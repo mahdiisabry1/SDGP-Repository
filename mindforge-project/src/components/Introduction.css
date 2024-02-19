@@ -1,0 +1,37 @@
+.outerLayer{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(https://bernardmarr.com/wp-content/uploads/2022/04/The-10-Biggest-Technology-Trends-That-Will-Transform-The-Next-Decade.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 45% 30%;
+    background-color: black;
+    text-align: center;
+}
+
+.innerLayer{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    text-align: center;
+}
+
+.TheBanner{
+    font-size: 3rem;
+    line-height: 2;
+}
+
+.paragrapgh{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+@media (min-width: 1024px) {
+    .TheBanner {
+        font-size: 8rem;
+        line-height: 1;
+    }
+}
