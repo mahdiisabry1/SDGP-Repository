@@ -1,11 +1,11 @@
 .outerLayer{
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 12rem;
+    padding-bottom: 12rem;
     margin-left: auto;
     margin-right: auto;
-    background-image: url(hacker.gif);
+    background-image: url(BoncingSurface.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 45% 30%;
@@ -29,12 +29,13 @@
 
 h1{
     font-size: 3rem;
-    line-height: 2;
+    line-height: 3;
     -webkit-text-stroke: 2px rgb(255, 255, 255);
     color: rgba(0, 0, 0, 0);
 }
 
 .paragrapgh{
+    margin-top: 30px;
     font-weight: 500;
     font-size: 15px;
 }
@@ -59,7 +60,7 @@ button {
 }
 
 button.learn-more {
-    margin-top: 20px;
+    margin-top: 45px;
     font-weight: 600;
     color: #382b22;
     text-transform: uppercase;

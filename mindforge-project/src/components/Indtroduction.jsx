@@ -15,16 +15,12 @@ const Indtroduction = () => {
         <div className='innerLayer'>
             <h1 className='TheBanner'><marquee behavior="scroll" direction="right" scrollamount="30">Welcome to MindForge</marquee></h1>
             <p className='paragrapgh'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat architecto molestiae unde inventore expedita a ipsum! Fuga dicta dolore, tempora molestias at ipsam placeat praesentium dignissimos consectetur neque eveniet? Quisquam, error praesentium? A consequuntur repellat molestias non dolorem aliquam rem voluptates? Aut magni, blanditiis perferendis impedit iusto provident perspiciatis incidunt?</p>
+            
             <div>
-              <button className='learn-more'> Explore </button>
-            </div>
-            <div>
-              <button className='learn-more'>
-                  {navItems.map(({ path, link }) => (<li key={path} className='TheIntroList'>
+                  {navItems.map(({ path, link }) => (<button key={path} className='learn-more'>
                   <NavLink className={({ isActive }) => (isActive ? 'active' : '')}to={path}>{link}</NavLink>
-                </li>
+                </button>
                 ))}
-              </button>
             </div>
         </div>
     </div>

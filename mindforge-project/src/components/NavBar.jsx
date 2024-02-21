@@ -26,9 +26,22 @@ const NavBar = () => {
         {path: "/game-room", link: "GameRoom"},
     ]
   return (
-    <header className='bg-black text-white fixed top-0 left-0 right-0'>
-        <nav className='px-4 py-4 max-w-7xl mx-auto flex justify-between items-center'>
-            <a href="/" className='text-xl font-bold text-white'>Mind<span className='text-blue-400'>FORGE</span></a> 
+    <header className='bg-black text-white fixed top-0 left-0 right-0 z-10'>
+        <div className='logo-box'>
+            <a href="/" className='text-4xl font-bold text-white'>MIND<span className='text-blue-400'>FORGE</span></a>
+            <div className='md:hidden relative'>
+                <button onClick={toggleMenu} className='cursor-pointer'>
+                    {
+                        isMenuOpen ? <FaXmark className='w-5 h-5'/> : <FaBars className='w-5 h-5'/>
+                    }
+                </button>
+            </div> 
+        </div>
+        <nav className='the-main-navbar'>
+            <div className='flex gap-5'><a href="/" className='hover:text-blue-300 gap-0'><FaEnvelope /></a>
+            <a href="/" className='hover:text-blue-300 gap-0'><FaEthereum /></a>
+            <a href="/" className='hover:text-blue-300 gap-0'><FaGooglePlay /></a></div>
+            
             {/* Nav Items with routing */}
             <ul className='md:flex gap-12 text-lg hidden'>
                 {
@@ -41,22 +54,19 @@ const NavBar = () => {
                 }
             </ul>
             {/* Menu items */}
-            <div className='text-white lg:flex gap-4 items-center hidden'>
-                <a href="/" className='hover:text-blue-300'><FaEnvelope /></a>
-                <a href="/" className='hover:text-blue-300'><FaEthereum /></a>
-                <a href="/" className='hover:text-blue-300'><FaGooglePlay /></a>
+            <div className='text-white lg:flex gap-6 items-center hidden'>
+                <button className='bg-blue-600 px-6 py-2 font-medium rounded hover:bg-slate-50 hover:text-black transition-all'>Sign up</button>
                 <button className='bg-blue-600 px-6 py-2 font-medium rounded hover:bg-slate-50 hover:text-black transition-all'>Log in</button>
             </div>
 
             {/* Mobile menu button, Displaying only in menu screen */}
-            <div className='md:hidden'>
+            {/* <div className='md:hidden'>
                 <button onClick={toggleMenu} className='cursor-pointer'>
                     {
                         isMenuOpen ? <FaXmark className='w-5 h-5'/> : <FaBars className='w-5 h-5'/>
                     }
-                    
                 </button>
-            </div>
+            </div> */}
         </nav>
         {/* Menu for mobile(smaller) devices */}
         <div>
