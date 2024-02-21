@@ -14,7 +14,7 @@ const Indtroduction = () => {
               <button className='learn-more'><a href="/"> Explore </a></button>
             </div>
             <div>
-              <button className='learn-more'><a href="/"> Get Started </a></button>
+              <button  className='learn-more'><a href="./Quz"> Get Started </a></button>
             </div>
         </div>
     </div>
