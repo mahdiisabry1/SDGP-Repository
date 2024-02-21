@@ -5,12 +5,19 @@
     padding-bottom: 10rem;
     margin-left: auto;
     margin-right: auto;
-    background-image: url(https://bernardmarr.com/wp-content/uploads/2022/04/The-10-Biggest-Technology-Trends-That-Will-Transform-The-Next-Decade.jpg);
+    background-image: url(hacker.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 45% 30%;
     background-color: black;
     text-align: center;
+}
+
+.learn-more .TheIntroList{
+    list-style-type: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
 }
 
 .innerLayer{

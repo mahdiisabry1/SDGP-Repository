@@ -20,10 +20,10 @@ const NavBar = () => {
 
     const navItems = [
         {path: "/", link: "Home"},
-        {path: "/RoadMap", link: "RoadMap"},
+        {path: "/RoadMap", link: "RoadMaps"},
         {path: "/cetification", link: "Cetification"},
         {path: "/blogs", link: "Blogs"},
-        {path: "/game-room", link: "GameRoom"}
+        {path: "/game-room", link: "GameRoom"},
     ]
   return (
     <header className='bg-black text-white fixed top-0 left-0 right-0'>
@@ -63,7 +63,7 @@ const NavBar = () => {
             <ul className= {`md:hidden gap-12 text-lg block space-y-4 px-5 py-6 mt-14 bg-white ${isMenuOpen ? "fixed top-0 left-0 w-full transition-all ease-out duration-50":"hidden"}`}>
                 {
                     navItems.map(({path, link}) => <li className='text-black'>
-                        <NavLink onClick={toggleMenu} to={path}>{link}</NavLink></li>)
+                    <NavLink onClick={toggleMenu} to={path}>{link}</NavLink></li>)
                 }
             </ul>
         </div>

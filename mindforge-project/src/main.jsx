@@ -11,6 +11,8 @@ import Blogs from './pages/Blogs.jsx';
 import RoadMap from './pages/RoadMap.jsx';
 import Cetification from './pages/Cetification.jsx';
 import GameRoom from './pages/GameRoom.jsx';
+import Quiz from './components/Quz.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
     {
       path: "/game-room",
       element: <GameRoom/>
+    },
+    {
+      path: "/Quiz",
+      element: <Quiz />
     }
   ]
   },
