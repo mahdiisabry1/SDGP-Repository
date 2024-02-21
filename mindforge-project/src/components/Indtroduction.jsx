@@ -2,6 +2,8 @@
 /* eslint-disable react/no-unknown-property */
 import React from 'react'
 import './Introduction.css'
+import { NavLink } from 'react-router-dom'
+ 
 
 const Indtroduction = () => {
 
@@ -14,7 +16,7 @@ const Indtroduction = () => {
               <button className='learn-more'><a href="/"> Explore </a></button>
             </div>
             <div>
-              <button  className='learn-more'><a href="./Quz"> Get Started </a></button>
+              <button  className='learn-more'><a href="../Quz.jsx"> Get Started </a></button>
             </div>
         </div>
     </div>
