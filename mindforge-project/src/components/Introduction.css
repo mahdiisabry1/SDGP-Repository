@@ -1,11 +1,11 @@
 .outerLayer{
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 12rem;
-    padding-bottom: 12rem;
+    padding-top: 15rem;
+    padding-bottom: 8rem;
     margin-left: auto;
     margin-right: auto;
-    background-image: url(BoncingSurface.gif);
+    background-image: url(earth.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 45% 30%;
@@ -46,6 +46,7 @@ h1{
         line-height: 1.1;
     }
 }
+
 
 button {
     position: relative;

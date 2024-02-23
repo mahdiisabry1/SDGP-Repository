@@ -13,6 +13,7 @@ import { FaGooglePlay } from "react-icons/fa6";
 const NavBar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isModelOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () =>{
         setIsMenuOpen(!isMenuOpen);
