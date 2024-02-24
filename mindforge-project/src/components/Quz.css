@@ -1,12 +1,71 @@
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Styling */
 .container {
-    padding-bottom: 20px; /* Adjust as needed */
-  }
-  
-  .question {
-    margin-bottom: 20px; /* Add space between questions */
-  }
-  
-  .submit-button {
-    margin-top: 10px; /* Add space above the submit button */
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styling */
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Question Styling */
+.question {
+  margin-bottom: 30px;
+}
+
+.question h2 {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Select Styling */
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 16px;
+}
+
+/* Button Styling */
+button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional Styling */
+.question:last-child {
+  margin-bottom: 0; /* Remove bottom margin from the last question */
+}
+
+.submit-button {
+  margin-top: 20px; /* Add more space above the submit button */
+}
