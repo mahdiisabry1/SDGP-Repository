@@ -2,7 +2,9 @@ import React from 'react'
 
 const Cetification = () => {
   return (
-    <div>Cetification</div>
+    <div className='py-40 bg-black text-white'>
+      Type your code here
+    </div>
   )
 }
 

@@ -3,7 +3,9 @@ import React from 'react'
 
 const RoadMap = () => {
   return (
-    <div></div>
+    <div className='py-40 bg-black text-white'>
+      Type your code here 
+    </div>
   )
 }
 
