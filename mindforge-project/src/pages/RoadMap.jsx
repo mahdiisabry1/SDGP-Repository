@@ -1,7 +1,21 @@
 import React from 'react';
 
+
 const RoadMap = () => {
+  const containerStyle = {
+    padding: '2.5rem 1.5rem',
+    backgroundColor: '#1a1a1a',
+    color: '#ffffff',
+  };
+
+  const titleStyle = {
+    fontSize: '1.875rem',
+    fontWeight: 'bold',
+    marginBottom: '1.5rem',
+  };
   return (
+    <div style={containerStyle}>
+    <h2 style={titleStyle}>Development Roadmap</h2>
     <div className='py-10 px-6 bg-gray-900 text-white'>
       <h2 className='text-3xl font-bold mb-6'>Development Roadmap</h2>
       <div className='flex flex-col space-y-4'>
@@ -45,6 +59,7 @@ const RoadMap = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
