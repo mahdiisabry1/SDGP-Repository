@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './Login.css'; // Import CSS file for styling
+import './Login.css'; 
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Handle login logic here
+   
     console.log('Logging in with:', { username, password });
   };
 
