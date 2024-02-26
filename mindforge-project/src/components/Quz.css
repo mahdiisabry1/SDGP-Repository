@@ -54,7 +54,7 @@ select {
 }
 
 /* Button Styling */
-button {
+/* button {
   display: block;
   width: 100%;
   padding: 12px;
@@ -65,7 +65,7 @@ button {
   cursor: pointer;
   font-size: 18px;
   transition: background-color 0.3s ease;
-}
+} */
 
 button:hover {
   background-color: #0056b3;
