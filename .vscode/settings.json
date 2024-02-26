@@ -4,6 +4,5 @@
   "less.lint.unknownProperties": "warning",
   "scss.lint.unknownProperties": "warning",
   "less.lint.unknownAtRules": "warning",
-  "scss.lint.unknownAtRules": "warning",
-  "liveServer.settings.port": 5501
+  "scss.lint.unknownAtRules": "warning"
 }
