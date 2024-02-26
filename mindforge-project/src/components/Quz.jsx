@@ -1,69 +1,84 @@
-import React, { useState } from 'react';
-import './Quz.css'; // Import CSS file
+import React, { Component } from 'react';
+import './Quz.css';
 
+class QuestionPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      side: 'front-end',
+      experience: '',
+      experienceLevel: '',
+      welcomeMessage: '',
+    };
+  }
 
-const QuestionPage = () => {
-  const [side, setSide] = useState('front-end');
-  const [experience, setExperience] = useState('beginner');
-  const [experienceLevel, setExperienceLevel] = useState('');
+  componentDidMount() {
+    if (this.state.side) {
+      this.setState({ welcomeMessage: `Welcome to the ${this.state.side} learning corner!` });
+    }
+  }
 
-  const submitAnswers = () => {
-    // Implement your logic for submitting answers
-    console.log('Selected Side:', side);
-    console.log('Selected Experience:', experience);
-    console.log('Selected Experience Level:', experienceLevel);
-    // Add more logic as needed
+  handleSideChange = (event) => {
+    this.setState({ side: event.target.value });
   };
 
-  const handleExperienceChange = (e) => {
-    setExperience(e.target.value);
-    if (e.target.value === 'no') {
-      // Reset experience level if user selects 'No'
-      setExperienceLevel('');
+  handleExperienceChange = (event) => {
+    this.setState({ experience: event.target.value });
+    if (event.target.value === 'no') {
+      this.setState({ experienceLevel: '' });
     }
   };
 
-  const handleExperienceLevelChange = (e) => {
-    setExperienceLevel(e.target.value);
+  handleExperienceLevelChange = (event) => {
+    this.setState({ experienceLevel: event.target.value });
   };
 
-  return (
-    <div className="container">
-      <h1>Quiz Corner</h1>
-      <div className="question">
-        <h2>What is the main side that you wish to learn from here? (Select one)</h2>
-        <select value={side} onChange={(e) => setSide(e.target.value)}>
-          <option value="front-end">Front-end</option>
-          <option value="back-end">Back-end</option>
-          <option value="full-stack">Full-stack</option>
-          <option value="React">React</option>
-          <option value="Angular">Angular</option>
-        </select>
-      </div>
-      <div className="question">
-        <h2>What is your level of experience with this technology/field? (Select one)</h2>
-        <select value={experience} onChange={handleExperienceChange}>
-          <option value="beginner">Beginner</option>
-          <option value="intermediate">Intermediate</option>
-          <option value="senior">Senior</option>
-        </select>
-      </div>
-      {experience === 'yes' && (
+  submitAnswers = () => {
+    console.log('Selected Side:', this.state.side);
+    console.log('Selected Experience:', this.state.experience);
+    console.log('Selected Experience Level:', this.state.experienceLevel);
+  };
+
+  render() {
+    return (
+      <div className="container">
+        <h1>Quiz Corner</h1>
+        {this.state.welcomeMessage && <h2 className="welcome-message">{this.state.welcomeMessage}</h2>}
         <div className="question">
-          <h2>What kind of experience do you have with React and Angular? (Select one)</h2>
-          <select value={experienceLevel} onChange={handleExperienceLevelChange}>
-            <option value="">Select</option>
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="senior">Senior</option>
+          <h2>What do you wish to learn from our website? (Select one)</h2>
+          <select value={this.state.side} onChange={this.handleSideChange}>
+            <option value="front-end">Front-end</option>
+            <option value="back-end">Back-end</option>
+            <option value="full-stack">Full-stack</option>
+            <option value="React">React</option>
+            <option value="Angular">Angular</option>
           </select>
         </div>
-      )}
-      <div>
-        <button onClick={submitAnswers}>Submit Answers</button>
+        <div className="question">
+          <h2>Do you have any experience in that side? (Select one)</h2>
+          <select value={this.state.experience} onChange={this.handleExperienceChange}>
+            <option value="">Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        {this.state.experience === 'yes' && (
+          <div className="question">
+            <h2>What kind of experience do you have in that field? (Select one)</h2>
+            <select value={this.state.experienceLevel} onChange={this.handleExperienceLevelChange}>
+              <option value="">Select</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="senior">Senior</option>
+            </select>
+          </div>
+        )}
+        <div className="submit-button">
+          <button onClick={this.submitAnswers}>Submit Answers</button>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default QuestionPage;
