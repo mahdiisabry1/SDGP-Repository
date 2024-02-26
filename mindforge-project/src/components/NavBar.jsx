@@ -8,12 +8,14 @@ import './NavBar.css'
 import { FaBars, FaEnvelope, FaXmark } from "react-icons/fa6";
 import { FaEthereum } from "react-icons/fa6";
 import { FaGooglePlay } from "react-icons/fa6";
+import Login from './Login';
+
 
 
 const NavBar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isModelOpen, setMenuOpen] = useState(false);
+    const [isModelOpen, setIsModalOpen] = useState(false);
 
     const toggleMenu = () =>{
         setIsMenuOpen(!isMenuOpen);
@@ -26,6 +28,16 @@ const NavBar = () => {
         {path: "/blogs", link: "Blogs"},
         {path: "/game-room", link: "GameRoom"},
     ]
+
+    // Details of the learner
+    const openModel = () =>{
+        setIsModalOpen(true);
+    }
+
+    const closeModel = () => {
+        setIsModalOpen(false);
+    }
+
   return (
     <header className='header-container'>
         <div className='logo-box'>
@@ -39,9 +51,12 @@ const NavBar = () => {
             </div> 
         </div>
         <nav className='the-main-navbar'>
-            <div className='flex gap-5'><a href="/" className='hover:text-blue-300 gap-0'><FaEnvelope /></a>
-            <a href="/" className='hover:text-blue-300 gap-0'><FaEthereum /></a>
-            <a href="/" className='hover:text-blue-300 gap-0'><FaGooglePlay /></a></div>
+            <div className='flex gap-5'>
+                <a href="/" className='hover:text-blue-300 gap-0'><FaEnvelope /></a>
+                <a href="/" className='hover:text-blue-300 gap-0'><FaEthereum /></a>
+                <a href="/" className='hover:text-blue-300 gap-0'><FaGooglePlay /></a>
+            </div>
+
             
             {/* Nav Items with routing */}
             <ul className='md:flex gap-12 text-lg hidden'>
@@ -56,9 +71,11 @@ const NavBar = () => {
             </ul>
             {/* Menu items */}
             <div className='text-white lg:flex gap-6 items-center hidden'>
-                <button className='bg-blue-600 px-6 py-2 font-medium rounded hover:bg-slate-50 hover:text-black transition-all'>Sign up</button>
-                <button className='bg-blue-600 px-6 py-2 font-medium rounded hover:bg-slate-50 hover:text-black transition-all'>Log in</button>
+                <button onClick={openModel} className='bg-blue-600 px-6 py-2 font-medium rounded hover:bg-slate-50 hover:text-black transition-all'>Log in</button>
             </div>
+
+            {/* Displaying the login an signup modal */}
+            <Login isOpen = {isModelOpen} onClose = {closeModel}/>
 
             {/* Mobile menu button, Displaying only in menu screen */}
             {/* <div className='md:hidden'>
