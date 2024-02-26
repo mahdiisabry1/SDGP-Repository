@@ -54,7 +54,7 @@ select {
 }
 
 /* Button Styling */
-button {
+.button-primary {
   display: block;
   width: 100%;
   padding: 12px;
@@ -67,7 +67,7 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.button-primary:hover {
   background-color: #0056b3;
 }
 
