@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       element: <Home />
     },
     {
-      path: "/MindMap",
+      path: "/RoadMap",
       element: <RoadMap />
     },
     {
