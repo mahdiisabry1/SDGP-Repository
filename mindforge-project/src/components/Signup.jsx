@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Signup.css'; 
+import './Signup.css'; // Import CSS file for styling
 
 const Signup = () => {
   const [fullName, setFullName] = useState('');
@@ -8,7 +8,7 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSignup = () => {
-    
+    // Handle signup logic here
     console.log('Signing up with:', { fullName, email, password });
   };
 
