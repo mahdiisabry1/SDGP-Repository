@@ -27,7 +27,7 @@ const NavBar = () => {
         {path: "/game-room", link: "GameRoom"},
     ]
   return (
-    <header className='bg-black text-white fixed top-0 left-0 right-0 z-10'>
+    <header className='header-container'>
         <div className='logo-box'>
             <a href="/" className='text-4xl font-bold text-white'>MIND<span className='text-blue-400'>FORGE</span></a>
             <div className='md:hidden relative'>
@@ -46,7 +46,7 @@ const NavBar = () => {
             {/* Nav Items with routing */}
             <ul className='md:flex gap-12 text-lg hidden'>
                 {
-                    navItems.map(({path, link}) => <li className='text-cyan-50'>
+                    navItems.map(({path, link}) => <li className='text-cyan-50 navItems'>
                         <NavLink className={({ isActive }) =>
                       isActive
                         ? "active"

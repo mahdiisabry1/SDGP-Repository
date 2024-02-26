@@ -18,3 +18,22 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.header-container{
+    z-index: 10;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.navItems{
+    transition: 1s;
+}
+
+.navItems:hover{
+    color: rgb(0, 68, 255);
+}
