@@ -65,7 +65,7 @@ select {
   cursor: pointer;
   font-size: 18px;
   transition: background-color 0.3s ease;
-}
+} 
 
 .button-primary:hover {
   background-color: #0056b3;
