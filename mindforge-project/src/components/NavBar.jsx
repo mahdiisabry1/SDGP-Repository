@@ -1,21 +1,20 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import '../components/CSS/NavBar.css'
 
 // react icons
 import { FaBars, FaEnvelope, FaXmark } from "react-icons/fa6";
 import { FaEthereum } from "react-icons/fa6";
 import { FaGooglePlay } from "react-icons/fa6";
-import Login from '../pages/Login';
+
 
 
 
 const NavBar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isModelOpen, setIsModalOpen] = useState(false);
 
     const toggleMenu = () =>{
         setIsMenuOpen(!isMenuOpen);
@@ -29,16 +28,11 @@ const NavBar = () => {
         {path: "/game-room", link: "GameRoom"},
     ]
 
-    // Details of the learner
-    const openModel = () =>{
-        setIsModalOpen(true);
-    }
+    const user = false;
 
-    const closeModel = () => {
-        setIsModalOpen(false);
-    }
-
+    
   return (
+
     <header className='header-container'>
         <div className='logo-box'>
             <a href="/" className='Mind'>MIND<span className='Forge'>FORGE</span></a>
@@ -52,9 +46,9 @@ const NavBar = () => {
         </div>
         <nav className='the-main-navbar'>
             <div className='flex gap-5'>
-                <a href="/" className='hover:text-blue-300 gap-0'><FaEnvelope /></a>
-                <a href="/" className='hover:text-blue-300 gap-0'><FaEthereum /></a>
-                <a href="/" className='hover:text-blue-300 gap-0'><FaGooglePlay /></a>
+                <a href="#" className='hover:text-blue-300 gap-0'><FaEnvelope /></a>
+                <a href="#" className='hover:text-blue-300 gap-0'><FaEthereum /></a>
+                <a href="#" className='hover:text-blue-300 gap-0'><FaGooglePlay /></a>
             </div>
 
             
@@ -69,13 +63,14 @@ const NavBar = () => {
                     } to={path}>{link}</NavLink></li>)
                 }
             </ul>
-            {/* Menu items */}
-            <div className='text-white lg:flex gap-6 items-center hidden'>
-                <button onClick={openModel} className='login-button'><span className="tooltip">Register</span><span>Login</span></button>
+
+            <div className='flex gap-4'>
+                {user ? <Link to='/Create'><button className='login-button' >Create</button></Link> : <Link to='/login'><button className='login-button'>Login</button></Link>}
+                {/* {user ? <Link to='/Create'><button className='login-button'>Profile</button></Link> : <Link to='/register'><button className='login-button'>Register</button></Link>} */}
             </div>
 
-            {/* Displaying the login an signup modal */}
-            <Login isOpen = {isModelOpen} onClose = {closeModel}/>
+
+            {/* Menu items */}
 
             {/* Mobile menu button, Displaying only in menu screen */}
             {/* <div className='md:hidden'>

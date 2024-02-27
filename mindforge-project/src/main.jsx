@@ -12,6 +12,8 @@ import RoadMap from './pages/RoadMap.jsx';
 import Cetification from './pages/Cetification.jsx';
 import GameRoom from './pages/GameRoom.jsx';
 import Quiz from './components/Quz.jsx';
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -41,7 +43,15 @@ const router = createBrowserRouter([
     {
       path: "/Quiz",
       element: <Quiz />
-    }
+    },
+    {
+    path: "/Login",
+    element: <Login />
+    },
+    {
+    path: "/register",
+    element: <Register />
+    } 
   ]
   },
 ]);

@@ -11,12 +11,11 @@
     padding-right: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    /* max-width: 80rem;
-    margin-left: 9%;
-    margin-right: auto; */
+    gap: 12%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .header-container{
