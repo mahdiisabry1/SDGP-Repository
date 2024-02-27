@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-key */
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import './NavBar.css'
+import '../components/CSS/NavBar.css'
 
 // react icons
 import { FaBars, FaEnvelope, FaXmark } from "react-icons/fa6";
@@ -41,7 +41,7 @@ const NavBar = () => {
   return (
     <header className='header-container'>
         <div className='logo-box'>
-            <a href="/" className='text-4xl font-bold text-white'>MIND<span className='text-blue-400'>FORGE</span></a>
+            <a href="/" className='Mind'>MIND<span className='Forge'>FORGE</span></a>
             <div className='md:hidden relative'>
                 <button onClick={toggleMenu} className='cursor-pointer'>
                     {

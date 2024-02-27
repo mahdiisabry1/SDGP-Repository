@@ -37,3 +37,22 @@
 .navItems:hover{
     color: rgb(0, 68, 255);
 }
+
+.Mind{
+    font-size: 2.25rem/* 36px */;
+    line-height: 2.5rem/* 40px */;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    transition: 2s;
+}
+
+.Forge{
+    --tw-text-opacity: 1;
+    color: rgb(96 165 250 / var(--tw-text-opacity));
+    transition: 2s;
+}
+
+.Mind:hover{
+    color: rgb(96, 165, 250);
+}

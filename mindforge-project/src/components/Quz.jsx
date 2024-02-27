@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import './Quz.css';
+import '../components/CSS/Quz.css';
 
 class QuestionPage extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
 import React from 'react'
-import './Introduction.css'
+import '../components/CSS/Introduction.css'
 import { NavLink } from 'react-router-dom'
 
 const Indtroduction = () => {
