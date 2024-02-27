@@ -8,7 +8,7 @@ import '../components/CSS/NavBar.css'
 import { FaBars, FaEnvelope, FaXmark } from "react-icons/fa6";
 import { FaEthereum } from "react-icons/fa6";
 import { FaGooglePlay } from "react-icons/fa6";
-import Login from './Login';
+import Login from '../pages/Login';
 
 
 
@@ -71,7 +71,7 @@ const NavBar = () => {
             </ul>
             {/* Menu items */}
             <div className='text-white lg:flex gap-6 items-center hidden'>
-                <button onClick={openModel} className='bg-blue-600 px-6 py-2 font-medium rounded hover:bg-slate-50 hover:text-black transition-all'>Log in</button>
+                <button onClick={openModel} className='login-button'><span className="tooltip">Register</span><span>Login</span></button>
             </div>
 
             {/* Displaying the login an signup modal */}
