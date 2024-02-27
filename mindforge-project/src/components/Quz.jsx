@@ -6,11 +6,11 @@ class QuestionPage extends Component {
     super(props);
     this.state = {
       side: '',
-      experience: '',
+      experience: 'no',
       experienceLevel: '',
       welcomeMessage: '',
-      additionalQuestion: '', // New state for the additional question
-      additionalAnswer: '', // New state for the additional answer
+      additionalQuestion: '',
+      additionalAnswer: '',
     };
   }
 
@@ -52,6 +52,10 @@ class QuestionPage extends Component {
     console.log('Additional Answer:', this.state.additionalAnswer);
   };
 
+  retryQuestion = () => {
+    this.setState({ additionalAnswer: '', experienceLevel: '' });
+  };
+
   render() {
     return (
       <div className="container">
@@ -70,16 +74,14 @@ class QuestionPage extends Component {
         <div className="question">
           <h2>Do you have any experience in that side? (Select one)</h2>
           <select value={this.state.experience} onChange={this.handleExperienceChange}>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
             <option value="no">No</option>
+            <option value="yes">Yes</option>
           </select>
         </div>
         {this.state.experience === 'yes' && (
           <div className="question">
             <h2>What kind of experience do you have in that field? (Select one)</h2>
             <select value={this.state.experienceLevel} onChange={this.handleExperienceLevelChange}>
-              <option value="">Select</option>
               <option value="beginner">Beginner</option>
               <option value="intermediate">Intermediate</option>
               <option value="senior">Senior</option>
@@ -87,18 +89,26 @@ class QuestionPage extends Component {
           </div>
         )}
         {/* Conditional rendering of additional question based on specified conditions */}
-{this.state.side === 'front-end' && this.state.experience === 'yes' && this.state.experienceLevel === 'beginner' && (
-  <div className="question">
-    <h2>What is the purpose of HTML in web development?</h2>
-    <select value={this.state.additionalAnswer} onChange={this.handleAdditionalAnswerChange}>
-      <option value="">Select</option>
-      <option value="structure">HTML is used to structure content on web pages, providing a framework for organizing text, images, links, and other media elements.</option>
-      <option value="styling">HTML is primarily used for styling and designing websites.</option>
-      <option value="programming">HTML is a programming language used to create dynamic interactions and functionalities on web pages.</option>
-    </select>
-  </div>
-)}
-
+        {this.state.side === 'front-end' && this.state.experience === 'yes' && this.state.experienceLevel === 'beginner' && (
+          <div className="question">
+            <h2>What is the purpose of HTML in web development?</h2>
+            <select value={this.state.additionalAnswer} onChange={this.handleAdditionalAnswerChange}>
+              <option value="">Select</option>
+              <option value="structure">HTML is used to structure content on web pages, providing a framework for organizing text, images, links, and other media elements.</option>
+              <option value="styling">HTML is primarily used for styling and designing websites.</option>
+              <option value="programming">HTML is a programming language used to create dynamic interactions and functionalities on web pages.</option>
+            </select>
+            {this.state.additionalAnswer === 'structure' ? (
+              <p className="correct-message">You are correct!</p>
+            ) : this.state.additionalAnswer !== '' ? (
+              <div>
+                <p className="incorrect-message">You are incorrect.</p>
+                <p>Let's try again.</p>
+                <button onClick={this.retryQuestion}>Retry</button>
+              </div>
+            ) : null}
+          </div>
+        )}
         <div className="submit-button">
           <button onClick={this.submitAnswers}>Submit Answers</button>
         </div>

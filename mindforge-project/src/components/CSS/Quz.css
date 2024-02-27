@@ -108,18 +108,45 @@ select {
   background: #4db2e8;
   border: 0;
   color: #FFF;
-  /*font-family: "Libre Baskerville", Libre Baskerville, Times New Roman, Times, serif;*/
   font-size: 20px;
   font-weight: 700;
   line-height: 12px;
   margin: 0;
   padding: 15px 25px; /* Increased padding */
   text-transform: lowercase;
-  /* css3 */
   transition: background 0.25s; /* Add transition for hover effect */
 }
 
 .submit-button:hover {
   background: #1531eb;
   cursor: pointer;
+}
+
+/* Correct Message Styling */
+.correct-message {
+  color: #008000; /* Green color for correctness */
+  font-weight: bold;
+}
+
+/* Incorrect Message Styling */
+.incorrect-message {
+  color: #ff0000; /* Red color for incorrectness */
+  font-weight: bold;
+}
+
+/* Retry Button Styling */
+.retry-button {
+  background: #ff9800;
+  border: 0;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 12px;
+  margin-top: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.retry-button:hover {
+  background: #e69500;
 }
