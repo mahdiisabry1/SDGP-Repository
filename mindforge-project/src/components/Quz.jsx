@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import '../components/CSS/Quz.css';
 
@@ -6,10 +5,12 @@ class QuestionPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      side: 'front-end',
+      side: 'Mind forge - E',
       experience: '',
       experienceLevel: '',
       welcomeMessage: '',
+      additionalQuestion: '', // New state for the additional question
+      additionalAnswer: '', // New state for the additional answer
     };
   }
 
@@ -24,9 +25,10 @@ class QuestionPage extends Component {
   };
 
   handleExperienceChange = (event) => {
-    this.setState({ experience: event.target.value });
-    if (event.target.value === 'no') {
-      this.setState({ experienceLevel: '' });
+    const value = event.target.value;
+    this.setState({ experience: value });
+    if (value === 'no') {
+      this.setState({ experienceLevel: '', additionalQuestion: '', additionalAnswer: '' });
     }
   };
 
@@ -34,10 +36,20 @@ class QuestionPage extends Component {
     this.setState({ experienceLevel: event.target.value });
   };
 
+  handleAdditionalQuestionChange = (event) => {
+    this.setState({ additionalQuestion: event.target.value });
+  };
+
+  handleAdditionalAnswerChange = (event) => {
+    this.setState({ additionalAnswer: event.target.value });
+  };
+
   submitAnswers = () => {
     console.log('Selected Side:', this.state.side);
     console.log('Selected Experience:', this.state.experience);
     console.log('Selected Experience Level:', this.state.experienceLevel);
+    console.log('Additional Question:', this.state.additionalQuestion);
+    console.log('Additional Answer:', this.state.additionalAnswer);
   };
 
   render() {
@@ -71,6 +83,18 @@ class QuestionPage extends Component {
               <option value="beginner">Beginner</option>
               <option value="intermediate">Intermediate</option>
               <option value="senior">Senior</option>
+            </select>
+          </div>
+        )}
+        {/* Conditional rendering of additional question based on specified conditions */}
+        {this.state.side === 'front-end' && this.state.experience === 'yes' && this.state.experienceLevel === 'beginner' && (
+          <div className="question">
+            <h2>What is the purpose of HTML in web development?</h2>
+            <select value={this.state.additionalAnswer} onChange={this.handleAdditionalAnswerChange}>
+              <option value="">Select</option>
+              <option value="structure">HTML is used to structure content on web pages, providing a framework for organizing text, images, links, and other media elements.</option>
+              <option value="styling">HTML is primarily used for styling and designing websites.</option>
+              <option value="programming">HTML is a programming language used to create dynamic interactions and functionalities on web pages.</option>
             </select>
           </div>
         )}
