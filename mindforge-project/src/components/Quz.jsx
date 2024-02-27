@@ -5,7 +5,7 @@ class QuestionPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      side: 'Mind forge - E',
+      side: '',
       experience: '',
       experienceLevel: '',
       welcomeMessage: '',
@@ -87,17 +87,18 @@ class QuestionPage extends Component {
           </div>
         )}
         {/* Conditional rendering of additional question based on specified conditions */}
-        {this.state.side === 'front-end' && this.state.experience === 'yes' && this.state.experienceLevel === 'beginner' && (
-          <div className="question">
-            <h2>What is the purpose of HTML in web development?</h2>
-            <select value={this.state.additionalAnswer} onChange={this.handleAdditionalAnswerChange}>
-              <option value="">Select</option>
-              <option value="structure">HTML is used to structure content on web pages, providing a framework for organizing text, images, links, and other media elements.</option>
-              <option value="styling">HTML is primarily used for styling and designing websites.</option>
-              <option value="programming">HTML is a programming language used to create dynamic interactions and functionalities on web pages.</option>
-            </select>
-          </div>
-        )}
+{this.state.side === 'front-end' && this.state.experience === 'yes' && this.state.experienceLevel === 'beginner' && (
+  <div className="question">
+    <h2>What is the purpose of HTML in web development?</h2>
+    <select value={this.state.additionalAnswer} onChange={this.handleAdditionalAnswerChange}>
+      <option value="">Select</option>
+      <option value="structure">HTML is used to structure content on web pages, providing a framework for organizing text, images, links, and other media elements.</option>
+      <option value="styling">HTML is primarily used for styling and designing websites.</option>
+      <option value="programming">HTML is a programming language used to create dynamic interactions and functionalities on web pages.</option>
+    </select>
+  </div>
+)}
+
         <div className="submit-button">
           <button onClick={this.submitAnswers}>Submit Answers</button>
         </div>
