@@ -6,8 +6,8 @@ import '../components/CSS/NavBar.css'
 
 // react icons
 import { FaBars, FaEnvelope, FaXmark } from "react-icons/fa6";
-import { FaEthereum } from "react-icons/fa6";
-import { FaGooglePlay } from "react-icons/fa6";
+// import { FaEthereum } from "react-icons/fa6";
+// import { FaGooglePlay } from "react-icons/fa6";
 
 
 
@@ -28,7 +28,7 @@ const NavBar = () => {
         {path: "/game-room", link: "GameRoom"},
     ]
 
-    const user = false;
+    const user = true;
 
     
   return (
@@ -46,12 +46,9 @@ const NavBar = () => {
         </div>
         <nav className='the-main-navbar'>
             <div className='flex gap-5'>
-                <a href="#" className='hover:text-blue-300 gap-0'><FaEnvelope /></a>
-                <a href="#" className='hover:text-blue-300 gap-0'><FaEthereum /></a>
-                <a href="#" className='hover:text-blue-300 gap-0'><FaGooglePlay /></a>
+                {user ? <Link to='/Create'><button className='login-button'>Profile</button></Link> : <Link to='/register'><button className='login-button'>Register</button></Link>} 
             </div>
 
-            
             {/* Nav Items with routing */}
             <ul className='md:flex gap-12 text-lg hidden'>
                 {
@@ -65,7 +62,7 @@ const NavBar = () => {
             </ul>
 
             <div className='flex gap-4'>
-                {user ? <Link to='/Create'><button className='login-button' >Create</button></Link> : <Link to='/login'><button className='login-button'>Login</button></Link>}
+                {user ? <Link to='/create'><button className='login-button' >Create</button></Link> : <Link to='/login'><button className='login-button'>Login</button></Link>}
                 {/* {user ? <Link to='/Create'><button className='login-button'>Profile</button></Link> : <Link to='/register'><button className='login-button'>Register</button></Link>} */}
             </div>
 

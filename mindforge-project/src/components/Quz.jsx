@@ -59,7 +59,7 @@ class QuestionPage extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Quiz Corner</h1>
+        <h1 className='quiz'>Quiz Corner</h1>
         {this.state.welcomeMessage && <h2 className="welcome-message">{this.state.welcomeMessage}</h2>}
         <div className="question">
           <h2>What do you wish to learn from our website? (Select one)</h2>

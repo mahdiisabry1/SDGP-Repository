@@ -14,6 +14,8 @@ import GameRoom from './pages/GameRoom.jsx';
 import Quiz from './components/Quz.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import PostDetails from './pages/PostDetails.jsx';
+import CreatePost from './pages/CreatePost.jsx';
 
 
 const router = createBrowserRouter([
@@ -51,7 +53,15 @@ const router = createBrowserRouter([
     {
     path: "/register",
     element: <Register />
-    } 
+    },
+    {
+      path: "/posts/post/:id",
+      element: <PostDetails />
+    },
+    {
+      path: "/create",
+      element: <CreatePost /> 
+    },
   ]
   },
 ]);
