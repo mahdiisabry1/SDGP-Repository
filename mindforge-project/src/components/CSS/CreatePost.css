@@ -1,0 +1,8 @@
+.create-post-container{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    height: 500px;
+    width: 500px;
+    background-color: blue;
+}

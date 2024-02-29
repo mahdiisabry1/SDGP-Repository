@@ -47,7 +47,7 @@ body {
 }
 
 /* Input Styling */
-input[type="text"] {
+/* input[type="text"] {
   width: 100%;
   padding: 10px;
   border-radius: 4px;
@@ -60,10 +60,10 @@ input[type="text"] {
   padding-left: 10px;
   padding-right: 10px;
   cursor: pointer;
-}
+} */
 
 /* Select Styling */
-select {
+.select-option {
   width: 100%;
   padding: 10px;
   border-radius: 4px;
