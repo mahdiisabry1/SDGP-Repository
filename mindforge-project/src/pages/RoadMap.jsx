@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 
 const RoadMap = () => {
+  const [selectedPhase, setSelectedPhase] = useState(null);
+
   const containerStyle = {
     padding: '2.5rem 1.5rem',
     backgroundColor: '#1a1a1a',
     color: '#ffffff',
+    marginTop: '6%',
   };
 
   const titleStyle = {
@@ -40,8 +44,8 @@ const RoadMap = () => {
   };
 
   const handlePhaseClick = (phase) => {
-    // Replace this with your custom logic
-    alert(`Clicked on ${phase.title}`);
+    setSelectedPhase(phase);
+    window.open('/mindmap', '_blank');
   };
 
   const phases = [
@@ -54,7 +58,7 @@ const RoadMap = () => {
 
   return (
     <div style={containerStyle}>
-      <h2 style={titleStyle}>Development Roadmap</h2>
+      <h2 style={titleStyle}>Choose Your MindMap Here :</h2>
       <div>
         {phases.map((phase, index) => (
           <div
@@ -70,6 +74,7 @@ const RoadMap = () => {
           </div>
         ))}
       </div>
+     
     </div>
   );
 };
