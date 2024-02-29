@@ -1,8 +1,11 @@
 import React from 'react'
+import Tabs from '../components/Tabs'
 
 const Cetification = () => {
   return (
-    <div>Cetification</div>
+    <div className="w-[1440px] m-auto">
+      <Tabs></Tabs>
+    </div>
   )
 }
 
