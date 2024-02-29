@@ -3,7 +3,7 @@ import Tabs from '../components/Tabs'
 
 const Cetification = () => {
   return (
-    <div className="w-[1440px] m-auto">
+    <div className='py-40 bg-black text-white'>
       <Tabs></Tabs>
     </div>
   )
