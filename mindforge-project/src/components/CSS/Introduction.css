@@ -77,3 +77,13 @@
 .learn-more:hover::before {
     width: 100%;
 }
+
+.Scrol-down-btn{
+    margin-top: 10px;
+}
+.Scrol-down-btn .SVG-arrow{
+    font-size: 25px;
+    position: relative;
+    left: 734px;
+    top: 2px;
+}

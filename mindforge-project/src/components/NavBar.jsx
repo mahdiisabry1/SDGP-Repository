@@ -28,7 +28,7 @@ const NavBar = () => {
         {path: "/game-room", link: "GameRoom"},
     ]
 
-    const user = true;
+    const user = false;
 
     
   return (

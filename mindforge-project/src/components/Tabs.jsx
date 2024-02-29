@@ -3,7 +3,7 @@ import '../components/CSS/tabs.css'
 const Tabs = () => {
     return(
         <div>
-           <div className="container">
+           <div className="container-tabs">
             <div className="bloc-tabs">
             <button className="tabs
             active-tabs">Front-end</button>
