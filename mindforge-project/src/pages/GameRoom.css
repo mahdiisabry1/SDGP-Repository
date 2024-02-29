@@ -29,15 +29,15 @@
 }
 
 /* Styles for the execute code button */
-button {
+/* button {
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  position: relative; /* Add relative positioning to ensure z-index works */
-}
+  position: relative; 
+} */
 
 /* Styles for the output section */
 .output {

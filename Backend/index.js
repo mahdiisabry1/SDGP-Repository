@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const dotenv = require('dotenv')
+const authRoute = require('./Routes/auth')
 
 
 // database
@@ -15,6 +16,8 @@ const connectDB = async() => {
 }
 
 dotenv.config()
+app.use(express.json())
+app.use("/api/auth", authRoute)
 
 
 app.listen(process.env.PORT, () =>{
