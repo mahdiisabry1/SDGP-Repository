@@ -15,7 +15,7 @@ const BlogPosts = () => {
       {/* Details section */}
       <div className="flex flex-col w-[65%]">
         <h1 className="text-xl font-bold">
-          <Link to="/posts/post/:id" className='hover:uppercase'>10 Uses of artifitial intelligence</Link>
+          <Link to="/posts/post/:id" className='hover:underline'>10 Uses of artifitial intelligence</Link>
         </h1>
         <div className="flex mb-2 text-sm font-semibold text-gray-500 items-center justify-between md:mb-4">
           <p>@mahdiisabry</p>

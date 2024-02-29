@@ -3,7 +3,7 @@
 /* Styles for the game room container */
 .game-room {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 10% auto;
   padding: 20px;
   position: relative; /* Needed for positioning the button */
 }
