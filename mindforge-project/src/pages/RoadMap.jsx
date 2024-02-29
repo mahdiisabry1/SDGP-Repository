@@ -55,7 +55,7 @@ const RoadMap = () => {
 
   return (
     <div style={containerStyle}>
-      <h2 style={titleStyle}>Development Roadmap</h2>
+      <h2 style={titleStyle}>Choose Your MindMap Here :</h2>
       <div>
         {phases.map((phase, index) => (
           <div
