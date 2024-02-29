@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 800px;
+    height: auto;
+    background-color: black;
+    margin: 100px auto;
+    word-break: break-all;
+    border: 1px solid rgba(0,0,0,0);
+    box-shadow: 10px 10px 10px #1cfdff;
+    
+
+}
