@@ -16,6 +16,7 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import PostDetails from './pages/PostDetails.jsx';
 import CreatePost from './pages/CreatePost.jsx';
+import Profile from './pages/Profile.jsx';
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
     {
       path: "/create",
       element: <CreatePost /> 
+    },
+    {
+      path: "/profile",
+      element: <Profile />
     },
   ]
   },

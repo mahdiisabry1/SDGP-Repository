@@ -28,7 +28,7 @@ const NavBar = () => {
         {path: "/game-room", link: "GameRoom"},
     ]
 
-    const user = true;
+    const user = false;
 
     
   return (
@@ -46,7 +46,7 @@ const NavBar = () => {
         </div>
         <nav className='the-main-navbar'>
             <div className='flex gap-5'>
-                {user ? <Link to='/Create'><button className='login-button'>Profile</button></Link> : <Link to='/register'><button className='login-button'>Register</button></Link>} 
+                {user ? <Link to='/profile'><button className='login-button'>Profile</button></Link> : <Link to='/register'><button className='login-button'>Register</button></Link>} 
             </div>
 
             {/* Nav Items with routing */}

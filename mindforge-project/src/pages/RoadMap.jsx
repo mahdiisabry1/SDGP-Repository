@@ -1,65 +1,80 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 const RoadMap = () => {
+  const [selectedPhase, setSelectedPhase] = useState(null);
+
   const containerStyle = {
     padding: '2.5rem 1.5rem',
     backgroundColor: '#1a1a1a',
     color: '#ffffff',
+    marginTop: '6%',
   };
 
   const titleStyle = {
-    fontSize: '1.875rem',
+    fontSize: '2.5rem',
     fontWeight: 'bold',
     marginBottom: '1.5rem',
+    textAlign: 'center',
   };
+
+  const phaseStyle = {
+    padding: '1rem',
+    borderRadius: '8px',
+    marginBottom: '1.5rem',
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+  };
+
+  const circleStyle = {
+    width: '2rem',
+    height: '2rem',
+    borderRadius: '50%',
+    marginRight: '1.5rem',
+  };
+
+  const phaseTitleStyle = {
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+  };
+
+  const phaseDescriptionStyle = {
+    color: '#a0a0a0',
+  };
+
+  const handlePhaseClick = (phase) => {
+    setSelectedPhase(phase);
+    window.open('/mindmap', '_blank');
+  };
+
+  const phases = [
+    { title: 'Course 1: React', description: 'JavaScript library for building user interfaces', customColor: '#61dafb' },
+    { title: 'Course 2: Angular', description: 'TypeScript-based open-source framework', customColor: '#dd1b16' },
+    { title: 'Course 3: Front-End', description: 'Involves creating the visual and interactive elements of a web application', customColor: '#4caf50' },
+    { title: 'Course 4: Back-End', description: 'Enabling communication between the front end and databases', customColor: '#673ab7' },
+    { title: 'Course 5: Full-Stack', description: 'Proficient in both front-end and back-end development', customColor: '#ff5722' },
+  ];
+
   return (
     <div style={containerStyle}>
-    <h2 style={titleStyle}>Development Roadmap</h2>
-    <div className='py-10 px-6 bg-gray-900 text-white'>
-      <h2 className='text-3xl font-bold mb-6'>Development Roadmap</h2>
-      <div className='flex flex-col space-y-4'>
-        <div className='flex items-center'>
-          <div className='bg-green-500 w-4 h-4 rounded-full mr-4'></div>
-          <div>
-            <h3 className='text-xl font-semibold'>Phase 1: Planning</h3>
-            <p className='text-gray-400'>Define project goals and requirements</p>
+      <h2 style={titleStyle}>Choose Your MindMap Here :</h2>
+      <div>
+        {phases.map((phase, index) => (
+          <div
+            key={index}
+            style={{ ...phaseStyle, backgroundColor: `${phase.customColor}50` }}
+            onClick={() => handlePhaseClick(phase)}
+          >
+            <div style={{ ...circleStyle, backgroundColor: phase.customColor }}></div>
+            <div>
+              <h3 style={phaseTitleStyle}>{phase.title}</h3>
+              <p style={phaseDescriptionStyle}>{phase.description}</p>
+            </div>
           </div>
-        </div>
-
-        <div className='flex items-center'>
-          <div className='bg-yellow-500 w-4 h-4 rounded-full mr-4'></div>
-          <div>
-            <h3 className='text-xl font-semibold'>Phase 2: Design</h3>
-            <p className='text-gray-400'>Create wireframes and design UI/UX</p>
-          </div>
-        </div>
-
-        <div className='flex items-center'>
-          <div className='bg-blue-500 w-4 h-4 rounded-full mr-4'></div>
-          <div>
-            <h3 className='text-xl font-semibold'>Phase 3: Development</h3>
-            <p className='text-gray-400'>Write code and implement features</p>
-          </div>
-        </div>
-
-        <div className='flex items-center'>
-          <div className='bg-purple-500 w-4 h-4 rounded-full mr-4'></div>
-          <div>
-            <h3 className='text-xl font-semibold'>Phase 4: Testing</h3>
-            <p className='text-gray-400'>Perform testing and debugging</p>
-          </div>
-        </div>
-
-        <div className='flex items-center'>
-          <div className='bg-red-500 w-4 h-4 rounded-full mr-4'></div>
-          <div>
-            <h3 className='text-xl font-semibold'>Phase 5: Deployment</h3>
-            <p className='text-gray-400'>Release the application to production</p>
-          </div>
-        </div>
+        ))}
       </div>
-    </div>
+     
     </div>
   );
 };
