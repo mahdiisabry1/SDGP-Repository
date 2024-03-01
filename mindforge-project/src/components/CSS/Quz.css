@@ -1,5 +1,6 @@
 /* Body Styling */
 body {
+  font-family: 'Roboto', sans-serif;
   background-color: #f5f5f5;
   margin: 0;
   padding: 0;
@@ -47,7 +48,7 @@ body {
 }
 
 /* Input Styling */
-/* input[type="text"] {
+input[type="text"] {
   width: 100%;
   padding: 10px;
   border-radius: 4px;
@@ -60,10 +61,10 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   cursor: pointer;
-} */
+}
 
 /* Select Styling */
-.select-option {
+select {
   width: 100%;
   padding: 10px;
   border-radius: 4px;

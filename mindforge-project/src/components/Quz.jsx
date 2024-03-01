@@ -60,17 +60,11 @@ class QuestionPage extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="quiz">Quiz Corner</h1>
-        {this.state.welcomeMessage && (
-          <h2 className="welcome-message">{this.state.welcomeMessage}</h2>
-        )}
+        <h1 className='quiz'>Quiz Corner</h1>
+        {this.state.welcomeMessage && <h2 className="welcome-message">{this.state.welcomeMessage}</h2>}
         <div className="question">
           <h2>What do you wish to learn from our website? (Select one)</h2>
-          <select
-            className="select-option"
-            value={this.state.side}
-            onChange={this.handleSideChange}
-          >
+          <select value={this.state.side} onChange={this.handleSideChange}>
             <option value="front-end">Front-end</option>
             <option value="back-end">Back-end</option>
             <option value="full-stack">Full-stack</option>
@@ -80,25 +74,15 @@ class QuestionPage extends Component {
         </div>
         <div className="question">
           <h2>Do you have any experience in that side? (Select one)</h2>
-          <select
-            className="select-option"
-            value={this.state.experience}
-            onChange={this.handleExperienceChange}
-          >
+          <select value={this.state.experience} onChange={this.handleExperienceChange}>
             <option value="no">No</option>
             <option value="yes">Yes</option>
           </select>
         </div>
-        {this.state.experience === "yes" && (
+        {this.state.experience === 'yes' && (
           <div className="question">
-            <h2>
-              What kind of experience do you have in that field? (Select one)
-            </h2>
-            <select
-              className="select-option"
-              value={this.state.experienceLevel}
-              onChange={this.handleExperienceLevelChange}
-            >
+            <h2>What kind of experience do you have in that field? (Select one)</h2>
+            <select value={this.state.experienceLevel} onChange={this.handleExperienceLevelChange}>
               <option value="beginner">Beginner</option>
               <option value="intermediate">Intermediate</option>
               <option value="senior">Senior</option>
@@ -106,41 +90,26 @@ class QuestionPage extends Component {
           </div>
         )}
         {/* Conditional rendering of additional question based on specified conditions */}
-        {this.state.side === "front-end" &&
-          this.state.experience === "yes" &&
-          this.state.experienceLevel === "beginner" && (
-            <div className="question">
-              <h2>What is the purpose of HTML in web development?</h2>
-              <select
-                className="select-option"
-                value={this.state.additionalAnswer}
-                onChange={this.handleAdditionalAnswerChange}
-              >
-                <option value="">Select</option>
-                <option value="structure">
-                  HTML is used to structure content on web pages, providing a
-                  framework for organizing text, images, links, and other media
-                  elements.
-                </option>
-                <option value="styling">
-                  HTML is primarily used for styling and designing websites.
-                </option>
-                <option value="programming">
-                  HTML is a programming language used to create dynamic
-                  interactions and functionalities on web pages.
-                </option>
-              </select>
-              {this.state.additionalAnswer === "structure" ? (
-                <p className="correct-message">You are correct!</p>
-              ) : this.state.additionalAnswer !== "" ? (
-                <div>
-                  <p className="incorrect-message">You are incorrect.</p>
-                  <p>Let's try again.</p>
-                  <button onClick={this.retryQuestion}>Retry</button>
-                </div>
-              ) : null}
-            </div>
-          )}
+        {this.state.side === 'front-end' && this.state.experience === 'yes' && this.state.experienceLevel === 'beginner' && (
+          <div className="question">
+            <h2>What is the purpose of HTML in web development?</h2>
+            <select value={this.state.additionalAnswer} onChange={this.handleAdditionalAnswerChange}>
+              <option value="">Select</option>
+              <option value="structure">HTML is used to structure content on web pages, providing a framework for organizing text, images, links, and other media elements.</option>
+              <option value="styling">HTML is primarily used for styling and designing websites.</option>
+              <option value="programming">HTML is a programming language used to create dynamic interactions and functionalities on web pages.</option>
+            </select>
+            {this.state.additionalAnswer === 'structure' ? (
+              <p className="correct-message">You are correct!</p>
+            ) : this.state.additionalAnswer !== '' ? (
+              <div>
+                <p className="incorrect-message">You are incorrect.</p>
+                <p>Let's try again.</p>
+                <button onClick={this.retryQuestion}>Retry</button>
+              </div>
+            ) : null}
+          </div>
+        )}
         <div className="submit-button">
           <button onClick={this.submitAnswers}>Submit Answers</button>
         </div>

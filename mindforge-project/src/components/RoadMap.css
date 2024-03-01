@@ -1,0 +1,93 @@
+/* Add this CSS code to your stylesheets or components
+
+/* Overall container styles */
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .bg-gray-900 {
+    background-color: #1a1a1a;
+  }
+  
+  .text-white {
+    color: #ffffff;
+  }
+  
+  /* Title styles */
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Phase styles */
+  .flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .space-y-4 > * {
+    margin-bottom: 1rem;
+  }
+  
+  /* Circle styles */
+  .bg-green-500 {
+    background-color: #34d399;
+  }
+  
+  .bg-yellow-500 {
+    background-color: #fbbf24;
+  }
+  
+  .bg-blue-500 {
+    background-color: #3b82f6;
+  }
+  
+  .bg-purple-500 {
+    background-color: #9333ea;
+  }
+  
+  .bg-red-500 {
+    background-color: #ef4444;
+  }
+  
+  .w-4 {
+    width: 1rem;
+  }
+  
+  .h-4 {
+    height: 1rem;
+  }
+  
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  /* Phase details styles */
+  .text-xl {
+    font-size: 1.25rem;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .text-gray-400 {
+    color: #9ca3af;
+  } 
+  
