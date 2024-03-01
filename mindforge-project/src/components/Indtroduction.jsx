@@ -20,12 +20,9 @@ const Indtroduction = () => {
           </marquee>
         </h1>
         <p className="paragrapgh">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-          architecto molestiae unde inventore expedita a ipsum! Fuga dicta
-          dolore, tempora molestias at ipsam placeat praesentium dignissimos
-          consectetur neque eveniet? Quisquam, error praesentium? A consequuntur
-          repellat molestias non dolorem aliquam rem voluptates? Aut magni,
-          blanditiis perferendis impedit iusto provident perspiciatis incidunt?
+          
+          Learn , Create and Earn
+
         </p>
 
         <div>

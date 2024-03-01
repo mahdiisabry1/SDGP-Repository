@@ -3,13 +3,13 @@ import "../components/CSS/CreatePost.css";
 import { HiXCircle } from "react-icons/hi";
 
 const CreatePost = () => {
-  const [cat, setCat] = useState("");
+  const [cat, setCat] = useState("Tech");
   const [cats, setcats] = useState([]);
 
   const addCategory = () => {
     let updatedCats = [...cats];
     updatedCats.push(cat);
-    setCat("");
+    setCat("Tech");
     setcats(updatedCats);
   };
 
@@ -46,7 +46,7 @@ const CreatePost = () => {
               onChange={(e) => setCat(e.target.value)}
               type="text"
               className="mt-5 flex-1"
-              placeholder="Enter post Category"
+              placeholder="Enter post Keywords"
             />
             <div
               onClick={addCategory}
@@ -78,9 +78,10 @@ const CreatePost = () => {
             cols="30"
             rows="15"
             className="px-4 py-4 outline-none mt-5"
-          >
-            Write Your description
-          </textarea>
+            required
+            minLength={500}
+            placeholder="200 words minimum required"
+          ></textarea>
           <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
             Create post
           </button>
