@@ -21,6 +21,7 @@ The BackEnd:
 The backend will not run if the dependencies are not properly installed and if the database is not connected (Atlas)
 
 npm i  Express mongoose dotenv cors bcrypt jsonwebtoken cookie-parser multer
+
 npm run start-dev
 
 
