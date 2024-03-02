@@ -1,3 +1,8 @@
+.app{
+  padding: 20%;
+  margin-left: 20%;
+}
+
 .quiz-app {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 20px;

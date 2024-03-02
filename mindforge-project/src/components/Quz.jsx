@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import '../components/CSS/Quz.css';
 
 class Quz extends Component {
@@ -80,11 +80,13 @@ class Quz extends Component {
               </div>
               <div className='question-text'>{questions[currentQuestion].questionText}</div>
             </div>
-            <div className='answer-section'>
+            <div className='answer-section flex gap-4'>
               {questions[currentQuestion].answerOptions.map((answerOption, index) => (
                 <button key={index} onClick={() => this.handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
               ))}
             </div>
+            
+
           </>
         )}
       </div>
