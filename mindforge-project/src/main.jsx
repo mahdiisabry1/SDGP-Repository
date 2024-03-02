@@ -17,6 +17,7 @@ import Register from './pages/Register.jsx';
 import PostDetails from './pages/PostDetails.jsx';
 import CreatePost from './pages/CreatePost.jsx';
 import Profile from './pages/Profile.jsx';
+import ReactMindmap from './pages/ReactMindmap.jsx';
 
 
 const router = createBrowserRouter([
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
     {
       path: "/profile",
       element: <Profile />
+    },
+    {
+      path: "/mindmap",
+      element: <ReactMindmap />
     },
   ]
   },

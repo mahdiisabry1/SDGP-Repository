@@ -1,152 +1,97 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import '../components/CSS/Quz.css';
 
-class QuestionPage extends Component {
+class Quz extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      side: '',
-      experience: 'no',
-      experienceLevel: '',
-      welcomeMessage: '',
-      additionalQuestion: '',
-      additionalAnswer: '',
+      currentQuestion: 0,
+      showScore: false,
+      score: 0,
     };
   }
 
-  componentDidMount() {
-    if (this.state.side) {
-      this.setState({ welcomeMessage: `Welcome to the ${this.state.side} learning corner!` });
+  handleAnswerOptionClick = (isCorrect) => {
+    if (isCorrect) {
+      this.setState({ score: this.state.score + 1 });
     }
-  }
 
-  handleSideChange = (event) => {
-    this.setState({ side: event.target.value });
-  };
-
-  handleExperienceChange = (event) => {
-    const value = event.target.value;
-    this.setState({ experience: value });
-    if (value === 'no') {
-      this.setState({ experienceLevel: '', additionalQuestion: '', additionalAnswer: '' });
+    const nextQuestion = this.state.currentQuestion + 1;
+    if (nextQuestion < questions.length) {
+      this.setState({ currentQuestion: nextQuestion });
+    } else {
+      this.setState({ showScore: true });
     }
-  };
-
-  handleExperienceLevelChange = (event) => {
-    this.setState({ experienceLevel: event.target.value });
-  };
-
-  handleAdditionalQuestionChange = (event) => {
-    this.setState({ additionalQuestion: event.target.value });
-  };
-
-  handleAdditionalAnswerChange = (event) => {
-    this.setState({ additionalAnswer: event.target.value });
-  };
-
-  submitAnswers = () => {
-    console.log('Selected Side:', this.state.side);
-    console.log('Selected Experience:', this.state.experience);
-    console.log('Selected Experience Level:', this.state.experienceLevel);
-    console.log('Additional Question:', this.state.additionalQuestion);
-    console.log('Additional Answer:', this.state.additionalAnswer);
-    console.log('Additional Answer:', this.state.handleAdditionalAnswerChange);
-  };
-
-  retryQuestion = () => {
-    this.setState({ additionalAnswer: '', experienceLevel: '' });
   };
 
   render() {
+    const questions = [
+      {
+        questionText: 'What is the capital of France?',
+        answerOptions: [
+          { answerText: 'New York', isCorrect: false },
+          { answerText: 'London', isCorrect: false },
+          { answerText: 'Paris', isCorrect: true },
+          { answerText: 'Dublin', isCorrect: false },
+        ],
+      },
+      {
+        questionText: 'Who is CEO of Tesla?',
+        answerOptions: [
+          { answerText: 'Jeff Bezos', isCorrect: false },
+          { answerText: 'Elon Musk', isCorrect: true },
+          { answerText: 'Bill Gates', isCorrect: false },
+          { answerText: 'Tony Stark', isCorrect: false },
+        ],
+      },
+      {
+        questionText: 'The iPhone was created by which company?',
+        answerOptions: [
+          { answerText: 'Apple', isCorrect: true },
+          { answerText: 'Intel', isCorrect: false },
+          { answerText: 'Amazon', isCorrect: false },
+          { answerText: 'Microsoft', isCorrect: false },
+        ],
+      },
+      {
+        questionText: 'How many Harry Potter books are there?',
+        answerOptions: [
+          { answerText: '1', isCorrect: false },
+          { answerText: '4', isCorrect: false },
+          { answerText: '6', isCorrect: false },
+          { answerText: '7', isCorrect: true },
+        ],
+      },
+    ];
+
+    const { currentQuestion, showScore, score } = this.state;
+
     return (
-      <div className="container">
-        <h1 className="quiz">Quiz Corner</h1>
-        {this.state.welcomeMessage && (
-          <h2 className="welcome-message">{this.state.welcomeMessage}</h2>
-        )}
-        <div className="question">
-          <h2>What do you wish to learn from our website? (Select one)</h2>
-          <select
-            className="select-option"
-            value={this.state.side}
-            onChange={this.handleSideChange}
-          >
-            <option value="front-end">Front-end</option>
-            <option value="back-end">Back-end</option>
-            <option value="full-stack">Full-stack</option>
-            <option value="React">React</option>
-            <option value="Angular">Angular</option>
-          </select>
-        </div>
-        <div className="question">
-          <h2>Do you have any experience in that side? (Select one)</h2>
-          <select
-            className="select-option"
-            value={this.state.experience}
-            onChange={this.handleExperienceChange}
-          >
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-          </select>
-        </div>
-        {this.state.experience === "yes" && (
-          <div className="question">
-            <h2>
-              What kind of experience do you have in that field? (Select one)
-            </h2>
-            <select
-              className="select-option"
-              value={this.state.experienceLevel}
-              onChange={this.handleExperienceLevelChange}
-            >
-              <option value="beginner">Beginner</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="senior">Senior</option>
-            </select>
+      <div className='app'>
+        {showScore ? (
+          <div className='score-section'>
+            You scored {score} out of {questions.length}
           </div>
-        )}
-        {/* Conditional rendering of additional question based on specified conditions */}
-        {this.state.side === "front-end" &&
-          this.state.experience === "yes" &&
-          this.state.experienceLevel === "beginner" && (
-            <div className="question">
-              <h2>What is the purpose of HTML in web development?</h2>
-              <select
-                className="select-option"
-                value={this.state.additionalAnswer}
-                onChange={this.handleAdditionalAnswerChange}
-              >
-                <option value="">Select</option>
-                <option value="structure">
-                  HTML is used to structure content on web pages, providing a
-                  framework for organizing text, images, links, and other media
-                  elements.
-                </option>
-                <option value="styling">
-                  HTML is primarily used for styling and designing websites.
-                </option>
-                <option value="programming">
-                  HTML is a programming language used to create dynamic
-                  interactions and functionalities on web pages.
-                </option>
-              </select>
-              {this.state.additionalAnswer === "structure" ? (
-                <p className="correct-message">You are correct!</p>
-              ) : this.state.additionalAnswer !== "" ? (
-                <div>
-                  <p className="incorrect-message">You are incorrect.</p>
-                  <p>Let's try again.</p>
-                  <button onClick={this.retryQuestion}>Retry</button>
-                </div>
-              ) : null}
+        ) : (
+          <>
+            <div className='question-section'>
+              <div className='question-count'>
+                <span>Question {currentQuestion + 1}</span>/{questions.length}
+              </div>
+              <div className='question-text'>{questions[currentQuestion].questionText}</div>
             </div>
-          )}
-        <div className="submit-button">
-          <button onClick={this.submitAnswers}>Submit Answers</button>
-        </div>
+            <div className='answer-section flex gap-4'>
+              {questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                <button key={index} onClick={() => this.handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+              ))}
+            </div>
+            
+
+          </>
+        )}
       </div>
     );
   }
 }
 
-export default QuestionPage;
+export default Quz;
