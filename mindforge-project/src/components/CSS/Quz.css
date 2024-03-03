@@ -55,3 +55,8 @@
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
+/* Add this to your CSS file */
+
+.option-item.selected {
+  background-color: #ce8fd1;
+}

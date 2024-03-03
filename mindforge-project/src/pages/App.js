@@ -1,6 +1,7 @@
 // App.js
 import React from 'react';
 import QuestionSurvey from './QuestionSurvey';
+import './QuestionSurvey.css';
 
 const App = () => {
   return (

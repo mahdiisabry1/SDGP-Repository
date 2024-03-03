@@ -11,8 +11,9 @@ const QuestionSurvey = () => {
     {
       id: 1,
       text: 'What is the capital of France?',
-      options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
       rating: 1,
+      options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+      
     },
     {
       id: 2,
@@ -23,11 +24,12 @@ const QuestionSurvey = () => {
     {
       id: 3,
       text: 'What does JSX stand for?',
-      options: ['JavaScript XML', 'Java XML', 'JavaScript Extension', 'Java Extension'],
       rating: 3,
+      options: ['JavaScript XML', 'Java XML', 'JavaScript Extension', 'Java Extension'],
+      
     },
     {
-      id: 4,
+      id: 3,
       text: 'What is the virtual DOM?',
       options: [
         'A JavaScript library',
@@ -41,7 +43,7 @@ const QuestionSurvey = () => {
       id: 5,
       text: 'What is Redux used for in a React application?',
       options: ['State management', 'Routing', 'Styling', 'Server communication'],
-      rating: 2,
+      rating: 3,
     },
     {
       id: 6,
@@ -75,24 +77,29 @@ const QuestionSurvey = () => {
     },
   ];
 
-  const handleSelectOption = (option, rating) => {
+  const handleSelectOption = (optionIndex, rating) => {
     if (!submitted) {
-      setSelectedOption(option);
+      setSelectedOptionIndex(optionIndex);
       setTotalMarks((prevTotalMarks) => prevTotalMarks + rating * 10);
     }
   };
+  
 
   const handleNextQuestion = () => {
+    if (selectedOptionIndex !== null) {
+      const isCorrect = selectedOptionIndex === questions[currentQuestion].correctIndex;
+      setTotalMarks((prevTotalMarks) => prevTotalMarks + (isCorrect ? questions[currentQuestion].rating * 10 : 0));
+    }
+  
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      setSelectedOption(null);
+      setSelectedOptionIndex(null);
       setSubmitted(false);
     } else {
       // Last question, display final result
       setSubmitted(true);
     }
   };
-
   const handleSubmit = () => {
     setSubmitted(true);
     // Display grading message or any additional messages
