@@ -14,9 +14,15 @@ const ReactMindmap = () => {
           title="1. HTML, CSS, and JavaScript Fundamentals:"
           description="Make sure you have a solid understanding of HTML, CSS, and JavaScript before diving into React. Understanding ES6+ JavaScript features is particularly helpful."
           clickableParagraphs={[
-            { label: 'Resource 1', link: 'https://example.com/resource1' },
-            { label: 'Resource 2', link: 'https://example.com/resource2' },
-            { label: 'Resource 3', link: 'https://example.com/resource3' },
+            { label: 'W3Schools', link: 'https://www.w3schools.com/html/html_intro.asp' },
+            { label: 'htmlreference.io', link: 'https://htmlreference.io/' },
+            { label: 'HTML For Beginners The Easy Way', link: 'https://html.com/' },
+            { label: 'Web Development Basics', link: 'https://internetingishard.netlify.app/html-and-css/index.html' },
+            { label: 'Codecademy - Learn HTML', link: 'https://www.codecademy.com/learn/learn-html' },
+            { label: 'HTML Full Course for Beginners | Complete All-in-One Tutorial', link: 'https://youtu.be/mJgBOIoGihA' },
+            { label: 'HTML Full Course - Build a Website Tutorial', link: 'https://www.youtube.com/watch?v=pQN-pnXPaVg' },
+            { label: 'HTML Tutorial for Beginners: HTML Crash Course', link: 'https://www.youtube.com/watch?v=qz0aGYrrlhU' },
+            
           ]}
         />
         
