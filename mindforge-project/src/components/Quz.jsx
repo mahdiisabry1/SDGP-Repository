@@ -1,97 +1,155 @@
-import { Component } from 'react';
-import '../components/CSS/Quz.css';
+import React, { useState } from 'react';
 
-class Quz extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentQuestion: 0,
-      showScore: false,
-      score: 0,
-    };
-  }
+const QuestionSurvey = () => {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [rating, setRating] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+  const [totalMarks, setTotalMarks] = useState(0);
+  const questions = [
+    {
+      id: 1,
+      text: 'What is the capital of France?',
+      options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
+      rating: 1,
+    },
+    {
+      id: 2,
+      text: 'Which programming language is React written in?',
+      options: ['Java', 'JavaScript', 'Python', 'C++'],
+      rating: 2,
+    },
+    {
+      id: 3,
+      text: 'What does JSX stand for?',
+      options: ['JavaScript XML', 'Java XML', 'JavaScript Extension', 'Java Extension'],
+      rating: 3,
+    },
+    {
+      id: 4,
+      text: 'What is the virtual DOM?',
+      options: [
+        'A JavaScript library',
+        'A representation of the UI in memory',
+        'A way to style components',
+        'A React component',
+      ],
+      rating: 1,
+    },
+    {
+      id: 5,
+      text: 'What is Redux used for in a React application?',
+      options: ['State management', 'Routing', 'Styling', 'Server communication'],
+      rating: 2,
+    },
+    {
+      id: 6,
+      text: 'How do you pass data from a parent component to a child component in React?',
+      options: ['Props', 'State', 'Context', 'Ref'],
+      rating: 3,
+    },
+    {
+      id: 7,
+      text: 'What is the purpose of the useEffect hook in React?',
+      options: ['Handling form events', 'Fetching data', 'Lifecycle methods', 'Conditional rendering'],
+      rating: 1,
+    },
+    {
+      id: 8,
+      text: 'In React, what is a controlled component?',
+      options: ['A component with controlled access', 'A component with internal state', 'A component with no state', 'A functional component'],
+      rating: 2,
+    },
+    {
+      id: 9,
+      text: 'What is the purpose of the key prop in React lists?',
+      options: ['Assigning a unique identifier to each list item', 'Styling list items', 'Handling click events', 'Creating nested lists'],
+      rating: 3,
+    },
+    {
+      id: 10,
+      text: 'What is the significance of the npm start command in a React project?',
+      options: ['Installing dependencies', 'Starting the development server', 'Building the production bundle', 'Running tests'],
+      rating: 1,
+    },
+  ];
 
-  handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
-      this.setState({ score: this.state.score + 1 });
-    }
-
-    const nextQuestion = this.state.currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      this.setState({ currentQuestion: nextQuestion });
-    } else {
-      this.setState({ showScore: true });
+  const handleSelectOption = (option, rating) => {
+    if (!submitted) {
+      setSelectedOption(option);
+      setTotalMarks((prevTotalMarks) => prevTotalMarks + rating * 10);
     }
   };
 
-  render() {
-    const questions = [
-      {
-        questionText: 'What is the capital of France?',
-        answerOptions: [
-          { answerText: 'New York', isCorrect: false },
-          { answerText: 'London', isCorrect: false },
-          { answerText: 'Paris', isCorrect: true },
-          { answerText: 'Dublin', isCorrect: false },
-        ],
-      },
-      {
-        questionText: 'Who is CEO of Tesla?',
-        answerOptions: [
-          { answerText: 'Jeff Bezos', isCorrect: false },
-          { answerText: 'Elon Musk', isCorrect: true },
-          { answerText: 'Bill Gates', isCorrect: false },
-          { answerText: 'Tony Stark', isCorrect: false },
-        ],
-      },
-      {
-        questionText: 'The iPhone was created by which company?',
-        answerOptions: [
-          { answerText: 'Apple', isCorrect: true },
-          { answerText: 'Intel', isCorrect: false },
-          { answerText: 'Amazon', isCorrect: false },
-          { answerText: 'Microsoft', isCorrect: false },
-        ],
-      },
-      {
-        questionText: 'How many Harry Potter books are there?',
-        answerOptions: [
-          { answerText: '1', isCorrect: false },
-          { answerText: '4', isCorrect: false },
-          { answerText: '6', isCorrect: false },
-          { answerText: '7', isCorrect: true },
-        ],
-      },
-    ];
+  const handleNextQuestion = () => {
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelectedOption(null);
+      setSubmitted(false);
+    } else {
+      // Last question, display final result
+      setSubmitted(true);
+    }
+  };
 
-    const { currentQuestion, showScore, score } = this.state;
+  const handleSubmit = () => {
+    setSubmitted(true);
+    // Display grading message or any additional messages
+    displayGradingMessage(totalMarks);
+  };
 
-    return (
-      <div className='app'>
-        {showScore ? (
-          <div className='score-section'>
-            You scored {score} out of {questions.length}
-          </div>
-        ) : (
-          <>
-            <div className='question-section'>
-              <div className='question-count'>
-                <span>Question {currentQuestion + 1}</span>/{questions.length}
-              </div>
-              <div className='question-text'>{questions[currentQuestion].questionText}</div>
-            </div>
-            <div className='answer-section flex gap-4'>
-              {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                <button key={index} onClick={() => this.handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-              ))}
-            </div>
-            
+  const displayGradingMessage = (marks) => {
+    let message = '';
 
-          </>
-        )}
-      </div>
-    );
-  }
-}
+    if (marks < 50) {
+      message = "You need to study more. Your marking is low.";
+    } else if (marks < 70) {
+      message = "You've passed, but there's room for improvement.";
+    } else if (marks < 90) {
+      message = "Great job! You did well.";
+    } else {
+      message = "Excellent! You've scored exceptionally.";
+    }
 
-export default Quz;
+    alert(message);
+  };
+  return (
+    <div className="question-container">
+      <h2 className="question-text">{questions[currentQuestion].text}</h2>
+      <ul className="options-list">
+        {questions[currentQuestion].options.map((option, index) => (
+          <li
+            key={index}
+            className="option-item"
+            onClick={() => handleSelectOption(option, questions[currentQuestion].rating)}
+            style={{ cursor: 'pointer' }}
+          >
+            {option}
+            <span className="rating-star">{Array(questions[currentQuestion].rating + 1).join('★')}</span>
+          </li>
+        ))}
+      </ul>
+      {submitted ? (
+        <div>
+          <p>Your marks: {totalMarks}</p>
+          {currentQuestion < questions.length - 1 && (
+            <button className="action-button" onClick={handleNextQuestion}>
+              Next
+            </button>
+          )}
+        </div>
+      ) : (
+        <button className="action-button" onClick={handleNextQuestion}>
+          Next
+        </button>
+      )}
+      {!submitted && currentQuestion === questions.length - 1 && (
+        <button className="action-button" onClick={handleSubmit}>
+          Submit
+        </button>
+      )}
+    </div>
+  );
+};
+QuestionSurvey.whyDidYouRender = true;
+export default QuestionSurvey;
