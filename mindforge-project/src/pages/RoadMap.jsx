@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const RoadMap = () => {
   const [selectedPhase, setSelectedPhase] = useState(null);
 
@@ -45,6 +44,15 @@ const RoadMap = () => {
 
   const handlePhaseClick = (phase) => {
     setSelectedPhase(phase);
+    openMindmap(); // Call the function to use selectedPhase
+  };
+
+  const openMindmap = () => {
+    // You can use the selectedPhase state here or pass it to another function
+    console.log("Selected Phase:", selectedPhase);
+
+    // Example: You can perform some actions with selectedPhase
+    // For demonstration purposes, let's open the mindmap in a new window
     window.open('/mindmap', '_blank');
   };
 
@@ -74,7 +82,6 @@ const RoadMap = () => {
           </div>
         ))}
       </div>
-     
     </div>
   );
 };
