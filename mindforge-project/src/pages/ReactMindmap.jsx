@@ -97,14 +97,6 @@ const ReactMindmap = () => {
   );
 };
 
-const RoadmapItem = ({ title, description }) => {
-  return (
-    <div className="bg-gray-100 p-4 rounded-md">
-      <h2 className="text-xl font-semibold mb-2">{title}</h2>
-      <p>{description}</p>
-    </div>
-  );
-};
 
 const DropdownRoadmapItem = ({ title, description }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);

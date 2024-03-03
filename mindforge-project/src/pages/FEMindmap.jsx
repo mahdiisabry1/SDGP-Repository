@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 const FEMindmap = () => {
   return (
     <div className="p-48 text-black">
@@ -7,32 +9,33 @@ const FEMindmap = () => {
       </p>
 
       <div className="flex flex-col space-y-4">
-        <RoadmapItem
+
+        <DropdownRoadmapItem
           title="1. Basic Web Technologies:"
           description="Learn HTML5: Understand the structure of web pages.
           Learn CSS3: Learn styling and layout techniques.
           Learn JavaScript: Master the fundamentals of programming and DOM manipulation."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="2. Responsive Web Design:"
           description="Understand the principles of responsive design.
           Learn CSS frameworks like Bootstrap or Tailwind CSS.
           Dive into media queries for custom responsive design solutions."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="3. Version Control:"
           description="Learn Git: Understand version control basics, branching, merging, and collaborating on code."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="4. CSS Preprocessors and Build Tools:"
           description="Learn Sass or Less: Enhance your CSS workflow with features like variables, mixins, and nesting.
           Familiarize yourself with build tools like Webpack or Parcel for automating tasks."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="5. JavaScript Libraries and Frameworks:"
           description="Learn jQuery: Understand DOM manipulation and event handling.
           Master a modern JavaScript framework like React, Angular, or Vue.js.
@@ -40,64 +43,64 @@ const FEMindmap = () => {
           Understand asynchronous JavaScript and concepts like Promises and async/await."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="6. Front-end Architecture:"
           description="Learn about component-based architecture.
           Understand the concepts of reusability, maintainability, and scalability.
           Explore design patterns like MVC (Model-View-Controller) or MVVM (Model-View-ViewModel)."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="7. APIs and AJAX:"
           description="Learn how to make asynchronous requests to APIs using fetch or Axios.
           Understand RESTful APIs and how to consume them."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="8. Testing:"
           description="Learn testing frameworks like Jest (for React), Jasmine, or Mocha.
           Understand unit testing, integration testing, and end-to-end testing."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="9. Progressive Web Apps (PWAs):"
           description="Understand the principles of PWAs: reliability, performance, and engagement.
           Learn service workers for offline capabilities and caching strategies."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="10. Build Tools and Task Runners:"
           description="Explore task runners like Gulp or Grunt for automating repetitive tasks.
           Learn about module bundlers like Webpack for bundling JavaScript files."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="11. Package Managers:"
           description="Understand package managers like npm or Yarn for managing project dependencies."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="12. Browser Developer Tools:"
           description="Master browser developer tools for debugging, profiling, and optimizing web applications."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="13. Cross-Browser Compatibility:"
           description="Learn about browser compatibility issues and how to address them.
           Understand vendor prefixes and polyfills."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="14. Web Performance Optimization:"
           description="Learn techniques to optimize website performance, such as code splitting, lazy loading, and image optimization."
         />
 
-        <RoadmapItem
+        <DropdownRoadmapItem
           title="15. Continuous Integration and Deployment (CI/CD):"
           description="Learn about CI/CD pipelines for automating the build, test, and deployment process."
         />
 
-       <RoadmapItem
+       <DropdownRoadmapItem
           title="16. Accessibility:"
           description="Understand accessibility guidelines and ensure your web applications are accessible to all users."
         />
@@ -108,11 +111,25 @@ const FEMindmap = () => {
   );
 };
 
-const RoadmapItem = ({ title, description }) => {
+const DropdownRoadmapItem = ({ title, description }) => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
   return (
-    <div className="bg-gray-100 p-4 rounded-md">
-      <h2 className="text-xl font-semibold mb-2">{title}</h2>
-      <p>{description}</p>
+    <div className="bg-gray-100 p-4 rounded-md relative">
+      <div className="flex items-center justify-between cursor-pointer" onClick={toggleDropdown}>
+        <h2 className="text-xl font-semibold mb-2">{title}</h2>
+        <span>{isDropdownOpen ? '▲' : '▼'}</span>
+      </div>
+      {isDropdownOpen && (
+        <div className="mt-2">
+          <p>{description}</p>
+          {/* Add more dropdown content as needed */}
+        </div>
+      )}
     </div>
   );
 };
