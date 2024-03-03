@@ -1,4 +1,4 @@
-const ReactMindmap = () => {
+const FEMindmap = () => {
     return (
       <div className="p-48 text-black">
         <h1 className="text-3xl font-bold mb-4">Mindmap to Front-End</h1>
@@ -117,5 +117,5 @@ const ReactMindmap = () => {
     );
   };
   
-  export default ReactMindmap;
+  export default FEMindmap;
   

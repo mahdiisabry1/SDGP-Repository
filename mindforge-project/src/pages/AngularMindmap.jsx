@@ -8,97 +8,97 @@ const AngularMindmap = () => {
   
         <div className="flex flex-col space-y-4">
           <RoadmapItem
-            title="Angular Framework:"
+            title="1. Angular Framework:"
             description="Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google."
           />
   
           <RoadmapItem
-            title="Components:"
+            title="2. Components:"
             description="Building blocks of Angular applications.
             Comprised of a template, class, and metadata."
           />
   
           <RoadmapItem
-            title="Templates:"
+            title="3. Templates:"
             description="HTML with additional Angular-specific syntax.
             Used to define the UI of an Angular component."
           />
 
         <RoadmapItem
-            title="Directives:"
+            title="4. Directives:"
             description="Instructions in the DOM.
             Types: Structural (e.g., ngIf, ngFor) and Attribute (e.g., ngClass, ngStyle)."
           />
 
         <RoadmapItem
-            title="Data Binding:"
+            title="5. Data Binding:"
             description="Establishing a connection between the UI and application logic.
             Types: Interpolation, Property Binding, Event Binding, Two-Way Binding."
           />
 
         <RoadmapItem
-            title="Services:"
+            title="6. Services:"
             description="Reusable pieces of code.
             Used for tasks that are not tied to a specific view."
           />
 
         <RoadmapItem
-            title="Dependency Injection (DI):"
+            title="7. Dependency Injection (DI):"
             description="Design pattern to increase efficiency and modularity.
             Angular's DI framework provides dependencies to a class upon instantiation."
           />
 
         <RoadmapItem
-            title="Modules:"
+            title="8. Modules:"
             description="Organizational units for an Angular application.
             Help in organizing code and managing dependencies."
           />
 
         <RoadmapItem
-            title="Routing:"
+            title="9. Routing:"
             description="
             Managing navigation in Angular applications.
             Allows mapping URLs to different parts of the application."
           />
 
         <RoadmapItem
-            title="Forms:"
+            title="10. Forms:"
             description="Handling user input.
             Template-driven and Reactive (Model-driven) approaches."
           />
 
         <RoadmapItem
-            title="HTTP Client:"
+            title="11. HTTP Client:"
             description="Angular's built-in module for making HTTP requests.
             Used to fetch data from a server."
           />
 
         <RoadmapItem
-            title="Pipes:"
+            title="12. Pipes:"
             description="Transforming data in the template.
             Angular provides several built-in pipes for common transformations."
           />
 
 <RoadmapItem
-            title="Interceptors:"
+            title="13. Interceptors:"
             description="Intercepting and manipulating HTTP requests globally.
             Used for tasks such as adding headers or handling errors."
           />
 
 <RoadmapItem
-            title="Testing:"
+            title="14. Testing:"
             description="Comprehensive testing support with tools like Jasmine and Karma.
             Allows writing unit tests, integration tests, and end-to-end tests."
           />
 
 <RoadmapItem
-            title="Deployment:"
+            title="15. Deployment:"
             description="Strategies for deploying Angular applications to production servers.
             Options include using a simple HTTP server, deploying to cloud platforms, or Dockerizing the application."
           />
 
 <RoadmapItem
-            title="Community and Resources:"
+            title="16. Community and Resources:"
             description="Angular has a large and active community with abundant resources such as official documentation, tutorials, blogs, and forums."
           />
 
