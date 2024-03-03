@@ -9,9 +9,15 @@ const ReactMindmap = () => {
       </p>
 
       <div className="flex flex-col space-y-4">
+
       <DropdownRoadmapItem
           title="1. HTML, CSS, and JavaScript Fundamentals:"
           description="Make sure you have a solid understanding of HTML, CSS, and JavaScript before diving into React. Understanding ES6+ JavaScript features is particularly helpful."
+          clickableParagraphs={[
+            { label: 'Resource 1', link: 'https://example.com/resource1' },
+            { label: 'Resource 2', link: 'https://example.com/resource2' },
+            { label: 'Resource 3', link: 'https://example.com/resource3' },
+          ]}
         />
         
 
@@ -98,7 +104,7 @@ const ReactMindmap = () => {
 };
 
 
-const DropdownRoadmapItem = ({ title, description }) => {
+const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -114,6 +120,17 @@ const DropdownRoadmapItem = ({ title, description }) => {
       {isDropdownOpen && (
         <div className="mt-2">
           <p>{description}</p>
+          {clickableParagraphs && (
+            <div className="mt-2">
+              {clickableParagraphs.map((paragraph, index) => (
+                <p key={index}>
+                  <a href={paragraph.link} target="_blank" rel="noopener noreferrer">
+                    {paragraph.label}
+                  </a>
+                </p>
+              ))}
+            </div>
+          )}
           {/* Add more dropdown content as needed */}
         </div>
       )}
