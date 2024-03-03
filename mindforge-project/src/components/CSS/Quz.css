@@ -51,12 +51,11 @@
   background-color: #1e7e34;
 }
 
-.result-message {
+.question-result-message {
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
-/* Add this to your CSS file */
 
-.option-item.selected {
+.question-option-item.selected {
   background-color: #ce8fd1;
 }

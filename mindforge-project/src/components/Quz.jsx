@@ -13,23 +13,24 @@ const QuestionSurvey = () => {
       text: 'What is the capital of France?',
       rating: 1,
       options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
-      
+      correctIndex: 1, // 'Paris' is the correct answer
     },
     {
       id: 2,
       text: 'Which programming language is React written in?',
       options: ['Java', 'JavaScript', 'Python', 'C++'],
-      rating: 2,
+      correctIndex: 1, // 'JavaScript' is the correct answer
+      rating: 1,
     },
     {
       id: 3,
       text: 'What does JSX stand for?',
-      rating: 3,
+      rating: 1,
       options: ['JavaScript XML', 'Java XML', 'JavaScript Extension', 'Java Extension'],
-      
+      correctIndex: 0, // 'JavaScript XML' is the correct answer
     },
     {
-      id: 3,
+      id: 4,
       text: 'What is the virtual DOM?',
       options: [
         'A JavaScript library',
@@ -37,52 +38,65 @@ const QuestionSurvey = () => {
         'A way to style components',
         'A React component',
       ],
+      correctIndex: 1, // 'A representation of the UI in memory' is the correct answer
       rating: 1,
     },
     {
       id: 5,
       text: 'What is Redux used for in a React application?',
       options: ['State management', 'Routing', 'Styling', 'Server communication'],
-      rating: 3,
+      correctIndex: 0, // 'State management' is the correct answer
+      rating: 1,
     },
     {
       id: 6,
       text: 'How do you pass data from a parent component to a child component in React?',
       options: ['Props', 'State', 'Context', 'Ref'],
-      rating: 3,
+      correctIndex: 0, // 'Props' is the correct answer
+      rating: 1,
     },
     {
       id: 7,
       text: 'What is the purpose of the useEffect hook in React?',
       options: ['Handling form events', 'Fetching data', 'Lifecycle methods', 'Conditional rendering'],
+      correctIndex: 1, // 'Fetching data' is the correct answer
       rating: 1,
     },
     {
       id: 8,
       text: 'In React, what is a controlled component?',
       options: ['A component with controlled access', 'A component with internal state', 'A component with no state', 'A functional component'],
-      rating: 2,
+      correctIndex: 1, // 'A component with internal state' is the correct answer
+      rating: 1,
     },
     {
       id: 9,
       text: 'What is the purpose of the key prop in React lists?',
       options: ['Assigning a unique identifier to each list item', 'Styling list items', 'Handling click events', 'Creating nested lists'],
-      rating: 3,
+      correctIndex: 0, // 'Assigning a unique identifier to each list item' is the correct answer
+      rating: 1,
     },
     {
       id: 10,
       text: 'What is the significance of the npm start command in a React project?',
       options: ['Installing dependencies', 'Starting the development server', 'Building the production bundle', 'Running tests'],
+      correctIndex: 1, // 'Starting the development server' is the correct answer
       rating: 1,
     },
   ];
-
+  
   const handleSelectOption = (optionIndex, rating) => {
     if (!submitted) {
       setSelectedOption(optionIndex);
-      setTotalMarks((prevTotalMarks) => prevTotalMarks + rating * 10);
+  
+      // Check if the selected option index matches the correct index
+      const isCorrect = optionIndex === questions[currentQuestion].correctIndex;
+  
+      // Apply the rating only if the selected option is correct
+      setTotalMarks((prevTotalMarks) => prevTotalMarks + (isCorrect ? rating * 10 : 10));
     }
   };
+  
   
 
   const handleNextQuestion = () => {
@@ -134,7 +148,7 @@ const QuestionSurvey = () => {
             style={{ cursor: 'pointer' }}
           >
             {option}
-            <span className="rating-star">{Array(questions[currentQuestion].rating + 1).join('★')}</span>
+            <span className="rating-star">{Array(questions[currentQuestion].rating + 1).join('')}</span>
           </li>
         ))}
       </ul>
