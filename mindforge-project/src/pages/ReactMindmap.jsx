@@ -1,94 +1,38 @@
-// ReactMindmap.jsx
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-
-const ReactMindmap = ({
-  tabs: propTabs,
-  containerClassName,
-  activeTabClassName,
-  tabClassName,
-  contentClassName,
-}) => {
-  const [active, setActive] = useState(propTabs[0]);
-  const [tabs, setTabs] = useState(propTabs);
-
-  const moveSelectedTabToTop = (idx) => {
-    const newTabs = [...propTabs];
-    const selectedTab = newTabs.splice(idx, 1);
-    newTabs.unshift(selectedTab[0]);
-    setTabs(newTabs);
-    setActive(newTabs[0]);
-  };
-
-  const [hovering, setHovering] = useState(false);
-
+const ReactMindmap = () => {
   return (
-    <>
-      <div
-        className={`${containerClassName} flex flex-row items-center justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full`}
-      >
-        {propTabs.map((tab, idx) => (
-          <button
-            key={tab.title}
-            onClick={() => {
-              moveSelectedTabToTop(idx);
-            }}
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
-            className={`${tabClassName} relative px-4 py-2 rounded-full`}
-            style={{
-              transformStyle: "preserve-3d",
-            }}
-          >
-            {active.value === tab.value && (
-              <motion.div
-                layoutId="clickedbutton"
-                transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
-                className={`${activeTabClassName} absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full `}
-              />
-            )}
+    <div className="p-48 text-black">
+      <h1 className="text-3xl font-bold mb-4">Development Roadmap</h1>
+      <p className="mb-6">
+        This roadmap provides a structured path to explore and learn in the field of React development.
+      </p>
 
-            <span className="relative block text-black dark:text-white">
-              {tab.title}
-            </span>
-          </button>
-        ))}
+      <div className="flex flex-col space-y-4">
+        <RoadmapItem
+          title="Getting Started"
+          description="Understand the basics of React, set up your development environment, and create your first React app."
+        />
+
+        <RoadmapItem
+          title="Component Fundamentals"
+          description="Learn about React components, props, and state. Dive into component lifecycle methods."
+        />
+
+        <RoadmapItem
+          title="Routing with React Router"
+          description="Explore React Router to add navigation and routing to your React applications."
+        />
+
+        {/* Add more roadmap items as needed */}
       </div>
-      <FadeInDiv
-        tabs={tabs}
-        active={active}
-        key={active.value}
-        hovering={hovering}
-        className={`${contentClassName} mt-32`}
-      />
-    </>
+    </div>
   );
 };
 
-const FadeInDiv = ({ className, tabs, hovering }) => {
-  const isActive = (tab) => {
-    return tab.value === tabs[0].value;
-  };
+const RoadmapItem = ({ title, description }) => {
   return (
-    <div className="relative w-full h-full">
-      {tabs.map((tab, idx) => (
-        <motion.div
-          key={tab.value}
-          layoutId={tab.value}
-          style={{
-            scale: 1 - idx * 0.1,
-            top: hovering ? idx * -50 : 0,
-            zIndex: -idx,
-            opacity: idx < 3 ? 1 - idx * 0.1 : 0,
-          }}
-          animate={{
-            y: isActive(tab) ? [0, 40, 0] : 0,
-          }}
-          className={`${className} w-full h-full absolute top-0 left-0`}
-        >
-          {tab.content}
-        </motion.div>
-      ))}
+    <div className="bg-gray-100 p-4 rounded-md">
+      <h2 className="text-xl font-semibold mb-2">{title}</h2>
+      <p>{description}</p>
     </div>
   );
 };
