@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../components/CSS/Quz.css'
 
 const QuestionSurvey = () => {
@@ -79,21 +79,22 @@ const QuestionSurvey = () => {
 
   const handleSelectOption = (optionIndex, rating) => {
     if (!submitted) {
-      setSelectedOptionIndex(optionIndex);
+      setSelectedOption(optionIndex);
       setTotalMarks((prevTotalMarks) => prevTotalMarks + rating * 10);
     }
   };
   
 
   const handleNextQuestion = () => {
-    if (selectedOptionIndex !== null) {
-      const isCorrect = selectedOptionIndex === questions[currentQuestion].correctIndex;
+    if (selectedOption !== null) {
+      const isCorrect =
+        selectedOption === questions[currentQuestion].correctIndex;
       setTotalMarks((prevTotalMarks) => prevTotalMarks + (isCorrect ? questions[currentQuestion].rating * 10 : 0));
     }
   
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      setSelectedOptionIndex(null);
+      setSelectedOption(null);
       setSubmitted(false);
     } else {
       // Last question, display final result
