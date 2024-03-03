@@ -1,9 +1,9 @@
 const ReactMindmap = () => {
   return (
     <div className="p-48 text-black">
-      <h1 className="text-3xl font-bold mb-4">React  MindMap</h1>
+      <h1 className="text-3xl font-bold mb-4">MindMap to React</h1>
       <p className="mb-6">
-        This roadmap provides a structured path to explore and learn in the field of React development.
+        This mindmap provides a structured path to explore and learn in the field of React development.
       </p>
 
       <div className="flex flex-col space-y-4">
