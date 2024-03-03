@@ -113,11 +113,11 @@ Create a webpage with a heading saying "Hello, World!" and a button labeled "Cli
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={500}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -163,11 +163,11 @@ Create a div element with a width of 200 pixels, a height of 100 pixels, a backg
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={500}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -218,11 +218,11 @@ Write a JavaScript function that changes the text of a paragraph to "Button Clic
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={500}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -269,11 +269,11 @@ Create a simple webpage layout with header, footer, sidebar, and main content ar
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={500}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -319,11 +319,11 @@ Create a simple animation using CSS transitions or keyframes. For example, make 
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={500}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+            Submit
             </button>
           </div>
         </form>
@@ -384,11 +384,11 @@ Write a Node.js script that prints "Hello, World!" to the console.
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={500}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -436,11 +436,11 @@ Create a simple Express server that listens on port 3000 and responds with "Hell
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={500}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -488,11 +488,11 @@ Write a Node.js script that connects to a MongoDB database and performs basic CR
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={500}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -539,11 +539,11 @@ Write a Node.js script that connects to a MongoDB database and performs basic CR
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={500}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -594,7 +594,7 @@ Create a basic user authentication system using Node.js, Express, and a database
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -652,11 +652,11 @@ Create an Angular component called "HelloComponent" that displays the text "Hell
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -703,11 +703,11 @@ Implement two-way data binding in Angular for an input field and a paragraph ele
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -756,11 +756,11 @@ Create a button in an Angular component that, when clicked, increments a counter
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -816,11 +816,11 @@ Create a React component that renders a simple "Hello, World!" message on the sc
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -867,11 +867,11 @@ Implement two-way data binding in Angular for an input field and a paragraph ele
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -918,11 +918,11 @@ Implement two-way data binding in Angular for an input field and a paragraph ele
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -969,11 +969,11 @@ Implement two-way data binding in Angular for an input field and a paragraph ele
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -1037,11 +1037,11 @@ Implement two-way data binding in Angular for an input field and a paragraph ele
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -1089,11 +1089,11 @@ Implement two-way data binding in Angular for an input field and a paragraph ele
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -1140,11 +1140,11 @@ Implement two-way data binding in Angular for an input field and a paragraph ele
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -1191,11 +1191,11 @@ Implement two-way data binding in Angular for an input field and a paragraph ele
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
@@ -1242,11 +1242,11 @@ Implement two-way data binding in Angular for an input field and a paragraph ele
               rows="15"
               className="px-4 py-4 outline-none mt-5"
               required
-              minLength={150}
+              minLength={100}
               placeholder="200 words minimum required"
             ></textarea>
             <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              write your code
+              Submit
             </button>
           </div>
         </form>
