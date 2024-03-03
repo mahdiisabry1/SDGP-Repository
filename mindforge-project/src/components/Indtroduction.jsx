@@ -8,7 +8,7 @@ import { HiArrowDown } from "react-icons/hi";
 const Indtroduction = () => {
 
   const navItems = [{
-    path: "/Quiz", link: "Get Started",
+    path: "/Quiz", link: "TAKE A MIND TEST",
   }]
 
   return (
