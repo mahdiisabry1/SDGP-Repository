@@ -213,7 +213,6 @@ const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
               ))}
             </div>
           )}
-          
         </div>
       )}
     </div>

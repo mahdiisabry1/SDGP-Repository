@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "../components/CSS/Login.css";
 import axios from "axios";
 import { URL } from "../url";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 
 const Login = () => {
@@ -10,6 +12,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false)
+  const {setUser} = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate()
@@ -21,6 +24,7 @@ const Login = () => {
         email,
         password,
       });
+      setUser(res.data)
 
       // Check response status or other success conditions
       if (res.status === 200) {

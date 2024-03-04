@@ -44,24 +44,32 @@ const RoadMap = () => {
 
   const handlePhaseClick = (phase) => {
     setSelectedPhase(phase);
-    openMindmap(); // Call the function to use selectedPhase
+    openMindmap(phase); // Pass the selected phase to the openMindmap function
   };
 
-  const openMindmap = () => {
-    // You can use the selectedPhase state here or pass it to another function
-    console.log("Selected Phase:", selectedPhase);
+  const openMindmap = (phase) => {
+    const components = {
+      'Course 1: React': 'ReactMindmap',
+      'Course 2: Angular': 'AngularMindmap',
+      'Course 3: Front-End': 'FEMindmap',
+      'Course 4: Back-End': 'BEMindmap',
+      'Course 5: Full-Stack': 'FSMindmap',
+    };
 
-    // Example: You can perform some actions with selectedPhase
-    // For demonstration purposes, let's open the mindmap in a new window
-    window.open('/mindmap', '_blank');
+    const componentName = components[phase.title];
+
+    if (componentName) {
+      const url = `/path-to-components/${componentName}`; // Update the path to your components
+      window.open(url, '_blank');
+    }
   };
 
   const phases = [
-    { title: 'Course 1: React', description: 'JavaScript library for building user interfaces', customColor: '#61dafb' },
-    { title: 'Course 2: Angular', description: 'TypeScript-based open-source framework', customColor: '#dd1b16' },
-    { title: 'Course 3: Front-End', description: 'Involves creating the visual and interactive elements of a web application', customColor: '#4caf50' },
-    { title: 'Course 4: Back-End', description: 'Enabling communication between the front end and databases', customColor: '#673ab7' },
-    { title: 'Course 5: Full-Stack', description: 'Proficient in both front-end and back-end development', customColor: '#ff5722' },
+    { title: 'Course 1: React',/* path: '/react'*/ description: 'JavaScript library for building user interfaces', customColor: '#61dafb' },
+    { title: 'Course 2: Angular',/* path: '/angular'*/ description: 'TypeScript-based open-source framework', customColor: '#dd1b16' },
+    { title: 'Course 3: Front-End',/* path: '/frontend'*/ description: 'Involves creating the visual and interactive elements of a web application', customColor: '#4caf50' },
+    { title: 'Course 4: Back-End', /*path: '/backend'*/ description: 'Enabling communication between the front end and databases', customColor: '#673ab7' },
+    { title: 'Course 5: Full-Stack', /*path: '/react'*/ description: 'Proficient in both front-end and back-end development', customColor: '#ff5722' },
   ];
 
   return (
