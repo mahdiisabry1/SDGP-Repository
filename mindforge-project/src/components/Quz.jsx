@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import '../components/CSS/Quz.css'
+import '../components/CSS/Quz.css';
 
 const QuestionSurvey = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [rating, setRating] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [totalMarks, setTotalMarks] = useState(0);
+
   const questions = [
     {
       id: 1,
@@ -85,27 +85,20 @@ const QuestionSurvey = () => {
     },
   ];
   
-  const handleSelectOption = (optionIndex, rating) => {
-    if (!submitted) {
+  const handleSelectOption = (optionIndex) => {
+    if (!submitted && selectedOption === null) {
       setSelectedOption(optionIndex);
-  
-      // Check if the selected option index matches the correct index
-      const isCorrect = optionIndex === questions[currentQuestion].correctIndex;
-  
-      // Apply the rating only if the selected option is correct
-      setTotalMarks((prevTotalMarks) => prevTotalMarks + (isCorrect ? rating * 10 : 10));
     }
   };
-  
-  
 
   const handleNextQuestion = () => {
     if (selectedOption !== null) {
-      const isCorrect =
-        selectedOption === questions[currentQuestion].correctIndex;
-      setTotalMarks((prevTotalMarks) => prevTotalMarks + (isCorrect ? questions[currentQuestion].rating * 10 : 0));
+      const isCorrect = selectedOption === questions[currentQuestion].correctIndex;
+
+      // Only add marks if the answer is correct
+      setTotalMarks((prevTotalMarks) => prevTotalMarks + (isCorrect ? 10 : 0));
     }
-  
+
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(null);
@@ -115,6 +108,7 @@ const QuestionSurvey = () => {
       setSubmitted(true);
     }
   };
+
   const handleSubmit = () => {
     setSubmitted(true);
     // Display grading message or any additional messages
@@ -136,43 +130,49 @@ const QuestionSurvey = () => {
 
     alert(message);
   };
+
   return (
     <div className="question-container">
       <h2 className="question-text">{questions[currentQuestion].text}</h2>
       <ul className="options-list">
-        {questions[currentQuestion].options.map((option, index) => (
-          <li
-            key={index}
-            className="option-item"
-            onClick={() => handleSelectOption(option, questions[currentQuestion].rating)}
-            style={{ cursor: 'pointer' }}
-          >
-            {option}
-            <span className="rating-star">{Array(questions[currentQuestion].rating + 1).join('')}</span>
-          </li>
-        ))}
+        {questions[currentQuestion].options.map((option, index) => {
+          const isCorrect = index === questions[currentQuestion].correctIndex;
+          const isSelected = selectedOption === index;
+          const optionClass = isSelected
+            ? isCorrect
+              ? 'correct'
+              : 'wrong'
+            : '';
+
+          return (
+            <li
+              key={index}
+              className={`option-item ${optionClass}`}
+              onClick={() => handleSelectOption(index)}
+              style={{ cursor: 'pointer', pointerEvents: submitted ? 'none' : 'auto' }}
+            >
+              {option}
+              <span className="rating-star">{Array(questions[currentQuestion].rating + 1).join('')}</span>
+            </li>
+          );
+        })}
       </ul>
       {submitted ? (
         <div>
           <p>Your marks: {totalMarks}</p>
-          {currentQuestion < questions.length - 1 && (
+          {!submitted && currentQuestion < questions.length - 1 && (
             <button className="action-button" onClick={handleNextQuestion}>
               Next
             </button>
           )}
         </div>
       ) : (
-        <button className="action-button" onClick={handleNextQuestion}>
-          Next
-        </button>
-      )}
-      {!submitted && currentQuestion === questions.length - 1 && (
-        <button className="action-button" onClick={handleSubmit}>
-          Submit
+        <button className="action-button" onClick={currentQuestion === questions.length - 1 ? handleSubmit : handleNextQuestion}>
+          {currentQuestion === questions.length - 1 ? 'Submit' : 'Next'}
         </button>
       )}
     </div>
   );
 };
-QuestionSurvey.whyDidYouRender = true;
+
 export default QuestionSurvey;
