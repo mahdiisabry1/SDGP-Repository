@@ -2,9 +2,7 @@ import React from 'react'
 
 const Profile = () => {
   return (
-    <div className='mt-40'>
-      <span className='cursor-pointer'>Logout</span>
-    </div>
+    <div>Profile</div>
   )
 }
 
