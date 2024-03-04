@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import '../components/CSS/NavBar.css'
 
 // react icons
 import { FaBars, FaEnvelope, FaXmark } from "react-icons/fa6";
+import { UserContext } from '../context/UserContext';
 // import { FaEthereum } from "react-icons/fa6";
 // import { FaGooglePlay } from "react-icons/fa6";
 
@@ -28,9 +29,8 @@ const NavBar = () => {
         {path: "/game-room", link: "GameRoom"},
     ]
 
-    const user = true;
+    const {user} = useContext(UserContext)
 
-    
   return (
 
     <header className='header-container'>
@@ -46,7 +46,8 @@ const NavBar = () => {
         </div>
         <nav className='the-main-navbar'>
             <div className='flex gap-5'>
-                {user ? <Link to='/profile'><button className='login-button'>Profile</button></Link> : <Link to='/register'><button className='login-button'>Register</button></Link>} 
+                {!user && <Link to='/register'><button className='login-button'>Register</button></Link>}
+                {user && <Link to='/profile'><button className='login-button'>Profile</button></Link>}
             </div>
 
             {/* Nav Items with routing */}

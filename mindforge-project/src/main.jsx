@@ -18,9 +18,11 @@ import PostDetails from './pages/PostDetails.jsx';
 import CreatePost from './pages/CreatePost.jsx';
 import Profile from './pages/Profile.jsx';
 import ReactMindmap from './pages/ReactMindmap.jsx';
+import { UserContextProvider } from './context/UserContext.jsx';
 
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
   {
     path: "/",
     element: <App />,
@@ -77,7 +79,8 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <UserContextProvider>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </UserContextProvider>
+    
 )
