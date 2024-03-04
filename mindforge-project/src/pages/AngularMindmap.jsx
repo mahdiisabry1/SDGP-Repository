@@ -229,7 +229,7 @@ const AngularMindmap = () => {
         {isDropdownOpen && (
           <div className="mt-2">
             <p>{description}</p>
-            {/* Add more dropdown content as needed */}
+            
           </div>
         )}
       </div>
