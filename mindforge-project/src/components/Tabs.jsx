@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react'
 import '../components/CSS/tabs.css'
+import { Link } from 'react-router-dom';
 const Tabs = () => {
 const[toogleState, setToggleState]=useState
 (1);  
@@ -330,11 +332,11 @@ Create a simple animation using CSS transitions or keyframes. For example, make 
       </div>
 
         
-<button className={toogleState ===
+<Link to="/frontend"><button className={toogleState ===
             1? 'tabs active-tabs' : 'tabs'}
              onClick={()=> toggleTab(1)}>
              Click here
-             </button>
+             </button></Link>
                     
                 </div>
                 <div className={toogleState === 2 ?

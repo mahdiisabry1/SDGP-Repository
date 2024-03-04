@@ -17,67 +17,77 @@ import Register from './pages/Register.jsx';
 import PostDetails from './pages/PostDetails.jsx';
 import CreatePost from './pages/CreatePost.jsx';
 import Profile from './pages/Profile.jsx';
-import ReactMindmap from './pages/ReactMindmap.jsx';
+import FSMindmap from './pages/ReactMindmap.jsx';
+import { UserContextProvider } from './context/UserContext.jsx';
+import FrontEndCetificate from './pages/FrontEndCetificate.jsx';
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children:[{
-      path: "/",
-      element: <Home />
-    },
-    {
-      path: "/RoadMap",
-      element: <RoadMap />
-    },
-    {
-      path: "/cetification",
-      element: <Cetification/>
-    },
-    {
-      path: "/blogs",
-      element: <Blogs/>
-    },
-    {
-      path: "/game-room",
-      element: <GameRoom/>
-    },
-    {
-      path: "/Quiz",
-      element: <Quiz />
-    },
-    {
-    path: "/Login",
-    element: <Login />
-    },
-    {
-    path: "/register",
-    element: <Register />
-    },
-    {
-      path: "/posts/post/:id",
-      element: <PostDetails />
-    },
-    {
-      path: "/create",
-      element: <CreatePost /> 
-    },
-    {
-      path: "/profile",
-      element: <Profile />
-    },
-    {
-      path: "/mindmap",
-      element: <ReactMindmap />
-    },
-  ]
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/RoadMap",
+        element: <RoadMap />,
+      },
+      {
+        path: "/cetification",
+        element: <Cetification />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
+      },
+      {
+        path: "/game-room",
+        element: <GameRoom />,
+      },
+      {
+        path: "/Quiz",
+        element: <Quiz />,
+      },
+      {
+        path: "/Login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/posts/post/:id",
+        element: <PostDetails />,
+      },
+      {
+        path: "/create",
+        element: <CreatePost />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/mindmap",
+        element: <FSMindmap />,
+      },
+      {
+        path: "/frontend",
+        element: <FrontEndCetificate />
+      },
+    ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <UserContextProvider>
+    
+      <RouterProvider router={router} />
+    
+  </UserContextProvider> 
+);
