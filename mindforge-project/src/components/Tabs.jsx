@@ -26,9 +26,18 @@ const [cat, setCat] = useState("Tech");
       setUserCode(event.target.value);
     };
 
-const toggleTab=(index)=>{
-    setToggleState(index)
-}
+    const toggleTab = (tabNumber) => {
+      // Add your existing logic for tab toggling here
+      setToggleState(tabNumber);
+    
+      // Check if the clicked tab is the one you want to open a new tab for
+      if (tabNumber === 1) {
+        // Replace 'https://example.com' with the URL you want to open in the new tab
+        window.open('https://example.com', '_blank');
+      }
+      // Add more conditions for other tab numbers as needed
+    };
+    
 
 
     return(
@@ -605,6 +614,7 @@ Create a basic user authentication system using Node.js, Express, and a database
              Click here
              </button>
                 </div>
+                
 
 
                 <div className={toogleState === 3 ?
