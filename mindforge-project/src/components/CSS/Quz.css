@@ -59,3 +59,10 @@
 .question-option-item.selected {
   background-color: #ce8fd1;
 }
+.correct {
+  background-color: #7ed56f; 
+}
+
+.wrong {
+  background-color: #ff6b6b; 
+}
