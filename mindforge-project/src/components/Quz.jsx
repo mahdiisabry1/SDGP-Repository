@@ -10,10 +10,10 @@ const QuestionSurvey = () => {
   const questions = [
     {
       id: 1,
-      text: 'What is the capital of France?',
+      text: 'What does CSS stand for in web development?',
       rating: 1,
-      options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
-      correctIndex: 1, // 'Paris' is the correct answer
+      options: ['Central Style Sheets', 'Cascading Style Sheets', 'Computer Style Sheets', 'Creative Style Sheets'],
+      correctIndex: 1, // 'Cascading Style  Sheets' is the correct answer
     },
     {
       id: 2,
@@ -84,7 +84,15 @@ const QuestionSurvey = () => {
       rating: 1,
     },
   ];
-  
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  };
+
+  shuffleArray(questions);
+
   const handleSelectOption = (optionIndex) => {
     if (!submitted && selectedOption === null) {
       setSelectedOption(optionIndex);
