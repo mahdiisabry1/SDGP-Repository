@@ -13,6 +13,17 @@ const AngularMindmap = () => {
           <DropdownRoadmapItem
             title="1. Angular Framework:"
             description="Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google."
+            clickableParagraphs={[
+              { label: '', link: '' },
+              { label: '', link: '' },
+              { label: '', link: '' },
+              { label: '', link: '' },
+              { label: '', link: '' },
+              { label: '', link: '' },
+              { label: '', link: '' },
+              { label: '', link: '' },
+              
+            ]}
           />
   
           <DropdownRoadmapItem
