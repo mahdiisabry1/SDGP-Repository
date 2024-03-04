@@ -5,7 +5,7 @@ const FSMindmap = () => {
     <div className="p-48 text-black">
       <h1 className="text-3xl font-bold mb-4">Mindmap to Full Stack</h1>
       <p className="mb-6">
-        This roadmap provides a structured path to explore and learn in the field of React development.
+        This roadmap provides a structured path to explore and learn in the field of Full Stack development.
       </p>
 
       <div className="flex flex-col space-y-4">
@@ -174,7 +174,7 @@ const DropdownRoadmapItem = ({ title, description }) => {
       {isDropdownOpen && (
         <div className="mt-2">
           <p>{description}</p>
-          {/* Add more dropdown content as needed */}
+          
         </div>
       )}
     </div>
