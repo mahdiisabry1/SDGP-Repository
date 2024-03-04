@@ -44,16 +44,24 @@ const RoadMap = () => {
 
   const handlePhaseClick = (phase) => {
     setSelectedPhase(phase);
-    openMindmap(); // Call the function to use selectedPhase
+    openMindmap(phase); // Pass the selected phase to the openMindmap function
   };
 
-  const openMindmap = () => {
-    // You can use the selectedPhase state here or pass it to another function
-    console.log("Selected Phase:", selectedPhase);
+  const openMindmap = (phase) => {
+    const components = {
+      'Course 1: React': 'ReactMindmap',
+      'Course 2: Angular': 'AngularMindmap',
+      'Course 3: Front-End': 'FEMindmap',
+      'Course 4: Back-End': 'BEMindmap',
+      'Course 5: Full-Stack': 'FSMindmap',
+    };
 
-    // Example: You can perform some actions with selectedPhase
-    // For demonstration purposes, let's open the mindmap in a new window
-    window.open('/mindmap', '_blank');
+    const componentName = components[phase.title];
+
+    if (componentName) {
+      const url = `/path-to-components/${componentName}`; // Update the path to your components
+      window.open(url, '_blank');
+    }
   };
 
   const phases = [
