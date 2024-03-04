@@ -18,7 +18,14 @@ import PostDetails from './pages/PostDetails.jsx';
 import CreatePost from './pages/CreatePost.jsx';
 import Profile from './pages/Profile.jsx';
 import ReactMindmap from './pages/ReactMindmap.jsx';
+<<<<<<< HEAD
 import { UserContextProvider } from './context/UserContext.jsx';
+=======
+import AngularMindmap from './pages/AngularMindmap.jsx';
+import FEMindmap from './pages/FEMindmap.jsx';
+import BEMindmap from './pages/BEMindmap.jsx';
+import FSMindmap from './pages/FSMindmap.jsx';
+>>>>>>> f87c257a37b8c5350b011ebe34e0cca49b00ed72
 
 
 const router = createBrowserRouter(
@@ -71,8 +78,24 @@ const router = createBrowserRouter(
       element: <Profile />
     },
     {
-      path: "/mindmap",
+      path: "/ReactMindmap",
       element: <ReactMindmap />
+    },
+    {
+      path: "/AngularMindmap",
+      element: <AngularMindmap />
+    },
+    {
+      path: "/FEMindmap",
+      element: <FEMindmap />
+    },
+    {
+      path: "/BEMindmap",
+      element: <BEMindmap />
+    },
+    {
+      path: "/FSMindmap",
+      element: <FSMindmap />
     },
   ]
   },
