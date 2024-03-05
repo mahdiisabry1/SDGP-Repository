@@ -84,14 +84,14 @@ const QuestionSurvey = () => {
       rating: 1,
     },
   ];
-  const shuffleArray = (array) => {
+  /*const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
-  };
+  };*/
 
-  shuffleArray(questions);
+  //shuffleArray(questions);
 
   const handleSelectOption = (optionIndex) => {
     if (!submitted && selectedOption === null) {
@@ -102,13 +102,14 @@ const QuestionSurvey = () => {
   const handleNextQuestion = () => {
     if (selectedOption !== null) {
       const isCorrect = selectedOption === questions[currentQuestion].correctIndex;
-
+  
       // Only add marks if the answer is correct
       setTotalMarks((prevTotalMarks) => prevTotalMarks + (isCorrect ? 10 : 0));
     }
-
+  
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
+      // Reset selected option for the new question
       setSelectedOption(null);
       setSubmitted(false);
     } else {
@@ -118,6 +119,10 @@ const QuestionSurvey = () => {
   };
 
   const handleSubmit = () => {
+    // Check if an option is selected before allowing submission
+    if (selectedOption !== null) {
+      handleNextQuestion();
+    }
     setSubmitted(true);
     // Display grading message or any additional messages
     displayGradingMessage(totalMarks);
@@ -168,7 +173,7 @@ const QuestionSurvey = () => {
       {submitted ? (
         <div>
           <p>Your marks: {totalMarks}</p>
-          {!submitted && currentQuestion < questions.length - 1 && (
+          {currentQuestion < questions.length - 1 && (
             <button className="action-button" onClick={handleNextQuestion}>
               Next
             </button>
