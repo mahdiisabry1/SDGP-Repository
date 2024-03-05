@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../components/CSS/Quz.css';
 
 const QuestionSurvey = () => {
@@ -7,7 +7,14 @@ const QuestionSurvey = () => {
   const [submitted, setSubmitted] = useState(false);
   const [totalMarks, setTotalMarks] = useState(0);
 
-  const questions = [
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  };
+
+  const [questions, setQuestions] = useState([
     {
       id: 1,
       text: 'What does CSS stand for in web development?',
@@ -83,7 +90,14 @@ const QuestionSurvey = () => {
       correctIndex: 1, // 'Starting the development server' is the correct answer
       rating: 1,
     },
-  ];
+  ]);
+
+  useEffect(() => {
+    const shuffledQuestions = [...questions];
+    shuffleArray(shuffledQuestions);
+    setQuestions(shuffledQuestions);
+  }, []);
+
   /*const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
