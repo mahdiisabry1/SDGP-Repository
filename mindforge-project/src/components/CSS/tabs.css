@@ -1,76 +1,25 @@
-
-.container-tabs{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 800px;
-    height: auto;
-    margin: 150px auto;
-    word-break: break-all;
-    border: 1px solid rgba(3, 3, 3, 0);
-    box-shadow: 10px 10px 10px #1cfdff;
+.tab-container {
+  display: flex;
 }
 
-.container:hover{
-    box-shadow: 10px 10px 10px #6093c2;
+.tab {
+  flex: 1; /* Use flex property to evenly distribute the width */
+  padding: 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.bloc-tabs{
-    display: flex;
+.tab.active {
+  background-color: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
 }
 
-.tabs{
-    padding: 15px;
-    text-align: center;
-    width: 50%;
-    background: rgba(128, 128, 128, 0.07);
-    cursor: pointer;
-    box-sizing: content-box;
-    position: relative;
-    outline: none;
-}
-
-.tabs:not(:last-child){
-    border-right:1px solid white;
-}
-
-.active-tabs{
-    background-image: linear-gradient(to top
-    right,#10da53,#6093c2);
-    color: white;
-}
-.content_tabs{
-    flex-grow: 1;
-}
-
-.content{
-    background-image: linear-gradient(to top
-    right,#5f16e7,#6093c2) ;
-    padding: 20px;
-    width:100%;
-    height: 100%;
-    display: none ;
-    color: black;
-}
-
-.content h2{
-    padding: 0px 0px 5px 0px;
-
-}
-
-.content hr{
-    width: 100px;
-    height: 2px;
-    background: #222;
-    margin-bottom: 5px;
-}
-
-.content p{
-    width:100%;
-    height:100%;
-
-}
-
-.active-content{
-    display: block;
+.tab-content {
+  margin-top: 10px;
 }

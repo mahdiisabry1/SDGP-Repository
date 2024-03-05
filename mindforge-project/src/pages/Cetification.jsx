@@ -3,7 +3,7 @@ import Tabs from '../components/Tabs';
 
 const Certification = () => {
   const backgroundStyles = {
-    backgroundImage: 'url("https://news.uchicago.edu/sites/default/files/styles/explainer_hero/public/images/2022-10/sgr%20A%2A%20ESO%20and%20M.%20Kornmesser%20690.jpg?h=06d036b4&itok=Lr5t57tH")', // Replace with the URL of your image
+    backgroundImage: 'url("https://static.tildacdn.com/tild6261-3364-4637-a533-383932646565/anima3.gif")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
