@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './CSS/tabs.css'; // Import the CSS file
 
+
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(1);
   
@@ -30,9 +31,9 @@ const Tabs = () => {
 
   const quizQuestions = {
     1: [
-      "What is React?",
-      "What is JSX?",
-      "What is the purpose of virtual DOM?",
+      "Create a React component that renders a simple Hello, World! message on the screen.",
+      "Create a component that displays a counter starting from 0. Add buttons for incrementing and decrementing the counter. Use React state to manage the counter value.",
+      "Create a parent component that renders two child components. Pass a prop from the parent to each child component, and have each child component render the prop value.",
       "Explain the component lifecycle in React.",
       "Additional Question: What is React Fiber?",
     ],
@@ -93,6 +94,9 @@ const Tabs = () => {
               <div key={questionIndex}>
                 <p>Question {questionIndex + 1}: {question}</p>
                 <input type="text" placeholder="Enter your answer" />
+                <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
+              Submit
+            </button>
               </div>
             ))}
           </div>
@@ -100,6 +104,7 @@ const Tabs = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Tabs;
