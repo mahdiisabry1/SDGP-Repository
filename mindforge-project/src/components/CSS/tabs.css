@@ -3,21 +3,26 @@
 }
 
 .tab {
-  flex: 1; /* Use flex property to evenly distribute the width */
+  flex: 1;
   padding: 20px;
   margin: 5px;
   cursor: pointer;
-  border: 2px solid #4caf50;
+  border: 2px solid #007bff;;
   border-radius: 8px;
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: transparent; /* Use a transparent background */
+  color: #000; /* Change the font color to black */
+  font-size: 16px; /* Set the font size */
   transition: background-color 0.3s, color 0.3s;
 }
 
+.tab:hover {
+  background-color: #e0e0e0; /* Change the background color on hover */
+}
+
 .tab.active {
-  background-color: #4caf50;
+  background-color: transparent; /* Keep the background transparent for the active tab */
   color: #fff;
-  border-color: #4caf50;
+  border-color: #007bff;;
 }
 
 .tab-content {
