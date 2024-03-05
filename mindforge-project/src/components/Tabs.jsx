@@ -28,6 +28,45 @@ const Tabs = () => {
     5: '#795548', 
   };
 
+  const quizQuestions = {
+    1: [
+      "What is React?",
+      "What is JSX?",
+      "What is the purpose of virtual DOM?",
+      "Explain the component lifecycle in React.",
+      "Additional Question: What is React Fiber?",
+    ],
+    2: [
+      "What is Angular?",
+      "What is TypeScript?",
+      "Explain data binding in Angular.",
+      "What is the purpose of Angular CLI?",
+      "Additional Question: What is RxJS?",
+    ],
+    3: [
+      "What is Front-End development?",
+      "Explain the difference between margin and padding.",
+      "What is responsive design?",
+      "What is the box model in CSS?",
+      "Additional Question: What is BEM (Block Element Modifier)?",
+    ],
+    4: [
+      "What is Back-End development?",
+      "Explain the role of a server in Back-End architecture.",
+      "What is RESTful API?",
+      "What is the purpose of a database in Back-End development?",
+      "Additional Question: What is GraphQL?",
+    ],
+    5: [
+      "What is Full-Stack development?",
+      "Explain the MERN stack.",
+      "What is a microservices architecture?",
+      "What is the role of a full-stack developer?",
+      "Additional Question: What is serverless architecture?",
+    ],
+  };
+
+
   return (
     <div>
       <div className="tab-container">
@@ -35,8 +74,8 @@ const Tabs = () => {
           <div
             key={index + 1}
             className={`tab ${activeTab === index + 1 ? 'active' : ''}`}
-            style={{ 
-              backgroundColor: `rgba(${hexToRgb(tabColors[index + 1])}, ${tabTransparency})` 
+            style={{
+              backgroundColor: `rgba(${hexToRgb(tabColors[index + 1])}, ${tabTransparency})`
             }}
             onClick={() => handleTabClick(index + 1)}
           >
@@ -47,11 +86,17 @@ const Tabs = () => {
 
       {/* Content for each tab */}
       <div className="tab-content">
-        {activeTab === 1 && <p>React Quiz</p>}
-        {activeTab === 2 && <p>Angular Quiz</p>}
-        {activeTab === 3 && <p>Front-End Quiz</p>}
-        {activeTab === 4 && <p>Back-End Quiz</p>}
-        {activeTab === 5 && <p>Full-Stack Quiz</p>}
+        {activeTab >= 1 && activeTab <= 5 && (
+          <div>
+            <p>{tabNames[activeTab - 1]} Quiz</p>
+            {quizQuestions[activeTab].map((question, questionIndex) => (
+              <div key={questionIndex}>
+                <p>Question {questionIndex + 1}: {question}</p>
+                <input type="text" placeholder="Enter your answer" />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
