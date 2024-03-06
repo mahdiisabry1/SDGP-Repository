@@ -9,7 +9,8 @@ const BirthdateSelector = () => {
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', marginTop: '20px' }}>
-      <label htmlFor="birthdate" style={{ marginRight: '10px' }}>Select Birthdate:</label>
+      <h2 style={{ fontSize: '24px', marginBottom: '20px' }}>Enter Your Date of Birth :</h2>
+      <label htmlFor="birthdate" style={{ marginRight: '10px' }}>Selected Birthdate:</label>
       <input 
         type="date" 
         id="birthdate" 
@@ -19,8 +20,22 @@ const BirthdateSelector = () => {
         style={{ padding: '5px', borderRadius: '5px', border: '1px solid #ccc' }} 
       />
       {birthdate && (
-        <p style={{ marginTop: '10px' }}>Selected Birthdate: {birthdate}</p>
+        <p style={{ marginTop: '10px' }}>Your Date of Birth: {birthdate}</p>
       )}
+      <button 
+        style={{ 
+          marginTop: '20px',
+          padding: '10px 20px',
+          backgroundColor: '#007bff',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          fontSize: '16px'
+        }}
+      >
+        Continue
+      </button>
     </div>
   );
 };
