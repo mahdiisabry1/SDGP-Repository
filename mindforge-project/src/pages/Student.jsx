@@ -21,8 +21,23 @@ const BirthdateSelector = () => {
       {birthdate && (
         <p style={{ marginTop: '10px' }}>Selected Birthdate: {birthdate}</p>
       )}
+      <button 
+        style={{ 
+          marginTop: '20px',
+          padding: '10px 20px',
+          backgroundColor: '#007bff',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          fontSize: '16px'
+        }}
+      >
+        Continue
+      </button>
     </div>
   );
 };
 
 export default BirthdateSelector;
+
