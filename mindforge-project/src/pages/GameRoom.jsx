@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './GameRoom.css'; // Import the CSS file
 
+
 const GameRoom = () => {
   const [activeTab, setActiveTab] = useState('student'); // Updated initial active tab
   const [userName, setUserName] = useState(''); // State to store username
@@ -62,12 +63,9 @@ const GameRoom = () => {
             {/* Displaying the entered username */}
             <p>Your name: {userName}</p>
             {/* Continue button */}
-            <button
-              onClick={handleContinueClick}
-              disabled={!continueEnabled} // Disable button if username is empty
-            >
-              Continue
-            </button>
+            <button className="mt-4 bg-black w-full text-white hover:bg-slate-200">
+                      Continue
+                    </button>
           </div>
         )}
 
