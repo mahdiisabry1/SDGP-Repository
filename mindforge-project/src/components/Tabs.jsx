@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import './CSS/tabs.css'; // Import the CSS file
 
-
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(1);
-  
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
+
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
+    setSelectedQuestion(null); // Reset selected question when changing tabs
+  };
+
+  const handleQuestionClick = (questionIndex) => {
+    setSelectedQuestion(questionIndex === selectedQuestion ? null : questionIndex);
   };
 
   const tabNames = ["React", "Angular", "FrontEnd", "BackEnd", "FullStack"];
@@ -16,17 +21,18 @@ const Tabs = () => {
     const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
     hex = hex.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
+    return result
+      ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}`
+      : null;
   }
 
-  
   // Define a mapping of colors for each tab
   const tabColors = {
-    1: '#4caf50', 
-    2: '#2196f3', 
-    3: '#ff9800', 
-    4: '#e91e63', 
-    5: '#795548', 
+    1: '#4caf50',
+    2: '#2196f3',
+    3: '#ff9800',
+    4: '#e91e63',
+    5: '#795548',
   };
 
   const quizQuestions = {
@@ -67,7 +73,6 @@ const Tabs = () => {
     ],
   };
 
-
   return (
     <div>
       <div className="tab-container">
@@ -76,7 +81,7 @@ const Tabs = () => {
             key={index + 1}
             className={`tab ${activeTab === index + 1 ? 'active' : ''}`}
             style={{
-              backgroundColor: `rgba(${hexToRgb(tabColors[index + 1])}, ${tabTransparency})`
+              backgroundColor: `rgba(${hexToRgb(tabColors[index + 1])}, ${tabTransparency})`,
             }}
             onClick={() => handleTabClick(index + 1)}
           >
@@ -92,11 +97,21 @@ const Tabs = () => {
             <p>{tabNames[activeTab - 1]} Quiz</p>
             {quizQuestions[activeTab].map((question, questionIndex) => (
               <div key={questionIndex}>
-                <p>Question {questionIndex + 1}: {question}</p>
-                <input type="text" placeholder="Enter your answer" />
-                <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-              Submit
-            </button>
+                <p
+                  className={`question ${selectedQuestion === questionIndex ? 'active' : ''}`}
+                  onClick={() => handleQuestionClick(questionIndex)}
+                >
+                  Question {questionIndex + 1}: {question}
+                </p>
+                {selectedQuestion === questionIndex && (
+                  <div>
+                    <input type="file" accept=".pdf,.doc,.docx" />
+                    <input type="text" placeholder="Enter your answer" />
+                    <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
+                      Submit
+                    </button>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -104,7 +119,6 @@ const Tabs = () => {
       </div>
     </div>
   );
-  
 };
 
 export default Tabs;
