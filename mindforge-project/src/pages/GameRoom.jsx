@@ -3,10 +3,26 @@ import './GameRoom.css'; // Import the CSS file
 
 const GameRoom = () => {
   const [activeTab, setActiveTab] = useState('student'); // Updated initial active tab
+  const [userName, setUserName] = useState(''); // State to store username
+  const [continueEnabled, setContinueEnabled] = useState(false); // State to manage continue button
 
   // Function to handle tab change
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+  };
+
+  // Function to handle input change for username
+  const handleInputChange = (event) => {
+    const name = event.target.value;
+    setUserName(name);
+    // Enable continue button if user has entered a name
+    setContinueEnabled(name.trim().length > 0);
+  };
+
+  // Function to handle continue button click
+  const handleContinueClick = () => {
+    // Handle continue button click action here
+    console.log('Continue clicked');
   };
 
   return (
@@ -36,7 +52,22 @@ const GameRoom = () => {
         {activeTab === 'student' && (
           <div className="tab1-content">
             <h2>Student Content</h2>
-            {/* Add your student content here */}
+            {/* Input field for username */}
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value={userName}
+              onChange={handleInputChange}
+            />
+            {/* Displaying the entered username */}
+            <p>Your name: {userName}</p>
+            {/* Continue button */}
+            <button
+              onClick={handleContinueClick}
+              disabled={!continueEnabled} // Disable button if username is empty
+            >
+              Continue
+            </button>
           </div>
         )}
 
