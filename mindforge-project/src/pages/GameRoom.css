@@ -56,15 +56,39 @@ input {
 
 /* Styles for buttons inside the Teacher tab */
 .tab2-content button {
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding: 10px 20px;
-  background-color: #eee;
-  border: 1px solid #ccc;
   cursor: pointer;
   font-size: 16px;
+  padding: 15px 30px; /* Adjust button size */
+  margin-right: 15px; /* Add space between buttons */
 }
 
+/* Different colors for each button */
+.tab2-content button:nth-child(1) {
+  background-color: #ffcc00; /* Yellow */
+  border: 1px solid #b38600; /* Dark Yellow */
+}
+
+.tab2-content button:nth-child(2) {
+  background-color: #ff6666; /* Red */
+  border: 1px solid #b32424; /* Dark Red */
+}
+
+.tab2-content button:nth-child(3) {
+  background-color: #99ff99; /* Green */
+  border: 1px solid #00b300; /* Dark Green */
+}
+
+.tab2-content button:nth-child(4) {
+  background-color: #66b3ff; /* Blue */
+  border: 1px solid #004080; /* Dark Blue */
+}
+
+.tab2-content button:nth-child(5) {
+  background-color: #ff99cc; /* Pink */
+  border: 1px solid #b3598c; /* Dark Pink */
+}
+
+/* Hover styles for all buttons */
 .tab2-content button:hover {
   background-color: #3498db;
   color: #fff;
