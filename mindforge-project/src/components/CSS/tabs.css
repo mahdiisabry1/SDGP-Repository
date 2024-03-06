@@ -7,25 +7,47 @@
   padding: 20px;
   margin: 5px;
   cursor: pointer;
-  border: 2px solid #007bff;;
+  border: 2px solid #007bff;
   border-radius: 8px;
-  background-color: transparent; /* Use a transparent background */
-  color: #000; /* Change the font color to black */
-  font-size: 16px; /* Set the font size */
+  background-color: transparent;
+  color: #000;
+  font-size: 16px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .tab:hover {
-  background-color: #ece0e0; /* Change the background color on hover */
+  background-color: #ece0e0;
 }
 
 .tab.active {
-  background-color: transparent; /* Keep the background transparent for the active tab */
+  background-color: transparent;
   color: #f7eaea;
-  border-color: #007bff;;
+  border-color: #007bff;
 }
 
 .tab-content {
   margin-top: 10px;
 }
 
+.question {
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 20px; /* Increase padding */
+  margin-top: 15px; /* Increase margin */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.question:hover {
+  background-color: #ece0e0;
+}
+
+.question.active {
+  background-color: #f7eaea;
+  color: black;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-right: 10px;
+}

@@ -73,6 +73,13 @@ const Tabs = () => {
     ],
   };
 
+  const isLastTab = activeTab === 5;
+
+  const handleCertificationClick = () => {
+    // Open a new tab with the certification page
+    window.open('https://your-certification-url.com', '_blank');
+  };
+
   return (
     <div>
       <div className="tab-container">
@@ -106,7 +113,11 @@ const Tabs = () => {
                 {selectedQuestion === questionIndex && (
                   <div>
                     <input type="file" accept=".pdf,.doc,.docx" />
-                    <input type="text" placeholder="Enter your answer" />
+                    <input
+                      type="text"
+                      placeholder="Enter your answer"
+                      style={{ color: "black" }} // Set font color to black
+                    />
                     <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
                       Submit
                     </button>
@@ -114,6 +125,16 @@ const Tabs = () => {
                 )}
               </div>
             ))}
+            <div>
+              {/* Additional content for all tabs */}
+              <p>End of Questions</p>
+              <button
+                className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+                onClick={handleCertificationClick}
+              >
+                Get Your Certification
+              </button>
+            </div>
           </div>
         )}
       </div>
