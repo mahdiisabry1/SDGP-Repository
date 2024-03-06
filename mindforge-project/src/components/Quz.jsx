@@ -98,16 +98,7 @@ const QuestionSurvey = () => {
     setQuestions(shuffledQuestions);
   }, []);
 
-  /*const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  };*/
-
-  //shuffleArray(questions);
-
-  const handleSelectOption = (optionIndex) => {
+   const handleSelectOption = (optionIndex) => {
     if (!submitted && selectedOption === null) {
       setSelectedOption(optionIndex);
     }
