@@ -28,11 +28,11 @@ const Tabs = () => {
 
   // Define a mapping of colors for each tab
   const tabColors = {
-    1: '#4caf50',
-    2: '#2196f3',
-    3: '#ff9800',
-    4: '#e91e63',
-    5: '#795548',
+    1: '#61dafb',
+    2: '#dd1b16',
+    3: '#4caf50',
+    4: '#673ab7',
+    5: '#ff5722',
   };
 
   const quizQuestions = {
