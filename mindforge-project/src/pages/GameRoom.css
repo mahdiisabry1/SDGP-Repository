@@ -45,3 +45,27 @@
 .tab2-content {
   background-color: #fafafa;
 }
+
+/* Styles for input fields */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+/* Styles for buttons inside the Teacher tab */
+.tab2-content button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tab2-content button:hover {
+  background-color: #3498db;
+  color: #fff;
+}

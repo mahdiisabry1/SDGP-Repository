@@ -1,81 +1,90 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './GameRoom.css'; // Import the CSS file
 
 const GameRoom = () => {
-  const [activeTab, setActiveTab] = useState('student'); // Updated initial active tab
-  const [userName, setUserName] = useState(''); // State to store username
-  const [continueEnabled, setContinueEnabled] = useState(false); // State to manage continue button
+  const [activeTab, setActiveTab] = useState('student');
+  const [userName, setUserName] = useState('');
+  const [userBirthdate, setUserBirthdate] = useState('');
+  const [continueEnabled, setContinueEnabled] = useState(false);
 
-  // Function to handle tab change
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
 
-  // Function to handle input change for username
-  const handleInputChange = (event) => {
+  const handleUserNameChange = (event) => {
     const name = event.target.value;
     setUserName(name);
-    // Enable continue button if user has entered a name
-    setContinueEnabled(name.trim().length > 0);
+    setContinueEnabled(name.trim().length > 0 && userBirthdate.trim().length > 0);
+  };
+
+  const handleBirthdateChange = (event) => {
+    const birthdate = event.target.value;
+    setUserBirthdate(birthdate);
+    setContinueEnabled(userName.trim().length > 0 && birthdate.trim().length > 0);
   };
 
   // Function to handle continue button click
   const handleContinueClick = () => {
-    // Handle continue button click action here
+    // Perform any necessary actions before navigating to the StudentDetails component
     console.log('Continue clicked');
   };
 
   return (
     <div>
-      {/* Container for tabs */}
       <div className="center-container">
-        {/* Student tab with emoji */}
         <button
-          onClick={() => handleTabChange('student')} // Click handler for student tab
+          onClick={() => handleTabChange('student')}
           className={`tab-button ${activeTab === 'student' ? 'active' : ''}`}
         >
           🎓 Student
         </button>
 
-        {/* Teacher tab with emoji */}
         <button
-          onClick={() => handleTabChange('teacher')} // Click handler for teacher tab
+          onClick={() => handleTabChange('teacher')}
           className={`tab-button ${activeTab === 'teacher' ? 'active' : ''}`}
         >
           👨‍🏫 Teacher
         </button>
       </div>
 
-      {/* Container for tab content */}
       <div className="tab-content">
-        {/* Content for the Student tab */}
         {activeTab === 'student' && (
           <div className="tab1-content">
             <h2>Student Content</h2>
-            {/* Input field for username */}
             <input
               type="text"
               placeholder="Enter your name"
               value={userName}
-              onChange={handleInputChange}
+              onChange={handleUserNameChange}
             />
-            {/* Displaying the entered username */}
+
+            <input
+              type="date"
+              placeholder="Select your birthdate"
+              value={userBirthdate}
+              onChange={handleBirthdateChange}
+            />
+
             <p>Your name: {userName}</p>
-            {/* Continue button */}
-            <button
-              onClick={handleContinueClick}
-              disabled={!continueEnabled} // Disable button if username is empty
-            >
-              Continue
-            </button>
+            <p>Your birthdate: {userBirthdate}</p>
+
+            {/* Link to StudentDetails component */}
+            <Link to="/student-details">
+              <button disabled={!continueEnabled} onClick={handleContinueClick}>
+                Continue
+              </button>
+            </Link>
           </div>
         )}
 
-        {/* Content for the Teacher tab */}
         {activeTab === 'teacher' && (
           <div className="tab2-content">
             <h2>Teacher Content</h2>
-            {/* Add your teacher content here */}
+            <button onClick={() => console.log('School')}>School</button>
+            <button onClick={() => console.log('Higher Education')}>Higher Education</button>
+            <button onClick={() => console.log('School Administration')}>School Administration</button>
+            <button onClick={() => console.log('Other')}>Other</button>
           </div>
         )}
       </div>
