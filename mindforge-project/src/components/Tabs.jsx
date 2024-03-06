@@ -37,39 +37,39 @@ const Tabs = () => {
 
   const quizQuestions = {
     1: [
-      "Create a React component that renders a simple Hello, World! message on the screen.",
+      "Create a React component that renders a simple Hello World! message on the screen.",
       "Create a component that displays a counter starting from 0. Add buttons for incrementing and decrementing the counter. Use React state to manage the counter value.",
       "Create a parent component that renders two child components. Pass a prop from the parent to each child component, and have each child component render the prop value.",
-      "Explain the component lifecycle in React.",
-      "Additional Question: What is React Fiber?",
+      "Create a component that displays a message based on whether a boolean variable is true or false. Toggle the boolean variable using a button, and make the component re-render with the updated message.",
+      "Create a component that fetches data from a mock API (you can use tools like JSONPlaceholder) and displays it on the screen. Use React hooks like useState and useEffect to manage state and perform the API call.",
     ],
     2: [
-      "What is Angular?",
-      "What is TypeScript?",
-      "Explain data binding in Angular.",
-      "What is the purpose of Angular CLI?",
-      "Additional Question: What is RxJS?",
+      "Create an Angular component called HelloComponent that displays the text Hello, Angular! in the template.",
+      "Implement two-way data binding in Angular for an input field and a paragraph element, so that the input field's value is displayed in real-time in the paragraph.",
+      "Create a button in an Angular component that, when clicked, increments a counter variable and displays the updated count on the page.",
+      "Make an HTTP GET request to a JSON placeholder API to fetch a list of users and display them in an Angular component.",
+      "Create an Angular component called CounterComponent that displays a counter value starting from 0. Include two buttons: one to increment the counter and one to decrement it. Display the current counter value in the component's template.",
     ],
     3: [
-      "What is Front-End development?",
-      "Explain the difference between margin and padding.",
-      "What is responsive design?",
-      "What is the box model in CSS?",
-      "Additional Question: What is BEM (Block Element Modifier)?",
+      "Create a webpage with a heading saying Hello World! and a button labeled Click Me. When the button is clicked, change the background color of the webpage.",
+      "Write a JavaScript function that changes the text of a paragraph to Button Clicked! when a button is clicked. Add this functionality to the button in the previous question.",
+      "Create a simple webpage layout with header, footer, sidebar, and main content area. Ensure that the layout adjusts appropriately for different screen sizes using media queries.",
+      "Create a div element with a width of 200 pixels, a height of 100 pixels, a background color of blue, and 10 pixels of padding. Inside this div, create a paragraph with text Hello CSS Box Model!.",
+      "Create a simple animation using CSS transitions or keyframes. For example, make a div element move from left to right continuously when hovered over.",
     ],
     4: [
-      "What is Back-End development?",
-      "Explain the role of a server in Back-End architecture.",
-      "What is RESTful API?",
-      "What is the purpose of a database in Back-End development?",
-      "Additional Question: What is GraphQL?",
+      "Write a Node.js script that prints Hello, World! to the console.",
+      "Create a simple Express server that listens on port 3000 and responds with Hello, World! for any incoming requests.",
+      "Write a Node.js script that connects to a MongoDB database and performs basic CRUD (Create, Read, Update, Delete) operations on a collection of items, such as todos or users.",
+      "Implement an API endpoint using Express that accepts GET requests to /api/users and returns a JSON response with a list of user objects.",
+      "Create a basic user authentication system using Node.js, Express, and a database (e.g., MongoDB or SQLite). Implement endpoints for user registration, login, and logout.",
     ],
     5: [
-      "What is Full-Stack development?",
-      "Explain the MERN stack.",
-      "What is a microservices architecture?",
-      "What is the role of a full-stack developer?",
-      "Additional Question: What is serverless architecture?",
+      "Develop a basic full-stack web application using Node.js, Express, and MongoDB. The app should have a front-end interface to input user data (e.g., name, email) and save it to the database. Additionally, it should have a page to display all the saved user data.",
+      "Enhance the previous application by adding user authentication and authorization features. Users should be able to register, log in, and log out. Only authenticated users should be able to access certain routes, such as the page displaying user data.",
+      "Create a full-stack CRUD (Create, Read, Update, Delete) application using React for the front end and Node.js/Express with MongoDB for the back end. Users should be able to perform CRUD operations on a list of items displayed on the webpage.",
+      "Build a real-time chat application using technologies like Node.js, Express, Socket.io for the back end, and React for the front end. Users should be able to join chat rooms, send messages, and see messages from other users in real-time.",
+      "Develop a full-stack task management system where users can create tasks, assign them to other users, mark them as completed, and filter tasks based on their status. Use React for the front end and Node.js/Express with MongoDB for the back end.",
     ],
   };
 
@@ -115,7 +115,7 @@ const Tabs = () => {
                     <input type="file" accept=".pdf,.doc,.docx" />
                     <input
                       type="text"
-                      placeholder="Enter your answer"
+                      placeholder="Describe your answer"
                       style={{ color: "black" }} // Set font color to black
                     />
                     <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
