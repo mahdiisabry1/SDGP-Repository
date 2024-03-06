@@ -1,69 +1,52 @@
 import React, { useState } from 'react';
-import './GameRoom.css'; // Import CSS file for styling
+import './GameRoom.css'; // Import the CSS file
 
 const GameRoom = () => {
-  const [activeTab, setActiveTab] = useState('teacher');
-  const [output, setOutput] = useState('');
+  const [activeTab, setActiveTab] = useState('student'); // Updated initial active tab
 
+  // Function to handle tab change
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
 
-  const executeCode = () => {
-    // Clear previous output
-    setOutput('');
-
-    // Evaluate user's input code
-    try {
-      // Use eval to execute user's input code
-      eval(userCode);
-
-      // Set output to show success message
-      setOutput('Button moved to the center!');
-    } catch (error) {
-      // Set output to show error message
-      setOutput('Error occurred: ' + error.message);
-    }
-  };
-
   return (
-    <div className="game-room">
-      <h1>Welcome to the Game Room!</h1>
-      <div className="tabs">
+    <div>
+      {/* Container for tabs */}
+      <div className="center-container">
+        {/* Student tab with emoji */}
         <button
-          className={activeTab === 'teacher' ? 'active' : ''}
-          onClick={() => handleTabChange('teacher')}
+          onClick={() => handleTabChange('student')} // Click handler for student tab
+          className={`tab-button ${activeTab === 'student' ? 'active' : ''}`}
         >
-          Teacher
+          🎓 Student
         </button>
+
+        {/* Teacher tab with emoji */}
         <button
-          className={activeTab === 'student' ? 'active' : ''}
-          onClick={() => handleTabChange('student')}
+          onClick={() => handleTabChange('teacher')} // Click handler for teacher tab
+          className={`tab-button ${activeTab === 'teacher' ? 'active' : ''}`}
         >
-          Student
+          👨‍🏫 Teacher
         </button>
       </div>
-      {activeTab === 'teacher' && (
-        <div className="teacher-tab">
-          <h2>Teacher Instructions:</h2>
-          <p>Provide guidance and set challenges for students.</p>
-        </div>
-      )}
-      {activeTab === 'student' && (
-        <div className="student-tab">
-          <h2>Student Code Editor:</h2>
-          <textarea
-            className="code-input"
-            value={userCode}
-            onChange={handleCodeChange}
-            placeholder="Write your code here..."
-          />
-          <button onClick={executeCode}>Execute Code</button>
-        </div>
-      )}
-      <div className="output">
-        <h2>Output:</h2>
-        <div className="output-content" dangerouslySetInnerHTML={{ __html: output }} />
+
+      {/* Container for tab content */}
+      <div className="tab-content">
+        {/* Content for the Student tab */}
+        {activeTab === 'student' && (
+          <div className="tab1-content">
+            <h2>Student Content</h2>
+            {/* Add your student content here */}
+          </div>
+        )}
+
+        {/* Content for the Teacher tab */}
+        {activeTab === 'teacher' && (
+          <div className="tab2-content">
+            <h2>Teacher Content</h2>
+            {/* Add your teacher content here */}
+          </div>
+        )}
       </div>
     </div>
   );
