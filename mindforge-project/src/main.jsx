@@ -28,71 +28,72 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children:[{
-      path: "/",
-      element: <Home />
-    },
-    {
-      path: "/RoadMap",
-      element: <RoadMap />
-    },
-    {
-      path: "/cetification",
-      element: <Cetification/>
-    },
-    {
-      path: "/blogs",
-      element: <Blogs/>
-    },
-    {
-      path: "/game-room",
-      element: <GameRoom/>
-    },
-    {
-      path: "/Quiz",
-      element: <Quiz />
-    },
-    {
-    path: "/Login",
-    element: <Login />
-    },
-    {
-    path: "/register",
-    element: <Register />
-    },
-    {
-      path: "/posts/post/:id",
-      element: <PostDetails />
-    },
-    {
-      path: "/create",
-      element: <CreatePost /> 
-    },
-    {
-      path: "/profile",
-      element: <Profile />
-    },
-    {
-      path: "/ReactMindmap",
-      element: <ReactMindmap />
-    },
-    {
-      path: "/AngularMindmap",
-      element: <AngularMindmap />
-    },
-    {
-      path: "/FEMindmap",
-      element: <FEMindmap />
-    },
-    {
-      path: "/BEMindmap",
-      element: <BEMindmap />
-    },
-    {
-      path: "/FSMindmap",
-      element: <FSMindmap />
-    },
-  ]
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/RoadMap",
+        element: <RoadMap />,
+      },
+      {
+        path: "/cetification",
+        element: <Cetification />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
+      },
+      {
+        path: "/game-room",
+        element: <GameRoom />,
+      },
+      {
+        path: "/Quiz",
+        element: <Quiz />,
+      },
+      {
+        path: "/Login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/posts/post/:id",
+        element: <PostDetails />,
+      },
+      {
+        path: "/create",
+        element: <CreatePost />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/path-to-components/ReactMindmap",
+        element: <ReactMindmap />,
+      },
+      {
+        path: "/path-to-components/AngularMindmap",
+        element: <AngularMindmap />,
+      },
+      {
+        path: "/path-to-components/FEMindmap",
+        element: <FEMindmap />,
+      },
+      {
+        path: "/path-to-components/BEMindmap",
+        element: <BEMindmap />,
+      },
+      {
+        path: "/path-to-components/FSMindmap",
+        element: <FSMindmap />,
+      },
+    ],
   },
 ]);
 

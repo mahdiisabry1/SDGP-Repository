@@ -65,11 +65,37 @@ const RoadMap = () => {
   };
 
   const phases = [
-    { title: 'Course 1: React', path:'./pages/ReactMindmap.jsx', description: 'JavaScript library for building user interfaces', customColor: '#61dafb' },
-    { title: 'Course 2: Angular', path: './pages/AngularMindmap.jsx', description: 'TypeScript-based open-source framework', customColor: '#dd1b16' },
-    { title: 'Course 3: Front-End', path:'./pages/FEMindmap.jsx', description: 'Involves creating the visual and interactive elements of a web application', customColor: '#4caf50' },
-    { title: 'Course 4: Back-End', path: './pages/BEMindmap.jsx', description: 'Enabling communication between the front end and databases', customColor: '#673ab7' },
-    { title: 'Course 5: Full-Stack', path:'./pages/FSMindmap.jsx', description: 'Proficient in both front-end and back-end development', customColor: '#ff5722' },
+    {
+      title: "Course 1: React",
+      path: "/path-to-components/ReactMindmap",
+      description: "JavaScript library for building user interfaces",
+      customColor: "#61dafb",
+    },
+    {
+      title: "Course 2: Angular",
+      path: "/path-to-components/AngularMindmap",
+      description: "TypeScript-based open-source framework",
+      customColor: "#dd1b16",
+    },
+    {
+      title: "Course 3: Front-End",
+      path: "/path-to-components/FEMindmap.jsx",
+      description:
+        "Involves creating the visual and interactive elements of a web application",
+      customColor: "#4caf50",
+    },
+    {
+      title: "Course 4: Back-End",
+      path: "/path-to-components/BEMindmap.jsx",
+      description: "Enabling communication between the front end and databases",
+      customColor: "#673ab7",
+    },
+    {
+      title: "Course 5: Full-Stack",
+      path: "/path-to-components/FSMindmap.jsx",
+      description: "Proficient in both front-end and back-end development",
+      customColor: "#ff5722",
+    },
   ];
 
   return (

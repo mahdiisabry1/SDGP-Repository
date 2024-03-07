@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './CSS/tabs.css'; // Import the CSS file
 
 const Tabs = () => {
