@@ -3,10 +3,17 @@
 import React, { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import '../components/CSS/NavBar.css'
+import axios from 'axios';
+import { URL } from "../url";
 
 // react icons
-import { FaBars, FaEnvelope, FaXmark } from "react-icons/fa6";
+import { FaBars, FaXmark } from "react-icons/fa6";
 import { UserContext } from '../context/UserContext';
+import { CgProfile } from "react-icons/cg";
+import { CiLogout } from "react-icons/ci";
+
+
+
 // import { FaEthereum } from "react-icons/fa6";
 // import { FaGooglePlay } from "react-icons/fa6";
 
@@ -22,14 +29,23 @@ const NavBar = () => {
     }
 
     const navItems = [
-        {path: "/", link: "Home"},
-        {path: "/RoadMap", link: "MindMaps"},
-        {path: "/cetification", link: "Cetification"},
-        {path: "/blogs", link: "Blogs"},
-        {path: "/game-room", link: "GameRoom"},
-    ]
+      { id: 1, path: "/", link: "Home" },
+      { id: 2, path: "/RoadMap", link: "MindMaps" },
+      { id: 3, path: "/cetification", link: "Cetification" },
+      { id: 4, path: "/blogs", link: "Blogs" },
+      { id: 5, path: "/game-room", link: "GameRoom" },
+    ];
 
     const {user} = useContext(UserContext)
+    const {setUser} = useContext(UserContext)
+    const handleLogout = async() =>{
+        try {
+            const res = await axios.get(URL + "/api/auth/logout",{withCredentials:true})
+            setUser(null)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
   return (
 
@@ -47,13 +63,14 @@ const NavBar = () => {
         <nav className='the-main-navbar'>
             <div className='flex gap-5'>
                 {!user && <Link to='/register'><button className='login-button'>Register</button></Link>}
-                {user && <Link to='/profile'><button className='login-button'>Profile</button></Link>}
+                {user && <Link to='/profile'><button className='profile-button'><CgProfile /></button></Link>}
+                {user && <button onClick={handleLogout} className='profile-button'><CiLogout /></button>}
             </div>
 
             {/* Nav Items with routing */}
             <ul className='md:flex gap-12 text-lg hidden'>
                 {
-                    navItems.map(({path, link}) => <li className='text-cyan-50 navItems'>
+                    navItems.map(({id,path, link}) => <li key={id} className='text-cyan-50 navItems'>
                         <NavLink className={({ isActive }) =>
                       isActive
                         ? "active"

@@ -50,7 +50,7 @@ const GameRoom = () => {
         {activeTab === 'student' && (
           <div className="tab1-content">
             <h1>Student Content</h1>
-            <div classname="tab-name">
+            <div className="tab-name">
             <h2>Enter your UserName</h2>
             <input
               type="text"

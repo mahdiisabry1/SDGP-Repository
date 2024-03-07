@@ -13,34 +13,24 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false)
   const {setUser} = useContext(UserContext);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   const navigate = useNavigate()
 
   const handleLogin = async () => {
     try {
-      setLoading(true);
-      const res = await axios.post(URL + "/api/auth/login", {
-        email,
-        password,
-      });
-      setUser(res.data)
-
-      // Check response status or other success conditions
-      if (res.status === 200) {
-        console.log("Login successful");
-        navigate("/");
-      } else {
-        setError(true);
-        // Display appropriate error message based on the response
-        console.error("Login failed:", res.data.message);
-      }
-    } catch (error) {
+      const res = await axios.post(
+        URL + "/api/auth/login",
+        { email, password },
+        { withCredentials: true }
+      );
+      // console.log(res.data)
+      setUser(res.data);
+      navigate("/");
+      
+    } catch (err) {
       setError(true);
-      // Handle different types of errors (network, server, etc.)
-      console.error("Login error:", error.message);
-    } finally {
-      setLoading(false);
+      console.log(err);
     }
   };
 

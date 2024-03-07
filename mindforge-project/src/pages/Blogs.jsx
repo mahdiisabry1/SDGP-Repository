@@ -16,8 +16,6 @@ const Blogs = () => {
       {/* The Blog Container */}
       <div className="max-w-7xl mx-auto">
         <BlogPosts />
-        <BlogPosts />
-        <BlogPosts />
       </div>
     </div>
   );
