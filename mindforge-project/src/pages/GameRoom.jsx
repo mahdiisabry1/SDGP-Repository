@@ -49,29 +49,35 @@ const GameRoom = () => {
       <div className="tab-content">
         {activeTab === 'student' && (
           <div className="tab1-content">
-            <h2>Student Content</h2>
+            <h1>Student Content</h1>
+            <div classname="tab-name">
+            <h2>Enter your UserName</h2>
             <input
               type="text"
-              placeholder="Enter your name"
+              placeholder="Don't enter your real name"
               value={userName}
               onChange={handleUserNameChange}
             />
-
+            
+            <h2>Enter your Date of Birth</h2>
             <input
               type="date"
               placeholder="Select your birthdate"
               value={userBirthdate}
               onChange={handleBirthdateChange}
             />
+            </div>
 
-            <p>Your name: {userName}</p>
-            <p>Your birthdate: {userBirthdate}</p>
+            <p>Your NickName :  {userName}</p>
+            <p>Your BirthDate :  {userBirthdate}</p>
 
-            <Link to="/student-details">
-              <button disabled={!continueEnabled} onClick={handleContinueClick}>
-                Continue
-              </button>
-            </Link>
+            <div className="continue-button-container">
+              <Link to="/student-details">
+                <button disabled={!continueEnabled} onClick={handleContinueClick} className="continue-button">
+                  Continue
+                </button>
+              </Link>
+            </div>
           </div>
         )}
 
