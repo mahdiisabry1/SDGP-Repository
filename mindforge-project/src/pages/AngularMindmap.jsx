@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import './RoadMap.css';
 
 const AngularMindmap = () => {
-    return (
-      <div className="p-48 text-black">
-        <h1 className="text-3xl font-bold mb-4">MindMap to Angular</h1>
-        <p className="mb-6">
-          This mindmap provides a structured path to explore and learn in the field of Angular development.
-        </p>
-  
-        <div className="flex flex-col space-y-4">
+  return (
+    <div className="p-48 text-black">
+      <h1 className="text-3xl font-bold mb-4 question">MindMap to Angular</h1>
+      <p className="mb-6">
+        This mindmap provides a structured path to explore and learn in the field of Angular development.
+      </p>
+
+      <div className="flex flex-col space-y-4">
 
           <DropdownRoadmapItem
             title="1. Angular Framework:"
@@ -214,26 +215,26 @@ const AngularMindmap = () => {
   };
   
   const DropdownRoadmapItem = ({ title, description }) => {
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
-  
-    const toggleDropdown = () => {
-      setDropdownOpen(!isDropdownOpen);
-    };
-  
-    return (
-      <div className="bg-gray-100 p-4 rounded-md relative">
-        <div className="flex items-center justify-between cursor-pointer" onClick={toggleDropdown}>
-          <h2 className="text-xl font-semibold mb-2">{title}</h2>
-          <span>{isDropdownOpen ? '▲' : '▼'}</span>
-        </div>
-        {isDropdownOpen && (
-          <div className="mt-2">
-            <p>{description}</p>
-            
-          </div>
-        )}
-      </div>
-    );
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
   };
+
   
-  export default AngularMindmap;
+  return (
+    <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
+      <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
+        <h2 className="text-xl font-semibold mb-2">{title}</h2>
+        <span>{isDropdownOpen ? '▲' : '▼'}</span>
+      </div>
+      {isDropdownOpen && (
+        <div className="mt-2 dropdown-menu">
+          <p>{description}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default AngularMindmap;

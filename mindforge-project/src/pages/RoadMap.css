@@ -1,0 +1,23 @@
+/* styles.css */
+
+/* Set color for questions */
+.question {
+    color: #3498db; /* Blue color, you can change this */
+}
+
+/* Set transparent background color for dropdown menu */
+.dropdown-menu {
+    background-color: rgba(241, 241, 241, 0.5); /* Light gray color with 70% opacity, you can change this */
+}
+
+/* Set transparent background color for opened dropdown */
+.dropdown.open {
+    background-color: rgba(224, 224, 224, 0.5); /* Lighter gray color with 70% opacity, you can change this */
+}
+
+body {
+    background-image: url('https://cdn.dribbble.com/users/1928888/screenshots/4523166/tesseract_bulb_animation.gif'); /* Specify the path to your image */
+    background-size: cover; /* Adjust the background size to cover the entire screen */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center; /* Center the background image */
+}
