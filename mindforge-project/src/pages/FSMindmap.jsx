@@ -3,14 +3,13 @@ import './RoadMap.css';
 
 const FSMindmap = () => {
   return (
-    <div className="p-48 text-black">
-      <h1 className="text-3xl font-bold mb-4 question">MindMap to Full Stack</h1>
+    <div className="p-48 text-white">
+      <h1 className="text-3xl font-bold mb-4 question">MindMap to React</h1>
       <p className="mb-6">
-      This MindMap provides a structured path to explore and learn in the field of Full Stack development.
+        This MindMap provides a structured path to explore and learn in the field of Full Stack development.
       </p>
 
       <div className="flex flex-col space-y-4">
-
         <DropdownRoadmapItem
           title="1. Learn the Fundamentals:"
           description="Start with the basics of programming, including concepts like variables, data types, conditionals, loops, and functions.
@@ -160,7 +159,7 @@ const FSMindmap = () => {
   );
 };
 
-const DropdownRoadmapItem = ({ title, description }) => {
+const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -176,6 +175,17 @@ const DropdownRoadmapItem = ({ title, description }) => {
       {isDropdownOpen && (
         <div className="mt-2 dropdown-menu">
           <p>{description}</p>
+          {clickableParagraphs && (
+            <div className="mt-2">
+              {clickableParagraphs.map((paragraph, index) => (
+                <p key={index}>
+                  <a href={paragraph.link} target="_blank" rel="noopener noreferrer">
+                    {paragraph.label}
+                  </a>
+                </p>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
