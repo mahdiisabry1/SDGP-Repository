@@ -1,10 +1,10 @@
-/* Updated styles for centering the GameRoom component */
 .center-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 60vh; /* Decrease height to move the content higher */
   overflow-y: auto; /* Add vertical scrollbar if content overflows */
+  margin-top: 5vh; /* Add a top margin to move the content higher */
 }
 
 /* The rest of your existing styles */
@@ -16,7 +16,7 @@
 
 /* Style for the tab buttons */
 .tab-button {
-  padding: 15px 30px; /* Increase padding */
+  padding: 50px 50px; /* Increase padding */
   background-color: #eee;
   border: 2px solid #ccc; /* Increase border width */
   cursor: pointer;
@@ -40,10 +40,12 @@
 /* Additional styling for individual tabs (customize as needed) */
 .tab1-content {
   background-color: #f9f9f9;
+  text-align: center;
 }
 
 .tab2-content {
   background-color: #fafafa;
+  text-align: center;
 }
 
 /* Styles for input fields */
@@ -58,7 +60,7 @@ input {
 .tab2-content button {
   cursor: pointer;
   font-size: 16px;
-  padding: 15px 30px; /* Adjust button size */
+  padding: 40px 50px; /* Adjust button size */
   margin-right: 15px; /* Add space between buttons */
 }
 

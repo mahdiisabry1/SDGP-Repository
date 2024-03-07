@@ -24,9 +24,7 @@ const GameRoom = () => {
     setContinueEnabled(userName.trim().length > 0 && birthdate.trim().length > 0);
   };
 
-  // Function to handle continue button click
   const handleContinueClick = () => {
-    // Perform any necessary actions before navigating to the StudentDetails component
     console.log('Continue clicked');
   };
 
@@ -69,7 +67,6 @@ const GameRoom = () => {
             <p>Your name: {userName}</p>
             <p>Your birthdate: {userBirthdate}</p>
 
-            {/* Link to StudentDetails component */}
             <Link to="/student-details">
               <button disabled={!continueEnabled} onClick={handleContinueClick}>
                 Continue
@@ -81,6 +78,7 @@ const GameRoom = () => {
         {activeTab === 'teacher' && (
           <div className="tab2-content">
             <h2>Teacher Content</h2>
+            {/* Content for the Teacher tab */}
             <button onClick={() => console.log('School')}>School</button>
             <button onClick={() => console.log('Higher Education')}>Higher Education</button>
             <button onClick={() => console.log('School Administration')}>School Administration</button>
