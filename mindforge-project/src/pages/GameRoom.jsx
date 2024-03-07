@@ -51,21 +51,21 @@ const GameRoom = () => {
           <div className="tab1-content">
             <h1>Student Content</h1>
             <div className="tab-name">
-            <h2>Enter your UserName</h2>
-            <input
-              type="text"
-              placeholder="Don't enter your real name"
-              value={userName}
-              onChange={handleUserNameChange}
-            />
-            
-            <h2>Enter your Date of Birth</h2>
-            <input
-              type="date"
-              placeholder="Select your birthdate"
-              value={userBirthdate}
-              onChange={handleBirthdateChange}
-            />
+              <h2>Enter your UserName</h2>
+              <input
+                type="text"
+                placeholder="Don't enter your real name"
+                value={userName}
+                onChange={handleUserNameChange}
+              />
+              
+              <h2>Enter your Date of Birth</h2>
+              <input
+                type="date"
+                placeholder="Select your birthdate"
+                value={userBirthdate}
+                onChange={handleBirthdateChange}
+              />
             </div>
 
             <p>Your NickName :  {userName}</p>
@@ -89,6 +89,15 @@ const GameRoom = () => {
             <button onClick={() => console.log('Higher Education')}>Higher Education</button>
             <button onClick={() => console.log('School Administration')}>School Administration</button>
             <button onClick={() => console.log('Other')}>Other</button>
+
+            {/* Continue button for the Teacher tab */}
+            <div className="continue-button-container">
+              <Link to="/teacher-details">
+                <button onClick={handleContinueClick} className="continue-button">
+                  Continue
+                </button>
+              </Link>
+            </div>
           </div>
         )}
       </div>

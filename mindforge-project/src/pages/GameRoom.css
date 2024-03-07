@@ -1,4 +1,5 @@
 .center-container {
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,11 +17,15 @@
 
 /* Style for the tab buttons */
 .tab-button {
+  margin: 5px;
   padding: 50px 50px; /* Increase padding */
   background-color: #eee;
   border: 2px solid #ccc; /* Increase border width */
   cursor: pointer;
   font-size: 18px; /* Increase font size */
+}
+.tab-name {
+  margin-bottom: 10px;
 }
 
 /* Style for the active tab button */
@@ -96,34 +101,7 @@ input {
   color: #fff;
 }
 
-.continue-button-container {
-  position: fixed;
-  bottom: 180px; /* Adjust as needed */
-  left: 50%;
-  transform: translateX(-50%);
-}
 
-.continue-button {
-  background-color: #47658b;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.continue-button:hover {
-  background-color: #45a0a0;
-}
-
-.continue-button:disabled {
-  background-color: #aaaaaa;
-  cursor: not-allowed;
-}
 
 .footer {
   position: fixed;
@@ -132,4 +110,56 @@ input {
   background-color: #f2f2f2;
   padding: 20px 0;
   text-align: center;
+}
+
+.continue-button-container {
+  text-align: center;
+  margin-top: 20px; /* Add space between content and the "Continue" button */
+}
+
+.continue-button {
+  padding: 15px 30px; /* Adjust button size */
+  font-size: 18px; /* Adjust font size */
+  background-color: #4CAF50; /* Green color for gaming feel */
+  color: #fff;
+  border: 2px solid #45a049; /* Darker green border */
+  border-radius: 8px; /* Add more rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.continue-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.continue-button:disabled {
+  background-color: #555; /* Dark gray for disabled state */
+  border: 2px solid #555; /* Dark gray border for disabled state */
+  cursor: not-allowed;
+}
+
+.tab2-content .continue-button-container {
+  text-align: center;
+  margin-top: 20px; /* Add space between content and the "Continue" button */
+}
+
+.tab2-content .continue-button {
+  padding: 15px 30px; /* Adjust button size */
+  font-size: 18px; /* Adjust font size */
+  background-color: #4CAF50; /* Green color for gaming feel */
+  color: #fff;
+  border: 2px solid #45a049; /* Darker green border */
+  border-radius: 8px; /* Add more rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.tab2-content .continue-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.tab2-content .continue-button:disabled {
+  background-color: #555; /* Dark gray for disabled state */
+  border: 2px solid #555; /* Dark gray border for disabled state */
+  cursor: not-allowed;
 }
