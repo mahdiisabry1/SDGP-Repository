@@ -3,11 +3,11 @@ import './RoadMap.css';
 
 const BEMindmap = () => {
   return (
-    <div className="p-48 text-black">
+    <div className="p-48 text-white">
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Back-End</h1>
       <p className="mb-6">
-      This MindMap provides a structured path to explore and learn in the field of Back-end development.
-      </p>
+       This MindMap provides a structured path to explore and learn in the field of Back-end development.
+      </p>.
 
       <div className="flex flex-col space-y-4">
           
@@ -243,7 +243,7 @@ const BEMindmap = () => {
     );
   };
   
-  const DropdownRoadmapItem = ({ title, description }) => {
+  const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
   
     const toggleDropdown = () => {
@@ -259,6 +259,17 @@ const BEMindmap = () => {
         {isDropdownOpen && (
           <div className="mt-2 dropdown-menu">
             <p>{description}</p>
+            {clickableParagraphs && (
+              <div className="mt-2">
+                {clickableParagraphs.map((paragraph, index) => (
+                  <p key={index}>
+                    <a href={paragraph.link} target="_blank" rel="noopener noreferrer">
+                      {paragraph.label}
+                    </a>
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>

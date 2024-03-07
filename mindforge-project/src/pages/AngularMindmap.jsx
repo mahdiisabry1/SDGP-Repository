@@ -3,10 +3,10 @@ import './RoadMap.css';
 
 const AngularMindmap = () => {
   return (
-    <div className="p-48 text-black">
+    <div className="p-48 text-white">
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Angular</h1>
       <p className="mb-6">
-        This mindmap provides a structured path to explore and learn in the field of Angular development.
+       This mindmap provides a structured path to explore and learn in the field of Angular development.
       </p>
 
       <div className="flex flex-col space-y-4">
@@ -214,14 +214,13 @@ const AngularMindmap = () => {
     );
   };
   
-  const DropdownRoadmapItem = ({ title, description }) => {
+  const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
-  
   return (
     <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
       <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
@@ -231,6 +230,17 @@ const AngularMindmap = () => {
       {isDropdownOpen && (
         <div className="mt-2 dropdown-menu">
           <p>{description}</p>
+          {clickableParagraphs && (
+            <div className="mt-2">
+              {clickableParagraphs.map((paragraph, index) => (
+                <p key={index}>
+                  <a href={paragraph.link} target="_blank" rel="noopener noreferrer">
+                    {paragraph.label}
+                  </a>
+                </p>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -3,7 +3,7 @@ import './RoadMap.css';
 
 const ReactMindmap = () => {
   return (
-    <div className="p-48 text-black">
+    <div className="p-48 text-white">
       <h1 className="text-3xl font-bold mb-4 question">MindMap to React</h1>
       <p className="mb-6">
         This mindmap provides a structured path to explore and learn in the field of React development.
@@ -107,7 +107,6 @@ const ReactMindmap = () => {
           ]}
         />
         
-
         <DropdownRoadmapItem
           title="7. Using Hooks:"
           description="Learn about React Hooks, introduced in React 16.8, which allow you to use state and other React features without writing a class.
