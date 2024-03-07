@@ -117,3 +117,28 @@ svg:hover .tooltip {
     background: linear-gradient(320deg, rgb(3, 77, 146), rgb(0, 60, 255));
     color: #ffffff;
 }
+
+.profile-button {
+    position: relative;
+    top: 2px;
+    background: #ffffff;
+    color: #000;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.profile-button:hover,
+.profile-button:hover .tooltip,
+.profile-button:hover .tooltip::before {
+    background: linear-gradient(320deg, rgb(3, 77, 146), rgb(0, 60, 255));
+    color: #ffffff;
+}

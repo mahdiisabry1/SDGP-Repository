@@ -22,6 +22,7 @@ import AngularMindmap from './pages/AngularMindmap.jsx';
 import FEMindmap from './pages/FEMindmap.jsx';
 import BEMindmap from './pages/BEMindmap.jsx';
 import FSMindmap from './pages/FSMindmap.jsx';
+import { UserContextProvider } from './context/UserContext.jsx';
 
 
 const router = createBrowserRouter([
@@ -97,8 +98,8 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <UserContextProvider>
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  </UserContextProvider>
+);
