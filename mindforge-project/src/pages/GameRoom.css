@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
   overflow-y: auto; /* Add vertical scrollbar if content overflows */
 }
 
@@ -35,15 +35,17 @@
   border: 2px solid #ccc; /* Increase border width */
   box-sizing: border-box;
   font-size: 16px; /* Increase font size */
+  
 }
 
 /* Additional styling for individual tabs (customize as needed) */
 .tab1-content {
-  background-color: #f9f9f9;
+  background-color: #85bdd6;
+  color: #080707;
 }
 
 .tab2-content {
-  background-color: #fafafa;
+  background-color: #85bdd6;
 }
 
 /* Styles for input fields */
@@ -93,3 +95,37 @@ input {
   background-color: #3498db;
   color: #fff;
 }
+
+.continue-button-container {
+  position: fixed;
+  bottom: 160px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.continue-button {
+  background-color: #4173a1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.continue-button:hover {
+  background-color: #1b60bb;
+}
+
+.continue-button:disabled {
+  background-color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+
+
+
+

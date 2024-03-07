@@ -51,14 +51,14 @@ const GameRoom = () => {
       <div className="tab-content">
         {activeTab === 'student' && (
           <div className="tab1-content">
-            <h2>Student Content</h2>
+            <h2>Enter your Username</h2>
             <input
               type="text"
-              placeholder="Enter your name"
+              placeholder="Don't enter your real name"
               value={userName}
               onChange={handleUserNameChange}
             />
-
+            <h2>Enter your Date of Birth</h2>
             <input
               type="date"
               placeholder="Select your birthdate"
@@ -66,15 +66,17 @@ const GameRoom = () => {
               onChange={handleBirthdateChange}
             />
 
-            <p>Your name: {userName}</p>
-            <p>Your birthdate: {userBirthdate}</p>
-
-            {/* Link to StudentDetails component */}
-            <Link to="/student-details">
-              <button disabled={!continueEnabled} onClick={handleContinueClick}>
-                Continue
-              </button>
-            </Link>
+            <p>Your NickName: {userName}</p>
+            <p>Your BirthDate: {userBirthdate}</p>
+            
+            {/* Continue button rendered below tab1-content */}
+            <div className="continue-button-container">
+              <Link to="/student-details">
+                <button disabled={!continueEnabled} onClick={handleContinueClick} className="continue-button">
+                  Continue
+                </button>
+              </Link>
+            </div>
           </div>
         )}
 
