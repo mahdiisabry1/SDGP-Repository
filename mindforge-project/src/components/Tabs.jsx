@@ -41,7 +41,8 @@ const Tabs = () => {
       "Create a component that displays a counter starting from 0. Add buttons for incrementing and decrementing the counter. Use React state to manage the counter value.",
       "Create a parent component that renders two child components. Pass a prop from the parent to each child component, and have each child component render the prop value.",
       "Create a component that displays a message based on whether a boolean variable is true or false. Toggle the boolean variable using a button, and make the component re-render with the updated message.",
-      "Create a component that fetches data from a mock API (you can use tools like JSONPlaceholder) and displays it on the screen. Use React hooks like useState and useEffect to manage state and perform the API call.",
+      "Create a component that fetches data from a mock API (you can use tools like JSONPlaceholder) and displays it on the screen. Use React hooks like useState and useEffect to manage state and perform the API call."
+
     ],
     2: [
       "Create an Angular component called HelloComponent that displays the text Hello, Angular! in the template.",
