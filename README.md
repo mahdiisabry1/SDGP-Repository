@@ -14,8 +14,11 @@ make sure node is installed
 run the frontend:
 
 cd mindforge-project
+
 npm install
+
 npm run dev
+
 
 The BackEnd:
 The backend will not run if the dependencies are not properly installed and if the database is not connected (Atlas)
