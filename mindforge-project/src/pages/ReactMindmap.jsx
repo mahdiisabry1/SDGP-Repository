@@ -2,8 +2,16 @@ import React, { useState } from 'react';
 import './RoadMap.css'; 
 
 const ReactMindmap = () => {
+  const containerStyle = {
+    backgroundImage: 'url("https://gteches.com/wp-content/uploads/2023/05/Full-Stack-3.gif")', // Specify the path to your background image
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+  };
+
   return (
-    <div className="p-48 text-white">
+    <div className="p-48 text-Black" style={containerStyle}>
+  
       <h1 className="text-3xl font-bold mb-4 question">MindMap to React</h1>
       <p className="mb-6">
         This mindmap provides a structured path to explore and learn in the field of React development.

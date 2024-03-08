@@ -74,12 +74,22 @@ const Tabs = () => {
     ],
   };
 
-  const isLastTab = activeTab === 5;
-
   const handleCertificationClick = () => {
-    // Open a new tab with the certification page
-    window.open('https://your-certification-url.com', '_blank');
+    // Define an object mapping each tab to its corresponding image file
+    const certificationImages = {
+      1: 'image_react.jpg', // Replace with your actual image file names
+      2: 'image_angular.jpg',
+      3: 'image_frontend.jpg',
+      4: 'image_backend.jpg',
+      5: 'image_fullstack.jpg',
+    };
+
+    const certificationImage = certificationImages[activeTab];
+
+    // Open a new tab with the certification image
+    window.open(certificationImage, '_blank');
   };
+
 
   return (
     <div>
@@ -130,11 +140,11 @@ const Tabs = () => {
               {/* Additional content for all tabs */}
               <p>End of Questions</p>
               <button
-                className="mt-5 bg-black w-full text-white hover:bg-slate-500"
-                onClick={handleCertificationClick}
-              >
-                Get Your Certification
-              </button>
+        className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+        onClick={handleCertificationClick}
+      >
+        Get Your Certification
+        </button>
             </div>
           </div>
         )}

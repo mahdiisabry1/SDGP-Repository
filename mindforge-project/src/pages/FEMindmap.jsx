@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import './RoadMap.css';
 
 const FEMindmap = () => {
+  const containerStyle = {
+    backgroundImage: 'url("your-background-image-path.jpg")', // Specify the path to your background image
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+  };
+
   return (
-    <div className="p-48 text-white">
+    <div className="p-48 text-white" style={containerStyle}>
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Front-End</h1>
       <p className="mb-6">
       This MindMap provides a structured path to explore and learn in the field of Front-End development.

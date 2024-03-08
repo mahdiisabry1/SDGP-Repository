@@ -24,6 +24,8 @@ const RoadMap = () => {
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
+    backgroundSize: 'cover', // Added background size property
+    backgroundImage: 'url("https://gteches.com/wp-content/uploads/2023/05/Full-Stack-3.gif")', // Specify the path to your background image
   };
 
   const circleStyle = {
@@ -70,12 +72,14 @@ const RoadMap = () => {
       path: "/path-to-components/ReactMindmap",
       description: "JavaScript library for building user interfaces",
       customColor: "#61dafb",
+      backgroundImage: "url('path-to-background-image2.jpg')",
     },
     {
       title: "Course 2: Angular",
       path: "/path-to-components/AngularMindmap",
       description: "TypeScript-based open-source framework",
       customColor: "#dd1b16",
+      backgroundImage: "url('path-to-background-image2.jpg')",
     },
     {
       title: "Course 3: Front-End",
@@ -83,18 +87,21 @@ const RoadMap = () => {
       description:
         "Involves creating the visual and interactive elements of a web application",
       customColor: "#4caf50",
+      backgroundImage: "url('path-to-background-image2.jpg')",
     },
     {
       title: "Course 4: Back-End",
       path: "/path-to-components/BEMindmap.jsx",
       description: "Enabling communication between the front end and databases",
       customColor: "#673ab7",
+      backgroundImage: "url('path-to-background-image2.jpg')",
     },
     {
       title: "Course 5: Full-Stack",
       path: "/path-to-components/FSMindmap.jsx",
       description: "Proficient in both front-end and back-end development",
       customColor: "#ff5722",
+      backgroundImage: "url('path-to-background-image2.jpg')",
     },
   ];
 
@@ -105,7 +112,11 @@ const RoadMap = () => {
         {phases.map((phase, index) => (
           <div
             key={index}
-            style={{ ...phaseStyle, backgroundColor: `${phase.customColor}50` }}
+            style={{
+              ...phaseStyle,
+              backgroundColor: `${phase.customColor}50`,
+              backgroundImage: phase.backgroundImage, // Set background image
+            }}
             onClick={() => handlePhaseClick(phase)}
           >
             <div style={{ ...circleStyle, backgroundColor: phase.customColor }}></div>
