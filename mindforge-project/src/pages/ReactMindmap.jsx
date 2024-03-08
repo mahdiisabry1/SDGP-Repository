@@ -3,14 +3,14 @@ import './RoadMap.css';
 
 const ReactMindmap = () => {
   const containerStyle = {
-    backgroundImage: 'url("https://gteches.com/wp-content/uploads/2023/05/Full-Stack-3.gif")', // Specify the path to your background image
+    backgroundImage: 'url("https://miro.medium.com/v2/resize:fit:1400/1*WKS5uUEDzK4YdVRq7DOkbw.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
   };
 
   return (
-    <div className="p-48 text-Black" style={containerStyle}>
+    <div className="p-48 text-white" style={containerStyle}>
   
       <h1 className="text-3xl font-bold mb-4 question">MindMap to React</h1>
       <p className="mb-6">

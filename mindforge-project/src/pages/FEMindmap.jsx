@@ -3,7 +3,7 @@ import './RoadMap.css';
 
 const FEMindmap = () => {
   const containerStyle = {
-    backgroundImage: 'url("your-background-image-path.jpg")', // Specify the path to your background image
+    backgroundImage: 'url("https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201111215809/How-to-Become-a-Front-End-Developer-in-2020.png")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
