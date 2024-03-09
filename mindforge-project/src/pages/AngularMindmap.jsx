@@ -3,7 +3,7 @@ import './RoadMap.css';
 
 const AngularMindmap = () => {
   const containerStyle = {
-    backgroundImage: 'url("https://i.pinimg.com/originals/bb/fe/b2/bbfeb24d476b9eb3f53aa452b1ee47ad.gif")', // Specify the path to your background image
+    backgroundImage: 'url("https://i.pinimg.com/originals/02/74/20/0274207612d515f49012c87803a9e631.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',

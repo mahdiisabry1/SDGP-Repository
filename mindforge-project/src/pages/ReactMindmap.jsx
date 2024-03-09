@@ -3,7 +3,7 @@ import './RoadMap.css';
 
 const ReactMindmap = () => {
   const containerStyle = {
-    backgroundImage: 'url("https://miro.medium.com/v2/resize:fit:1400/1*WKS5uUEDzK4YdVRq7DOkbw.gif")', // Specify the path to your background image
+    backgroundImage: 'url("https://i.pinimg.com/originals/02/74/20/0274207612d515f49012c87803a9e631.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',

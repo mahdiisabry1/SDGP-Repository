@@ -3,7 +3,7 @@ import './RoadMap.css';
 
 const BEMindmap = () => {
   const containerStyle = {
-    backgroundImage: 'url("https://www.hyperinteractive.de/wp-content/uploads/2022/05/back-end-developer.gif")', // Specify the path to your background image
+    backgroundImage: 'url("https://www.wingstechsolutions.com/wp-content/uploads/2022/03/full-stack-development.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',

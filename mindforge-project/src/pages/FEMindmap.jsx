@@ -3,7 +3,7 @@ import './RoadMap.css';
 
 const FEMindmap = () => {
   const containerStyle = {
-    backgroundImage: 'url("https://i.gifer.com/39Cg.gif")', // Specify the path to your background image
+    backgroundImage: 'url("https://www.wingstechsolutions.com/wp-content/uploads/2022/03/full-stack-development.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
