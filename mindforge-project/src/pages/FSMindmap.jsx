@@ -3,7 +3,7 @@ import './RoadMap.css';
 
 const FSMindmap = () => {
   const containerStyle = {
-    backgroundImage: 'url("your-background-image-path.jpg")', // Specify the path to your background image
+    backgroundImage: 'url("https://www.hyperinteractive.de/wp-content/uploads/2022/05/full-stack-developer.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
