@@ -7,16 +7,17 @@ const FEMindmap = () => {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
+    backgroundAttachment: 'fixed', // Add this line to fix the background image
   };
 
   return (
     <div className="p-48 text-white" style={containerStyle}>
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Front-End</h1>
-      <p className="mb-6">
+      <p className="mb-6 font-bold increased-font-size">
       This MindMap provides a structured path to explore and learn in the field of Front-End development.
       </p>
 
-      <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-0">
 
         <DropdownRoadmapItem
           title="1. Basic Web Technologies:"

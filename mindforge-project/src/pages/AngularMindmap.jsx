@@ -3,20 +3,21 @@ import './RoadMap.css';
 
 const AngularMindmap = () => {
   const containerStyle = {
-    backgroundImage: 'url("https://i.pinimg.com/originals/02/74/20/0274207612d515f49012c87803a9e631.gif")', // Specify the path to your background image
+    backgroundImage: 'url("https://img.etimg.com/thumb/height-450,width-600,imgsize-638053,msid-84146056/.jpg")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
+    backgroundAttachment: 'fixed', // Add this line to fix the background image
   };
 
   return (
     <div className="p-48 text-white" style={containerStyle}>
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Angular</h1>
-      <p className="mb-6">
-       This mindmap provides a structured path to explore and learn in the field of Angular development.
+      <p className="mb-6 font-bold increased-font-size">
+     This mindmap provides a structured path to explore and learn in the field of Angular development.
       </p>
 
-      <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-o">
 
           <DropdownRoadmapItem
             title="1. Angular Framework:"

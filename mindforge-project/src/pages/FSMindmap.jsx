@@ -7,16 +7,17 @@ const FSMindmap = () => {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
+    backgroundAttachment: 'fixed', // Add this line to fix the background image
   };
 
   return (
     <div className="p-48 text-white" style={containerStyle}>
-      <h1 className="text-3xl font-bold mb-4 question">MindMap to React</h1>
-      <p className="mb-6">
-        This MindMap provides a structured path to explore and learn in the field of Full Stack development.
+      <h1 className="text-3xl font-bold mb-4 question">MindMap to Full-Stack</h1>
+      <p className="mb-6 font-bold increased-font-size">
+     This MindMap provides a structured path to explore and learn in the field of Full Stack development.
       </p>
+        <div className="flex flex-col space-y-0">
 
-      <div className="flex flex-col space-y-4">
         <DropdownRoadmapItem
           title="1. Learn the Fundamentals:"
           description="Start with the basics of programming, including concepts like variables, data types, conditionals, loops, and functions.
