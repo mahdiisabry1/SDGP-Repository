@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 const dotenv = require('dotenv')
 const cors = require('cors');
+const multer = require('multer')
 const cookieParser = require('cookie-parser');
 const authRoute = require('./Routes/auth')
 const userRoute = require('./Routes/users')
@@ -30,6 +31,20 @@ app.use("/api/users", userRoute)
 app.use("/api/posts", postRoute)
 app.use("/api/comments", commentRoute)
 
+//image 
+const storage = multer.diskStorage({
+    destination:(req,file,fn)=>{
+        fn(null,"images")
+    },
+    filename:(req,file,fn)=>{
+        fn(null,req.body.img)
+    }
+})
+
+const upload= multer({storage:storage})
+app.post("/api/upload",upload.single("file"),(req,res)=>{
+    res.status(200).json("Image has been uploaded")
+})
 
 app.listen(process.env.PORT, () =>{
     connectDB()
