@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import './CSS/tabs.css'; // Import the CSS file
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
+  const [answer, setAnswer] = useState('');
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
@@ -12,6 +15,10 @@ const Tabs = () => {
 
   const handleQuestionClick = (questionIndex) => {
     setSelectedQuestion(questionIndex === selectedQuestion ? null : questionIndex);
+  };
+
+  const handleAnswerChange = (event) => {
+    setAnswer(event.target.value);
   };
 
   const tabNames = ["React", "Angular", "FrontEnd", "BackEnd", "FullStack"];
@@ -90,6 +97,7 @@ const Tabs = () => {
     window.open(certificationImage, '_blank');
   };
 
+  const isAnswerProvided = selectedQuestion !== null && answer.trim() !== '';
 
   return (
     <div>
@@ -128,10 +136,14 @@ const Tabs = () => {
                       type="text"
                       placeholder="Describe your answer"
                       style={{ color: "black" }} // Set font color to black
+                      value={answer}
+                      onChange={handleAnswerChange}
                     />
-                    <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-                      Submit
-                    </button>
+                    {isAnswerProvided && (
+                      <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
+                        Submit
+                      </button>
+                    )}
                   </div>
                 )}
               </div>
@@ -140,11 +152,11 @@ const Tabs = () => {
               {/* Additional content for all tabs */}
               <p>End of Questions</p>
               <button
-        className="mt-5 bg-black w-full text-white hover:bg-slate-500"
-        onClick={handleCertificationClick}
-      >
-        Get Your Certification
-        </button>
+                className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+                onClick={handleCertificationClick}
+              >
+                Get Your Certification
+              </button>
             </div>
           </div>
         )}
