@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 import '../components/CSS/BlogPosts.css';
 import { Link } from "react-router-dom";
+import { IF } from "../url"
 
 const BlogPosts = ({post}) => {
   return (
     <div className="the-blog-container">
       {/* Image section */}
       <div className="the-image-section">
-        <img className="the-blog-img" src={post.photo} alt="" />
+        <img className="the-blog-img" src={IF+post.photo} alt="" />
       </div>
       {/* Details section */}
       <div className="flex flex-col w-[65%]">
