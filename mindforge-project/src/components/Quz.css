@@ -1,0 +1,158 @@
+/* Quz.css */
+
+/* Global Styles */
+.Quz.body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container Styles */
+.Quz.app-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Header Styles */
+.Quz.h1 {
+  text-align: center;
+  color: #3498db;
+}
+
+/* Questions Container Styles */
+.Quz.questions-container {
+  margin-bottom: 20px;
+}
+
+/* Question Styles */
+.Quz.question {
+  margin-bottom: 30px;
+}
+
+.Quz.question p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Options Container Styles */
+.Quz.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.Quz.options-container button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.Quz.options-container button:hover {
+  background-color: #2980b9;
+}
+
+/* Result Container Styles */
+.Quz.result-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.Quz.result-container p {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.Quz.result-container button {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.Quz.result-container button:hover {
+  background-color: #45a049;
+}
+
+/* Question Container Styles */
+.Quz.question-container {
+  margin-top: 30px;
+}
+
+/* Question Text Styles */
+.Quz.question-text {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Options List Styles */
+.Quz.options-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Option Item Styles */
+.Quz.option-item {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  flex: 1 1 200px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Quz.option-item:hover {
+  background-color: #e0e0e0;
+}
+
+/* Selected Option Styles */
+.Quz.selected {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+/* Action Button Styles */
+.Quz.action-button {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.Quz.action-button:hover {
+  background-color: #45a049;
+}
+
+/* Submitted Styles */
+.Quz.submitted {
+  color: #3498db;
+  font-size: 1.4rem;
+}
