@@ -17,28 +17,28 @@ const QuestionSurvey = () => {
   const [questions, setQuestions] = useState([
     {
       id: 1,
-      text: 'What does CSS stand for in web development?',
+      text: 'How do you approach the balance between aesthetics and functionality in web design?',
       rating: 1,
       options: ['Central Style Sheets', 'Cascading Style Sheets', 'Computer Style Sheets', 'Creative Style Sheets'],
       correctIndex: 1, // 'Cascading Style  Sheets' is the correct answer
     },
     {
       id: 2,
-      text: 'Which programming language is React written in?',
+      text: 'What is your preferred method for gathering user feedback during the design process?',
       options: ['Java', 'JavaScript', 'Python', 'C++'],
       correctIndex: 1, // 'JavaScript' is the correct answer
       rating: 1,
     },
     {
       id: 3,
-      text: 'What does JSX stand for?',
+      text: 'How do you approach the use of white space in your designs?',
       rating: 1,
       options: ['JavaScript XML', 'Java XML', 'JavaScript Extension', 'Java Extension'],
       correctIndex: 0, // 'JavaScript XML' is the correct answer
     },
     {
       id: 4,
-      text: 'What is the virtual DOM?',
+      text: 'What is your attitude towards responsive design and mobile optimization?',
       options: [
         'A JavaScript library',
         'A representation of the UI in memory',
@@ -50,42 +50,42 @@ const QuestionSurvey = () => {
     },
     {
       id: 5,
-      text: 'What is Redux used for in a React application?',
+      text: 'How do you choose color palettes for your web designs?',
       options: ['State management', 'Routing', 'Styling', 'Server communication'],
       correctIndex: 0, // 'State management' is the correct answer
       rating: 1,
     },
     {
       id: 6,
-      text: 'How do you pass data from a parent component to a child component in React?',
+      text: 'What role does storytelling play in your web designs?',
       options: ['Props', 'State', 'Context', 'Ref'],
       correctIndex: 0, // 'Props' is the correct answer
       rating: 1,
     },
     {
       id: 7,
-      text: 'What is the purpose of the useEffect hook in React?',
+      text: 'How do you approach collaboration with developers during the implementation phase?',
       options: ['Handling form events', 'Fetching data', 'Lifecycle methods', 'Conditional rendering'],
       correctIndex: 1, // 'Fetching data' is the correct answer
       rating: 1,
     },
     {
       id: 8,
-      text: 'In React, what is a controlled component?',
+      text: 'What is your perspective on design trends in the industry?',
       options: ['A component with controlled access', 'A component with internal state', 'A component with no state', 'A functional component'],
       correctIndex: 1, // 'A component with internal state' is the correct answer
       rating: 1,
     },
     {
       id: 9,
-      text: 'What is the purpose of the key prop in React lists?',
+      text: 'How do you handle revisions and feedback from clients?',
       options: ['Assigning a unique identifier to each list item', 'Styling list items', 'Handling click events', 'Creating nested lists'],
       correctIndex: 0, // 'Assigning a unique identifier to each list item' is the correct answer
       rating: 1,
     },
     {
       id: 10,
-      text: 'What is the significance of the npm start command in a React project?',
+      text: 'What is your approach to user interface (UI) animations and interactions?',
       options: ['Installing dependencies', 'Starting the development server', 'Building the production bundle', 'Running tests'],
       correctIndex: 1, // 'Starting the development server' is the correct answer
       rating: 1,
