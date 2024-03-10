@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './RoadMap.css'; 
 
 const ReactMindmap = () => {
+  // Add this line to fix the background image
   const containerStyle = {
     backgroundImage: 'url("https://img.etimg.com/thumb/height-450,width-600,imgsize-638053,msid-84146056/.jpg")',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundAttachment: 'fixed', // Add this line to fix the background image
+    backgroundAttachment: 'fixed', 
   };
   
   return (
@@ -19,8 +20,8 @@ const ReactMindmap = () => {
       </p>
 
       <div className="flex flex-col space-y-0">
-
       <DropdownRoadmapItem
+      //add dropdown menu
           title="1. HTML, CSS, and JavaScript Fundamentals:"
           description="Make sure you have a solid understanding of HTML, CSS, and JavaScript before diving into React. Understanding ES6+ JavaScript features is particularly helpful."
           clickableParagraphs={[
