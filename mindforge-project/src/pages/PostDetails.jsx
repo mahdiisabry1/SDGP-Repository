@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { URL } from "../url";
+import { URL, IF } from "../url";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
@@ -40,7 +40,7 @@ const PostDetails = () => {
         <p>@{post.username}</p>
         <p>{new Date(post.updatedAt).toString().slice(16, 24)}</p>
       </div>
-      <img src={post.photo} className="w-1/2 relative left-1/4" alt="" />
+      <img src={IF+post.photo} className="w-1/2 relative left-1/4" alt="" />
       <p>{post.desc}</p>
       <div className="flex items-center mt-8 space-x-4 font-semibold">
         <p>Categories:</p>

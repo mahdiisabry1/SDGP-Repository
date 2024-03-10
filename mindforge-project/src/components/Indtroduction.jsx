@@ -3,12 +3,11 @@
 import React from 'react'
 import '../components/CSS/Introduction.css'
 import { NavLink } from 'react-router-dom'
-import { HiArrowDown } from "react-icons/hi";
 
 const Indtroduction = () => {
 
   const navItems = [{
-    path: "/Quiz", link: "TAKE A MIND TEST",
+    path: "/Quiz", link: "TAKE A PERSONALITY TEST",
   }]
 
   return (
@@ -38,7 +37,7 @@ const Indtroduction = () => {
           ))}
         </div>
         <div className="Scrol-down-btn">
-          <p className="text-white">Scroll Down<HiArrowDown className='SVG-arrow'/></p>
+          <p className="text-white">Scroll Down</p>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ const dotenv = require('dotenv')
 const cors = require('cors');
 const multer = require('multer')
 const cookieParser = require('cookie-parser');
+const path = require("path")
 const authRoute = require('./Routes/auth')
 const userRoute = require('./Routes/users')
 const postRoute = require('./Routes/posts')
@@ -24,6 +25,7 @@ const connectDB = async() => {
 
 dotenv.config()
 app.use(express.json())
+app.use("/images", express.static(path.join(__dirname,"/images")))
 app.use(cors({origin:"http://localhost:5173", credentials: true}))
 app.use(cookieParser())
 app.use("/api/auth", authRoute)

@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../components/CSS/CreatePost.css";
 import { HiXCircle } from "react-icons/hi";
+import { UserContext } from "../context/UserContext";
+import axios from "axios";
+import { URL } from "../url";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [file, setFile] = useState(null);
+  const { user } = useContext(UserContext);
   const [cat, setCat] = useState("Tech");
   const [cats, setcats] = useState([]);
+  const navigate = useNavigate()
 
   const addCategory = () => {
     let updatedCats = [...cats];
@@ -14,9 +23,43 @@ const CreatePost = () => {
   };
 
   const deleteCategory = (i) => {
-    let updatedCats = [...cats]
-    updatedCats.splice(i, 1)
-    setcats(updatedCats)
+    let updatedCats = [...cats];
+    updatedCats.splice(i, 1);
+    setcats(updatedCats);
+  };
+
+  const handleCreate = async (e) => {
+    e.preventDefault();
+    const post = {
+      title,
+      desc,
+      username: user.username,
+      userId: user._id,
+      categories: cats,
+    };
+
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("img", filename);
+      data.append("file", file);
+      post.photo = filename;
+
+      try {
+        const imgUpload = await axios.post(URL + "/api/upload", data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    //Upload post
+    try {
+      const res = await axios.post(URL+"/api/posts/create", post, {withCredentials:true})
+      navigate("/posts/post/" + res.data._id);
+    } catch (error) {
+      console.log(error)
+    }
+
 
   };
 
@@ -28,6 +71,7 @@ const CreatePost = () => {
       <form action="" className="">
         <div className="flex flex-col gap-4 justify-between">
           <input
+            onChange={(e) => setTitle(e.target.value)}
             type="text"
             placeholder="Title"
             required
@@ -37,7 +81,12 @@ const CreatePost = () => {
         </div>
         <div className="flex items-center space-x-4 md:space-x-8 mt-5">
           <label htmlFor="file">upload a Image</label>
-          <input type="file" className="flex-1" id="file" />
+          <input
+            onChange={(e) => setFile(e.target.files[0])}
+            type="file"
+            className="flex-1"
+            id="file"
+          />
         </div>
         <div className="flex flex-col">
           <div className="flex items-center space-x-4 md:space-x-8">
@@ -73,6 +122,7 @@ const CreatePost = () => {
           </div>
 
           <textarea
+            onChange={(e) => setDesc(e.target.value)}
             name=""
             id=""
             cols="30"
@@ -82,7 +132,10 @@ const CreatePost = () => {
             minLength={500}
             placeholder="200 words minimum required"
           ></textarea>
-          <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
+          <button
+            onClick={handleCreate}
+            className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+          >
             Create post
           </button>
         </div>

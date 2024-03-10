@@ -1,0 +1,16 @@
+.main-system{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.main-system .heading{
+    padding: 1px;
+    color: aliceblue;
+}
+
+
+.btn-recommend:hover{
+    color: blue;
+}
