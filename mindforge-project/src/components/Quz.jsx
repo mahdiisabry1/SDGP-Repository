@@ -134,6 +134,21 @@ const QuestionSurvey = () => {
     }
     setSubmitted(true);
   };
+  const calculateTotalScore = () => {
+    return Object.values(answers).reduce((total, rating) => total + rating, 0);
+  };
+
+  const getRecommendation = () => {
+    const totalScore = calculateTotalScore();
+
+    if (totalScore >= 10 && totalScore <= 18) {
+      return 'Functionality-Oriented Designer';
+    } else if (totalScore >= 19 && totalScore <= 27) {
+      return 'Balanced Designer';
+    } else {
+      return 'Aesthetics-Driven Designer';
+    }
+  };
 
   return (
     <div className="app-container">
