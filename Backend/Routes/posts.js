@@ -4,7 +4,6 @@ const User=require('../Models/User')
 const bcrypt=require('bcrypt')
 const Post=require('../Models/Posts')
 const Comment=require('../Models/Comments')
-const verifyToken = require('../verifyToken')
 
 //CREATE
 router.post("/create",async (req,res)=>{
@@ -15,9 +14,9 @@ router.post("/create",async (req,res)=>{
         
         res.status(200).json(savedPost)
     }
-    catch(err){
+    catch(error){
         
-        res.status(500).json(err)
+        res.status(500).json(error)
     }
      
 })
@@ -44,8 +43,8 @@ router.delete("/:id",async (req,res)=>{
         res.status(200).json("Post has been deleted!")
 
     }
-    catch(err){
-        res.status(500).json(err)
+    catch(error){
+        res.status(500).json(error)
     }
 })
 
@@ -56,24 +55,20 @@ router.get("/:id",async (req,res)=>{
         const post=await Post.findById(req.params.id)
         res.status(200).json(post)
     }
-    catch(err){
-        res.status(500).json(err)
+    catch(error){
+        res.status(500).json(error)
     }
 })
 
 //GET POSTS
 router.get("/",async (req,res)=>{
-    const query=req.query
     
     try{
-        const searchFilter={
-            title:{$regex:query.search, $options:"i"}
-        }
-        const posts=await Post.find(query.search?searchFilter:null)
+        const posts=await Post.find()
         res.status(200).json(posts)
     }
-    catch(err){
-        res.status(500).json(err)
+    catch(error){
+        res.status(500).json(error)
     }
 })
 
@@ -83,8 +78,8 @@ router.get("/user/:userId",async (req,res)=>{
         const posts=await Post.find({userId:req.params.userId})
         res.status(200).json(posts)
     }
-    catch(err){
-        res.status(500).json(err)
+    catch(error){
+        res.status(500).json(error)
     }
 })
 
