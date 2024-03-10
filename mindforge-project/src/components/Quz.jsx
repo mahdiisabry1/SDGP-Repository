@@ -128,18 +128,18 @@ const QuestionSurvey = () => {
   };
 
   const handleSubmit = () => {
+    
     if (selectedOption !== null) {
       handleNextQuestion();
     }
     setSubmitted(true);
-    
   };
 
   return (
     <div className="app-container">
       <h1>Web Design Preferences Questionnaire</h1>
 
-      <div className="questions-container">
+      {/* <div className="questions-container">
         {questions.map((q, index) => (
           <div key={index} className="question">
             <p>{`${index + 1}. ${q.question}`}</p>
@@ -164,18 +164,21 @@ const QuestionSurvey = () => {
         ) : (
           <button onClick={handleSubmit}>Submit</button>
         )}
-      </div>
+      </div> */}
 
-      
       <div className="question-container">
-        <h2 className="question-text">{questions[currentQuestion].question}</h2>
+        <h2 className="question-text">
+          {questions[currentQuestion]?.question}
+        </h2>
         <ul className="options-list">
-          {questions[currentQuestion].options.map((option, index) => (
+          {questions[currentQuestion]?.options?.map((option, index) => (
             <li
               key={index}
-              className={`option-item ${selectedOption === index ? 'selected' : ''}`}
+              className={`option-item ${
+                selectedOption === index ? "selected" : ""
+              }`}
               onClick={() => handleSelectOption(index)}
-              style={{ cursor: submitted ? 'not-allowed' : 'pointer' }}
+              style={{ cursor: submitted ? "not-allowed" : "pointer" }}
             >
               {option.text}
             </li>
@@ -191,8 +194,15 @@ const QuestionSurvey = () => {
             )}
           </div>
         ) : (
-          <button className="action-button" onClick={currentQuestion === questions.length - 1 ? handleSubmit : handleNextQuestion}>
-            {currentQuestion === questions.length - 1 ? 'Submit' : 'Next'}
+          <button
+            className="action-button"
+            onClick={
+              currentQuestion === questions.length - 1
+                ? handleSubmit
+                : handleNextQuestion
+            }
+          >
+            {currentQuestion === questions.length - 1 ? "Submit" : "Next"}
           </button>
         )}
       </div>
