@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './RoadMap.css';
 
 const FEMindmap = () => {
+  // Add this line to fix the background image
   const containerStyle = {
     backgroundImage: 'url("https://www.wingstechsolutions.com/wp-content/uploads/2022/03/full-stack-development.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundAttachment: 'fixed', // Add this line to fix the background image
+    backgroundAttachment: 'fixed', 
   };
 
   return (
@@ -20,6 +21,7 @@ const FEMindmap = () => {
         <div className="flex flex-col space-y-0">
 
         <DropdownRoadmapItem
+        //Add dropdown menu
           title="1. Basic Web Technologies:"
           description="Learn HTML5: Understand the structure of web pages.
           Learn CSS3: Learn styling and layout techniques.

@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './RoadMap.css';
 
 const AngularMindmap = () => {
+  // Add this line to fix the background image
   const containerStyle = {
     backgroundImage: 'url("https://img.etimg.com/thumb/height-450,width-600,imgsize-638053,msid-84146056/.jpg")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundAttachment: 'fixed', // Add this line to fix the background image
+    backgroundAttachment: 'fixed', 
   };
 
   return (
@@ -20,6 +21,7 @@ const AngularMindmap = () => {
         <div className="flex flex-col space-y-o">
 
           <DropdownRoadmapItem
+          //Add dropdown menu
             title="1. Angular Framework:"
             description="Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google."
             clickableParagraphs={[
