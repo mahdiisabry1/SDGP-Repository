@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './RoadMap.css';
 
 const BEMindmap = () => {
+   // Add this line to fix the background image
   const containerStyle = {
     backgroundImage: 'url("https://www.wingstechsolutions.com/wp-content/uploads/2022/03/full-stack-development.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundAttachment: 'fixed', // Add this line to fix the background image
+    backgroundAttachment: 'fixed',
   };
 
   return (
@@ -20,6 +21,7 @@ const BEMindmap = () => {
         <div className="flex flex-col space-y-0">
           
           <DropdownRoadmapItem
+          // Add dropdown meenu
             title="1. Programming Fundamentals:"
             description="Learn a programming language commonly used for backend development such as Python, JavaScript (Node.js), Java, C#, or Ruby.
             Understand basic programming concepts like variables, data types, control structures, functions, and object-oriented programming (OOP) principles."

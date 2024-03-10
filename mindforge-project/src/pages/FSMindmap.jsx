@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './RoadMap.css';
 
 const FSMindmap = () => {
+  // Add this line to fix the background image
   const containerStyle = {
     backgroundImage: 'url("https://www.wingstechsolutions.com/wp-content/uploads/2022/03/full-stack-development.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundAttachment: 'fixed', // Add this line to fix the background image
+    backgroundAttachment: 'fixed', 
   };
 
   return (
@@ -19,6 +20,7 @@ const FSMindmap = () => {
         <div className="flex flex-col space-y-0">
 
         <DropdownRoadmapItem
+        //Add dropdown menu
           title="1. Learn the Fundamentals:"
           description="Start with the basics of programming, including concepts like variables, data types, conditionals, loops, and functions.
           Get comfortable with HTML, CSS, and JavaScript, which form the foundation of web development."
