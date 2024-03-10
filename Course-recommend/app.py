@@ -63,11 +63,10 @@ def main():
         search_course = st.text_input("What are you interested in")
         cosine_sim = vectorize_text(df['course_title'])
         st.dataframe(df.head(10))
-        number_of_records = st.sidebar.number_input("Number",4,20,7)
         if st.button("Enter"):
             if search_course is not None:
                 try:
-                    result = get_recommendation(search_course, cosine_sim, df, number_of_records)
+                    result = get_recommendation(search_course, cosine_sim, df)
                 except:
                     result = "Not Found"
                 for row in result.iterrows():
