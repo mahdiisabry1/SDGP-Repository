@@ -83,7 +83,7 @@ const Tabs = () => {
 
   const handleCertificationClick = () => {
     // Define an object mapping each tab to its corresponding image file
-    const phases = [
+    const tabs = [
       {
         title: "React Certification",
         path: "image_react.jpg",
