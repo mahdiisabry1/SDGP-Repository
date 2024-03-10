@@ -25,9 +25,26 @@ def load_data(data):
 def vectorize_text(data):
     count_vect = CountVectorizer()
     cv_mat = count_vect.fit_transform(data)
-    #Get the cosine
+    # Get the cosine
     cosine_sim = cosine_similarity(cv_mat)
     return cosine_sim
+
+# recommendation Logic
+def get_recommendation(title, cosine_sim, df,number_of_records = 5):
+    course_indices = pd.Series(df.index, index=df['course_title']).drop_duplicates()
+    #index of the course
+    idx = course_indices[title]
+    #cosine matrix of the index
+    sim_scores = list(enumerate(cosine_sim[idx]))
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    selected_course_indices = [i[0] for i in sim_scores[1:]]
+    selected_course_scores = [i[0] for i in sim_scores[1:]]
+
+    # getting the title and data
+    result_df = df.iloc[selected_course_indices]
+    result_df['similarity_score'] = selected_course_scores
+    finally_recommended = result_df[['course_title', 'similarity_score', 'url', 'price', 'num_subscribers']]
+    return finally_recommended
 
 def main():
     st.title("Get Recommendations")
@@ -44,11 +61,24 @@ def main():
     if choice == "Courses":
         st.subheader("Courses")
         search_course = st.text_input("What are you interested in")
+        cosine_sim = vectorize_text(df['course_title'])
         st.dataframe(df.head(10))
         number_of_records = st.sidebar.number_input("Number",4,20,7)
         if st.button("Enter"):
             if search_course is not None:
-                pass
+                try:
+                    result = get_recommendation(search_course, cosine_sim, df, number_of_records)
+                except:
+                    result = "Not Found"
+                for row in result.iterrows():
+                    rec_title = row[1][0]
+                    rec_score = row[1][1]
+                    rec_url = row[1][2]
+                    rec_price = row[1][3]
+                    rec_num_sub = row[1][4]
+
+                    st.write("Title : ", rec_title)
+                    st.write("URL :", rec_url)
 
     elif choice == "University":
         st.subheader("University")
