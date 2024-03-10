@@ -83,29 +83,13 @@ const Tabs = () => {
 
   const handleCertificationClick = () => {
     // Define an object mapping each tab to its corresponding image file
-    const phases = [
-      {
-        title: "React Certification",
-        path: "image_react.jpg",
-      },
-      {
-        title: "Angular Certification",
-        path: "image_angular.jpg",
-      },
-      {
-        title: "FrontEnd Certification",
-        path: "image_frontend.jpg",
-      },
-      {
-        title: "BackEnd Certification",
-        path: "image_backend.jpg",
-      },
-      {
-        title: "FullStack Certification",
-        path: "image_fullstack.jpg",
-      },
-    ];
-    
+    const certificationImages = {
+      1: 'image_react.jpg', // Replace with your actual image file names
+      2: 'image_angular.jpg',
+      3: 'image_frontend.jpg',
+      4: 'image_backend.jpg',
+      5: 'image_fullstack.jpg',
+    };
 
     const certificationImage = certificationImages[activeTab];
 
