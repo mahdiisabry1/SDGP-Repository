@@ -19,15 +19,16 @@ npm run dev <br/>
 
 The BackEnd:
 The backend will not run if the dependencies are not properly installed and if the database is not connected (Atlas) <br/>
-npm i  Express mongoose dotenv cors bcrypt jsonwebtoken cookie-parser multer <br/>
-npm run start-dev
+npm i  Express mongoose dotenv cors bcrypt jsonwebtoken cookie-parser multer<br/>
+npm run start-dev<br/>
+npm i path
 
 To run the machine learning:<br/>
 pip install scikit-learn <br/>
 pip install streamlit <br/>
 pip install neattext
 
-// Finally run After every dependency is istalled correctly <br/>
+// Finally run After every dependency is intalled correctly <br/>
 streamlit run app.py 
 
 
