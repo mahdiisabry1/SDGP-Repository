@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 import './CSS/tabs.css'; // Import the CSS file
 
