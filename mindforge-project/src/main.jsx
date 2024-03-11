@@ -22,6 +22,7 @@ import AngularMindmap from './pages/AngularMindmap.jsx';
 import FEMindmap from './pages/FEMindmap.jsx';
 import BEMindmap from './pages/BEMindmap.jsx';
 import FSMindmap from './pages/FSMindmap.jsx';
+import ReactCertification from './pages/ReactCertification.jsx';
 import { UserContextProvider } from './context/UserContext.jsx';
 
 
