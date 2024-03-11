@@ -84,11 +84,11 @@ const Tabs = () => {
   const handleCertificationClick = () => {
     // Define an object mapping each tab to its corresponding image file
     const certificationImages = {
-      1: 'image_react.jpg', // Replace with your actual image file names
-      2: 'image_angular.jpg',
-      3: 'image_frontend.jpg',
-      4: 'image_backend.jpg',
-      5: 'image_fullstack.jpg',
+      1: "/path-to -components/ReactCertification", // Replace with your actual image file names
+      2: "/path-to-components/AngularMindmap",
+      3: "/path-to-components/AngularMindmap",
+      4: "/path-to-components/AngularMindmap",
+      5: "/path-to-components/AngularMindmap",
     };
 
     const certificationImage = certificationImages[activeTab];
