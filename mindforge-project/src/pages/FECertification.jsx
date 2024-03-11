@@ -10,4 +10,4 @@ const FECertification = () => {
   );
 }
 
-export default ReactCertification;
+export default FECertification;

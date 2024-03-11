@@ -95,6 +95,10 @@ const router = createBrowserRouter([
         path: "/path-to-components/FSMindmap",
         element: <FSMindmap />,
       },
+      {
+        path: "/path-to-components/ReactCertification",
+        element: <ReactCertification />
+      },
     ],
   },
 ]);
