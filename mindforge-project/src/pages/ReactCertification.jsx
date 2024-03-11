@@ -5,7 +5,7 @@ const ReactCertification = () => {
     <div>
       <h1>React Certification</h1>
       <p>Congratulations! You've completed your React certification.</p>
-      <img src="path_to_your_image" alt="Certificate" />
+      <img src="\src\assets\images\Reactjscertifiaction.jpg" alt="Certificate" />
     </div>
   );
 }
