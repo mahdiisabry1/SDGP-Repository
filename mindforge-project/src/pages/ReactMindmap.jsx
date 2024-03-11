@@ -4,7 +4,7 @@ import './RoadMap.css';
 const ReactMindmap = () => {
   // Add this line to fix the background image
   const containerStyle = {
-    backgroundImage: 'url("https://img.etimg.com/thumb/height-450,width-600,imgsize-638053,msid-84146056/.jpg")',
+    backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
