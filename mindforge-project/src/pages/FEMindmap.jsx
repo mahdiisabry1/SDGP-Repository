@@ -11,6 +11,15 @@ const FEMindmap = () => {
     backgroundAttachment: 'fixed', 
   };
 
+  const [completedItems, setCompletedItems] = useState([]);
+
+  // Function to mark an item as completed
+  const markAsCompleted = (title) => {
+    if (!completedItems.includes(title)) {
+      setCompletedItems([...completedItems, title]);
+    }
+  };
+
   return (
     <div className="p-48 text-white" style={containerStyle}>
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Front-End</h1>
@@ -50,6 +59,9 @@ const FEMindmap = () => {
             { label: 'JavaScript Crash Course for Beginners', link: 'https://youtu.be/hdI2bqOjy3c?t=2' },
             { label: 'JavaScript for Beginners', link: 'https://www.scaler.com/topics/course/javascript-beginners' },
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("1. Basic Web Technologies:")}
         />
 
         <DropdownRoadmapItem
@@ -67,6 +79,9 @@ const FEMindmap = () => {
             { label: 'Bootstrap Studio', link: 'https://bootstrapstudio.io/' },
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("2. Responsive Web Design:")}
         />
 
         <DropdownRoadmapItem
@@ -79,6 +94,9 @@ const FEMindmap = () => {
             { label: 'Learn Git by Atlassian', link: 'https://www.atlassian.com/git' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("3. Version Control:")}
         />
 
         <DropdownRoadmapItem
@@ -91,6 +109,9 @@ const FEMindmap = () => {
             { label: 'Parcel is a zero configuration build tool for the web ', link: 'https://parceljs.org/' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("4. CSS Preprocessors and Build Tools:")}
         />
 
         <DropdownRoadmapItem
@@ -106,6 +127,9 @@ const FEMindmap = () => {
             { label: 'Vue.js Website', link: 'https://vuejs.org/' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("5. JavaScript Libraries and Frameworks:")}
         />
 
         <DropdownRoadmapItem
@@ -120,6 +144,9 @@ const FEMindmap = () => {
             { label: 'SMACSS Official Website', link: 'http://smacss.com/ ' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("6. Front-end Architecture:")}
         />
 
         <DropdownRoadmapItem
@@ -133,6 +160,9 @@ const FEMindmap = () => {
             { label: 'JavaScript Fetch API', link: 'https://www.youtube.com/watch?v=-ZI0ea5O2oA' },
           
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("7. APIs and AJAX:")}
         />
 
         <DropdownRoadmapItem
@@ -145,6 +175,9 @@ const FEMindmap = () => {
             { label: 'Testing React apps with Jest', link: 'https://jestjs.io/docs/tutorial-react' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("8. Testing:")}
         />
 
         <DropdownRoadmapItem
@@ -158,6 +191,9 @@ const FEMindmap = () => {
             { label: 'Build a Progressive Web App', link: 'https://www.youtube.com/watch?v=sFsRylCQblw' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("9. Progressive Web Apps (PWAs):")}
         />
 
         <DropdownRoadmapItem
@@ -171,6 +207,9 @@ const FEMindmap = () => {
             { label: 'Vite Next Generation Frontend Tooling', link: 'https://vitejs.dev/' },
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("10. Build Tools and Task Runners:")}
         />
 
         <DropdownRoadmapItem
@@ -185,6 +224,9 @@ const FEMindmap = () => {
             { label: 'Yarn Crash Course', link: 'Yarn Crash Course' },
         
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("11. Package Managers:")}
         />
 
         <DropdownRoadmapItem
@@ -195,6 +237,10 @@ const FEMindmap = () => {
             { label: 'Front End Development Tools You Should Know', link: 'https://www.linkedin.com/pulse/10-essential-front-end-development-tools-you-should-know-ferchichi-6yy1f' },
             
           ]}
+
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("12. Browser Developer Tools:")}
         />
 
         <DropdownRoadmapItem
@@ -206,6 +252,9 @@ const FEMindmap = () => {
             { label: 'Cross-Browser Compatibility - Front-End Curriculum', link: 'https://frontend.turing.edu/lessons/module-2/cross-browser-compat.html' },
           
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("13. Cross-Browser Compatibility:")}
         />
 
         <DropdownRoadmapItem
@@ -216,6 +265,9 @@ const FEMindmap = () => {
             { label: 'Optimizing Performance in Frontend Development', link: 'https://www.linkedin.com/pulse/optimizing-performance-frontend-development-tips-fatima-modupe-bello' },
           
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("14. Web Performance Optimization:")}
         />
 
         <DropdownRoadmapItem
@@ -226,6 +278,9 @@ const FEMindmap = () => {
             { label: 'Create a CI/CD Pipeline for Front End Projects', link: 'https://blog.openreplay.com/create-a-ci-cd-pipeline-for-front-end-projects/' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("15. Continuous Integration and Deployment (CI/CD):")}
         />
 
        <DropdownRoadmapItem
@@ -239,6 +294,9 @@ const FEMindmap = () => {
             { label: 'Web Accessibility by Udacity', link: 'https://www.udacity.com/course/web-accessibility--ud891' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("16. Accessibility:")}
         />
 
        
@@ -247,22 +305,31 @@ const FEMindmap = () => {
   );
 };
 
-const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
+const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCompleted, completed }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isTitleCutOff, setTitleCutOff] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
+  const handleDoneClick = () => {
+    markAsCompleted(title);
+    setTitleCutOff(true);
+  };
+
   return (
     <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
       <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
-        <h2 className="text-xl font-semibold mb-2">{title}</h2>
+        <h2 className={`text-xl font-semibold mb-2 ${completed ? 'text-blue-300' : ''}`}>
+          {isTitleCutOff ? title.split("DONE")[0] : title}
+        </h2>
+        {completed && <hr className="w-full border-t border-gray-500" />}
         <span>{isDropdownOpen ? '▲' : '▼'}</span>
       </div>
       {isDropdownOpen && (
         <div className="mt-2 dropdown-menu">
-          <p>{description}</p>
+          <p className="description">{description}</p>
           {clickableParagraphs && (
             <div className="mt-2">
               {clickableParagraphs.map((paragraph, index) => (
@@ -274,10 +341,14 @@ const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
               ))}
             </div>
           )}
+          {!completed && (
+            <button className="bg-blue-900 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
+          )}
         </div>
       )}
     </div>
   );
 };
+
 
 export default FEMindmap;

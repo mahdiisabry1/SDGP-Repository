@@ -11,6 +11,15 @@ const FSMindmap = () => {
     backgroundAttachment: 'fixed', 
   };
 
+  const [completedItems, setCompletedItems] = useState([]);
+
+  // Function to mark an item as completed
+  const markAsCompleted = (title) => {
+    if (!completedItems.includes(title)) {
+      setCompletedItems([...completedItems, title]);
+    }
+  };
+
   return (
     <div className="p-48 text-white" style={containerStyle}>
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Full-Stack</h1>
@@ -29,6 +38,9 @@ const FSMindmap = () => {
             { label: 'Fundamentals of Full Stack Web Development', link: 'https://www.go1.com/lo/fundamentals-of-full-stack-web-development/12624881/' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("1. Learn the Fundamentals:")}
         />
 
         <DropdownRoadmapItem
@@ -59,6 +71,9 @@ const FSMindmap = () => {
             { label: 'JavaScript Crash Course for Beginners', link: 'https://youtu.be/hdI2bqOjy3c?t=2' },
             { label: 'JavaScript for Beginners', link: 'https://www.scaler.com/topics/course/javascript-beginners' },
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("2. Frontend Development:")}
         />
         
         <DropdownRoadmapItem
@@ -74,6 +89,9 @@ const FSMindmap = () => {
             { label: 'Complete Zero to Hero Angular full Tutorial', link: 'https://www.youtube.com/watch?v=CGLdH5ORX-Y' },
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("3. Frontend Frameworks:")}
         />
 
         <DropdownRoadmapItem
@@ -88,6 +106,9 @@ const FSMindmap = () => {
             { label: 'Become a Backend Developer in 3 Hours', link: 'https://www.youtube.com/watch?v=Wz-zOpzk1Jk' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("4. Backend Development:")}
         />
 
         <DropdownRoadmapItem
@@ -101,6 +122,9 @@ const FSMindmap = () => {
             { label: 'DBMS Tutorial ', link: 'https://www.javatpoint.com/dbms-tutorial' },
         
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("5. Database Management:")}
         />
 
         <DropdownRoadmapItem
@@ -112,6 +136,9 @@ const FSMindmap = () => {
            
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("6. Authentication and Authorization:")}
         />
 
         <DropdownRoadmapItem
@@ -122,6 +149,9 @@ const FSMindmap = () => {
             { label: 'Version Control Systems', link: 'https://www.geeksforgeeks.org/version-control-systems/' },
           
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("7. Version Control:")}
         />
 
         <DropdownRoadmapItem
@@ -135,6 +165,9 @@ const FSMindmap = () => {
             { label: 'Intro to Backend Development', link: 'https://www.youtube.com/watch?v=wvVXSdiGyBc' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("8. Deployment and DevOps:")}
         />
 
         <DropdownRoadmapItem
@@ -148,6 +181,9 @@ const FSMindmap = () => {
             { label: 'What is Backend Testing?', link: 'https://www.geeksforgeeks.org/what-is-backend-testing/' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("9. Testing:")}
         />
 
         <DropdownRoadmapItem
@@ -160,6 +196,9 @@ const FSMindmap = () => {
             { label: 'More Security Best Practices for Backend Developers', link: 'https://medium.com/swlh/more-security-best-practices-for-backend-developers-c7a41f85bf8e' },
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("10. Security Best Practices:")}
         />
 
 
@@ -169,22 +208,31 @@ const FSMindmap = () => {
   );
 };
 
-const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
+const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCompleted, completed }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isTitleCutOff, setTitleCutOff] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
+  const handleDoneClick = () => {
+    markAsCompleted(title);
+    setTitleCutOff(true);
+  };
+
   return (
     <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
       <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
-        <h2 className="text-xl font-semibold mb-2">{title}</h2>
+        <h2 className={`text-xl font-semibold mb-2 ${completed ? 'text-blue-300' : ''}`}>
+          {isTitleCutOff ? title.split("DONE")[0] : title}
+        </h2>
+        {completed && <hr className="w-full border-t border-gray-500" />}
         <span>{isDropdownOpen ? '▲' : '▼'}</span>
       </div>
       {isDropdownOpen && (
         <div className="mt-2 dropdown-menu">
-          <p>{description}</p>
+          <p className="description">{description}</p>
           {clickableParagraphs && (
             <div className="mt-2">
               {clickableParagraphs.map((paragraph, index) => (
@@ -196,10 +244,14 @@ const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
               ))}
             </div>
           )}
+          {!completed && (
+            <button className="bg-blue-900 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
+          )}
         </div>
       )}
     </div>
   );
 };
+
 
 export default FSMindmap;

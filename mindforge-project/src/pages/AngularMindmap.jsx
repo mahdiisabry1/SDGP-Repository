@@ -11,6 +11,15 @@ const AngularMindmap = () => {
     backgroundAttachment: 'fixed', 
   };
 
+  const [completedItems, setCompletedItems] = useState([]);
+
+  // Function to mark an item as completed
+  const markAsCompleted = (title) => {
+    if (!completedItems.includes(title)) {
+      setCompletedItems([...completedItems, title]);
+    }
+  };
+
   return (
     <div className="p-48 text-white" style={containerStyle}>
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Angular</h1>
@@ -30,6 +39,9 @@ const AngularMindmap = () => {
               { label: 'Angular Framework Fundamentals', link: 'https://www.youtube.com/watch?v=ZNilX-i1Vck' },
               
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("1. Angular Framework:")}
           />
   
           <DropdownRoadmapItem
@@ -43,6 +55,9 @@ const AngularMindmap = () => {
               { label: 'Angular Components In Depth', link: 'https://www.youtube.com/playlist?list=PLqq-6Pq4lTTbh7bUrKwyCWr6ABBFEd4bD' },
               
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("2. Components:")}
           />
   
           <DropdownRoadmapItem
@@ -54,6 +69,9 @@ const AngularMindmap = () => {
               { label: 'Understanding templates', link: 'https://angular.io/guide/template-overview' },
               
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("3. Templates:")}
           />
 
         <DropdownRoadmapItem
@@ -67,6 +85,9 @@ const AngularMindmap = () => {
               { label: 'Angular 8 - Directives', link: 'https://www.tutorialspoint.com/angular8/angular8_directives.htm' },
               
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("4. Directives:")}
           />
 
         <DropdownRoadmapItem
@@ -81,6 +102,9 @@ const AngularMindmap = () => {
               { label: 'Understanding binding', link: 'https://angular.io/guide/binding-overview' },
               
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("5. Data Binding:")}
           />
 
         <DropdownRoadmapItem
@@ -94,6 +118,9 @@ const AngularMindmap = () => {
               { label: 'How To Use Services in Angular', link: 'https://www.telerik.com/blogs/angular-basics-how-to-use-services-angular' },
               
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("6. Services:")}
           />
 
         <DropdownRoadmapItem
@@ -107,6 +134,9 @@ const AngularMindmap = () => {
               { label: 'Angular dependency injection', link: 'https://www.youtube.com/watch?v=jWODteEGQmw' },
               
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("7. Dependency Injection (DI):")}
           />
 
         <DropdownRoadmapItem
@@ -120,6 +150,9 @@ const AngularMindmap = () => {
               { label: 'Angular 4 - Module', link: 'https://www.tutorialspoint.com/angular4/angular4_module.htm' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("8. Modules:")}
           />
 
         <DropdownRoadmapItem
@@ -134,6 +167,9 @@ const AngularMindmap = () => {
               { label: 'What is Routing in Angular', link: 'https://www.youtube.com/watch?v=OMX6Wcx2yZA' },
               
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("9. Routing:")}
           />
 
         <DropdownRoadmapItem
@@ -147,6 +183,9 @@ const AngularMindmap = () => {
               { label: 'Forms in Angular', link: 'https://medium.com/@jaydeepvpatil225/forms-in-angular-8fde7d0dcdf6' },
               
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("10. Forms:")}
           />
 
         <DropdownRoadmapItem
@@ -159,6 +198,9 @@ const AngularMindmap = () => {
               { label: 'Angular 8 - Http Client Programming', link: 'https://www.tutorialspoint.com/angular8/angular8_http_client_programming.htm' },
             
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("11. HTTP Client:")}
           />
 
         <DropdownRoadmapItem
@@ -172,6 +214,9 @@ const AngularMindmap = () => {
               { label: 'Pipes in Angular', link: 'https://www.knowledgehut.com/blog/web-development/pipes-in-angular' },
             
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("12. Pipes:")}
           />
 
         <DropdownRoadmapItem
@@ -184,6 +229,9 @@ const AngularMindmap = () => {
               { label: 'Angular Http Interceptor', link: 'https://www.javatpoint.com/angular-http-interceptor' },
             
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("13. Interceptors:")}
           />
 
         <DropdownRoadmapItem
@@ -197,6 +245,9 @@ const AngularMindmap = () => {
               { label: 'Unit Testing in Angular', link: 'https://www.prestonlamb.com/blog/unit-testing-in-angular/' },
            
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("14. Testing:")}
           />
 
         <DropdownRoadmapItem
@@ -210,11 +261,17 @@ const AngularMindmap = () => {
               { label: 'Deploying Angular Applications', link: 'https://www.youtube.com/watch?v=vwyvMZStS54' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("15. Deployment:")}
           />
 
         <DropdownRoadmapItem
             title="16. Community and Resources:"
             description="Angular has a large and active community with abundant resources such as official documentation, tutorials, blogs, and forums."
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("16. Community and Resources:")}
             
           />
 
@@ -224,37 +281,50 @@ const AngularMindmap = () => {
     );
   };
   
-  const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
-  };
-
-  return (
-    <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
-      <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
-        <h2 className="text-xl font-semibold mb-2">{title}</h2>
-        <span>{isDropdownOpen ? '▲' : '▼'}</span>
-      </div>
-      {isDropdownOpen && (
-        <div className="mt-2 dropdown-menu">
-          <p>{description}</p>
-          {clickableParagraphs && (
-            <div className="mt-2">
-              {clickableParagraphs.map((paragraph, index) => (
-                <p key={index}>
-                  <a href={paragraph.link} target="_blank" rel="noopener noreferrer">
-                    {paragraph.label}
-                  </a>
-                </p>
-              ))}
-            </div>
-          )}
+  const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCompleted, completed }) => {
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const [isTitleCutOff, setTitleCutOff] = useState(false);
+  
+    const toggleDropdown = () => {
+      setDropdownOpen(!isDropdownOpen);
+    };
+  
+    const handleDoneClick = () => {
+      markAsCompleted(title);
+      setTitleCutOff(true);
+    };
+  
+    return (
+      <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
+        <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
+          <h2 className={`text-xl font-semibold mb-2 ${completed ? 'text-blue-300' : ''}`}>
+            {isTitleCutOff ? title.split("DONE")[0] : title}
+          </h2>
+          {completed && <hr className="w-full border-t border-gray-500" />}
+          <span>{isDropdownOpen ? '▲' : '▼'}</span>
         </div>
-      )}
-    </div>
-  );
-};
-
+        {isDropdownOpen && (
+          <div className="mt-2 dropdown-menu">
+            <p className="description">{description}</p>
+            {clickableParagraphs && (
+              <div className="mt-2">
+                {clickableParagraphs.map((paragraph, index) => (
+                  <p key={index}>
+                    <a href={paragraph.link} target="_blank" rel="noopener noreferrer">
+                      {paragraph.label}
+                    </a>
+                  </p>
+                ))}
+              </div>
+            )}
+            {!completed && (
+              <button className="bg-blue-900 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
+  
+  
 export default AngularMindmap;

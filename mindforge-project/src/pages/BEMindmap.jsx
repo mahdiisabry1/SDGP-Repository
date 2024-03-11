@@ -11,6 +11,15 @@ const BEMindmap = () => {
     backgroundAttachment: 'fixed',
   };
 
+  const [completedItems, setCompletedItems] = useState([]);
+
+  // Function to mark an item as completed
+  const markAsCompleted = (title) => {
+    if (!completedItems.includes(title)) {
+      setCompletedItems([...completedItems, title]);
+    }
+  };
+
   return (
     <div className="p-48 text-white" style={containerStyle}>
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Back-End</h1>
@@ -47,6 +56,9 @@ const BEMindmap = () => {
               { label: 'Ruby, An Introduction to a Programmer’s Best Friend', link: 'https://thenewstack.io/ruby-a-programmers-best-friend/' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("1. Programming Fundamentals:")}
           />
 
           <DropdownRoadmapItem
@@ -62,6 +74,9 @@ const BEMindmap = () => {
               { label: 'HTTP Crash Course & Exploration', link: 'https://www.youtube.com/watch?v=iYM2zFP3Zn0' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("2. HTTP and RESTful APIs:")}  
           />
 
           <DropdownRoadmapItem
@@ -85,6 +100,9 @@ const BEMindmap = () => {
               
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("3. Databases:")}
           />
 
           <DropdownRoadmapItem
@@ -111,6 +129,9 @@ const BEMindmap = () => {
               
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("4. Server-side Frameworks:")}
           />
 
           <DropdownRoadmapItem
@@ -125,6 +146,9 @@ const BEMindmap = () => {
               { label: 'Session Based Authentication', link: ' https://roadmap.sh/guides/session-authentication' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("5. Authentication and Authorization:")}
           />
 
           <DropdownRoadmapItem
@@ -139,6 +163,9 @@ const BEMindmap = () => {
              
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("6. Web Security:")}
           />
 
           <DropdownRoadmapItem
@@ -152,6 +179,9 @@ const BEMindmap = () => {
               
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("7. API Documentation:")}
           />
 
           <DropdownRoadmapItem
@@ -168,6 +198,9 @@ const BEMindmap = () => {
               { label: 'Functional Testing vs Non-Functional Testing', link: ' https://youtu.be/j_79AXkG4PY' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("8. Testing:")}
           />
 
           <DropdownRoadmapItem
@@ -181,6 +214,9 @@ const BEMindmap = () => {
               { label: 'How to Build and Deploy a Backend App', link: 'https://www.freecodecamp.org/news/how-to-build-a-backend-application/' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("9. Containerization and Deployment:")}
           />
 
           <DropdownRoadmapItem
@@ -193,6 +229,9 @@ const BEMindmap = () => {
               { label: 'Backend Error Tracking and Monitoring', link: 'https://sentry.io/for/backend/' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("10. Monitoring and Logging:")}
           />
 
           <DropdownRoadmapItem
@@ -205,6 +244,9 @@ const BEMindmap = () => {
               { label: '3 Ways to Use Automation in CI/CD Pipelines', link: ' https://thenewstack.io/3-ways-to-use-automation-in-ci-cd-pipelines/' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("11. Continuous Integration and Deployment (CI/CD):")}
           />
 
          <DropdownRoadmapItem
@@ -216,6 +258,9 @@ const BEMindmap = () => {
               { label: 'Scalability and Performance Optimization', link: 'https://www.gratasoftware.com/scalability-and-performance-optimization-ensuring-software-success/' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("12. Scalability and Performance Optimization:")}
           />
  
           <DropdownRoadmapItem
@@ -229,6 +274,9 @@ const BEMindmap = () => {
               { label: 'Learn Git Branching', link: ' https://learngitbranching.js.org/' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("13. Version Control:")}
           />
 
           <DropdownRoadmapItem
@@ -239,12 +287,18 @@ const BEMindmap = () => {
               { label: 'Backend Document Manipulation', link: 'https://tiptap.dev/docs/editor/collaboration/backend-document-manipulation' },
              
             ]}
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("14. Documentation and Collaboration:")}
           />
 
         <DropdownRoadmapItem
             title="15. Stay Updated and Keep Learning:"
             description="Backend development is continuously evolving with new technologies and best practices.
             Stay updated with the latest trends, attend conferences, participate in online communities, and continue learning to enhance your skills."
+
+            markAsCompleted={markAsCompleted}
+            completed={completedItems.includes("15. Stay Updated and Keep Learning:")}
            
           />
 
@@ -253,22 +307,31 @@ const BEMindmap = () => {
     );
   };
   
-  const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
+  const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCompleted, completed }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const [isTitleCutOff, setTitleCutOff] = useState(false);
   
     const toggleDropdown = () => {
       setDropdownOpen(!isDropdownOpen);
     };
   
+    const handleDoneClick = () => {
+      markAsCompleted(title);
+      setTitleCutOff(true);
+    };
+  
     return (
       <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
         <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
-          <h2 className="text-xl font-semibold mb-2">{title}</h2>
+          <h2 className={`text-xl font-semibold mb-2 ${completed ? 'text-blue-300' : ''}`}>
+            {isTitleCutOff ? title.split("DONE")[0] : title}
+          </h2>
+          {completed && <hr className="w-full border-t border-gray-500" />}
           <span>{isDropdownOpen ? '▲' : '▼'}</span>
         </div>
         {isDropdownOpen && (
           <div className="mt-2 dropdown-menu">
-            <p>{description}</p>
+            <p className="description">{description}</p>
             {clickableParagraphs && (
               <div className="mt-2">
                 {clickableParagraphs.map((paragraph, index) => (
@@ -280,10 +343,14 @@ const BEMindmap = () => {
                 ))}
               </div>
             )}
+            {!completed && (
+              <button className="bg-blue-900 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
+            )}
           </div>
         )}
       </div>
     );
   };
+  
   
   export default BEMindmap;

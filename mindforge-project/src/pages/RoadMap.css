@@ -1,7 +1,7 @@
 /* Set font color for the question */
 .question {
     color: #1f3f96;
-    background-color: black;
+    background-color: rgb(39, 172, 154);
     text-align: center;
 }
 
@@ -24,11 +24,12 @@
   .increased-font-size {
     font-size: 20px;
     font-style: italic;
-    color: rgb(24, 211, 224);
+    color: rgb(136, 174, 179);
   }
 
   .description {
-    font-size: 1.3rem; /* Adjust the font size as needed */
+    font-size: 1.2rem;
+    color: rgb(193, 236, 212); /* Adjust the font size as needed */
   }
 
   .completed-title {
