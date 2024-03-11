@@ -10,4 +10,4 @@ const BECertification = () => {
   );
 }
 
-export default ReactCertification;
+export default BECertification;

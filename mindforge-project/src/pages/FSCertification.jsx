@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
 const FSCertification = () => {
@@ -10,4 +11,4 @@ const FSCertification = () => {
   );
 }
 
-export default ReactCertification;
+export default FSCertification;
