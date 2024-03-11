@@ -1,6 +1,6 @@
 /* Set font color for the question */
 .question {
-    color: #5fa2cf;
+    color: #1f3f96;
     background-color: black;
     text-align: center;
 }
@@ -26,6 +26,17 @@
     font-style: italic;
     color: rgb(24, 211, 224);
   }
+
+  .description {
+    font-size: 1.3rem; /* Adjust the font size as needed */
+  }
+
+  .completed-title {
+    background-color: lightblue;
+    color: black; /* Ensure font color stays the same */
+  }
+  
+  
   
 
   

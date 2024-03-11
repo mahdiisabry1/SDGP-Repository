@@ -2,13 +2,22 @@ import React, { useState } from 'react';
 import './RoadMap.css'; 
 
 const ReactMindmap = () => {
-  // Add this line to fix the background image
+  
   const containerStyle = {
     backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed', 
+  };
+
+  const [completedItems, setCompletedItems] = useState([]);
+
+  // Function to mark an item as completed
+  const markAsCompleted = (title) => {
+    if (!completedItems.includes(title)) {
+      setCompletedItems([...completedItems, title]);
+    }
   };
   
   return (
@@ -21,7 +30,7 @@ const ReactMindmap = () => {
 
       <div className="flex flex-col space-y-0">
       <DropdownRoadmapItem
-      //add dropdown menu
+     
           title="1. HTML, CSS, and JavaScript Fundamentals:"
           description="Make sure you have a solid understanding of HTML, CSS, and JavaScript before diving into React. Understanding ES6+ JavaScript features is particularly helpful."
           clickableParagraphs={[
@@ -48,11 +57,14 @@ const ReactMindmap = () => {
             { label: 'JavaScript Crash Course for Beginners', link: 'https://youtu.be/hdI2bqOjy3c?t=2' },
             { label: 'JavaScript for Beginners', link: 'https://www.scaler.com/topics/course/javascript-beginners' },
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("1. HTML, CSS, and JavaScript Fundamentals:")}
         />
         
 
         <DropdownRoadmapItem
-          title="2. Learn React Basics"
+          title="2. Learn React Basics:"
           description="Start by understanding the core concepts of React such as components, JSX (JavaScript XML), props, state, and the component lifecycle."
           clickableParagraphs={[
             { label: 'Tutorial: Intro to React', link: 'https://legacy.reactjs.org/tutorial/tutorial.html' },
@@ -61,6 +73,9 @@ const ReactMindmap = () => {
             { label: 'React Tutorial for Beginners', link: 'https://www.youtube.com/watch?v=SqcY0GlETPk' },
             { label: 'React JS Basic Concepts Reference', link: 'https://www.geeksforgeeks.org/reactjs-basics-concepts-complete-reference/' },  
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("2. Learn React Basics:")}
         />
         
 
@@ -76,6 +91,9 @@ const ReactMindmap = () => {
             { label: 'What is a Development Environment? What is an IDE?', link: 'https://umbraco.com/knowledge-base/development-environment/' },
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("3. Setting Up Your Development Environment:")}
         />
         
 
@@ -89,6 +107,9 @@ const ReactMindmap = () => {
             { label: 'What is the difference between components, elements, and instances?', link: 'https://www.robinwieruch.de/react-element-component/' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("4.Understanding Components:")}
         />
        
 
@@ -103,6 +124,9 @@ const ReactMindmap = () => {
             { label: 'react Routing', link: 'https://www.geeksforgeeks.org/reactjs-router/' },
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("5. React Routing:")}
         />
         
 
@@ -115,6 +139,9 @@ const ReactMindmap = () => {
             { label: 'Overview of State in React', link: 'https://www.robinwieruch.de/react-state/' },
  
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("6. Managing State:")}
         />
         
         <DropdownRoadmapItem
@@ -127,6 +154,9 @@ const ReactMindmap = () => {
             { label: 'Introducing Hooks', link: 'https://legacy.reactjs.org/docs/hooks-intro.html' },
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("7. Using Hooks:")}
         />
        
         <DropdownRoadmapItem
@@ -140,6 +170,9 @@ const ReactMindmap = () => {
             { label: 'How to fetch data from an API in ReactJS', link: 'https://www.geeksforgeeks.org/how-to-fetch-data-from-an-api-in-reactjs/' },
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("8. API Calls and Data Handling:")}
         />
         
 
@@ -153,6 +186,9 @@ const ReactMindmap = () => {
             { label: 'Styling in React: 5 ways to style React apps', link: 'https://blog.logrocket.com/styling-react-5-ways-style-react-apps/' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("9. Styling in React:")}
         />
         
 
@@ -167,6 +203,9 @@ const ReactMindmap = () => {
             { label: 'How to test React Apps', link: 'https://www.browserstack.com/guide/how-to-test-react-apps' },
             
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("10. Testing React Applications:")}
         />
        
 
@@ -180,6 +219,9 @@ const ReactMindmap = () => {
             { label: '9 ways to deploy a React app for free', link: 'https://blog.logrocket.com/9-ways-deploy-react-app-free/' },
            
           ]}
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("1. HTML, CSS, and JavaScript Fundamentals:")}
         />
         
 
@@ -187,6 +229,9 @@ const ReactMindmap = () => {
           title="12. Continuous Learning and Practice:"
           description="Stay updated with the latest features and best practices in React by following official documentation, blogs, and community discussions.
           Build projects and practice regularly to solidify your understanding."
+
+          markAsCompleted={markAsCompleted}
+          completed={completedItems.includes("1. HTML, CSS, and JavaScript Fundamentals:")}
           
         />
       
@@ -196,22 +241,31 @@ const ReactMindmap = () => {
 };
 
 
-const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
+const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCompleted, completed }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isTitleCutOff, setTitleCutOff] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
+  const handleDoneClick = () => {
+    markAsCompleted(title);
+    setTitleCutOff(true);
+  };
+
   return (
     <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
       <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
-        <h2 className="text-xl font-semibold mb-2">{title}</h2>
+        <h2 className={`text-xl font-semibold mb-2 ${completed ? 'text-blue-300' : ''}`}>
+          {isTitleCutOff ? title.split("DONE")[0] : title}
+        </h2>
+        {completed && <hr className="w-full border-t border-gray-500" />}
         <span>{isDropdownOpen ? '▲' : '▼'}</span>
       </div>
       {isDropdownOpen && (
         <div className="mt-2 dropdown-menu">
-          <p>{description}</p>
+          <p className="description">{description}</p>
           {clickableParagraphs && (
             <div className="mt-2">
               {clickableParagraphs.map((paragraph, index) => (
@@ -223,10 +277,16 @@ const DropdownRoadmapItem = ({ title, description, clickableParagraphs }) => {
               ))}
             </div>
           )}
+          {!completed && (
+            <button className="bg-blue-900 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
+          )}
         </div>
       )}
     </div>
   );
 };
+
+
+
 
 export default ReactMindmap;

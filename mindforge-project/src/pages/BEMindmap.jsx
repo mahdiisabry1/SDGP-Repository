@@ -21,7 +21,7 @@ const BEMindmap = () => {
         <div className="flex flex-col space-y-0">
           
           <DropdownRoadmapItem
-          // Add dropdown meenu
+          
             title="1. Programming Fundamentals:"
             description="Learn a programming language commonly used for backend development such as Python, JavaScript (Node.js), Java, C#, or Ruby.
             Understand basic programming concepts like variables, data types, control structures, functions, and object-oriented programming (OOP) principles."
