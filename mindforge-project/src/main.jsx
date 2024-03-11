@@ -24,6 +24,8 @@ import BEMindmap from './pages/BEMindmap.jsx';
 import FSMindmap from './pages/FSMindmap.jsx';
 import ReactCertification from './pages/ReactCertification.jsx';
 import { UserContextProvider } from './context/UserContext.jsx';
+import AngularCertification from './pages/AngularCertification.jsx';
+import FECertification from './pages/FECertification.jsx';
 
 
 const router = createBrowserRouter([
@@ -97,7 +99,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/path-to-components/ReactCertification",
-        element: <ReactCertification />
+        element: <ReactCertification />,
+      },
+      {
+        path: "/path-to-components/AngularCertification",
+        element: <AngularCertification />,
+      },
+      {
+        path: "/path-to-components/FECertification",
+        element: <FECertification />
       },
     ],
   },

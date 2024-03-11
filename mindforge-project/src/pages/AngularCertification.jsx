@@ -10,4 +10,4 @@ const AngularCertification = () => {
   );
 }
 
-export default ReactCertification;
+export default AngularCertification;

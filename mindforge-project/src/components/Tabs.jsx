@@ -84,7 +84,7 @@ const Tabs = () => {
   const handleCertificationClick = () => {
     // Define an object mapping each tab to its corresponding image file
     const certificationImages = {
-      1: "/path-to -components/ReactCertification", // Replace with your actual image file names
+      1: "/path-to-components/ReactCertification", // Replace with your actual image file names
       2: "/path-to-components/AngularCertification",
       3: "/path-to-components/FECertification",
       4: "/path-to-components/BECertification",
