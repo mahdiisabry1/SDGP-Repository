@@ -85,13 +85,13 @@ const Tabs = () => {
     // Define an object mapping each tab to its corresponding image file
     const certificationImages = {
       1: "/path-to -components/ReactCertification", // Replace with your actual image file names
-      2: "/path-to-components/AngularMindmap",
-      3: "/path-to-components/AngularMindmap",
-      4: "/path-to-components/AngularMindmap",
-      5: "/path-to-components/AngularMindmap",
+      2: "/path-to-components/AngularCertification",
+      3: "/path-to-components/FECertification",
+      4: "/path-to-components/BECertification",
+      5: "/path-to-components/FSCertification",
     };
 
-    const certificationImage = certificationImages[activeTab];
+    const certificationImage = certificationImages[activeTab];''
 
     // Open a new tab with the certification image
     window.open(certificationImage, '_blank');
