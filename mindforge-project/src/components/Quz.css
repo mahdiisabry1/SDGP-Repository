@@ -18,12 +18,15 @@
 .Quz.app-container {
   max-width: 800px;
   width: 100%;
-  margin: 20px;
+  margin: 20px auto;
   padding: 30px;
   background-color: #ffffff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 /* Header Styles */
@@ -35,6 +38,7 @@
 /* Questions Container Styles */
 .Quz.questions-container {
   margin-bottom: 20px;
+  text-align: center;
   padding: 16%;
   margin-left: 15%;
   display: flex;
@@ -49,6 +53,7 @@
 /* Question Styles */
 .Quz.question {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .Quz.question p {
@@ -61,6 +66,30 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
+}
+.Quz.options-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.Quz.option-item {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  flex: 1 1 200px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.Quz.option-item:hover {
+  background-color: #e0e0e0;
+}
+.Quz.selected {
+  background-color: #3498db;
+  color: #ffffff;
 }
 
 .Quz.options-container button {
@@ -110,10 +139,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20%;
-  margin-bottom: 21%;
-  margin-left: 0%;
-  padding-left: 0%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+ /* margin-left: 0%;
+  padding-left: 0%;*/
 }
 
 /* Question Text Styles */
