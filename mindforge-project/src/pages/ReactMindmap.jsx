@@ -3,17 +3,17 @@ import './RoadMap.css';
 
 const ReactMindmap = () => {
   
-  const containerStyle = {
+  const containerStyle = {// Container style with background image
     backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed', 
   };
-
+  // State to track completed items
   const [completedItems, setCompletedItems] = useState([]);
 
- 
+ // Function to mark an item as completed
   const markAsCompleted = (title) => {
     if (!completedItems.includes(title)) {
       setCompletedItems([...completedItems, title]);
@@ -21,19 +21,19 @@ const ReactMindmap = () => {
   };
   
   return (
-    <div className="p-48 text-white" style={containerStyle}>
+    <div className="p-48 text-white" style={containerStyle}>{/* Title */}
   
       <h1 className="text-3xl font-bold mb-4 question">MindMap to React</h1>
       <p className="mb-6 font-bold increased-font-size">
    This mindmap provides a structured path to explore and learn in the field of React development.
       </p>
-
+        {/* DropdownRoadmapItem components for each step */}
       <div className="flex flex-col space-y-0">
       <DropdownRoadmapItem
      
           title="1. HTML, CSS, and JavaScript Fundamentals:"
           description="Make sure you have a solid understanding of HTML, CSS, and JavaScript before diving into React. Understanding ES6+ JavaScript features is particularly helpful."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             
             { label: 'W3Schools', link: 'https://www.w3schools.com/html/html_intro.asp' },
             { label: 'htmlreference.io', link: 'https://htmlreference.io/' },
@@ -66,7 +66,7 @@ const ReactMindmap = () => {
         <DropdownRoadmapItem
           title="2. Learn React Basics:"
           description="Start by understanding the core concepts of React such as components, JSX (JavaScript XML), props, state, and the component lifecycle."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'Tutorial: Intro to React', link: 'https://legacy.reactjs.org/tutorial/tutorial.html' },
             { label: 'React Basics', link: 'https://www.coursera.org/learn/react-basics' },
             { label: 'Learn React Basics in 10 Minutes', link: 'https://www.freecodecamp.org/news/learn-react-basics-in-10-minutes/' },
@@ -84,7 +84,7 @@ const ReactMindmap = () => {
           description="Set up Node.js and npm (Node Package Manager) if you haven't already.
           Choose a code editor or IDE (Integrated Development Environment) such as Visual Studio Code, Atom, or Sublime Text.
           Install create-react-app globally or use it to bootstrap your React projects."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'Setting up the development environment', link: 'https://reactnative.dev/docs/environment-setup' },
             { label: 'What Is a Development Environment? How to Get Started', link: 'https://www.plutora.com/blog/what-development-environment-how-get-started-now' },
             { label: 'Set up your development environment', link: 'https://developer.android.com/design-for-safety/privacy-sandbox/setup' },
@@ -101,7 +101,7 @@ const ReactMindmap = () => {
           title="4.Understanding Components:"
           description="Dive deeper into React components and their types (functional and class components).
           Learn about props, state, and when to use each."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'Creating and nesting components', link: 'https://react.dev/learn#components' },
             { label: 'Explore the different types of components in React', link: 'https://www.robinwieruch.de/react-component-types/' },
             { label: 'What is the difference between components, elements, and instances?', link: 'https://www.robinwieruch.de/react-element-component/' },
@@ -117,7 +117,7 @@ const ReactMindmap = () => {
           title="5. React Routing:"
           description="Learn how to set up routing in React using libraries like React Router.
           Understand concepts like routes, route parameters, and nested routes."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'How to use Routing in React JS: A Comprehensive Guide', link: 'https://blog.logrocket.com/react-router-v6-guide/' },
             { label: 'React Router 6 – Tutorial for Beginners.', link: 'https://www.youtube.com/watch?v=59IXY5IDrBA' },
             { label: 'React Router', link: 'https://www.w3schools.com/react/react_router.asp' },
@@ -134,7 +134,7 @@ const ReactMindmap = () => {
           title="6. Managing State:"
           description="Explore different state management solutions such as React's built-in state management, Context API, or external libraries like Redux or MobX.
           Understand when and why to use each solution."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'What is State Management?', link: 'https://www.techtarget.com/searchapparchitecture/definition/state-management' },
             { label: 'Overview of State in React', link: 'https://www.robinwieruch.de/react-state/' },
  
@@ -148,7 +148,7 @@ const ReactMindmap = () => {
           title="7. Using Hooks:"
           description="Learn about React Hooks, introduced in React 16.8, which allow you to use state and other React features without writing a class.
           Explore commonly used hooks like useState, useEffect, useContext, etc."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'Hooks Reference', link: 'https://react.dev/reference/react' },
             { label: 'React Hooks', link: 'https://www.w3schools.com/react/react_hooks.asp' },
             { label: 'Introducing Hooks', link: 'https://legacy.reactjs.org/docs/hooks-intro.html' },
@@ -163,7 +163,7 @@ const ReactMindmap = () => {
           title="8. API Calls and Data Handling:"
           description="Learn how to make HTTP requests from your React application using libraries like Axios or the built-in Fetch API.
           Understand how to handle asynchronous operations and update your UI based on data fetched from APIs."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'AJAX and APIs', link: 'https://reactjs.org/docs/faq-ajax.html' },
             { label: 'How to fetch data in React', link: 'https://www.robinwieruch.de/react-hooks-fetch-data/' },
             { label: 'How to Fetch API Data in React', link: 'https://www.freecodecamp.org/news/how-to-fetch-api-data-in-react/' },
@@ -179,7 +179,7 @@ const ReactMindmap = () => {
         <DropdownRoadmapItem
           title="9. Styling in React:"
           description="Explore different approaches to styling React components such as inline styles, CSS modules, CSS-in-JS libraries like styled-components, or using traditional CSS files."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'Ways to CSS style a React application', link: 'https://www.robinwieruch.de/react-css-styling/' },
             { label: 'Styling React Using CSS', link: 'https://www.w3schools.com/react/react_css.asp' },
             { label: 'Styling and CSS', link: 'https://legacy.reactjs.org/docs/faq-styling.html' },
@@ -196,7 +196,7 @@ const ReactMindmap = () => {
           title="10. Testing React Applications:"
           description="Learn about testing React components using tools like Jest and React Testing Library.
           Understand the importance of writing unit tests and integration tests for your components."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'What is Software Testing?', link: 'https://www.guru99.com/software-testing-introduction-importance.html' },
             { label: 'Testing Pyramid', link: 'https://www.browserstack.com/guide/testing-pyramid-for-test-automation' },
             { label: 'Testing Overview', link: 'https://legacy.reactjs.org/docs/testing.html' },
@@ -213,7 +213,7 @@ const ReactMindmap = () => {
           title="11. Deployment:"
           description="Learn how to deploy your React application to production.
           Explore different hosting platforms like Netlify, Vercel, or AWS Amplify."
-          clickableParagraphs={[
+          clickableParagraphs={[// Clickable links for further resources
             { label: 'Deployment', link: 'https://create-react-app.dev/docs/deployment/' },
             { label: 'ReactJS - Building & Deployment', link: 'https://www.tutorialspoint.com/reactjs/reactjs_building_deployment.htm' },
             { label: '9 ways to deploy a React app for free', link: 'https://blog.logrocket.com/9-ways-deploy-react-app-free/' },
@@ -241,31 +241,32 @@ const ReactMindmap = () => {
 };
 
 
-const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCompleted, completed }) => {
+const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCompleted, completed }) => {// DropdownRoadmapItem component
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isTitleCutOff, setTitleCutOff] = useState(false);
 
-  const toggleDropdown = () => {
+  const toggleDropdown = () => {// Toggle dropdown visibility
     setDropdownOpen(!isDropdownOpen);
   };
 
-  const handleDoneClick = () => {
+  const handleDoneClick = () => {// Handle "DONE" button click to mark item as completed
     markAsCompleted(title);
     setTitleCutOff(true);
   };
 
   return (
-    <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
+    <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>{/* Dropdown header */}
       <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
         <h2 className={`text-xl font-semibold mb-2 ${completed ? 'text-blue-300' : ''}`}>
-          {isTitleCutOff ? title.split("DONE")[0] : title}
+          {isTitleCutOff ? title.split("DONE")[0] : title}{/* Display title with "DONE" cut-off if completed */}
         </h2>
-        {completed && <hr className="w-full border-t border-gray-500" />}
-        <span>{isDropdownOpen ? '▲' : '▼'}</span>
+        {completed && <hr className="w-full border-t border-gray-500" />}{/* Separator line for completed items */}
+        <span>{isDropdownOpen ? '▲' : '▼'}</span>{/* Dropdown toggle icon */}
       </div>
       {isDropdownOpen && (
-        <div className="mt-2 dropdown-menu">
+        <div className="mt-2 dropdown-menu">{/* Dropdown menu */}
           <p className="description">{description}</p>
+          {/* Clickable links for further resources */}
           {clickableParagraphs && (
             <div className="mt-2">
               {clickableParagraphs.map((paragraph, index) => (
@@ -279,7 +280,7 @@ const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCo
           )}
           {!completed && (
             <button className="bg-blue-500 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
-          )}
+          )}{/* "DONE" button for marking item as completed */}
         </div>
       )}
     </div>

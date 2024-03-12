@@ -1,42 +1,49 @@
+/* Set font color for the question */
 .question {
-    color: #1f3f96;
-    background-color: rgb(39, 172, 154);
-    text-align: center;
+  color: #1f3f96; /* Font color for the question */
+  background-color: rgb(39, 172, 154); /* Background color for the question */
+  text-align: center; /* Center align the text */
 }
 
+/* Styling for open dropdown */
 .dropdown.open {
-    background-color: rgba(2, 15, 63, 0.8);
+  background-color: rgba(2, 15, 63, 0.8); /* Transparent highlighted green color */
 }
+
+/* Base styling for dropdown */
 .dropdown {
-    position: relative;
-    background-color:transparent;
-    margin: 0;
-  }
-  .dropdown .flex {
-    cursor: pointer;
-    background-color: white;
-  }
-  
-  .dropdown .flex:hover {
-    background-color: rgb(255, 255, 255);
-  }
-  .increased-font-size {
-    font-size: 20px;
-    font-style: italic;
-    color: rgb(136, 174, 179);
-  }
+  position: relative; /* Position relative for proper dropdown positioning */
+  background-color: transparent; /* Transparent background for the dropdown */
+  margin: 0; /* Reset margin */
+}
 
-  .description {
-    font-size: 1.2rem;
-    color: rgb(193, 236, 212);
-  }
+/* Styling for the dropdown flex container */
+.dropdown .flex {
+  cursor: pointer; /* Set cursor to pointer */
+  background-color: white; /* Background color for dropdown flex container */
+}
 
-  .completed-title {
-    background-color: lightblue;
-    color: black;
-  }
-  
-  
-  
+/* Styling for dropdown flex container on hover */
+.dropdown .flex:hover {
+  background-color: rgb(255, 255, 255); /* Transparent white color on hover */
+}
 
-  
+/* Styling for elements with increased font size */
+.increased-font-size {
+  font-size: 20px; /* Font size of 20 pixels */
+  font-style: italic; /* Italic font style */
+  color: rgb(136, 174, 179); /* Font color */
+}
+
+/* Styling for description text */
+.description {
+  font-size: 1.2rem; /* Font size of 1.2 rem */
+  color: rgb(193, 236, 212); /* Font color */
+}
+
+/* Styling for completed title */
+.completed-title {
+  background-color: lightblue; /* Background color for completed title */
+  color: black; /* Font color for completed title */
+  /* Ensure font color stays the same */
+}
