@@ -24,8 +24,8 @@ const RoadMap = () => {
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
-    backgroundSize: 'cover', // Added background size property
-    backgroundImage: 'url("https://gteches.com/wp-content/uploads/2023/05/Full-Stack-3.gif")', // Specify the path to your background image
+    backgroundSize: 'cover',
+    backgroundImage: 'url("https://gteches.com/wp-content/uploads/2023/05/Full-Stack-3.gif")',
   };
 
   const circleStyle = {
@@ -46,7 +46,7 @@ const RoadMap = () => {
 
   const handlePhaseClick = (phase) => {
     setSelectedPhase(phase);
-    openMindmap(phase); // Pass the selected phase to the openMindmap function
+    openMindmap(phase);
   };
 
   const openMindmap = (phase) => {
@@ -61,7 +61,7 @@ const RoadMap = () => {
     const componentName = components[phase.title];
 
     if (componentName) {
-      const url = `/path-to-components/${componentName}`; // Update the path to your components
+      const url = `/path-to-components/${componentName}`;
       window.open(url, '_blank');
     }
   };
@@ -115,7 +115,7 @@ const RoadMap = () => {
             style={{
               ...phaseStyle,
               backgroundColor: `${phase.customColor}50`,
-              backgroundImage: phase.backgroundImage, // Set background image
+              backgroundImage: phase.backgroundImage,
             }}
             onClick={() => handlePhaseClick(phase)}
           >

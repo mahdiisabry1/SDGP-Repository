@@ -1,4 +1,3 @@
-/* Set font color for the question */
 .question {
     color: #1f3f96;
     background-color: rgb(39, 172, 154);
@@ -6,7 +5,7 @@
 }
 
 .dropdown.open {
-    background-color: rgba(2, 15, 63, 0.8); /* Transparent highlighted green color */
+    background-color: rgba(2, 15, 63, 0.8); 
 }
 .dropdown {
     position: relative;
@@ -19,7 +18,7 @@
   }
   
   .dropdown .flex:hover {
-    background-color: rgb(255, 255, 255); /* Transparent white color on hover */
+    background-color: rgb(255, 255, 255); 
   }
   .increased-font-size {
     font-size: 20px;
@@ -29,12 +28,12 @@
 
   .description {
     font-size: 1.2rem;
-    color: rgb(193, 236, 212); /* Adjust the font size as needed */
+    color: rgb(193, 236, 212); 
   }
 
   .completed-title {
     background-color: lightblue;
-    color: black; /* Ensure font color stays the same */
+    color: black;
   }
   
   
