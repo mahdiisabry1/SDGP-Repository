@@ -1,24 +1,9 @@
-/* Quz.css */
 
 
-
-/* Global Styles */
-.Quz.body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* Container Styles */
 .Quz.app-container {
   max-width: 800px;
   width: 100%;
-  margin: 20px auto;
+  margin: 60px auto 20px; /* Added margin-top of 60px, adjust as needed */
   padding: 30px;
   background-color: #ffffff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -26,8 +11,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  height: 150vh; /* Adjust the height as needed */
 }
+
+
 
 /* Header Styles */
 .Quz.h1 {

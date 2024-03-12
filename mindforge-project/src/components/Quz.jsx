@@ -139,8 +139,6 @@ const QuestionSurvey = () => {
   };
 
   const getRecommendation = () => {
-    const totalScore = calculateTotalScore();
-
     if (totalScore >= 10 && totalScore <= 18) {
       return 'Functionality-Oriented Designer';
     } else if (totalScore >= 19 && totalScore <= 27) {
@@ -149,10 +147,22 @@ const QuestionSurvey = () => {
       return 'Aesthetics-Driven Designer';
     }
   };
-
   return (
     <div className="app-container">
       <h1>Web Design Preferences Questionnaire</h1>
+      <div className="result-container">
+        {submitted && (
+          <>
+            <p>Your total score: {totalScore}</p>
+            <p>Recommendation: {getRecommendation()}</p>
+          </>
+        )}
+        {submitted ? (
+          <p>Submitted</p>
+        ) : (
+          <button onClick={handleSubmit}>Submit</button>
+        )}
+      </div>
 
       {/* <div className="questions-container">
         {questions.map((q, index) => (
