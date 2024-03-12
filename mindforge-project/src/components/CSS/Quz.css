@@ -1,0 +1,63 @@
+.question-container {
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-bottom: 10%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.question-text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+}
+
+.option-item {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option-item:hover {
+  background-color: #d8e2dc;
+}
+
+.action-button {
+  background-color: #218838;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #1e7e34;
+}
+
+.question-result-message {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.question-option-item.selected {
+  background-color: #ce8fd1;
+}
+.option-item.selected {
+  background-color: #109db2; /* Add a different background color for the selected option */
+  color: #ffffff; /* Add a different text color for the selected option */
+}

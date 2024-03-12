@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './Quz.css'; // You can customize the styling in App.css
+import './CSS/Quz.css'; // You can customize the styling in App.css
 
 const initialQuestions = [
   {
