@@ -255,23 +255,22 @@ const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCo
   };
 
   return (
-    <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>{/* Dropdown header */}
+    <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
       <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
         <h2 className={`text-xl font-semibold mb-2 ${completed ? 'text-blue-300' : ''}`}>
-          {isTitleCutOff ? title.split("DONE")[0] : title}{/* Display title with "DONE" cut-off if completed */}
+          {isTitleCutOff ? title.split("DONE")[0] : title}
         </h2>
-        {completed && <hr className="w-full border-t border-gray-500" />}{/* Separator line for completed items */}
-        <span>{isDropdownOpen ? '▲' : '▼'}</span>{/* Dropdown toggle icon */}
+        {completed && <hr className="w-full border-t border-gray-500" />}
+        <span>{isDropdownOpen ? '▲' : '▼'}</span>
       </div>
       {isDropdownOpen && (
-        <div className="mt-2 dropdown-menu">{/* Dropdown menu */}
+        <div className="mt-2 dropdown-menu">
           <p className="description">{description}</p>
-          {/* Clickable links for further resources */}
           {clickableParagraphs && (
             <div className="mt-2">
               {clickableParagraphs.map((paragraph, index) => (
                 <p key={index}>
-                  <a href={paragraph.link} target="_blank" rel="noopener noreferrer">
+                  <a href={paragraph.link} target="_blank" rel="noopener noreferrer" className="underline">
                     {paragraph.label}
                   </a>
                 </p>
@@ -280,7 +279,7 @@ const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCo
           )}
           {!completed && (
             <button className="bg-blue-500 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
-          )}{/* "DONE" button for marking item as completed */}
+          )}
         </div>
       )}
     </div>

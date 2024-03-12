@@ -234,7 +234,7 @@ const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCo
             <div className="mt-2">
               {clickableParagraphs.map((paragraph, index) => (
                 <p key={index}>
-                  <a href={paragraph.link} target="_blank" rel="noopener noreferrer">
+                  <a href={paragraph.link} target="_blank" rel="noopener noreferrer" className="underline">
                     {paragraph.label}
                   </a>
                 </p>
@@ -242,7 +242,7 @@ const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCo
             </div>
           )}
           {!completed && (
-            <button className="bg-blue-900 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
+            <button className="bg-blue-500 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
           )}
         </div>
       )}
