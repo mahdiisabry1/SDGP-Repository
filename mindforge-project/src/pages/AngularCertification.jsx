@@ -5,7 +5,7 @@ const AngularCertification = () => {
     <div>
       <h1>React Certification</h1>
       <p>Congratulations! You've completed your React certification.</p>
-      <img src="path_to_your_image" alt="Certificate" />
+      <img src="mindforge-project\src\assets\images\AngularCertifiacation.jpg" alt="Certificate" />
     </div>
   );
 }
