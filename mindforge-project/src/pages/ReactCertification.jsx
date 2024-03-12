@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import './CSS/ReactCertification.css';
 const ReactCertification = () => {
   return (
     <div>
