@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './RoadMap.css';
 
 const FEMindmap = () => {
-  // Add this line to fix the background image
   const containerStyle = {
     backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
@@ -13,7 +12,6 @@ const FEMindmap = () => {
 
   const [completedItems, setCompletedItems] = useState([]);
 
-  // Function to mark an item as completed
   const markAsCompleted = (title) => {
     if (!completedItems.includes(title)) {
       setCompletedItems([...completedItems, title]);
@@ -30,7 +28,6 @@ const FEMindmap = () => {
         <div className="flex flex-col space-y-0">
 
         <DropdownRoadmapItem
-        //Add dropdown menu
           title="1. Basic Web Technologies:"
           description="Learn HTML5: Understand the structure of web pages.
           Learn CSS3: Learn styling and layout techniques.

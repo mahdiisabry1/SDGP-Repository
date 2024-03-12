@@ -13,7 +13,7 @@ const ReactMindmap = () => {
 
   const [completedItems, setCompletedItems] = useState([]);
 
-  // Function to mark an item as completed
+ 
   const markAsCompleted = (title) => {
     if (!completedItems.includes(title)) {
       setCompletedItems([...completedItems, title]);

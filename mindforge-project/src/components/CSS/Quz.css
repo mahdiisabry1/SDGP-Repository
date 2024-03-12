@@ -1,14 +1,24 @@
+.Quzapp-container{
+  background-image: url('https://images.squarespace-cdn.com/content/v1/608a3fe4a4fc7856db3b9a98/e4652480-9950-4208-96ab-9444d43d9766/aeoniumsky_Questionmark.gif?format=750w');
+  background-size:auto;
+  background-position: center;
+  height:auto;
+}
+
 .question-container {
-  margin-top: 10%;
-  margin-left: 30%;
-  margin-bottom: 10%;
+  margin-top: 20vh;
+  margin-bottom: 0;
+  margin-left: auto; 
+  margin-right: auto;
   background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  padding: 30px;
   max-width: 600px;
-  width: 100%;
+  width: 100%; 
+  height: 100%;
 }
+
 
 .question-text {
   font-size: 1.5rem;
@@ -58,6 +68,6 @@
   background-color: #ce8fd1;
 }
 .option-item.selected {
-  background-color: #109db2; /* Add a different background color for the selected option */
-  color: #ffffff; /* Add a different text color for the selected option */
+  background-color: #109db2; 
+  color: #ffffff;
 }

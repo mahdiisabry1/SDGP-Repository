@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import './RoadMap.css';
 
 const AngularMindmap = () => {
-  // Add this line to fix the background image
   const containerStyle = {
-    backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")', // Specify the path to your background image
+    backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")', 
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -13,7 +12,6 @@ const AngularMindmap = () => {
 
   const [completedItems, setCompletedItems] = useState([]);
 
-  // Function to mark an item as completed
   const markAsCompleted = (title) => {
     if (!completedItems.includes(title)) {
       setCompletedItems([...completedItems, title]);
