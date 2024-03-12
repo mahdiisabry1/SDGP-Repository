@@ -80,7 +80,29 @@ const Tabs = () => {
       "Develop a full-stack task management system where users can create tasks, assign them to other users, mark them as completed, and filter tasks based on their status. Use React for the front end and Node.js/Express with MongoDB for the back end.",
     ],
   };
+  const handleSubmitClick = () => {
+    // Assuming you have a separate object storing correct answers for each question
+    const correctAnswers = {
+      1: ["Hello World!", "Counter", "Parent-Child Props", "Boolean Toggle", "Fetch Data"],
+      2: ["Hello, Angular!", "Two-way Data Binding", "Counter Button", "HTTP GET", "Counter Component"],
+      3: ["Change Background", "Change Text", "Simple Layout", "CSS Box Model", "CSS Animation"],
+      4: ["Print Hello World", "Express Server", "CRUD Operations", "GET Users", "Authentication System"],
+      5: ["Basic CRUD App", "Authentication", "Full-stack CRUD", "Real-time Chat", "Task Management System"],
+    };
 
+    // Fetch the correct answers for the active tab
+    const correctAnswersForTab = correctAnswers[activeTab];
+
+    // Check if the provided answer matches any of the correct answers
+    const isCorrectAnswer = correctAnswersForTab[selectedQuestion] === answer.trim();
+
+    // Display message based on whether the answer is correct or wrong
+    if (isCorrectAnswer) {
+      alert("Answer is correct!");
+    } else {
+      alert("Answer is wrong!");
+    }
+  };
   const handleCertificationClick = () => {
     // Define an object mapping each tab to its corresponding image file
     const certificationImages = {
@@ -140,9 +162,13 @@ const Tabs = () => {
                       onChange={handleAnswerChange}
                     />
                     {isAnswerProvided && (
-                      <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
-                        Submit
-                      </button>
+                      <button
+                      className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+                      onClick={handleSubmitClick}
+                    >
+                      Submit
+                    </button>
+                    
                     )}
                   </div>
                 )}
