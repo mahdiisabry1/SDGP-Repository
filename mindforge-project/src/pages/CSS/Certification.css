@@ -9,8 +9,11 @@
 }
 
 .certificate-image {
-  width: 100%; /* Adjust as needed */
+  max-width: 800px; /* Adjust as needed */
   height: auto;
   display: block;
+  top: 70%;
+  bottom: 70%;
+  padding: 20px;
   margin: 0 auto; /* Center the image horizontally */
 }

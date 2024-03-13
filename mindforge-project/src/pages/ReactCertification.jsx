@@ -1,5 +1,5 @@
 import React from 'react';
-import './CSS/ReactCertification.css';
+import '../pages/CSS/Certification.css';
 import html2pdf from 'html2pdf.js';
 
 const ReactCertification = () => {
