@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './RoadMap.css'; // Import CSS file for styling
 
-const FSMindmap = () => {
+const FSMindmap = () => {   // Functional component FSMindmap
   const containerStyle = {   // Container style with background image
     backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
@@ -27,6 +27,7 @@ const FSMindmap = () => {
         <div className="flex flex-col space-y-0">
 
  {/* DropdownRoadmapItem components for each step */}
+ {/* Each DropdownRoadmapItem is conditionally rendered based on whether it's completed or not */}
         <DropdownRoadmapItem
           title="1. Learn the Fundamentals:"
           description="Start with the basics of programming, including concepts like variables, data types, conditionals, loops, and functions.

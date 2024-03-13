@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './RoadMap.css'; // Import CSS file for styling
 
-const FEMindmap = () => {
+const FEMindmap = () => {   // Functional component FEMindmap
   const containerStyle = {   // Container style with background image
     backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
@@ -9,8 +9,10 @@ const FEMindmap = () => {
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed', 
   };
+
   // State to track completed items
   const [completedItems, setCompletedItems] = useState([]);
+
  // Function to mark an item as completed
   const markAsCompleted = (title) => {
     if (!completedItems.includes(title)) {
@@ -19,14 +21,17 @@ const FEMindmap = () => {
   };
 
   return (
-    <div className="p-48 text-white" style={containerStyle}>
+    <div className="p-48 text-white" style={containerStyle}>  
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Front-End</h1>
       <p className="mb-6 font-bold increased-font-size">
       This MindMap provides a structured path to explore and learn in the field of Front-End development.
       </p>
 
-        <div className="flex flex-col space-y-0">
+        <div className="flex flex-col space-y-0">   
+ 
  {/* DropdownRoadmapItem components for each step */}
+ {/* Each DropdownRoadmapItem is conditionally rendered based on whether it's completed or not */}
+        
         <DropdownRoadmapItem
           title="1. Basic Web Technologies:"
           description="Learn HTML5: Understand the structure of web pages.
