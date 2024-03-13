@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './RoadMap.css';
+import './RoadMap.css'; // Import CSS file for styling
 
 const AngularMindmap = () => {
+    // Container style with background image
   const containerStyle = {
     backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")', 
     backgroundSize: 'cover',
@@ -9,9 +10,10 @@ const AngularMindmap = () => {
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed', 
   };
-
+  // State to track completed items
   const [completedItems, setCompletedItems] = useState([]);
-
+  
+  // Function to mark an item as completed
   const markAsCompleted = (title) => {
     if (!completedItems.includes(title)) {
       setCompletedItems([...completedItems, title]);
@@ -20,18 +22,21 @@ const AngularMindmap = () => {
 
   return (
     <div className="p-48 text-white" style={containerStyle}>
+       {/* Title */}
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Angular</h1>
+      {/* Description */}
       <p className="mb-6 font-bold increased-font-size">
      This mindmap provides a structured path to explore and learn in the field of Angular development.
       </p>
 
         <div className="flex flex-col space-y-o">
-
+          {/* DropdownRoadmapItem components for each step */}
           <DropdownRoadmapItem
           //Add dropdown menu
             title="1. Angular Framework:"
             description="Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google."
             clickableParagraphs={[
+              // Clickable links for further resources
               { label: 'Angular', link: 'https://angular.io/' },
               { label: 'Top 15 Angular Frameworks and Libraries', link: 'https://www.techtic.com/blog/top-angular-frameworks/' },
               { label: 'Angular Framework Fundamentals', link: 'https://www.youtube.com/watch?v=ZNilX-i1Vck' },
@@ -279,14 +284,15 @@ const AngularMindmap = () => {
     );
   };
   
+  // DropdownRoadmapItem component
   const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCompleted, completed }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isTitleCutOff, setTitleCutOff] = useState(false);
-  
+      // Toggle dropdown visibility
     const toggleDropdown = () => {
       setDropdownOpen(!isDropdownOpen);
     };
-  
+      // Handle "DONE" button click to mark item as completed
     const handleDoneClick = () => {
       markAsCompleted(title);
       setTitleCutOff(true);
@@ -294,16 +300,21 @@ const AngularMindmap = () => {
   
     return (
       <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
+        {/* Dropdown header */}
         <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
           <h2 className={`text-xl font-semibold mb-2 ${completed ? 'text-blue-300' : ''}`}>
+            {/* Display title with "DONE" cut-off if completed */}
             {isTitleCutOff ? title.split("DONE")[0] : title}
           </h2>
+          {/* Separator line for completed items */}
           {completed && <hr className="w-full border-t border-gray-500" />}
+          {/* Dropdown toggle icon */}
           <span>{isDropdownOpen ? '▲' : '▼'}</span>
         </div>
         {isDropdownOpen && (
           <div className="mt-2 dropdown-menu">
             <p className="description">{description}</p>
+            {/* Clickable links for further resources */}
             {clickableParagraphs && (
               <div className="mt-2">
                 {clickableParagraphs.map((paragraph, index) => (
@@ -315,6 +326,7 @@ const AngularMindmap = () => {
                 ))}
               </div>
             )}
+            {/* "DONE" button for marking item as completed */}
             {!completed && (
               <button className="bg-blue-500 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
             )}

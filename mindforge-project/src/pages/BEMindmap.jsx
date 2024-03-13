@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './RoadMap.css';
+import './RoadMap.css'; // Import CSS file for styling
 
 const BEMindmap = () => {
+  // Container style with background image
   const containerStyle = {
     backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")', // Specify the path to your background image
     backgroundSize: 'cover',
@@ -9,9 +10,9 @@ const BEMindmap = () => {
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed',
   };
-
+  // State to track completed items
   const [completedItems, setCompletedItems] = useState([]);
-
+   // Function to mark an item as completed
   const markAsCompleted = (title) => {
     if (!completedItems.includes(title)) {
       setCompletedItems([...completedItems, title]);
@@ -26,13 +27,13 @@ const BEMindmap = () => {
       </p>
 
         <div className="flex flex-col space-y-0">
-          
+          {/* DropdownRoadmapItem components for each step */}
           <DropdownRoadmapItem
           
             title="1. Programming Fundamentals:"
             description="Learn a programming language commonly used for backend development such as Python, JavaScript (Node.js), Java, C#, or Ruby.
             Understand basic programming concepts like variables, data types, control structures, functions, and object-oriented programming (OOP) principles."
-            clickableParagraphs={[
+            clickableParagraphs={[  // Clickable links for further resources
               { label: 'python website', link: 'https://www.python.org/' },
               { label: 'python getting started', link: 'https://www.python.org/about/gettingstarted/' },
               { label: 'W3Schools - Python Tutorial', link: 'https://www.w3schools.com/python/' },
@@ -304,15 +305,15 @@ const BEMindmap = () => {
       </div>
     );
   };
-  
+  // DropdownRoadmapItem component
   const DropdownRoadmapItem = ({ title, description, clickableParagraphs, markAsCompleted, completed }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isTitleCutOff, setTitleCutOff] = useState(false);
-  
+    // Toggle dropdown visibility
     const toggleDropdown = () => {
       setDropdownOpen(!isDropdownOpen);
     };
-  
+    // Handle "DONE" button click to mark item as completed
     const handleDoneClick = () => {
       markAsCompleted(title);
       setTitleCutOff(true);
@@ -322,15 +323,18 @@ const BEMindmap = () => {
       <div className={`bg-gray-100 p-4 rounded-md relative dropdown ${isDropdownOpen ? 'open' : ''}`}>
         <div className="flex items-center justify-between cursor-pointer question" onClick={toggleDropdown}>
           <h2 className={`text-xl font-semibold mb-2 ${completed ? 'text-blue-300' : ''}`}>
+            {/* Display title with "DONE" cut-off if completed */}
             {isTitleCutOff ? title.split("DONE")[0] : title}
           </h2>
+          {/* Separator line for completed items */}
           {completed && <hr className="w-full border-t border-gray-500" />}
           <span>{isDropdownOpen ? '▲' : '▼'}</span>
         </div>
         {isDropdownOpen && (
           <div className="mt-2 dropdown-menu">
             <p className="description">{description}</p>
-            {clickableParagraphs && (
+            {/* Clickable links for further resources */}
+            {clickableParagraphs && ( 
               <div className="mt-2">
                 {clickableParagraphs.map((paragraph, index) => (
                   <p key={index}>
@@ -341,6 +345,7 @@ const BEMindmap = () => {
                 ))}
               </div>
             )}
+            {/* "DONE" button for marking item as completed */}
             {!completed && (
               <button className="bg-blue-500 text-white font-semibold px-3 py-1 rounded-md mt-2" onClick={handleDoneClick}>DONE</button>
             )}
