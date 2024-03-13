@@ -5,81 +5,81 @@ const initialQuestions = [ // Define initial questions for the survey
   {
     question: 'How do you approach the balance between aesthetics and functionality in web design?',
     options: [
-      { text: 'A -  Aesthetics are crucial; I want my designs to be visually stunning and unique.', rating: 3 },
-      { text: 'B -  Functionality comes first; my designs prioritize usability and user experience.', rating: 1 },
-      { text: 'C -  I strive for a balance, ensuring both aesthetics and functionality complement each other.', rating: 2 },
+      { text: '  Aesthetics are crucial; I want my designs to be visually stunning and unique.', rating: 3 },
+      { text: '  Functionality comes first; my designs prioritize usability and user experience.', rating: 1 },
+      { text: '  I strive for a balance, ensuring both aesthetics and functionality complement each other.', rating: 2 },
     ],
   },
   {
     question: 'What is your preferred method for gathering user feedback during the design process?',
     options: [
-      { text: 'A -  Conducting user surveys and interviews to understand their emotional responses.', rating: 2 },
-      { text: 'B -  Analyzing user behavior through heatmaps and analytics tools.', rating: 1 },
-      { text: 'C -  Combining both qualitative and quantitative data to inform design decisions.', rating: 3 },
+      { text: '  Conducting user surveys and interviews to understand their emotional responses.', rating: 2 },
+      { text: '  Analyzing user behavior through heatmaps and analytics tools.', rating: 1 },
+      { text: '  Combining both qualitative and quantitative data to inform design decisions.', rating: 3 },
     ],
   },
   {
     question: 'How do you approach the use of white space in your designs?',
     options: [
-      { text: 'A -  Embracing ample white space for a clean and minimalist look.', rating: 2 },
-      { text: 'B -  Using white space strategically to guide the user\'s attention and enhance readability.', rating: 3 },
-      { text: 'C -  Minimizing white space for a denser, content-rich design.', rating: 1 },
+      { text: '  Embracing ample white space for a clean and minimalist look.', rating: 2 },
+      { text: '  Using white space strategically to guide the user\'s attention and enhance readability.', rating: 3 },
+      { text: '  Minimizing white space for a denser, content-rich design.', rating: 1 },
     ],
   },
   {
     question: 'What is your attitude towards responsive design and mobile optimization?',
     options: [
-      { text: 'A -  Prioritizing mobile-first design to ensure a seamless experience on all devices.', rating: 3 },
-      { text: 'B -  Designing for desktop first and adapting for smaller screens afterward.', rating: 1 },
-      { text: 'C -  Considering various device sizes simultaneously during the entire design process.', rating: 2 },
+      { text: '  Prioritizing mobile-first design to ensure a seamless experience on all devices.', rating: 3 },
+      { text: ' Designing for desktop first and adapting for smaller screens afterward.', rating: 1 },
+      { text: ' Considering various device sizes simultaneously during the entire design process.', rating: 2 },
     ],
   },
   {
     question: 'How do you choose color palettes for your web designs?',
     options: [
-      { text: 'A -  Experimenting with bold and vibrant colors to evoke emotions.', rating: 3 },
-      { text: 'B -  Selecting colors based on usability and accessibility principles.', rating: 2 },
-      { text: 'C -  Striking a balance between aesthetics and color psychology.', rating: 1 },
+      { text: '  Experimenting with bold and vibrant colors to evoke emotions.', rating: 3 },
+      { text: '  Selecting colors based on usability and accessibility principles.', rating: 2 },
+      { text: ' Striking a balance between aesthetics and color psychology.', rating: 1 },
     ],
   },
   {
     question: 'What role does storytelling play in your web designs?',
     options: [
-      { text: 'A -  I integrate narratives and storytelling elements for a more engaging user experience.', rating: 3 },
-      { text: 'B -  I focus more on delivering information efficiently rather than storytelling.', rating: 1 },
-      { text: 'C -  I incorporate elements of storytelling when it enhances the overall design.', rating: 2 },
+      { text: '  I integrate narratives and storytelling elements for a more engaging user experience.', rating: 3 },
+      { text: '  I focus more on delivering information efficiently rather than storytelling.', rating: 1 },
+      { text: '  I incorporate elements of storytelling when it enhances the overall design.', rating: 2 },
     ],
   },
   {
     question: 'How do you approach collaboration with developers during the implementation phase?',
     options: [
-      { text: 'A -  Actively collaborate, ensuring the vision is translated into the final product.', rating: 3 },
-      { text: 'B -  Provide design assets and guidelines, allowing developers more autonomy.', rating: 1 },
-      { text: 'C -  Maintain open communication, adjusting the design based on technical constraints.', rating: 2 },
+      { text: '  Actively collaborate, ensuring the vision is translated into the final product.', rating: 3 },
+      { text: '  Provide design assets and guidelines, allowing developers more autonomy.', rating: 1 },
+      { text: '  Maintain open communication, adjusting the design based on technical constraints.', rating: 2 },
     ],
   },
   {
     question: 'What is your perspective on design trends in the industry?',
     options: [
-      { text: 'A -  I actively seek out and embrace the latest design trends.', rating: 3 },
-      { text: 'B -  I incorporate industry trends if they align with the project\'s goals and user needs.', rating: 2 },
-      { text: 'C -  I prefer timeless design elements over following current trends.', rating: 1 },
+      { text: '  I actively seek out and embrace the latest design trends.', rating: 3 },
+      { text: '  I incorporate industry trends if they align with the project\'s goals and user needs.', rating: 2 },
+      { text: '  I prefer timeless design elements over following current trends.', rating: 1 },
     ],
   },
   {
     question: 'How do you handle revisions and feedback from clients?',
     options: [
-      { text: 'A -  Embrace feedback as an opportunity for creative growth and improvement.', rating: 3 },
-      { text: 'B -  Focus on meeting client requirements without prioritizing personal design preferences.', rating: 1 },
-      { text: 'C -  Collaborate with clients, finding a middle ground between their vision and design principles.', rating: 2 },
+      { text: '  Embrace feedback as an opportunity for creative growth and improvement.', rating: 3 },
+      { text: '  Focus on meeting client requirements without prioritizing personal design preferences.', rating: 1 },
+      { text: '  Collaborate with clients, finding a middle ground between their vision and design principles.', rating: 2 },
     ],
   },
   {
     question: 'What is your approach to user interface (UI) animations and interactions?',
     options: [
-      { text: 'A -  I use animations and interactions to create a memorable and dynamic user experience.', rating: 3 },
-      { text: 'B -  I implement subtle animations to enhance usability without being distracting.', rating: 2 },
-      { text: 'C -  I minimize the use of animations, prioritizing a clean and straightforward interface.', rating: 1 },
+      { text: '  I use animations and interactions to create a memorable and dynamic user experience.', rating: 3 },
+      { text: '  I implement subtle animations to enhance usability without being distracting.', rating: 2 },
+      { text: '  I minimize the use of animations, prioritizing a clean and straightforward interface.', rating: 1 },
     ],
   },
 ];
@@ -132,22 +132,27 @@ const QuestionSurvey = () => { // QuestionSurvey component definition
     }
   };
 
-  const handleSubmit = () => {   // Function to handle submitting the survey
-        // Call handleNextQuestion to finalize the last question and set the submitted flag
-
-    if (selectedOption !== null) {
+// Function to handle the submission of the survey
+  const handleSubmit = () => {
+    if (selectedOption !== null) {  // If an option is selected, proceed to the next question
       handleNextQuestion();
+    } else {  // If no option is selected, show an error message
+      alert("Please answer the question before submitting.");
+      return;
     }
+    // Set the submitted flag to true after handling the current question
     setSubmitted(true);
   };
 
+
+
   // Function to get the recommendation based on the total score
-
-  const getRecommendation = () => {
-    if (totalScore >= 10 && totalScore <= 18) {     // Determine recommendation based on the total score range
-
+  const getRecommendation = (score) => {
+    if (score >=1 && score<=9) {
+      return 'You should study more keep touch with te website.'; 
+    } else if (score >= 10 && score <= 18) {
       return 'Functionality-Oriented Designer';
-    } else if (totalScore >= 19 && totalScore <= 27) {
+    } else if (score >= 19 && score <= 27) {
       return 'Balanced Designer';
     } else {
       return 'Aesthetics-Driven Designer';
