@@ -19,7 +19,7 @@ const ReactCertification = () => {
   return (
     <div className="certificate-container">
       <h1>React Certification</h1>
-      <p>Congratulations! You've completed your React certification.</p>
+      <p>Congratulations! </p>
       <div id="certificate" className="certificate">
         <img
           src="\src\assets\images\Reactjscertifiaction.jpg"
