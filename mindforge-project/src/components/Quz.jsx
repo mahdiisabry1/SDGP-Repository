@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import './CSS/Quz.css'; 
+import './CSS/Quz.css';  // Import custom styling
 
-const initialQuestions = [
+const initialQuestions = [ // Define initial questions for the survey
   {
     question: 'How do you approach the balance between aesthetics and functionality in web design?',
     options: [
@@ -83,42 +83,47 @@ const initialQuestions = [
     ],
   },
 ];
-const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
+const shuffleArray = (array) => { // Function to shuffle an array in place
+
+  for (let i = array.length - 1; i > 0; i--) {  // Implementation of the Fisher-Yates shuffle algorithm
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
 };
 
 
-const QuestionSurvey = () => {
-  const [questions, setQuestions] = useState([]);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [submitted, setSubmitted] = useState(false);
-  const [totalScore, setTotalScore] = useState(0);
+const QuestionSurvey = () => { // QuestionSurvey component definition
+  const [questions, setQuestions] = useState([]); // Array to hold shuffled questions
+  const [currentQuestion, setCurrentQuestion] = useState(0); // Index of the current question
+  const [selectedOption, setSelectedOption] = useState(null); // Index of the selected option
+  const [submitted, setSubmitted] = useState(false); // Flag to indicate if the survey is submitted
+  const [totalScore, setTotalScore] = useState(0); // Accumulated total score based on selected options
 
 
-  useEffect(() => {
+
+  useEffect(() => {  // useEffect hook to shuffle questions when the component mounts
     const shuffledQuestions = [...initialQuestions];
-    shuffleArray(shuffledQuestions);
-    setQuestions(shuffledQuestions);
+    shuffleArray(shuffledQuestions); // Shuffle the copied array
+    setQuestions(shuffledQuestions); // Set shuffled questions as the state
   }, []);
 
-  const handleSelectOption = (optionIndex) => {
-    if (!submitted && selectedOption === null) {
+  const handleSelectOption = (optionIndex) => {   // Function to handle option selection
+    if (!submitted && selectedOption === null) {     // Allow selection if the survey is not submitted and no option is currently selected
+
       setSelectedOption(optionIndex);
     }
   };
 
+  // Function to handle moving to the next question or submitting the survey
+
   const handleNextQuestion = () => {
-    if (selectedOption !== null) {
+    if (selectedOption !== null) {     // Calculate total score if an option is selected
       const question = questions[currentQuestion];
       const selectedRating = question.options[selectedOption].rating;
       setTotalScore((prevTotalScore) => prevTotalScore + selectedRating);
     }
 
-    if (currentQuestion < questions.length - 1) {
+    if (currentQuestion < questions.length - 1) {     // Move to the next question if not the last question, reset state, or submit the survey
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(null);
       setSubmitted(false);
@@ -127,17 +132,20 @@ const QuestionSurvey = () => {
     }
   };
 
-  const handleSubmit = () => {
-    
+  const handleSubmit = () => {   // Function to handle submitting the survey
+        // Call handleNextQuestion to finalize the last question and set the submitted flag
+
     if (selectedOption !== null) {
       handleNextQuestion();
     }
     setSubmitted(true);
   };
 
+  // Function to get the recommendation based on the total score
 
   const getRecommendation = () => {
-    if (totalScore >= 10 && totalScore <= 18) {
+    if (totalScore >= 10 && totalScore <= 18) {     // Determine recommendation based on the total score range
+
       return 'Functionality-Oriented Designer';
     } else if (totalScore >= 19 && totalScore <= 27) {
       return 'Balanced Designer';
@@ -160,6 +168,8 @@ const QuestionSurvey = () => {
               className={`option-item ${
                 selectedOption === index ? "selected" : ""
               }`}
+             // Handle option selection onClick, disable if survey is submitted
+
               onClick={() => handleSelectOption(index)}
               style={{ cursor: submitted ? "not-allowed" : "pointer" }}
             >
@@ -167,6 +177,8 @@ const QuestionSurvey = () => {
             </li>
           ))}
         </ul>
+       {/* Display result or next/submit button */}
+
         {submitted ? (
           <div className="result-container">
             <p>Your total score: {totalScore}</p>
@@ -174,6 +186,8 @@ const QuestionSurvey = () => {
         ) : (
           <button
             className="action-button"
+           // Handle click event based on current question status
+
             onClick={
               currentQuestion === questions.length - 1
                 ? handleSubmit
@@ -183,6 +197,8 @@ const QuestionSurvey = () => {
             {currentQuestion === questions.length - 1 ? "Submit" : "Next"}
           </button>
         )}
+       {/* Display recommendation after submission */}
+
         {submitted && (
           <div className="result-container">
             <p>Recommendation: {getRecommendation()}</p>
