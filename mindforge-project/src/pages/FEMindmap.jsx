@@ -21,13 +21,13 @@ const FEMindmap = () => {   // Functional component FEMindmap
   };
 
   return (
-    <div className="p-48 text-white" style={containerStyle}>  // Container with inline styles
+    <div className="p-48 text-white" style={containerStyle}>  
       <h1 className="text-3xl font-bold mb-4 question">MindMap to Front-End</h1>
       <p className="mb-6 font-bold increased-font-size">
       This MindMap provides a structured path to explore and learn in the field of Front-End development.
       </p>
 
-        <div className="flex flex-col space-y-0">   // Container for roadmap items
+        <div className="flex flex-col space-y-0">   
  
  {/* DropdownRoadmapItem components for each step */}
  {/* Each DropdownRoadmapItem is conditionally rendered based on whether it's completed or not */}
