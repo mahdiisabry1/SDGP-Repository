@@ -89,6 +89,7 @@ const Tabs = () => {
       4: ["Print Hello World", "Express Server", "CRUD Operations", "GET Users", "Authentication System"],
       5: ["Basic CRUD App", "Authentication", "Full-stack CRUD", "Real-time Chat", "Task Management System"],
     };
+    
 
     // Fetch the correct answers for the active tab
     const correctAnswersForTab = correctAnswers[activeTab];
@@ -152,26 +153,36 @@ const Tabs = () => {
                   Question {questionIndex + 1}: {question}
                 </p>
                 {selectedQuestion === questionIndex && (
-                  <div>
-                    <input type="file" accept=".pdf,.doc,.docx" />
-                    <input
-                      type="text"
-                      placeholder="Describe your answer"
-                      style={{ color: "black" }} // Set font color to black
-                      value={answer}
-                      onChange={handleAnswerChange}
-                    />
-                    {isAnswerProvided && (
-                      <button
-                      className="mt-5 bg-black w-full text-white hover:bg-slate-500"
-                      onClick={handleSubmitClick}
-                    >
-                      Submit
-                    </button>
-                    
-                    )}
-                  </div>
-                )}
+  <div>
+    <input
+      type="text"
+      placeholder="Describe your answer"
+      style={{ color: "black" }} // Set font color to black
+      value={answer}
+      onChange={handleAnswerChange}
+    />
+    {isAnswerProvided && (
+      <div style={{ borderTop: "1px solid #ccc", marginTop: "10px", paddingTop: "10px" }}>
+        <button
+          className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+          onClick={handleSubmitClick}
+        >
+          Submit
+        </button>
+        {/* "Done" button visually cut off by a line */}
+        <div style={{ borderTop: "1px solid #ccc", marginTop: "10px", paddingTop: "10px" }}>
+          <button
+            className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+            onClick={() => handleQuestionClick(null)} // Reset selected question
+          >
+            Done
+          </button>
+        </div>
+      </div>
+    )}
+  </div>
+)}
+
               </div>
             ))}
             <div>

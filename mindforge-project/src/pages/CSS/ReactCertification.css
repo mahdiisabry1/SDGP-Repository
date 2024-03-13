@@ -1,25 +1,16 @@
-/* CSS/ReactCertification.css */
-.certification-container {
-    text-align: center;
-    margin-top: 50px; /* Adjust margin as needed */
-  }
-  
-  .certification-container h1 {
-    font-size: 24px; /* Adjust font size as needed */
-    margin-bottom: 20px; /* Adjust margin as needed */
-  }
-  
-  .certification-container p {
-    font-size: 18px; /* Adjust font size as needed */
-    margin-bottom: 20px; /* Adjust margin as needed */
-  }
-  
-  .certification-container img {
-    max-width: 10%; /* Ensure image doesn't exceed container width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure image is centered horizontally */
-    margin: 0 auto; /* Center image horizontally */
-    border: 5px solid #000; /* Add border around the image */
-    padding: 10px; /* Add padding around the image */
-  }
-  
+.certificate-container {
+  text-align: center;
+}
+
+.certificate {
+  display: inline-block;
+  border: 2px solid #000; /* Border around the certificate */
+  padding: 10px; /* Padding inside the border */
+}
+
+.certificate-image {
+  width: 100%; /* Adjust as needed */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
