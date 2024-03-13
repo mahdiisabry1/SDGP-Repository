@@ -1,77 +1,73 @@
-/* CSS styling for the container of the survey questions */
+.Quzapp-container{
+  background-image: url('https://i.gifer.com/76YS.gif');
+  background-size:auto;
+  background-position: center;
+  height:auto;
+}
+
 .question-container {
-  /* Positioning and layout */
-  margin-top: 10%; /* Margin from the top of the viewport */
-  margin-left: 30%; /* Margin from the left of the viewport */
-  margin-bottom: 10%; /* Margin from the bottom of the viewport */
-  background-color: #ffffff; /* Background color */
-  border-radius: 8px; /* Border radius for rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
-  padding: 20px; /* Padding inside the container */
-  max-width: 600px; /* Maximum width of the container */
-  width: 100%; /* Set the width to 100% of the parent container */
+  margin-top: 20vh;
+  margin-bottom: 0;
+  margin-left: auto; 
+  margin-right: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  max-width: 600px;
+  width: 100%; 
+  height: 100%;
 }
 
-/* Styling for the text of the survey questions */
+
 .question-text {
-  font-size: 1.5rem; /* Font size */
-  margin-bottom: 20px; /* Bottom margin */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-/* Styling for the list of options */
 .options-list {
-  list-style: none; /* Remove default list styles */
-  padding: 0; /* Remove padding */
+  list-style: none;
+  padding: 0;
 }
 
-/* Styling for each option */
 .option-item {
-  /* Background color, borders, padding, and margins */
-  background-color: #e9ecef; /* Background color */
-  border: 1px solid #ced4da; /* Border */
-  border-radius: 4px; /* Border radius for rounded corners */
-  padding: 10px; /* Padding */
-  margin-bottom: 10px; /* Bottom margin */
-  cursor: pointer; /* Cursor style */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Hover effect for options */
 .option-item:hover {
-  background-color: #d8e2dc; /* Change background color on hover */
+  background-color: #d8e2dc;
 }
 
-/* Styling for the action button */
 .action-button {
-  /* Background color, text color, padding, font size, border, border radius, cursor, and transition */
-  background-color: #218838; /* Background color */
-  color: #ffffff; /* Text color */
-  padding: 10px 20px; /* Padding */
-  font-size: 1rem; /* Font size */
-  border: none; /* Remove border */
-  border-radius: 4px; /* Border radius for rounded corners */
-  cursor: pointer; /* Cursor style */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  background-color: #218838;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Hover effect for the action button */
 .action-button:hover {
-  background-color: #1e7e34; /* Change background color on hover */
+  background-color: #1e7e34;
 }
 
-/* Styling for the result message */
 .question-result-message {
-  font-size: 1.2rem; /* Font size */
-  margin-bottom: 20px; /* Bottom margin */
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-/* Styling for the selected option */
 .question-option-item.selected {
-  background-color: #ce8fd1; /* Background color for the selected option */
+  background-color: #ce8fd1;
 }
-
-/* Additional styling for the selected option */
 .option-item.selected {
-  background-color: #109db2; /* Background color for the selected option */
-  color: #ffffff; /* Text color for the selected option */
+  background-color: #109db2; 
+  color: #ffffff;
 }
