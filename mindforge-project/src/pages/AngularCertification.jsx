@@ -18,8 +18,8 @@ const AngularCertification = () => {
 
   return (
     <div className="certificate-container">
-      <h1>Angular Certification</h1>
-      <p>Congratulations! </p>
+       <h1 className="text-3xl font-bold ">Angular Certification</h1>
+       <p className="mb-6 font-bold increased-font-size">Congratulations! </p>
       <div id="certificate" className="certificate">
         <img
           src="\src\assets\images\AngularCertifiacation.jpg"

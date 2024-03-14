@@ -18,8 +18,8 @@ const FECertification = () => {
 
   return (
     <div className="certificate-container">
-      <h1>Front-End Certification</h1>
-      <p>Congratulations! </p>
+      <h1 className="text-3xl font-bold ">Front-End Certification</h1>
+      <p className="mb-6 font-bold increased-font-size">Congratulations! </p>
       <div id="certificate" className="certificate">
         <img
           src="\src\assets\images\FECertification.jpg"

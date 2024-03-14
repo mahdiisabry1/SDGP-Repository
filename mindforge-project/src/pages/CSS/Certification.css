@@ -1,20 +1,21 @@
 .certificate-container {
   text-align: center;
-  background-size: auto;
-  background-position: center;
-  height: auto;
-  transform: translate(0%,15%)
+  position: relative;/* Set position to relative for button positioning */
+  margin-top: 10%;
 }
 
+
 .download-button {
-  background-color: blue; /* Set button background color to blue */
-  color: white; /* Set text color to white */
-  border: 2px solid #000;  
-  padding: 10px 20px; /* Adjust padding as needed */
-  left: 50%; 
-  right: 40%;
-  transform: translateX(-250%); /* Center horizontally */
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  position: absolute; /* Position the button */
+  bottom: 20px; /* Distance from bottom of the container */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
 }
+
 
 
 .certificate {
