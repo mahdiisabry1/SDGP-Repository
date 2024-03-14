@@ -8,7 +8,7 @@
 .download-button {
   background-color: blue;
   color: white;
-  border: none;
+  border: 3px solid #000;
   padding: 10px 20px;
   position: absolute; /* Position the button */
   bottom: 20px; /* Distance from bottom of the container */
@@ -29,8 +29,7 @@
 
 .certificate-image {
   max-width: 800px; /* Adjust as needed */
-  height: auto;
-  display: block;
-  margin-top: 12vh;
-  margin-bottom: 10vh;
+  height: 600px;;
+  margin-top: 0vh;
+  margin-bottom: 0vh;
 }
