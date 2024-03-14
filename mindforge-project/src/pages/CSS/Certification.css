@@ -1,19 +1,35 @@
 .certificate-container {
   text-align: center;
+  background-size: auto;
+  background-position: center;
+  height: auto;
+  transform: translate(0%,15%)
 }
 
+.download-button {
+  background-color: blue; /* Set button background color to blue */
+  color: white; /* Set text color to white */
+  border: 2px solid #000;  
+  padding: 10px 20px; /* Adjust padding as needed */
+  left: 50%; 
+  right: 40%;
+  transform: translateX(-250%); /* Center horizontally */
+}
+
+
 .certificate {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
   display: inline-block;
   border: 2px solid #000; /* Border around the certificate */
   padding: 10px; /* Padding inside the border */
+  height: auto;
 }
 
 .certificate-image {
   max-width: 800px; /* Adjust as needed */
   height: auto;
   display: block;
-  top: 70%;
-  bottom: 70%;
-  padding: 20px;
-  margin: 0 auto; /* Center the image horizontally */
+  margin-top: 12vh;
+  margin-bottom: 10vh;
 }

@@ -27,7 +27,10 @@ const FSCertification = () => {
           className="certificate-image"
         />
       </div>
-      <button onClick={downloadCertificate}>Download Certificate</button>
+      <button onClick={downloadCertificate} className="download-button">
+        Download Certificate
+      </button>
+
     </div>
   );
 };
