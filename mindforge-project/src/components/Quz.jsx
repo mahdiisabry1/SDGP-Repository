@@ -146,18 +146,19 @@ const QuestionSurvey = () => { // QuestionSurvey component definition
 
 
 
-  // Function to get the recommendation based on the total score
-  const getRecommendation = (score) => {
-    if (score >=1 && score<=9) {
-      return 'You should study more keep touch with te website.'; 
-    } else if (score >= 10 && score <= 18) {
-      return 'Functionality-Oriented Designer';
-    } else if (score >= 19 && score <= 27) {
-      return 'Balanced Designer';
-    } else {
-      return 'Aesthetics-Driven Designer';
-    }
-  };
+ // Function to get the recommendation based on the total score
+const getRecommendation = (score) => {
+  if (score >= 1 && score <= 9) {
+    return 'You should study more and keep in touch with the website.'; // Adjusted message for scores between 1 and 9
+  } else if (score >= 10 && score <= 18) {
+    return 'Functionality-Oriented Designer';
+  } else if (score >= 19 && score <= 27) {
+    return 'Balanced Designer';
+  } else {
+    return 'Aesthetics-Driven Designer';
+  }
+};
+
 
   return (
     <div className="Quzapp-container">
