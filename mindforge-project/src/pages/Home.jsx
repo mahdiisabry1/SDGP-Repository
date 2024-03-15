@@ -1,4 +1,3 @@
-import React from 'react'
 import Indtroduction from '../components/Indtroduction'
 import Courses from '../components/Courses';
 

@@ -18,8 +18,8 @@ CORS(app)
 
 # Load Dataset
 def load_data(data):
-    df = pd.read_csv(data)
-    return df
+	df = pd.read_csv(data)
+	return df 
 
 # Similarity data Vecorizing
 def vectorize_text(data):
@@ -30,6 +30,7 @@ def vectorize_text(data):
     return cosine_sim
 
 # recommendation Logic
+
 def get_recommendation(title, cosine_sim, df,number_of_records = 5):
     course_indices = pd.Series(df.index, index=df['course_title']).drop_duplicates()
     #index of the course
@@ -46,6 +47,20 @@ def get_recommendation(title, cosine_sim, df,number_of_records = 5):
     finally_recommended = result_df[['course_title', 'similarity_score', 'url', 'price', 'num_subscribers']]
     return finally_recommended
 
+# Styling
+with open("template.html", "r", encoding="utf-8") as file:
+    external_html_content = file.read()
+
+Recommendation_style = f"""
+{external_html_content}
+"""
+
+# Search 
+def search_term_if_not_found(term,df):
+	result_df = df[df['course_title'].str.contains(term)]
+	return result_df
+
+
 def main():
     st.title("Get Recommendations")
     # Your recommendation logic here
@@ -56,32 +71,33 @@ def main():
     choice = st.sidebar.selectbox("Menu", menu)
 
     df = load_data("data/udemy_courses.csv")
-    uf = load_data("data/Colleges_and_Universities.csv")
 
     if choice == "Courses":
         st.subheader("Courses")
         search_course = st.text_input("What are you interested in")
         cosine_sim = vectorize_text(df['course_title'])
-        st.dataframe(df.head(10))
+        number_of_records = st.sidebar.number_input("Number", 4, 30, 7)
         if st.button("Enter"):
             if search_course is not None:
                 try:
-                    result = get_recommendation(search_course, cosine_sim, df)
+                    result = get_recommendation(search_course, cosine_sim, df, number_of_records)
+                    for row in result.iterrows():
+                        rec_title = row[1][0]
+                        rec_score = row[1][1]
+                        rec_url = row[1][2]
+                        rec_price = row[1][3]
+                        rec_num_sub = row[1][4]
+
+                        stc.html(Recommendation_style.format(rec_title, rec_score, rec_url, rec_price, rec_num_sub), height=350)
                 except:
                     result = "Not Found"
-                for row in result.iterrows():
-                    rec_title = row[1][0]
-                    rec_score = row[1][1]
-                    rec_url = row[1][2]
-                    rec_price = row[1][3]
-                    rec_num_sub = row[1][4]
-
-                    st.write("Title : ", rec_title)
-                    st.write("URL :", rec_url)
-
+                    st.warning(result)
+                    st.info("Suggested Courses")
+                    result_df = search_term_if_not_found(search_course, df)
+                    st.dataframe(result_df)
+                
     elif choice == "University":
         st.subheader("University")
-        st.dataframe(uf.head(5))
         search_course = st.text_input("Search")
 
     elif choice == "Books":

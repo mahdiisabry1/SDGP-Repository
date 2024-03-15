@@ -32,7 +32,7 @@ const NavBar = () => {
       { id: 1, path: "/", link: "Home" },
       { id: 2, path: "/RoadMap", link: "MindMaps" },
       { id: 3, path: "/cetification", link: "Certification" },
-      { id: 4, path: "/blogs", link: "Blogs" },
+      { id: 4, path: "/blogs", link: "Read" },
       { id: 5, path: "/game-room", link: "GameRoom" },
     ];
 
@@ -80,7 +80,7 @@ const NavBar = () => {
             </ul>
 
             <div className='flex gap-4'>
-                {user ? <Link to='/create'><button className='login-button' >Create</button></Link> : <Link to='/login'><button className='login-button'>Login</button></Link>}
+                {user ? <Link to='/create'><button className='login-button' >Write</button></Link> : <Link to='/login'><button className='login-button'>Login</button></Link>}
                 {/* {user ? <Link to='/Create'><button className='login-button'>Profile</button></Link> : <Link to='/register'><button className='login-button'>Register</button></Link>} */}
             </div>
 

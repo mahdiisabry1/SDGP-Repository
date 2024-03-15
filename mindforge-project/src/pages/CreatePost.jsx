@@ -47,6 +47,7 @@ const CreatePost = () => {
 
       try {
         const imgUpload = await axios.post(URL + "/api/upload", data);
+        console.log(imgUpload.data)
       } catch (error) {
         console.log(error);
       }
@@ -66,7 +67,7 @@ const CreatePost = () => {
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
       <h1 className="text-center text-3xl my-7 font-semibold mt-36">
-        Create your blog
+        Write your technical article
       </h1>
       <form action="" className="">
         <div className="flex flex-col gap-4 justify-between">
