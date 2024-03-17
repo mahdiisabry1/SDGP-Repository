@@ -32,7 +32,6 @@ def vectorize_text(data):
     return cosine_sim
 
 # recommendation Logic
-
 def get_recommendation(title, cosine_sim, df,number_of_records = 5):
     course_indices = pd.Series(df.index, index=df['course_title']).drop_duplicates()
     #index of the course
@@ -76,9 +75,13 @@ def main():
 
     if choice == "Courses":
         st.subheader("Courses")
-        search_course = st.text_input("What are you interested in").lower()
+        Course = ["Search instead","Flask Tutorial Step by Step","PHP Specialist (2017 Edition)","Python Web Programming","HTML and CSS Foundations","Angular Tutorial For Beginners","Web Hosting Fundamentals","1 Hour JavaScript"]
+        search_option = st.selectbox("What are you interested in", Course)
+        search_course = st.text_input("what do you like to learn").lower()
         cosine_sim = vectorize_text(df['course_title'])
         number_of_records = st.sidebar.number_input("Number", 4, 30, 7)
+
+
         if st.button("Enter"):
             if search_course is not None:
                 try:
