@@ -2,8 +2,8 @@ const express=require('express')
 const router=express.Router()
 const User=require('../Models/User')
 const bcrypt=require('bcrypt')
-const Post=require('../Models/Posts')
-const Comment=require('../Models/Comments')
+const Post=require('../Models/Post')
+const Comment=require('../Models/Comment')
 const verifyToken = require('../verifyToken')
 
 //CREATE
