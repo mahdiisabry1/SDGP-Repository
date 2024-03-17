@@ -18,8 +18,10 @@ CORS(app)
 
 # Load Dataset
 def load_data(data):
-	df = pd.read_csv(data)
-	return df 
+    df = pd.read_csv(data)
+    # Convert all text columns to lowercase
+    df = df.applymap(lambda x: x.lower() if isinstance(x, str) else x)
+    return df
 
 # Similarity data Vecorizing
 def vectorize_text(data):
@@ -74,7 +76,7 @@ def main():
 
     if choice == "Courses":
         st.subheader("Courses")
-        search_course = st.text_input("What are you interested in")
+        search_course = st.text_input("What are you interested in").lower()
         cosine_sim = vectorize_text(df['course_title'])
         number_of_records = st.sidebar.number_input("Number", 4, 30, 7)
         if st.button("Enter"):
@@ -88,7 +90,7 @@ def main():
                         rec_price = row[1][3]
                         rec_num_sub = row[1][4]
 
-                        stc.html(Recommendation_style.format(rec_title, rec_score, rec_url, rec_price, rec_num_sub), height=350)
+                        stc.html(Recommendation_style.format(rec_title, rec_score, rec_url, rec_price, rec_num_sub), height=250)
                 except:
                     result = "Not Found"
                     st.warning(result)
