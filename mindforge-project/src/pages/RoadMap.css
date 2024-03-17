@@ -20,7 +20,7 @@
 /* Styling for the dropdown flex container */
 .dropdown .flex {
   cursor: pointer; /* Set cursor to pointer */
-  background-color: white; /* Background color for dropdown flex container */
+  background-color: Black; /* Background color for dropdown flex container */
 }
 
 /* Styling for dropdown flex container on hover */
@@ -32,18 +32,18 @@
 .increased-font-size {
   font-size: 20px; /* Font size of 20 pixels */
   font-style: italic; /* Italic font style */
-  color: rgb(136, 174, 179); /* Font color */
+  color: rgb(255, 255, 255); /* Font color */
 }
 
 /* Styling for description text */
 .description {
   font-size: 1.2rem; /* Font size of 1.2 rem */
-  color: rgb(193, 236, 212); /* Font color */
+  color: rgb(193, 236, 234); /* Font color */
 }
 
 /* Styling for completed title */
 .completed-title {
-  background-color: lightblue; /* Background color for completed title */
+  background-color: rgb(230, 217, 173); /* Background color for completed title */
   color: black; /* Font color for completed title */
   /* Ensure font color stays the same */
 }
