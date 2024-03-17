@@ -1,165 +1,56 @@
-.center-container {
-  text-align: center;
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40vh; /* Decrease height to move the content higher */
-  overflow-y: auto; /* Add vertical scrollbar if content overflows */
-  margin-top: 5vh; /* Add a top margin to move the content higher */
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
 }
 
-/* The rest of your existing styles */
-.tabs-container {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  gap: 5px;
 }
 
-/* Style for the tab buttons */
-.tab-button {
-  margin: 5px;
-  padding: 50px 50px; /* Increase padding */
-  background-color: #eee;
-  border: 2px solid #ccc; /* Increase border width */
-  cursor: pointer;
-  font-size: 18px; /* Increase font size */
-}
-.tab-name {
-  margin-bottom: 10px;
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: #caa7a7;
+  border-radius: 10px;
 }
 
-/* Style for the active tab button */
-.tab-button.active {
-  background-color: #3498db;
-  color: #fff;
+.candy-0 {
+  background-color: #a83939; /* Red */
 }
 
-/* Container for tab content */
-.tab-content {
-  padding: 30px; /* Increase padding */
-  border: 2px solid #ccc; /* Increase border width */
-  box-sizing: border-box;
-  font-size: 16px; /* Increase font size */
+.candy-1 {
+  background-color: #2c7e2c; /* Green */
 }
 
-/* Additional styling for individual tabs (customize as needed) */
-.tab1-content {
-  background-color: #98bdee;
+.candy-2 {
+  background-color: #42429b; /* Blue */
+}
+
+.candy-3 {
+  background-color: #969620; /* Yellow */
+}
+
+.candy-4 {
+  background-color: #b163b1; /* Purple */
+}
+
+.cell.selected {
+  border: 2px solid rgb(19, 19, 18); /* Example: Highlight with a yellow border */
+}
+
+.score {
+  font-size: 20px;
   text-align: center;
+  margin-top: 20px;
 }
 
-.tab2-content {
-  background-color: #98bdee;
+.title {
   text-align: center;
+  margin-bottom: 650px;
 }
 
-/* Styles for input fields */
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-}
-
-/* Styles for buttons inside the Teacher tab */
-.tab2-content button {
-  cursor: pointer;
-  font-size: 16px;
-  padding: 40px 50px; /* Adjust button size */
-  margin-right: 15px; /* Add space between buttons */
-}
-
-/* Different colors for each button */
-.tab2-content button:nth-child(1) {
-  background-color: #ffcc00; /* Yellow */
-  border: 1px solid #b38600; /* Dark Yellow */
-}
-
-.tab2-content button:nth-child(2) {
-  background-color: #ff6666; /* Red */
-  border: 1px solid #b32424; /* Dark Red */
-}
-
-.tab2-content button:nth-child(3) {
-  background-color: #99ff99; /* Green */
-  border: 1px solid #00b300; /* Dark Green */
-}
-
-.tab2-content button:nth-child(4) {
-  background-color: #66b3ff; /* Blue */
-  border: 1px solid #004080; /* Dark Blue */
-}
-
-.tab2-content button:nth-child(5) {
-  background-color: #ff99cc; /* Pink */
-  border: 1px solid #b3598c; /* Dark Pink */
-}
-
-/* Hover styles for all buttons */
-.tab2-content button:hover {
-  background-color: #3498db;
-  color: #fff;
-}
-
-
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #f2f2f2;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.continue-button-container {
-  text-align: center;
-  margin-top: 20px; /* Add space between content and the "Continue" button */
-}
-
-.continue-button {
-  padding: 15px 30px; /* Adjust button size */
-  font-size: 18px; /* Adjust font size */
-  background-color: #4CAF50; /* Green color for gaming feel */
-  color: #fff;
-  border: 2px solid #45a049; /* Darker green border */
-  border-radius: 8px; /* Add more rounded corners */
-  cursor: pointer;
-  transition: background-color 0.3s; /* Add a smooth transition effect */
-}
-
-.continue-button:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
-
-.continue-button:disabled {
-  background-color: #555; /* Dark gray for disabled state */
-  border: 2px solid #555; /* Dark gray border for disabled state */
-  cursor: not-allowed;
-}
-
-.tab2-content .continue-button-container {
-  text-align: center;
-  margin-top: 20px; /* Add space between content and the "Continue" button */
-}
-
-.tab2-content .continue-button {
-  padding: 15px 30px; /* Adjust button size */
-  font-size: 18px; /* Adjust font size */
-  background-color: #4CAF50; /* Green color for gaming feel */
-  color: #fff;
-  border: 2px solid #45a049; /* Darker green border */
-  border-radius: 8px; /* Add more rounded corners */
-  cursor: pointer;
-  transition: background-color 0.3s; /* Add a smooth transition effect */
-}
-
-.tab2-content .continue-button:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
-
-.tab2-content .continue-button:disabled {
-  background-color: #555; /* Dark gray for disabled state */
-  border: 2px solid #555; /* Dark gray border for disabled state */
-  cursor: not-allowed;
-}
