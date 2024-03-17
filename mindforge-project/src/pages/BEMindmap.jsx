@@ -4,7 +4,7 @@ import './RoadMap.css'; // Import CSS file for styling
 const BEMindmap = () => {
   // Container style with background image
   const containerStyle = {
-    backgroundImage: 'url("https://i.gifer.com/origin/14/147205adae7144f46ea934ee831a0a63_w200.gif")', // Specify the path to your background image
+    backgroundImage: 'url("https://cdn.pixabay.com/photo/2021/09/10/17/52/circuit-6613812_960_720.jpg")', // Specify the path to your background image
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
