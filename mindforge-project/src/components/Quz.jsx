@@ -108,8 +108,7 @@ const QuestionSurvey = () => { // QuestionSurvey component definition
   }, []);
 
   const handleSelectOption = (optionIndex) => {   // Function to handle option selection
-    if (!submitted && selectedOption === null) {     // Allow selection if the survey is not submitted and no option is currently selected
-
+    if (!submitted) { // Allow selection if the survey is not submitted
       setSelectedOption(optionIndex);
     }
   };
@@ -147,17 +146,20 @@ const QuestionSurvey = () => { // QuestionSurvey component definition
 
 
  // Function to get the recommendation based on the total score
-const getRecommendation = (score) => {
+ const getRecommendation = (score) => {
+  let recommendation = '';
   if (score >= 1 && score <= 9) {
-    return 'Aesthetics-Driven Designer'; 
+    recommendation = 'Aesthetics-Driven Designer'; 
   } else if (score >= 10 && score <= 18) {
-    return 'Functionality-Oriented Designer';
+    recommendation = 'Functionality-Oriented Designer';
   } else if (score >= 19 && score <= 27) {
-    return 'Balanced Designer';
+    recommendation = 'Balanced Designer';
   } else {
-    return 'Stay inspired with us. Explore the latest trends and tips to fuel your web design journey.';
-    
+    recommendation = 'Stay inspired with us. Explore the latest trends and tips to fuel your web design journey.';
   }
+  
+  // Remove "Recommendation:" from the recommendation text
+  return recommendation.replace('Recommendation: ', '');
 };
 
 
@@ -171,7 +173,7 @@ const getRecommendation = (score) => {
         <ul className="options-list">
           {questions[currentQuestion]?.options?.map((option, index) => (
             <li
-              key={index}
+             key={index}
               className={`option-item ${
                 selectedOption === index ? "selected" : ""
               }`}
@@ -193,17 +195,16 @@ const getRecommendation = (score) => {
           </div>
         ) : (
           <button
-            className="action-button"
-           // Handle click event based on current question status
-
-            onClick={
-              currentQuestion === questions.length - 1
-                ? handleSubmit
-                : handleNextQuestion
-            }
-          >
-            {currentQuestion === questions.length - 1 ? "Submit" : "Next"}
-          </button>
+    className="action-button"
+    onClick={
+      selectedOption !== null ? // Check if an option is selected
+        (currentQuestion === questions.length - 1 ? handleSubmit : handleNextQuestion) // Render "Next" or "Submit" based on the current question
+        : null // Render null if no option is selected
+    }
+    disabled={selectedOption === null} // Disable the button if no option is selected
+  >
+    {currentQuestion === questions.length - 1 ? "Submit" : "Next"}
+  </button>
         )}
        {/* Display recommendation after submission */}
 

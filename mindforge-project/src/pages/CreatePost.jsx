@@ -47,7 +47,7 @@ const CreatePost = () => {
 
       try {
         const imgUpload = await axios.post(URL + "/api/upload", data);
-        console.log(imgUpload.data)
+        console.log(imgUpload.data);
       } catch (error) {
         console.log(error);
       }
@@ -55,13 +55,25 @@ const CreatePost = () => {
 
     //Upload post
     try {
-      const res = await axios.post(URL+"/api/posts/create", post, {withCredentials:true})
+      const res = await axios.post(URL + "/api/posts/create", post, {
+        withCredentials: true,
+      });
       navigate("/posts/post/" + res.data._id);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 
+    // Check if required fields are filled out
+    if (title.trim() === "" || desc.trim() === "") {
+      alert("Title and Description are required!");
+      return;
+    }
 
+    // Check minLength for description
+    if (desc.trim().length < 200) {
+      alert("Description must be at least 200 characters long!");
+      return;
+    }
   };
 
   return (
@@ -130,7 +142,7 @@ const CreatePost = () => {
             rows="15"
             className="px-4 py-4 outline-none mt-5"
             required
-            minLength={500}
+            minLength={200}
             placeholder="200 words minimum required"
           ></textarea>
           <button

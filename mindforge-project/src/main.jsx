@@ -24,11 +24,12 @@ import BEMindmap from './pages/BEMindmap.jsx';
 import FSMindmap from './pages/FSMindmap.jsx';
 import OwnMindMap from './pages/ownMindmap.jsx';
 import ReactCertification from './pages/ReactCertification.jsx';
-import { UserContextProvider } from './context/UserContext.jsx';
+import {  UserContextProvider } from './context/UserContext.jsx';
 import AngularCertification from './pages/AngularCertification.jsx';
 import FECertification from './pages/FSCertification.jsx';
 import BECertification from './pages/BECertification.jsx';
 import FSCertification from './pages/FSCertification.jsx';
+
 
 
 const router = createBrowserRouter([
