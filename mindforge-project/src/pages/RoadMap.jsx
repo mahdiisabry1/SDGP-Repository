@@ -55,6 +55,13 @@ const RoadMap = () => {
   const handlePhaseClick = (phase) => {
     setSelectedPhase(phase);
     openMindmap(phase);// Call the openMindmap function passing the selected phase
+    if (phase.title === 'Create Your Own Roadmap') {
+      // Handle custom roadmap creation
+      // For now, you can just console.log or implement custom logic as needed
+      console.log('Custom roadmap creation clicked');
+    } else {
+      openMindmap(phase); // Call the openMindmap function passing the selected phase
+    }
   };
 
   const openMindmap = (phase) => {
@@ -65,6 +72,7 @@ const RoadMap = () => {
       'Course 3: Front-End': 'FEMindmap',
       'Course 4: Back-End': 'BEMindmap',
       'Course 5: Full-Stack': 'FSMindmap',
+      'Create Your Own Mindmap': 'ownMindMap',
     };
 
     const componentName = components[phase.title];// Get the component name based on the selected phase
@@ -112,6 +120,13 @@ const RoadMap = () => {
       customColor: "#ff5722",
       backgroundImage: "url('path-to-background-image2.jpg')",// Update background image path
     },
+    {
+      title: 'Create Your Own Mindmap',
+      path: "/path-to-components/ownMindMap.jsx",
+      description: 'Design your own learning path',
+      customColor: '#DCF00C',
+      backgroundImage: "url('path-to-background-image3.jpg')", // Update background image path
+    },
   ];
 
   return (
@@ -121,15 +136,17 @@ const RoadMap = () => {
         {/* Mapping over each phase */}
         {phases.map((phase, index) => (
           <div
-            key={index}// Unique key for each phase
-            style={{// Inline styles for each phase
-              ...phaseStyle,// Merging phase styles
-              backgroundColor: `${phase.customColor}50`,// Background color with alpha based on custom color
+            key={index} // Unique key for each phase
+            style={{
+              // Inline styles for each phase
+              ...phaseStyle, // Merging phase styles
+              backgroundColor: `${phase.customColor}50`, // Background color with alpha based on custom color
               backgroundImage: phase.backgroundImage, // Background image
             }}
-            onClick={() => handlePhaseClick(phase)}// Click handler for phase selection
+            onClick={() => handlePhaseClick(phase)} // Click handler for phase selection
           >
-            <div style={{ ...circleStyle, backgroundColor: phase.customColor }}></div>{/* Circle indicating phase */}
+            <div style={{ ...circleStyle, backgroundColor: phase.customColor }}></div>
+            {/* Circle indicating phase */}
             <div>
               <h3 style={phaseTitleStyle}>{phase.title}</h3>
               <p style={phaseDescriptionStyle}>{phase.description}</p>

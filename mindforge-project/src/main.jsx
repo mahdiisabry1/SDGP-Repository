@@ -22,6 +22,7 @@ import AngularMindmap from './pages/AngularMindmap.jsx';
 import FEMindmap from './pages/FEMindmap.jsx';
 import BEMindmap from './pages/BEMindmap.jsx';
 import FSMindmap from './pages/FSMindmap.jsx';
+import OwnMindMap from './pages/ownMindmap.jsx';
 import ReactCertification from './pages/ReactCertification.jsx';
 import { UserContextProvider } from './context/UserContext.jsx';
 import AngularCertification from './pages/AngularCertification.jsx';
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
       {
         path: "/path-to-components/FSMindmap",
         element: <FSMindmap />,
+      },
+      {
+        path: "/path-to-components/ownMindMap",
+        element: <OwnMindMap />
       },
       {
         path: "/path-to-components/ReactCertification",
