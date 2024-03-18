@@ -1,10 +1,10 @@
-/* Styling for the main container of the quiz application */
 .Quzapp-container {
   background-image: url('https://i.gifer.com/76YS.gif');
-  background-size: auto;
+  background-size: cover; /* Using 'cover' to ensure the background covers the entire container */
   background-position: center;
-  height: auto;
+  height: 100vh; /* Setting height to fill the viewport vertically */
 }
+
 
 /* Styling for the container holding the survey questions */
 .question-container {
