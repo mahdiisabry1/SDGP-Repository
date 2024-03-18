@@ -39,11 +39,11 @@ const MoreGames = () => {
           <h1>Tab 3 Content</h1>
           <p>This is the content for Tab 3. You can add links here:</p>
           <ul>
-            <li><a href="https://www.crazygames.com/game/helix-jump">Link 1</a></li>
-            <li><a href="https://www.crazygames.com/game/tap-tap-shots">Link 2</a></li>
-            <li><a href="https://www.crazygames.com/game/tap-tap-shots">Link 2</a></li>
-            <li><a href="https://www.crazygames.com/game/tap-tap-shots">Link 2</a></li>
-            <li><a href="https://www.crazygames.com/game/tap-tap-shots">Link 2</a></li> 
+            <li><a href="https://www.crazygames.com/game/helix-jump">helix-jump</a></li>
+            <li><a href="https://www.crazygames.com/game/tap-tap-shots">tap-tap-shots</a></li>
+            <li><a href="https://www.crazygames.com/game/smash-karts">smash-karts</a></li>
+            <li><a href="https://www.crazygames.com/game/layers-roll">layers-roll</a></li>
+            <li><a href="https://www.crazygames.com/game/12-minibattles">12-minibattles</a></li> 
           </ul>
         </div>
       )}
