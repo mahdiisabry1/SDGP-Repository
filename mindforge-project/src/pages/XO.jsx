@@ -1,54 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-function XO() {
-  const [board, setBoard] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState(true);
+import { Board } from "./Board.jsx";
+import { ResetButton } from "./ResetButton.jsx";
+import { ScoreBoard } from "./ScoreBoard.jsx";
+import './XO.css';
 
-  const handleClick = (index) => {
-    const newBoard = [...board];
-    if (calculateWinner(board) || newBoard[index]) return;
-    newBoard[index] = xIsNext ? 'X' : 'O';
-    setBoard(newBoard);
-    setXIsNext(!xIsNext);
-  };
+const XO = () => {
 
-  const renderSquare = (index) => {
-    return (
-      <button className="square" onClick={() => handleClick(index)}>
-        {board[index]}
-      </button>
-    );
-  };
-
-  const winner = calculateWinner(board);
-  const status = winner
-    ? `Winner: ${winner}`
-    : `Next player: ${xIsNext ? 'X' : 'O'}`;
-
-  return (
-    <div>
-      <div className="status">{status}</div>
-      <div className="board-row">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
-      </div>
-      <div className="board-row">
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
-      </div>
-      <div className="board-row">
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
-      </div>
-    </div>
-  );
-}
-
-function calculateWinner(squares) {
-  const lines = [
+  const WIN_CONDITIONS = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -56,15 +15,69 @@ function calculateWinner(squares) {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6],
-  ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+    [2, 4, 6]
+  ]
+
+  const [xPlaying, setXPlaying] = useState(true);
+  const [board, setBoard] = useState(Array(9).fill(null))
+  const [scores, setScores] = useState({ xScore: 0, oScore: 0 })
+  const [gameOver, setGameOver] = useState(false);
+
+  const handleBoxClick = (boxIdx) => {
+    // Step 1: Update the board
+    const updatedBoard = board.map((value, idx) => {
+      if (idx === boxIdx) {
+        return xPlaying ? "X" : "O";
+      } else {
+        return value;
+      }
+    })
+
+    setBoard(updatedBoard);
+
+    // Step 2: Check if either player has won the game
+    const winner = checkWinner(updatedBoard);
+
+    if (winner) {
+      if (winner === "O") {
+        let { oScore } = scores;
+        oScore += 1;
+        setScores({ ...scores, oScore })
+      } else {
+        let { xScore } = scores;
+        xScore += 1;
+        setScores({ ...scores, xScore })
+      }
+    }
+
+    // Step 3: Change active player
+    setXPlaying(!xPlaying);
+  }
+
+  const checkWinner = (board) => {
+    for (let i = 0; i < WIN_CONDITIONS.length; i++) {
+      const [x, y, z] = WIN_CONDITIONS[i];
+
+      // Iterate through win conditions and check if either player satisfies them
+      if (board[x] && board[x] === board[y] && board[y] === board[z]) {
+        setGameOver(true);
+        return board[x];
+      }
     }
   }
-  return null;
+
+  const resetBoard = () => {
+    setGameOver(false);
+    setBoard(Array(9).fill(null));
+  }
+
+  return (
+    <div className="App">
+      <ScoreBoard scores={scores} xPlaying={xPlaying} />
+      <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
+      <ResetButton resetBoard={resetBoard} />
+    </div>
+  );
 }
 
 export default XO;
