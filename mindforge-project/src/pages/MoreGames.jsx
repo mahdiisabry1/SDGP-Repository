@@ -15,6 +15,7 @@ const MoreGames = () => {
       <div className="gamestab-buttons">
         <button className={activeTab === 'tab1' ? 'active' : ''} onClick={() => handleTabClick('tab1')}>Tab 1</button>
         <button className={activeTab === 'tab2' ? 'active' : ''} onClick={() => handleTabClick('tab2')}>Tab 2</button>
+        <button className={activeTab === 'tab3' ? 'active' : ''} onClick={() => handleTabClick('tab3')}>Tab 3</button>
       </div>
 
       {/* Content for tabs */}
@@ -29,6 +30,17 @@ const MoreGames = () => {
         <div>
           <h1>Tab 2 Content</h1>
           <p>This is the content for Tab 2.</p>
+        </div>
+      )}
+
+      {activeTab === 'tab3' && (
+        <div>
+          <h1>Tab 3 Content</h1>
+          <p>This is the content for Tab 3. You can add links here:</p>
+          <ul>
+            <li><a href="https://example.com">Link 1</a></li>
+            <li><a href="https://example.org">Link 2</a></li>
+          </ul>
         </div>
       )}
     </div>
