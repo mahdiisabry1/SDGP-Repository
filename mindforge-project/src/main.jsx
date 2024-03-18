@@ -29,6 +29,7 @@ import AngularCertification from './pages/AngularCertification.jsx';
 import FECertification from './pages/FSCertification.jsx';
 import BECertification from './pages/BECertification.jsx';
 import FSCertification from './pages/FSCertification.jsx';
+import MoreGames from './pages/MoreGames.jsx';
 
 
 
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/game-room",
         element: <GameRoom />,
+      },
+      {
+        path: "/MoreGames",
+        element: <MoreGames />,
       },
       {
         path: "/Quiz",
