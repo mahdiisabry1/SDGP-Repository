@@ -7,6 +7,8 @@ import purpleCandy from './images/purple-candy.png'
 import redCandy from './images/red-candy.png'
 import yellowCandy from './images/yellow-candy.png'
 import blueCandy from './images/blue-candy.png'
+import './CSS/Gameroom.css';
+
 
 const width = 8
 const candyColors = [

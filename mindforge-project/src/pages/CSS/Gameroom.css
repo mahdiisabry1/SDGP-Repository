@@ -1,0 +1,37 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(8, 50px); /* Adjust the width of each column */
+    grid-template-rows: repeat(8, 50px); /* Adjust the height of each row */
+    gap: 2px; /* Adjust the gap between candies */
+}
+
+.game img {
+    width: 100%; /* Make the candies fill the grid cell */
+    height: 100%;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.score {
+    margin-top: 20px; /* Adjust the margin as needed */
+    font-size: 24px; /* Adjust the font size as needed */
+}
