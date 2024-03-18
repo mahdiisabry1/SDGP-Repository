@@ -159,7 +159,7 @@ const QuestionSurvey = () => { // QuestionSurvey component definition
   }
   
   // Remove "Recommendation:" from the recommendation text
-  return recommendation.replace('Recommendation: ', '');
+  return recommendation.replace(' ', '');
 };
 
 
