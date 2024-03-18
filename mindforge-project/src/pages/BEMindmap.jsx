@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './RoadMap.css'; // Import CSS file for styling
 
 const BEMindmap = () => {

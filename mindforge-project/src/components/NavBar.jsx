@@ -27,7 +27,7 @@ const NavBar = () => {
   };
 
   const navItems = [
-    { id: 1, path: "/", link: "Home" },
+    { id: 1, path: "/Home", link: "Home" },
     { id: 2, path: "/RoadMap", link: "MindMaps" },
     { id: 3, path: "/cetification", link: "Certification" },
     { id: 4, path: "/blogs", link: "Read" },
@@ -41,12 +41,16 @@ const NavBar = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.get(URL + "/api/auth/logout", {
-        withCredentials: true,
-      });
-      setUser(null);
-      navigate("/login");
+      // Ask for confirmation before logging out
+      const confirmLogout = window.confirm("Are you sure you want to logout?");
 
+      if (confirmLogout) {
+        const res = await axios.get(URL + "/api/auth/logout", {
+          withCredentials: true,
+        });
+        setUser(null);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -84,7 +88,7 @@ const NavBar = () => {
             </button>
           )}
         </div> */}
-        <a href="/" className="Mind">
+        <a href="/Home" className="Mind">
           MIND<span className="Forge">FORGE</span>
         </a>
         {/* Nav Items with routing */}

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './GameRoom.css';
+import { useState, useEffect } from "react";
+import "./GameRoom.css";
+import NavBar from "../components/NavBar";
+
 
 const NUM_ROWS = 8;
 const NUM_COLS = 8;
@@ -21,7 +23,9 @@ const GameRoom = () => {
 
   const initializeBoard = () => {
     const newBoard = Array.from({ length: NUM_ROWS }, () =>
-      Array.from({ length: NUM_COLS }, () => Math.floor(Math.random() * NUM_CANDY_TYPES))
+      Array.from({ length: NUM_COLS }, () =>
+        Math.floor(Math.random() * NUM_CANDY_TYPES)
+      )
     );
     setBoard(newBoard);
   };
@@ -35,7 +39,6 @@ const GameRoom = () => {
   };
 
   const handleClick = (row, col) => {
-
     console.log(`Clicked candy at row ${row}, column ${col}`);
     setSelectedTile({ row, col });
     // If no candy is selected yet, set the clicked candy as the selected candy
@@ -44,7 +47,7 @@ const GameRoom = () => {
     } else {
       // If a candy is already selected, try to swap with the clicked candy
       const { row: selectedRow, col: selectedCol } = selectedCandy;
-  
+
       // Check if the clicked candy is adjacent to the selected candy
       if (
         (Math.abs(row - selectedRow) === 1 && col === selectedCol) ||
@@ -60,11 +63,10 @@ const GameRoom = () => {
     }
     setScore(score + 1);
   };
-  
 
   const checkAndRemoveMatches = () => {
     if (board.length === 0) return;
-  
+
     const newBoard = [...board];
 
     // Check for horizontal matches
@@ -118,29 +120,35 @@ const GameRoom = () => {
   };
 
   return (
-    <div className="container">
-      <h1 className="title">CANDY CRUSH</h1>
-    <div>
-      <div className="board">
-        {board.map((row, rowIndex) =>
-          row.map((col, colIndex) => {
-            const isSelected = selectedTile && selectedTile.row === rowIndex && selectedTile.col === colIndex;
-            return (
-              <div
-                key={`${rowIndex}-${colIndex}`}
-                className={`cell candy-${col} ${isSelected ? 'selected' : ''}`}
-                onClick={() => handleClick(rowIndex, colIndex)}
-              ></div>
-            );
-          })
-        )}
+    <>
+      <NavBar />
+      <div className="container">
+        <h1 className="title">CANDY CRUSH</h1>
+        <div>
+          <div className="board">
+            {board.map((row, rowIndex) =>
+              row.map((col, colIndex) => {
+                const isSelected =
+                  selectedTile &&
+                  selectedTile.row === rowIndex &&
+                  selectedTile.col === colIndex;
+                return (
+                  <div
+                    key={`${rowIndex}-${colIndex}`}
+                    className={`cell candy-${col} ${
+                      isSelected ? "selected" : ""
+                    }`}
+                    onClick={() => handleClick(rowIndex, colIndex)}
+                  ></div>
+                );
+              })
+            )}
+          </div>
+          <div className="score">Score: {score}</div>
+        </div>
       </div>
-      <div className="score">Score: {score}</div>
-    </div>
-    </div>
+    </>
   );
-  
-  
 };
 
 export default GameRoom;

@@ -26,7 +26,8 @@ const Login = () => {
       );
       // console.log(res.data)
       setUser(res.data);
-      navigate("/");
+      navigate("/Home");
+      console.log(res.data)
       
     } catch (err) {
       setError(true);
