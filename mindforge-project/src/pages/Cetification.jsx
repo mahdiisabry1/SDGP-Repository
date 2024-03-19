@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 
 const Certification = () => {
   const backgroundStyles = {
-    backgroundImage: 'url("https://i.gifer.com/F9Jr.gif")',
+    backgroundImage: 'url("https://i.pinimg.com/originals/0f/b2/88/0fb288a519fdb745d0b773d87a6aaf2e.gif")',
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

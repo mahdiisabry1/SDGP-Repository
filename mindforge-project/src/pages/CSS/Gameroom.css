@@ -1,0 +1,55 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('https://cdn.pixabay.com/photo/2016/02/22/16/03/hearts-1215842_1280.jpg');
+    background-position: center; /* Center the background image */
+}
+.game {
+    display: grid;
+    grid-template-columns: repeat(8, 50px); /* Adjust the width of each column */
+    grid-template-rows: repeat(8, 50px); /* Adjust the height of each row */
+    gap: 2px; /* Adjust the gap between candies */
+}
+
+.game img {
+    width: 100%; /* Make the candies fill the grid cell */
+    height: 100%;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.score {
+    margin-top: 40px; /* Adjust the margin as needed */
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the score text bold */
+    font-family: sans-serif; /* Apply the "Game Font" or your preferred font family */
+}
+
+.gamebutton {
+    margin-top: 50px; /* Adjust the margin as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+}
+
+.gamebutton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

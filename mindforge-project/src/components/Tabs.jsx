@@ -1,12 +1,10 @@
 import { useState } from 'react';
-
-
 import './CSS/tabs.css'; // Import the CSS file
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
-  const [answer, setAnswer] = useState('');
+  const [answers, setAnswers] = useState(Array(5).fill('')); // Array to store user answers
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
@@ -18,7 +16,10 @@ const Tabs = () => {
   };
 
   const handleAnswerChange = (event) => {
-    setAnswer(event.target.value);
+    const { name, value } = event.target;
+    const updatedAnswers = [...answers];
+    updatedAnswers[selectedQuestion] = value;
+    setAnswers(updatedAnswers);
   };
 
   const tabNames = ["React", "Angular", "FrontEnd", "BackEnd", "FullStack"];
@@ -49,7 +50,6 @@ const Tabs = () => {
       "Create a parent component that renders two child components. Pass a prop from the parent to each child component, and have each child component render the prop value.",
       "Create a component that displays a message based on whether a boolean variable is true or false. Toggle the boolean variable using a button, and make the component re-render with the updated message.",
       "Create a component that fetches data from a mock API (you can use tools like JSONPlaceholder) and displays it on the screen. Use React hooks like useState and useEffect to manage state and perform the API call."
-
     ],
     2: [
       "Create an Angular component called HelloComponent that displays the text Hello, Angular! in the template.",
@@ -80,6 +80,7 @@ const Tabs = () => {
       "Develop a full-stack task management system where users can create tasks, assign them to other users, mark them as completed, and filter tasks based on their status. Use React for the front end and Node.js/Express with MongoDB for the back end.",
     ],
   };
+
   const handleSubmitClick = () => {
     // Assuming you have a separate object storing correct answers for each question
     const correctAnswers = {
@@ -89,21 +90,23 @@ const Tabs = () => {
       4: ["Print Hello World", "Express Server", "CRUD Operations", "GET Users", "Authentication System"],
       5: ["Basic CRUD App", "Authentication", "Full-stack CRUD", "Real-time Chat", "Task Management System"],
     };
-    
 
     // Fetch the correct answers for the active tab
     const correctAnswersForTab = correctAnswers[activeTab];
 
-    // Check if the provided answer matches any of the correct answers
-    const isCorrectAnswer = correctAnswersForTab[selectedQuestion] === answer.trim();
+    // Check if the provided answers match the correct answers
+    const isAllCorrect = answers.every((answer, index) => {
+      return answer.trim() === correctAnswersForTab[index];
+    });
 
-    // Display message based on whether the answer is correct or wrong
-    if (isCorrectAnswer) {
-      alert("Answer is correct!");
+    // Display message based on whether all answers are correct
+    if (isAllCorrect) {
+      alert("All answers are correct!");
     } else {
-      alert("Answer is wrong!");
+      alert("One or more answers are wrong!");
     }
   };
+
   const handleCertificationClick = () => {
     // Define an object mapping each tab to its corresponding image file
     const certificationImages = {
@@ -114,13 +117,32 @@ const Tabs = () => {
       5: "/path-to-components/FSCertification",
     };
 
-    const certificationImage = certificationImages[activeTab];''
+    const certificationImage = certificationImages[activeTab];
 
     // Open a new tab with the certification image
     window.open(certificationImage, '_blank');
   };
 
-  const isAnswerProvided = selectedQuestion !== null && answer.trim() !== '';
+  const isAnswerProvided = selectedQuestion !== null && answers[selectedQuestion].trim() !== '';
+
+  const isAllAnswersCorrect = () => {
+    // Assuming you have a separate object storing correct answers for each question
+    const correctAnswers = {
+      1: [".", ".", ".", ".", "."],
+      2: ["Hello, Angular!", "Two-way Data Binding", "Counter Button", "HTTP GET", "Counter Component"],
+      3: ["Change Background", "Change Text", "Simple Layout", "CSS Box Model", "CSS Animation"],
+      4: ["Print Hello World", "Express Server", "CRUD Operations", "GET Users", "Authentication System"],
+      5: ["Basic CRUD App", "Authentication", "Full-stack CRUD", "Real-time Chat", "Task Management System"],
+    };
+
+    // Fetch the correct answers for the active tab
+    const correctAnswersForTab = correctAnswers[activeTab];
+
+    // Check if all answers are correct
+    return correctAnswersForTab.every((correctAnswer, index) => {
+      return correctAnswer === answers[index].trim();
+    });
+  };
 
   return (
     <div>
@@ -153,47 +175,50 @@ const Tabs = () => {
                   Question {questionIndex + 1}: {question}
                 </p>
                 {selectedQuestion === questionIndex && (
-  <div>
-    <input
-      type="text"
-      placeholder="Describe your answer"
-      style={{ color: "black" }} // Set font color to black
-      value={answer}
-      onChange={handleAnswerChange}
-    />
-    {isAnswerProvided && (
-      <div style={{ borderTop: "1px solid #ccc", marginTop: "10px", paddingTop: "10px" }}>
-        <button
-          className="mt-5 bg-black w-full text-white hover:bg-slate-500"
-          onClick={handleSubmitClick}
-        >
-          Submit
-        </button>
-        {/* "Done" button visually cut off by a line */}
-        <div style={{ borderTop: "1px solid #ccc", marginTop: "10px", paddingTop: "10px" }}>
-          <button
-            className="mt-5 bg-black w-full text-white hover:bg-slate-500"
-            onClick={() => handleQuestionClick(null)} // Reset selected question
-          >
-            Done
-          </button>
-        </div>
-      </div>
-    )}
-  </div>
-)}
+                  <div>
+                    <input
+                      type="text"
+                      name={`answer-${questionIndex}`}
+                      placeholder="Describe your answer"
+                      style={{ color: "black", width: "100%" }} // Set font color to black and adjust width
+                      value={answers[questionIndex]}
+                      onChange={handleAnswerChange}
+                    />
 
+                    {isAnswerProvided && (
+                      <div style={{ borderTop: "1px solid #ccc", marginTop: "10px", paddingTop: "10px" }}>
+                        <button
+                          className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+                          onClick={handleSubmitClick}
+                        >
+                          Submit
+                        </button>
+                        {/* "Done" button visually cut off by a line */}
+                        <div style={{ borderTop: "1px solid #ccc", marginTop: "10px", paddingTop: "10px" }}>
+                          <button
+                            className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+                            onClick={() => handleQuestionClick(null)} // Reset selected question
+                          >
+                            Done
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
             <div>
               {/* Additional content for all tabs */}
               <p>End of Questions</p>
-              <button
-                className="mt-5 bg-black w-full text-white hover:bg-slate-500"
-                onClick={handleCertificationClick}
-              >
-                Get Your Certification
-              </button>
+              {isAllAnswersCorrect() && (
+                <button
+                  className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+                  onClick={handleCertificationClick}
+                >
+                  Get Your Certification
+                </button>
+              )}
             </div>
           </div>
         )}
