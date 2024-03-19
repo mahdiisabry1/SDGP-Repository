@@ -11,8 +11,8 @@ import blueCandy from "./images/blue-candy.png";
 import "./CSS/Gameroom.css";
 import NavBar from "../components/NavBar";
 
-const width = 8;
-const candyColors = [
+const width = 8;// Width of the game board
+const candyColors = [ // Array containing different candy colors
   blueCandy,
   orangeCandy,
   purpleCandy,
@@ -20,12 +20,13 @@ const candyColors = [
   yellowCandy,
   greenCandy,
 ];
-
+// Main component
 const GameRoom = () => {
-  const [currentColorArrangement, setCurrentColorArrangement] = useState([]);
-  const [squareBeingDragged, setSquareBeingDragged] = useState(null);
-  const [squareBeingReplaced, setSquareBeingReplaced] = useState(null);
-  const [scoreDisplay, setScoreDisplay] = useState(0);
+  // State variables
+  const [currentColorArrangement, setCurrentColorArrangement] = useState([]); // Current arrangement of candies on the board
+  const [squareBeingDragged, setSquareBeingDragged] = useState(null); // Currently dragged candy square
+  const [squareBeingReplaced, setSquareBeingReplaced] = useState(null); // Square being replaced by a dragged candy
+  const [scoreDisplay, setScoreDisplay] = useState(0); // Displayed score
 
   const checkForColumnOfFour = () => {
     for (let i = 0; i <= 39; i++) {
