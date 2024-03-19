@@ -30,6 +30,7 @@ import FECertification from './pages/FSCertification.jsx';
 import BECertification from './pages/BECertification.jsx';
 import FSCertification from './pages/FSCertification.jsx';
 import MoreGames from './pages/MoreGames.jsx';
+import EditPost from './pages/EditPost.jsx';
 
 
 
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: "/create",
         element: <CreatePost />,
+      },
+      {
+        path: "/editpost/:id",
+        element: <EditPost/>,
       },
       {
         path: "/profile",

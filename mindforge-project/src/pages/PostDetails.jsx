@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { URL, IF } from "../url";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
@@ -10,11 +10,21 @@ const PostDetails = () => {
   const postId = useParams().id
   const [post, setPost] = useState({})
   const {user} = useContext(UserContext) 
+  const navigate = useNavigate()
 
   const fetchPosts = async() => {
     try {
       const res = await axios.get(URL+"/api/posts/"+postId)
       setPost(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const handleDelete = async() =>{
+    try {
+      await axios.delete(URL + "/api/posts/"+postId, {withCredentials:true})
+      navigate("/blogs");
     } catch (error) {
       console.log(error)
     }
@@ -31,8 +41,8 @@ const PostDetails = () => {
           {post.title}
         </h1>
         {user?._id === post?.userId && <div className="flex items-center justify-center space-x-2">
-          <span className="cursor-pointer">Edit</span>
-          <span className="cursor-pointer">Delete</span>
+          <span className="cursor-pointer" onClick={() => navigate("/editpost/"+postId)}>Edit</span>
+          <span className="cursor-pointer" onClick={handleDelete}>Delete</span>
         </div>}
         
       </div>
