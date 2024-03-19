@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom';
 import ScoreBoard from '../components/ScoreBoard'
 import blank from './images/blank.png'
 import greenCandy from './images/green-candy.png'
@@ -7,6 +8,8 @@ import purpleCandy from './images/purple-candy.png'
 import redCandy from './images/red-candy.png'
 import yellowCandy from './images/yellow-candy.png'
 import blueCandy from './images/blue-candy.png'
+import './CSS/Gameroom.css';
+
 
 const width = 8
 const candyColors = [
@@ -167,6 +170,9 @@ const GameRoom = () => {
         }, 100)
         return () => clearInterval(timer)
     }, [checkForColumnOfFour, checkForRowOfFour, checkForColumnOfThree, checkForRowOfThree, moveIntoSquareBelow, currentColorArrangement])
+    const handleMoreGamesClick = () => {
+        // Define what happens when the "More Games" button is clicked
+    }
 
 
     return (
@@ -189,8 +195,10 @@ const GameRoom = () => {
                 ))}
             </div>
             <ScoreBoard score={scoreDisplay}/>
+            <Link to="/MoreGames" className="gamebutton">More Games</Link>
+
         </div>
     )
 }
 
-export default GameRoom
+export default GameRoom;

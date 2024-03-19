@@ -1,0 +1,33 @@
+/* MoreGames.css */
+
+/* Tab buttons container */
+.gamestab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Tab button styles */
+  .gamestab-buttons button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Active tab button styles */
+  .gamestab-buttons button.active {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  /* Content styles */
+  .gamestab-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  

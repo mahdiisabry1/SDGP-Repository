@@ -1,0 +1,18 @@
+.Menu-bar{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.MenuNav{
+    background-color: blue;
+    padding: 1rem;
+    border-radius: 50px;
+}
+
+.Menu-com{
+    display: flex;
+    gap: 5rem;
+    color: white;
+}
