@@ -245,6 +245,8 @@ const QuestionSurvey = () => {
     }
     // Set the submitted flag to true after handling the current question
     setSubmitted(true);
+
+    
   };
 
   // Function to get the recommendation based on the total score
@@ -264,6 +266,15 @@ const QuestionSurvey = () => {
     // Remove "Recommendation:" from the recommendation text
     return recommendation.replace("Recommendation: ", "");
   };
+  useEffect(() => {
+    // Load recommendation from local storage on component mount
+    const savedRecommendation = localStorage.getItem("recommendation");
+    if (savedRecommendation) {
+      setRecommendation(savedRecommendation);
+      console.log("Recommendation loaded from local storage:", savedRecommendation);
+    }
+    
+  }, []);
 
   return (
     <>

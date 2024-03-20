@@ -5,7 +5,6 @@
   height: 100vh; /* Setting height to fill the viewport vertically */
 }
 
-
 /* Styling for the container holding the survey questions */
 .question-container {
   margin-top: 20vh; /* Margin from the top of the viewport */
@@ -18,7 +17,15 @@
   padding: 30px; /* Padding around the content */
   max-width: 600px; /* Maximum width of the container */
   width: 100%;
-  height: 50%;
+  height: auto; /* Adjusting height to fit content */
+}
+
+/* Styling for the recommendation and total score */
+.recommendation,
+.total-score {
+  text-align: center; /* Centering the text */
+  margin-top: 20px; /* Margin from the top */
+  font-size: 1.2rem; /* Adjust font size */
 }
 
 /* Styling for the text of the survey questions */
