@@ -7,7 +7,7 @@ import axios from "axios";
 import { URL } from "../url";
 
 const EditPost = () => {
-  const postId = useParams.id
+  const { id: postId } = useParams();
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
