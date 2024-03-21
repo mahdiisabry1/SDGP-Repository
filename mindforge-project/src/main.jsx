@@ -10,7 +10,6 @@ import Home from './pages/Home.jsx';
 import Blogs from './pages/Blogs.jsx';
 import RoadMap from './pages/RoadMap.jsx';
 import Cetification from './pages/Cetification.jsx';
-import GameRoom from './pages/GameRoom.jsx';
 import Quiz from './components/Quz.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
@@ -29,7 +28,7 @@ import AngularCertification from './pages/AngularCertification.jsx';
 import FECertification from './pages/FSCertification.jsx';
 import BECertification from './pages/BECertification.jsx';
 import FSCertification from './pages/FSCertification.jsx';
-import MoreGames from './pages/MoreGames.jsx';
+import GameRoom from './pages/GameRoom.jsx';
 import EditPost from './pages/EditPost.jsx';
 
 
@@ -58,10 +57,6 @@ const router = createBrowserRouter([
       {
         path: "/game-room",
         element: <GameRoom />,
-      },
-      {
-        path: "/MoreGames",
-        element: <MoreGames />,
       },
       {
         path: "/Quiz",
