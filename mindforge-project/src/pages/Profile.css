@@ -1,0 +1,13 @@
+/* Add this to your CSS file, e.g., styles.css */
+.logout-link {
+    background-color: #198585; /* Adjust the background color as needed */
+    color: #fff; /* Text color */
+    padding: 0.5rem 1rem; /* Padding around the link */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .logout-link:hover {
+    background-color: #5ab6db; /* Adjust the background color on hover */
+  }
+  
