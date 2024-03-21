@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './CSS/Gameroom.css';
 import XO from './XO.jsx';
 import Candycrush from './Candycrush.jsx';
+import NavBar from "../components/NavBar";
 
 const GameRoom = () => {
   const [activeTab, setActiveTab] = useState('tab1'); // State to manage active tab

@@ -29,6 +29,8 @@ import FECertification from './pages/FSCertification.jsx';
 import BECertification from './pages/BECertification.jsx';
 import FSCertification from './pages/FSCertification.jsx';
 import GameRoom from './pages/GameRoom.jsx';
+import XO from './pages/XO.jsx';
+import Candycrush from './pages/Candycrush.jsx'
 import EditPost from './pages/EditPost.jsx';
 
 
@@ -57,6 +59,14 @@ const router = createBrowserRouter([
       {
         path: "/game-room",
         element: <GameRoom />,
+      },
+      {
+        path: "/XO",
+        element: <XO />,
+      },
+      {
+        path: "/Candycrush",
+        element: <Candycrush />,
       },
       {
         path: "/Quiz",
