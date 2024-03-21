@@ -1,17 +1,18 @@
-/* Style for the container 
+/* Container styles */
 .create-roadmap-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    font-family: Arial, sans-serif;
   }
   
-  /* Style for the form 
+  /* Form styles */
   .create-roadmap-form {
     display: flex;
     flex-direction: column;
   }
   
-  /* Style for form elements 
+  /* Form element styles */
   .create-roadmap-form > div {
     margin-bottom: 15px;
   }
@@ -30,12 +31,12 @@
     margin-top: 5px;
   }
   
-  /* Style for the steps container 
+  /* Steps container styles */
   .step-container {
     margin-top: 10px;
   }
   
-  /* Style for individual steps 
+  /* Individual step styles */
   .step {
     margin-bottom: 10px;
   }
@@ -50,7 +51,7 @@
     margin-top: 5px;
   }
   
-  /* Style for the 'Add Step' button 
+  /* Add Step button styles */
   .step button {
     background-color: #007bff;
     color: #fff;
@@ -64,7 +65,7 @@
     background-color: #0056b3;
   }
   
-  /* Style for the 'Create Roadmap' button 
+  /* Create Roadmap button styles */
   .create-roadmap-form button[type="submit"] {
     background-color: #28a745;
     color: #fff;
@@ -77,5 +78,4 @@
   .create-roadmap-form button[type="submit"]:hover {
     background-color: #218838;
   }
-  */
   
