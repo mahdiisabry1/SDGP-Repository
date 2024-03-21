@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CSS/GameRoom.css';
+import './CSS/Gameroom.css';
 import XO from './XO.jsx';
 import Candycrush from './Candycrush.jsx';
 
