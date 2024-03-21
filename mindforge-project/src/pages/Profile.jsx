@@ -21,20 +21,28 @@ const Profile = () => {
   }, []);
 
   return (
-    <>
-      <NavBar />
-      <div className="mt-40 text-center"> {/* Added text-center class to center the content */}
-        <h1 className="text-4xl mb-4">Welcome to your profile</h1> {/* Increased font size using text-4xl class */}
-        {userData && (
-          <div>
-            <p className="text-xl mt-4">Username: <span className="text-lg">{userData.username}</span></p> {/* Increased font size using text-xl class */}
-            <p className="text-xl mt-2">Email: <span className="text-lg">{userData.email}</span></p> {/* Increased font size using text-xl class */}
-            {/* Add more user data fields as needed */}
-          </div>
-        )}
-        <a href="/" className="logout-link mt-10">Logout</a> {/* Applied CSS class to the logout link and added margin */}
+    <div className="profile-wrapper">
+      <div className="profile-bg">
+        <NavBar />
+        <div className="mt-40 text-center"> {/* Added text-center class to center the content */}
+          <h1 className="text-6xl mb-4">Welcome to Your Profile</h1> {/* Increased font size using text-4xl class */}
+        </div>
       </div>
-    </>
+      <div className="profile-content">
+        <div className="mt-40 text-center"> {/* Added text-center class to center the content */}
+          {userData && (
+            <div>
+              <p className="text-xl mt-4">Username: <span className="text-lg">{userData.username}</span></p> {/* Increased font size using text-xl class */}
+              <p className="text-xl mt-2">Email: <span className="text-lg">{userData.email}</span></p> {/* Increased font size using text-xl class */}
+              {/* Add more user data fields as needed */}
+            </div>
+          )}
+          <div className="mt-20"> {/* Added a div to separate the logout link */}
+            <a href="/" className="logout-link">Logout</a> {/* Applied CSS class to the logout link */}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

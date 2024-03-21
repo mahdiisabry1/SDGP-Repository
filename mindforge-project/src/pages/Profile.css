@@ -11,3 +11,18 @@
     background-color: #5ab6db; /* Adjust the background color on hover */
   }
   
+ /* Add this to your CSS file, e.g., styles.css */
+.profile-bg {
+    background-image: url('https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=600'); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+    background-size: cover; /* Cover the entire container with the background image */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Make the background image fixed */
+    height: 350px; /* Adjust the height of the background image as needed */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Align text horizontally */
+  }
+  
+  
+  
