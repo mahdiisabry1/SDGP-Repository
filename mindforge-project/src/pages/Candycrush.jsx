@@ -9,10 +9,10 @@ import redCandy from "./images/red-candy.png";
 import yellowCandy from "./images/yellow-candy.png";
 import blueCandy from "./images/blue-candy.png";
 import "./CSS/Candycrush.css";
-import NavBar from "../components/NavBar";
 
-const width = 8;// Width of the game board
-const candyColors = [ // Array containing different candy colors
+const width = 8; // Width of the game board
+const candyColors = [
+  // Array containing different candy colors
   blueCandy,
   orangeCandy,
   purpleCandy,
@@ -20,7 +20,7 @@ const candyColors = [ // Array containing different candy colors
   yellowCandy,
   greenCandy,
 ];
-// Main component
+
 const GameRoom = () => {
   // State variables
   const [currentColorArrangement, setCurrentColorArrangement] = useState([]); // Current arrangement of candies on the board
@@ -226,32 +226,26 @@ const GameRoom = () => {
   };
 
   return (
-    <>
-    <NavBar/>
-      <div className="app">
-        <div className="game">
-          {currentColorArrangement.map((candyColor, index) => (
-            <img
-              key={index}
-              src={candyColor}
-              alt={candyColor}
-              data-id={index}
-              draggable={true}
-              onDragStart={dragStart}
-              onDragOver={(e) => e.preventDefault()}
-              onDragEnter={(e) => e.preventDefault()}
-              onDragLeave={(e) => e.preventDefault()}
-              onDrop={dragDrop}
-              onDragEnd={dragEnd}
-            />
-          ))}
-        </div>
-        <ScoreBoard score={scoreDisplay} />
-        <Link to="/MoreGames" className="gamebutton">
-          More Games
-        </Link>
+    <div className="app">
+      <div className="game">
+        {currentColorArrangement.map((candyColor, index) => (
+          <img
+            key={index}
+            src={candyColor}
+            alt={candyColor}
+            data-id={index}
+            draggable={true}
+            onDragStart={dragStart}
+            onDragOver={(e) => e.preventDefault()}
+            onDragEnter={(e) => e.preventDefault()}
+            onDragLeave={(e) => e.preventDefault()}
+            onDrop={dragDrop}
+            onDragEnd={dragEnd}
+          />
+        ))}
       </div>
-    </>
+      <ScoreBoard score={scoreDisplay} />
+    </div>
   );
 };
 
