@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const CreateRoadMap = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [steps, setSteps] = useState([{ title: "", description: "" }]);
+  const [roadmaps, setRoadmaps] = useState([]);
 
+  useEffect(() => {
+    fetchRoadmaps();// Calls the fetchRoadmaps function when the component mounts
+  }, []);
+
+  const fetchRoadmaps = async () => {
+    try {
+      const response = await axios.get("/api/roadmaps");
+      setRoadmaps(response.data);// Updates the roadmaps state with the fetched data
+    } catch (error) {
+      console.error("Error fetching roadmaps:", error);
+    }
+  };
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
