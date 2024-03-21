@@ -31,3 +31,37 @@
     background-color: #f9f9f9;
   }
   
+  .game-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .game-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+  }
+  
+  .game-link:hover {
+    background-color: #45a049; /* Darker Green */
+  }
+
+  .tab3-container {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+  }
+  
+  
