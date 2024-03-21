@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { Board } from "./Board.jsx";
 import { ResetButton } from "./ResetButton.jsx";
 import { ScoreBoard } from "./ScoreBoard.jsx";
@@ -72,7 +71,7 @@ const XO = () => {
   }
 
   return (
-    <div className="App">
+    <div className="XO-App">
       <ScoreBoard scores={scores} xPlaying={xPlaying} />
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
       <ResetButton resetBoard={resetBoard} />
