@@ -10,7 +10,7 @@ const authRoute = require('./Routes/auth')
 const userRoute = require('./Routes/users')
 const postRoute = require('./Routes/posts')
 const commentRoute = require('./Routes/comments')
-
+const roadmapRoute = require('./Routes/roadmaps')
 
 // database
 const connectDB = async() => {
@@ -32,6 +32,7 @@ app.use("/api/auth", authRoute)
 app.use("/api/users", userRoute)
 app.use("/api/posts", postRoute)
 app.use("/api/comments", commentRoute)
+app.use("/api/roadmaps", roadmapRoute)
 
 //image 
 const storage = multer.diskStorage({
