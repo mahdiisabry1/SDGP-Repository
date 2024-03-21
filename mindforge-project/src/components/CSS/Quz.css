@@ -1,6 +1,6 @@
 .Quzapp-container {
-  background-image: url('https://i.gifer.com/76YS.gif');
-  background-size: cover; /* Using 'cover' to ensure the background covers the entire container */
+  background-image: url('https://i.gifer.com/9vry.gif');
+  background-size: auto; /* Using 'cover' to ensure the background covers the entire container */
   background-position: center;
   height: 100vh; /* Setting height to fill the viewport vertically */
 }
