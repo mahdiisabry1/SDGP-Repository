@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './CSS/Gameroom.css';
 import XO from './XO.jsx';
 import Candycrush from './Candycrush.jsx';
+import NavBar from "../components/NavBar";
 
 const GameRoom = () => {
   const [activeTab, setActiveTab] = useState('tab1'); // State to manage active tab
@@ -37,7 +38,7 @@ const GameRoom = () => {
       )}
 
       {activeTab === 'tab3' && (
-        <div>
+        <div style={{ backgroundImage: 'url("https://images.pexels.com/photos/12718848/pexels-photo-12718848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', padding: '20px' }}>
           <h1 style={{ textAlign: 'center' }}>MORE GAMES</h1>
           <p style={{ textAlign: 'center', fontStyle: 'italic', padding: 20, fontSize: '20px' }}>You can click these links and find more games here:</p>
           <ul style={{ listStyleType: 'none', textAlign: 'center', padding: 15 }}>

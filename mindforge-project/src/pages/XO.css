@@ -1,9 +1,48 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    background-color: #efefef;
-    font-family: "Fredoka", sans-serif;
-  }
+.XO-App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  font-family: Arial, sans-serif;
+  background-image: url('https://images.pexels.com/photos/4016535/pexels-photo-4016535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace 'path/to/your/image.jpg' with the path to your background image */
+  background-size: cover; /* Cover the entire container with the background image */
+  background-position: center; /* Center the background image */
+}
+
+
+.XO-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+}
+
+.XO-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.XO-box:hover {
+  background-color: #f0f0f0;
+}
+
+.XO-reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.reset-button:hover {
+  background-color: #0056b3;
+}
