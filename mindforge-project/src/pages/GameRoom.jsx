@@ -65,13 +65,13 @@ const GameRoom = () => {
               padding: "20px",
             }}
           >
-            <h1 style={{ textAlign: "center" }}>MORE GAMES</h1>
             <p
               style={{
-                textAlign: "center",
+                textAlign: "",
                 fontStyle: "italic",
                 padding: 20,
                 fontSize: "20px",
+                color:"white",
               }}
             >
               You can click these links and find more games here:

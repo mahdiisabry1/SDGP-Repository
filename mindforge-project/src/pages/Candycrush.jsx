@@ -202,6 +202,10 @@ const GameRoom = () => {
   useEffect(() => {
     createBoard();
   }, []);
+  
+  useEffect(() => {
+    resetScore();
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -221,12 +225,9 @@ const GameRoom = () => {
     moveIntoSquareBelow,
     currentColorArrangement,
   ]);
-  const handleMoreGamesClick = () => {
-    // Define what happens when the "More Games" button is clicked
-  };
 
   return (
-    <div className="app">
+    <div className="Gapp">
       <div className="game">
         {currentColorArrangement.map((candyColor, index) => (
           <img
@@ -243,8 +244,9 @@ const GameRoom = () => {
             onDragEnd={dragEnd}
           />
         ))}
-      </div>
+       </div>
       <ScoreBoard score={scoreDisplay} />
+      <button onClick={resetScore}>Reset Score</button> {/* Reset button */}
     </div>
   );
 };
