@@ -1,17 +1,20 @@
-.Menu-bar{
+.Menu-bar {
     display: flex;
     justify-content: space-around;
     padding-top: 1%;
     padding-bottom: 1%;
+    background-image: url('https://i.gifer.com/5Q10.gif'); /* Replace 'your-background-image-url.jpg' with your actual image URL */
+    background-size: ; /* Using 'cover' to ensure the background covers the entire container */
+    background-position: center;
 }
 
-.MenuNav{
-    background-color: blue;
+.MenuNav {
+    background-color: blue; /* This sets a fallback background color in case the image fails to load */
     padding: 1rem;
     border-radius: 50px;
 }
 
-.Menu-com{
+.Menu-com {
     display: flex;
     gap: 5rem;
     color: white;
