@@ -3,9 +3,6 @@
     justify-content: space-around;
     padding-top: 1%;
     padding-bottom: 1%;
-    background-image: url('https://i.gifer.com/5Q10.gif'); /* Replace 'your-background-image-url.jpg' with your actual image URL */
-    background-size: ; /* Using 'cover' to ensure the background covers the entire container */
-    background-position: center;
 }
 
 .MenuNav {

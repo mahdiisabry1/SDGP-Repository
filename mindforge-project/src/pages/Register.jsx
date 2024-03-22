@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { URL } from "../url";
 import Menu from "../components/Menu";
@@ -23,7 +23,7 @@ const Register = () => {
       setEmail(res.data.email);
       setPassword(res.data.password);
       setError(false);
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

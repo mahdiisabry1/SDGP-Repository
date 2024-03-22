@@ -37,7 +37,7 @@ const Login = () => {
   return (
     <>
       <Menu />
-      <div className="w-full flex justify-center items-center h-[80vh]">
+      <div className="w-full flex justify-center items-center h-[80vh] the-main-login-container">
         <div className="flex flex-col justify-center items-center space-y-4 w-[80%] md:w-[25%]">
           <h1 className="text-xl font-bold text-left">Log into your account</h1>
           <input
