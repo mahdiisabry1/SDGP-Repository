@@ -41,7 +41,7 @@ const Blogs = () => {
         <div className="max-w-7xl mx-auto">
           {posts.map((post) => (
             <>
-              <Link to={user ? `/posts/post/${post._id}` : "/login"}>
+              <Link to={user ? `/posts/post/${post._id}` : "/"}>
                 <BlogPosts key={post._id} post={post} />
               </Link>
             </>

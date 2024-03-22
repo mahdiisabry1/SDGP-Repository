@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NavBar from "../components/NavBar";
+import CreatedRoadmaps from "../components/CreatedRoadmaps";
 
 const RoadMap = () => {
   // State to manage the selected phase
@@ -157,6 +158,7 @@ const RoadMap = () => {
                 style={{ ...circleStyle, backgroundColor: phase.customColor }}
               ></div>
               {/* Circle indicating phase */}
+
               <div>
                 <h3 style={phaseTitleStyle}>{phase.title}</h3>
                 <p style={phaseDescriptionStyle}>{phase.description}</p>
@@ -164,7 +166,9 @@ const RoadMap = () => {
             </div>
           ))}
         </div>
+        <CreatedRoadmaps />
       </div>
+      
     </>
   );
 };

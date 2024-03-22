@@ -1,39 +1,34 @@
-
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Home from './pages/Home.jsx';
-import Blogs from './pages/Blogs.jsx';
-import RoadMap from './pages/RoadMap.jsx';
-import Cetification from './pages/Cetification.jsx';
-import Quiz from './components/Quz.jsx';
-import Login from './pages/Login.jsx';
-import Register from './pages/Register.jsx';
-import PostDetails from './pages/PostDetails.jsx';
-import CreatePost from './pages/CreatePost.jsx';
-import Profile from './pages/Profile.jsx';
-import ReactMindmap from './pages/ReactMindmap.jsx';
-import AngularMindmap from './pages/AngularMindmap.jsx';
-import FEMindmap from './pages/FEMindmap.jsx';
-import BEMindmap from './pages/BEMindmap.jsx';
-import FSMindmap from './pages/FSMindmap.jsx';
-import OwnMindMap from './pages/ownMindmap.jsx';
-import ReactCertification from './pages/ReactCertification.jsx';
-import {  UserContextProvider } from './context/UserContext.jsx';
-import AngularCertification from './pages/AngularCertification.jsx';
-import FECertification from './pages/FSCertification.jsx';
-import BECertification from './pages/BECertification.jsx';
-import FSCertification from './pages/FSCertification.jsx';
-import GameRoom from './pages/GameRoom.jsx';
-import XO from './pages/XO.jsx';
-import Candycrush from './pages/Candycrush.jsx'
-import EditPost from './pages/EditPost.jsx';
-
-
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Blogs from "./pages/Blogs.jsx";
+import RoadMap from "./pages/RoadMap.jsx";
+import Cetification from "./pages/Cetification.jsx";
+import Quiz from "./components/Quz.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import PostDetails from "./pages/PostDetails.jsx";
+import CreatePost from "./pages/CreatePost.jsx";
+import Profile from "./pages/Profile.jsx";
+import ReactMindmap from "./pages/ReactMindmap.jsx";
+import AngularMindmap from "./pages/AngularMindmap.jsx";
+import FEMindmap from "./pages/FEMindmap.jsx";
+import BEMindmap from "./pages/BEMindmap.jsx";
+import FSMindmap from "./pages/FSMindmap.jsx";
+import OwnMindMap from "./pages/ownMindmap.jsx";
+import ReactCertification from "./pages/ReactCertification.jsx";
+import { UserContextProvider } from "./context/UserContext.jsx";
+import AngularCertification from "./pages/AngularCertification.jsx";
+import FECertification from "./pages/FSCertification.jsx";
+import BECertification from "./pages/BECertification.jsx";
+import FSCertification from "./pages/FSCertification.jsx";
+import GameRoom from "./pages/GameRoom.jsx";
+import XO from "./pages/XO.jsx";
+import Candycrush from "./pages/Candycrush.jsx";
+import EditPost from "./pages/EditPost.jsx";
+import PersonalMapDetails from "./pages/PersonalMapDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -85,12 +80,16 @@ const router = createBrowserRouter([
         element: <PostDetails />,
       },
       {
+        path:"roadmaps/roadmap/:id",
+        element: <PersonalMapDetails />
+      },
+      {
         path: "/create",
         element: <CreatePost />,
       },
       {
         path: "/editpost/:id",
-        element: <EditPost/>,
+        element: <EditPost />,
       },
       {
         path: "/profile",
@@ -118,7 +117,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/path-to-components/ownMindMap",
-        element: <OwnMindMap />
+        element: <OwnMindMap />,
       },
       {
         path: "/path-to-components/ReactCertification",
@@ -130,15 +129,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/path-to-components/FECertification",
-        element: <FECertification />
+        element: <FECertification />,
       },
       {
         path: "/path-to-components/BECertification",
-        element: <BECertification />
+        element: <BECertification />,
       },
       {
         path: "/path-to-components/FSCertification",
-        element: <FSCertification />
+        element: <FSCertification />,
       },
     ],
   },
