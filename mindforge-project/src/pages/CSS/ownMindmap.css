@@ -1,17 +1,21 @@
-/* CreateRoadMap.css */
-
-/* Background for the main container */
 .create-roadmap-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background-image: url('https://i.gifer.com/4NB4.gif'); /* Replace with your actual background image URL */
+  background-image: url('https://cdn.pixabay.com/photo/2024/03/07/22/54/ai-generated-8619465_1280.jpg'); /* Replace with your actual background image URL */
   background-size: cover;
   background-position: center;
-  color: white; /* Set text color to black */
+  background-attachment: fixed; /* Fix the background image */
+  color: rgb(255, 255, 255); /* Set text color to white */
+  height: 100vh; /* Set height to fill the viewport vertically */
+  font-size: 20px; /* Set the font size */
+  font-weight: bold; /* Make the text bold */
 }
+
+
+
 
 /* Style for the form */
 .form {
