@@ -40,8 +40,11 @@ router.put('/update/:id', async (req, res) => {
 // Delete roadmap
 router.delete ('/:id', async (req, res) =>{
     await  Roadmap.remove({_id: req.params.id}, function(err){
+        
       if(!err) {res.send("Deleted Successfully!")} 
+
       else 
+
       {res.send("Error in Deletion")}
     });    
 })

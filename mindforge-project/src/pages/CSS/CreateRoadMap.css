@@ -1,81 +1,84 @@
-/* Container styles */
+/* CreateRoadMap.css */
+
+/* Background for the main container */
 .create-roadmap-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Form styles */
-  .create-roadmap-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Form element styles */
-  .create-roadmap-form > div {
-    margin-bottom: 15px;
-  }
-  
-  .create-roadmap-form label {
-    font-weight: bold;
-  }
-  
-  .create-roadmap-form input[type="text"],
-  .create-roadmap-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-top: 5px;
-  }
-  
-  /* Steps container styles */
-  .step-container {
-    margin-top: 10px;
-  }
-  
-  /* Individual step styles */
-  .step {
-    margin-bottom: 10px;
-  }
-  
-  .step input[type="text"],
-  .step textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-top: 5px;
-  }
-  
-  /* Add Step button styles */
-  .step button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .step button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Create Roadmap button styles */
-  .create-roadmap-form button[type="submit"] {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .create-roadmap-form button[type="submit"]:hover {
-    background-color: #218838;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* Style for the form */
+.form {
+  width: 100%;
+  max-width: 40rem; /* Adjust as needed */
+}
+
+/* Style for form elements */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  outline: none;
+  resize: vertical; /* Allow vertical resizing */
+}
+
+/* Style for the steps section */
+.steps {
+  margin-bottom: 1.5rem;
+}
+
+.step {
+  margin-bottom: 1rem;
+}
+
+/* Style for the add step button */
+.add-step-button {
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.add-step-button:hover {
+  background-color: #45a049;
+}
+
+/* Style for the submit button */
+.submit-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
