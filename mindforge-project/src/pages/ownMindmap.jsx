@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import "./CSS/ownMindmap.css";
+import { UserContext } from "../context/UserContext";
+import { URL } from "../url";
 
 
 
@@ -8,23 +10,9 @@ const CreateRoadMap = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [steps, setSteps] = useState([{ title: "", description: "" }]);
-  const [roadmaps, setRoadmaps] = useState([]);
+  const { user } = useContext(UserContext);
 
-  useEffect(() => {
-    fetchRoadmaps();// Calls the fetchRoadmaps function when the component mounts
-  }, []);
 
-  const fetchRoadmaps = async () => {
-    try {
-      const response = await axios.get("/api/roadmaps");
-      setRoadmaps(response.data);// Updates the roadmaps state with the fetched data
-    } catch (error) {
-      console.error("Error fetching roadmaps:", error);
-    }
-  };
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value);
-  };
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
@@ -58,10 +46,18 @@ const CreateRoadMap = () => {
       title,
       description,
       steps,
+      username: user.username,
+      userId: user._id,
     };
 
     try {
-      const response = await axios.post("/api/roadmaps/createRoad", roadmapData);
+      const response = await axios.post(
+        URL + "/api/roadmaps/createRoad",
+        roadmapData,
+        {
+          withCredentials: true,
+        }
+      );
       console.log("Roadmap created:", response.data);
       // Optionally, redirect the user or perform other actions upon successful creation
     } catch (error) {
@@ -73,7 +69,7 @@ const CreateRoadMap = () => {
   return (
     <div className="create-roadmap-container">
       <h2>Create Roadmap</h2>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form">
         <div className="form-group">
           <label htmlFor="title" className="label">
             Title:
@@ -82,7 +78,7 @@ const CreateRoadMap = () => {
             id="title"
             type="text"
             value={title}
-            onChange={handleTitleChange}
+            onChange={(e) => setTitle(e.target.value)}
             className="input"
             required
           />
@@ -124,11 +120,15 @@ const CreateRoadMap = () => {
               </button>
             </div>
           ))}
-          <button type="button" onClick={handleAddStep} className="add-step-button">
+          <button
+            type="button"
+            onClick={handleAddStep}
+            className="add-step-button"
+          >
             Add Step
           </button>
         </div>
-        <button type="submit" className="submit-button">
+        <button type="submit" className="submit-button" onClick={handleSubmit}>
           Create Roadmap
         </button>
       </form>

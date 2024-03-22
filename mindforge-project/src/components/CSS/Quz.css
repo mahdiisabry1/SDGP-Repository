@@ -21,8 +21,7 @@
 }
 
 /* Styling for the recommendation and total score */
-.recommendation,
-.total-score {
+.recommendation {
   text-align: center; /* Centering the text */
   margin-top: 20px; /* Margin from the top */
   font-size: 1.2rem; /* Adjust font size */
@@ -88,4 +87,17 @@
 .option-item.selected {
   background-color: #109db2; /* Background color for selected options */
   color: #ffffff; /* Text color for selected options */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  /* Adjusting width of elements for smaller screens */
+  .question-container {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .element {
+    width: 100%;
+  }
 }

@@ -17,7 +17,7 @@ router.post('/createRoad', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const roadmaps = await Roadmap.find();
-        res.send(roadmaps);
+        res.status(200).json(roadmaps)
     } catch (error) {
         res.status(500).send(error);
     }

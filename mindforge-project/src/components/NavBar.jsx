@@ -49,7 +49,6 @@ const NavBar = () => {
           withCredentials: true,
         });
         setUser(null);
-        navigate("/");
       }
     } catch (error) {
       console.log(error);
@@ -124,7 +123,7 @@ const NavBar = () => {
             </>
           ) : (
             <>
-              <Link to="/login">
+              <Link to="/">
                 <button className="login-button">Login</button>
               </Link>
               <Link to="/register">

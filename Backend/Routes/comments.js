@@ -4,10 +4,10 @@ const User=require('../Models/User')
 const bcrypt=require('bcrypt')
 const Post=require('../Models/Post')
 const Comment=require('../Models/Comment')
-const verifyToken = require('../verifyToken')
+const verifytoken = require('../verifyToken')
 
 //CREATE
-router.post("/create",async (req,res)=>{
+router.post("/create",verifytoken, async (req,res)=>{
     try{
         const newComment=new Comment(req.body)
         const savedComment=await newComment.save()
@@ -20,7 +20,7 @@ router.post("/create",async (req,res)=>{
 })
 
 //UPDATE
-router.put("/:id",async (req,res)=>{
+router.put("/:id",verifytoken, async (req,res)=>{
     try{
        
         const updatedComment=await Comment.findByIdAndUpdate(req.params.id,{$set:req.body},{new:true})
@@ -34,7 +34,7 @@ router.put("/:id",async (req,res)=>{
 
 
 //DELETE
-router.delete("/:id",async (req,res)=>{
+router.delete("/:id",verifytoken, async (req,res)=>{
     try{
         await Comment.findByIdAndDelete(req.params.id)
         

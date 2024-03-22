@@ -29,6 +29,57 @@ const EditPost = () => {
     }
   };
 
+  const handleupdate = async(e) => {
+    e.preventDefault();
+    const post = {
+      title,
+      desc,
+      username: user.username,
+      userId: user._id,
+      categories: cats,
+    };
+
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("img", filename);
+      data.append("file", file);
+      post.photo = filename;
+
+      try {
+        const imgUpload = await axios.post(URL + "/api/upload", data);
+        console.log(imgUpload.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    //Upload post
+    try {
+      const res = await axios.put(URL + "/api/posts/"+postId, post, {
+        withCredentials: true,
+      });
+      navigate("/posts/post/" + res.data._id);
+    } catch (error) {
+      alert("Cannot create post login before trying again")
+      console.log(error);
+      navigate("/")
+    }
+
+    // Check if required fields are filled out
+    if (title.trim() === "" || desc.trim() === "") {
+      alert("Title and Description are required!");
+      return;
+    }
+
+    // Check minLength for description
+    if (desc.trim().length < 200) {
+      alert("Description must be at least 200 characters long!");
+      return;
+    }
+  };
+
+
   useEffect(()=>{
     fetchPosts()
   }, [postId])
@@ -118,7 +169,7 @@ const EditPost = () => {
               required
               minLength={200}
             ></textarea>
-            <button className="mt-5 bg-black w-full text-white hover:bg-slate-500">
+            <button onClick={handleupdate} className="mt-5 bg-black w-full text-white hover:bg-slate-500">
               Edit post
             </button>
           </div>

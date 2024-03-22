@@ -1,6 +1,11 @@
 /* Login.css */
 
 /* Style for the entire login container */
+
+.the-main-login-container{
+  background-image: url('../../assets/images/man-1853545_1280.jpg');
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
@@ -8,9 +13,7 @@
     align-items: center;
     width: 100%;
     height: 80vh;
-    background-image: url('https://i.gifer.com/PVtR.gif'); /* Replace with your actual background image URL */
-  background-size: cover;
-  background-position: center;
+    
   }
   
   /* Style for the form container */
