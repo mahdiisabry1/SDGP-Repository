@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background-image: url('https://cdn.pixabay.com/photo/2024/03/07/22/54/ai-generated-8619465_1280.jpg'); /* Replace with your actual background image URL */
+  background-image: url('https://i.gifer.com/PVtR.gif'); /* Replace with your actual background image URL */
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Fix the background image */
@@ -13,9 +13,6 @@
   font-size: 20px; /* Set the font size */
   font-weight: bold; /* Make the text bold */
 }
-
-
-
 
 /* Style for the form */
 .form {
@@ -101,4 +98,24 @@
 
 .submit-button:hover {
   background-color: #0056b3;
+}
+
+/* Corrected styles for specific elements */
+.title,
+.step-title,
+.step-description {
+  color: black;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  /* Adjusting width of elements for smaller screens */
+  .question-container {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .element {
+    width: 100%;
+  }
 }
