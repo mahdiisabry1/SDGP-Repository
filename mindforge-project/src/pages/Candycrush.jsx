@@ -226,6 +226,10 @@ const GameRoom = () => {
     currentColorArrangement,
   ]);
 
+  const resetScore = () => {
+    setScoreDisplay(0);
+  };
+
   return (
     <div className="Gapp">
       <div className="game">

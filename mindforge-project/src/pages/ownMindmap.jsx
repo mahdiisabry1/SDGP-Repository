@@ -9,10 +9,8 @@ import { URL } from "../url";
 const CreateRoadMap = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [steps, setSteps] = useState([{ title: "", description: "" }]);
+  const [steps, setSteps] = useState([{ title: "", description: "", links: [] }]);
   const { user } = useContext(UserContext);
-
-
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
@@ -31,12 +29,23 @@ const CreateRoadMap = () => {
   };
 
   const handleAddStep = () => {
-    setSteps([...steps, { title: "", description: "" }]);
+    setSteps([...steps, { title: "", description: "", links: [] }]);
   };
 
   const handleDeleteStep = (index) => {
     const newSteps = [...steps];
     newSteps.splice(index, 1);
+    setSteps(newSteps);
+  };
+  const handleAddLink = (index) => {
+    const newSteps = [...steps];
+    newSteps[index].links.push("");
+    setSteps(newSteps);
+  };
+
+  const handleLinkChange = (stepIndex, linkIndex, e) => {
+    const newSteps = [...steps];
+    newSteps[stepIndex].links[linkIndex] = e.target.value;
     setSteps(newSteps);
   };
 
@@ -51,13 +60,9 @@ const CreateRoadMap = () => {
     };
 
     try {
-      const response = await axios.post(
-        URL + "/api/roadmaps/createRoad",
-        roadmapData,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.post(URL + "/api/roadmaps/createRoad", roadmapData, {
+        withCredentials: true,
+      });
       console.log("Roadmap created:", response.data);
       // Optionally, redirect the user or perform other actions upon successful creation
     } catch (error) {
@@ -68,7 +73,6 @@ const CreateRoadMap = () => {
 
   return (
     <div className="create-roadmap-container">
-      <h2>Create Roadmap</h2>
       <form className="form">
         <div className="form-group">
           <label htmlFor="title" className="label">
@@ -96,28 +100,47 @@ const CreateRoadMap = () => {
         </div>
         <div className="form-group steps">
           <h3>Steps:</h3>
-          {steps.map((step, index) => (
-            <div className="step" key={index}>
+          {steps.map((step, stepIndex) => (
+            <div className="step" key={stepIndex}>
               <input
                 type="text"
                 value={step.title}
-                onChange={(e) => handleStepTitleChange(index, e)}
+                onChange={(e) => handleStepTitleChange(stepIndex, e)}
                 className="input"
                 placeholder="Step Title"
               />
               <textarea
                 value={step.description}
-                onChange={(e) => handleStepDescriptionChange(index, e)}
+                onChange={(e) => handleStepDescriptionChange(stepIndex, e)}
                 className="textarea"
                 placeholder="Step Description"
               />
-              <button
-                type="button"
-                onClick={() => handleDeleteStep(index)}
-                className="delete-step-button"
-              >
-                Delete
-              </button>
+              {step.links.map((link, linkIndex) => (
+                <input
+                  key={linkIndex}
+                  type="text"
+                  value={link}
+                  onChange={(e) => handleLinkChange(stepIndex, linkIndex, e)}
+                  className="input"
+                  placeholder="Link URL"
+                />
+              ))}
+              <div className="step-buttons">
+                <button
+                  type="button"
+                  onClick={() => handleAddLink(stepIndex)}
+                  className="add-link-button"
+                >
+                  Add Link
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleDeleteStep(stepIndex)}
+                  className="delete-step-button"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           ))}
           <button
@@ -129,7 +152,7 @@ const CreateRoadMap = () => {
           </button>
         </div>
         <button type="submit" className="submit-button" onClick={handleSubmit}>
-          Create Roadmap
+          Create Mindmap
         </button>
       </form>
     </div>

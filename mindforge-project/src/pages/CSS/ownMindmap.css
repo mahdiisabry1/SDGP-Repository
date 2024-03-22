@@ -1,125 +1,120 @@
-/* CreateRoadMap.css */
+/* ownMindmap.css */
 
-/* Background for the main container */
 .create-roadmap-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  width: 100%; /* Set container width to full width */
+  height:auto; /* Set container height to full viewport height */
   background-image: url('https://i.gifer.com/PVtR.gif'); /* Replace with your actual background image URL */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Fix the background image */
-  color: white; /* Set text color to white */
-  height: 100vh; /* Set height to fill the viewport vertically */
-  font-size: 20px; /* Set the font size */
-  font-weight: bold; /* Make the text bold */
+  background-size: cover; /* Cover the entire container with the background image */
+  background-position: center; /* Center the background image */
+  display: flex; /* Use flexbox for centering content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
-/* Style for the form */
 .form {
-  width: 100%;
-  max-width: 40rem; /* Adjust as needed */
+  width: 60%; /* Set form width */
+  height:min-content;
+  background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to the form */
+  padding: 20px; /* Add padding to the form */
+  border-radius: 10px; /* Add border radius to the form */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the form */
 }
 
-/* Style for form elements */
+
+/* Add other styles for form elements, buttons, etc. as previously provided */
+
+
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+  margin-bottom: 5px;
+  font-weight: bold; /* Make labels bold */
+  font-size: 16px; /* Adjust label font size */
+  color: black; /* Change label font color to black */
+}
+h3 {
+  font-weight: bold; /* Make h3 elements bold */
 }
 
-.input {
+.input,
+.textarea {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #000000;
-  border-radius: 0.25rem;
-  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #000000;
-  border-radius: 0.25rem;
-  outline: none;
-  color: black; /* Set text color to black */
-  resize: vertical; /* Allow vertical resizing */
+  resize: vertical;
 }
 
-/* Style for the steps section */
 .steps {
-  margin-bottom: 1.5rem;
+  margin-top: 20px;
 }
 
 .step {
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
 }
 
-/* Style for the delete step button */
+.step input,
+.step textarea {
+  margin-bottom: 10px;
+}
+.add-link-button {
+  background-color: #88ff08;
+  color: #000000;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-link-button:hover {
+  opacity: 0.8;
+}
+
 .delete-step-button {
-  padding: 0.5rem 1rem;
-  background-color: #ff4d4d; /* Red color */
-  color: white;
+  background-color: #dc3545;
+  color: #fff;
   border: none;
-  border-radius: 0.25rem;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
   cursor: pointer;
-}
-
-.delete-step-button:hover {
-  background-color: #f02727; /* Darker red color on hover */
-}
-
-/* Style for the add step button */
-.add-step-button {
-  padding: 0.5rem 1rem;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-.add-step-button:hover {
-  background-color: #45a049;
-}
-
-/* Style for the submit button */
-.submit-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-}
-
-/* Corrected styles for specific elements */
-.title,
-.description,
-.step-title,
-.step-description {
-  color: black;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 600px) {
-  /* Adjusting width of elements for smaller screens */
-  .question-container {
-    width: 100%;
-    max-width: none;
-  }
   
-  .element {
-    width: 100%;
-  }
+}
+
+.add-step-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block; /* Ensure the button takes up the full width */
+  margin: 0 auto; /* Center the button horizontally */
+}
+
+
+.submit-button:hover,
+.delete-step-button:hover,
+.add-step-button:hover {
+  opacity: 0.8;
 }
