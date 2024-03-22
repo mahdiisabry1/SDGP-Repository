@@ -7,9 +7,10 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-
+  background-image: url('https://i.gifer.com/4NB4.gif'); /* Replace with your actual background image URL */
   background-size: cover;
   background-position: center;
+  color: white; /* Set text color to black */
 }
 
 /* Style for the form */
@@ -32,7 +33,7 @@
 .input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 0.25rem;
   outline: none;
 }
@@ -40,9 +41,10 @@
 .textarea {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 0.25rem;
   outline: none;
+  color: black;
   resize: vertical; /* Allow vertical resizing */
 }
 
@@ -53,6 +55,20 @@
 
 .step {
   margin-bottom: 1rem;
+}
+
+/* Style for the delete step button */
+.delete-step-button {
+  padding: 0.5rem 1rem;
+  background-color: #ff4d4d; /* Red color */
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.delete-step-button:hover {
+  background-color: #f02727; /* Darker red color on hover */
 }
 
 /* Style for the add step button */

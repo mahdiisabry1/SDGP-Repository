@@ -46,6 +46,12 @@ const CreateRoadMap = () => {
     setSteps([...steps, { title: "", description: "" }]);
   };
 
+  const handleDeleteStep = (index) => {
+    const newSteps = [...steps];
+    newSteps.splice(index, 1);
+    setSteps(newSteps);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const roadmapData = {
@@ -69,7 +75,9 @@ const CreateRoadMap = () => {
       <h2>Create Roadmap</h2>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="title" className="label">Title:</label>
+          <label htmlFor="title" className="label">
+            Title:
+          </label>
           <input
             id="title"
             type="text"
@@ -80,7 +88,9 @@ const CreateRoadMap = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="description" className="label">Description:</label>
+          <label htmlFor="description" className="label">
+            Description:
+          </label>
           <textarea
             id="description"
             value={description}
@@ -105,6 +115,13 @@ const CreateRoadMap = () => {
                 className="textarea"
                 placeholder="Step Description"
               />
+              <button
+                type="button"
+                onClick={() => handleDeleteStep(index)}
+                className="delete-step-button"
+              >
+                Delete
+              </button>
             </div>
           ))}
           <button type="button" onClick={handleAddStep} className="add-step-button">
