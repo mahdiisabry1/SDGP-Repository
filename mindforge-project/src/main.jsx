@@ -29,6 +29,7 @@ import XO from "./pages/XO.jsx";
 import Candycrush from "./pages/Candycrush.jsx";
 import EditPost from "./pages/EditPost.jsx";
 import PersonalMapDetails from "./pages/PersonalMapDetails.jsx";
+import CreateRoadMap from "./pages/ownMindmap.jsx";
 
 const router = createBrowserRouter([
   {
@@ -117,7 +118,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/path-to-components/ownMindMap",
-        element: <OwnMindMap />,
+        element: <CreateRoadMap />
       },
       {
         path: "/path-to-components/ReactCertification",
