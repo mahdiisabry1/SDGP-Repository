@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 90vh;
-    background-image: url("https://images.pexels.com/photos/5898236/pexels-photo-5898236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-image: url("https://cdn.pixabay.com/photo/2024/02/02/23/40/ai-generated-8549248_1280.jpg");
     background-position: center; /* Center the background image */
     background-size: cover; /* Cover the entire container with the background image */
 }
