@@ -1,58 +1,67 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../components/CSS/Login.css";
-import axios from "axios";
-import { URL } from "../url";
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
-import Menu from "../components/Menu";
-import Disclaimer from "../components/Disclaimer";
+import { useState } from "react"; // Import useState hook from React
+import { Link, useNavigate } from "react-router-dom"; // Import Link and useNavigate from react-router-dom
+import "../components/CSS/Login.css"; // Import CSS file for custom styles
+import axios from "axios"; // Import Axios for HTTP requests
+import { URL } from "../url"; // Import URL from a separate file
+import { useContext } from "react"; // Import useContext hook from React
+import { UserContext } from "../context/UserContext"; // Import UserContext for accessing user data
+import Menu from "../components/Menu"; // Import Menu component
+import Disclaimer from "../components/Disclaimer"; // Import Disclaimer component
 
+// Define the Login component
 const Login = () => {
+  // Define state variables
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const { setUser } = useContext(UserContext);
   const [loading] = useState(false);
 
+  // Use navigate hook from react-router-dom
   const navigate = useNavigate();
 
+  // Function to handle login process
   const handleLogin = async () => {
     try {
+      // Send a POST request to login endpoint with email and password
       const res = await axios.post(
         URL + "/api/auth/login",
         { email, password },
-        { withCredentials: true }
+        { withCredentials: true } // Include cookies with the request
       );
-      // console.log(res.data)
+      // Set user data in context and navigate to Home page
       setUser(res.data);
       navigate("/Home");
       console.log(res.data);
     } catch (err) {
-      setError(true);
+      setError(true); // Set error state to true if login fails
       console.log(err);
     }
   };
 
+  // Render the Login component
   return (
     <>
-      <Menu />
+      <Menu /> {/* Render Menu component */}
+      {/* Main login container */}
       <div className="w-full flex justify-center items-center h-[80vh] the-main-login-container">
         <div className="flex flex-col justify-center items-center space-y-4 w-[80%] md:w-[25%]">
-        <h1 className="text-xl font-bold text-left text-white login-heading">Log into Your Account</h1>
-
+          <h1 className="text-xl font-bold text-left text-white login-heading">Log into Your Account</h1>
+          {/* Input field for email */}
           <input
             onChange={(e) => setEmail(e.target.value)}
             className="w-full px-4 py-2 border-2 border-black outline-0 mt-4"
             type="email"
             placeholder="Enter your Email"
           />
+          {/* Input field for password */}
           <input
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-4 py-2 border-2 border-black outline-0"
             type="password"
             placeholder="Enter your password"
           />
+          {/* Login button */}
           <button
             onClick={handleLogin}
             className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-slate-600"
@@ -60,25 +69,22 @@ const Login = () => {
           >
             {loading ? "Logging in..." : "Login"}
           </button>
+          {/* Display error message if login fails */}
           {error && (
             <h3 className="text-red-500 text-sm">Something went wrong</h3>
           )}
+          {/* Link to registration page */}
           <div className="flex justify-center items-center space-x-3 text-white">
             <p>New here</p>
             <p className="hover:text-pink-500">
-            <Link to="/register" className="register-link">
-  Register
-</Link>
-
-</p>
-
-
+              <Link to="/register" className="register-link">Register</Link>
+            </p>
           </div>
         </div>
       </div>
-      <Disclaimer />
+      <Disclaimer /> {/* Render Disclaimer component */}
     </>
   );
 };
 
-export default Login;
+export default Login; // Export the Login component

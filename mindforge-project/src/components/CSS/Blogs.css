@@ -1,20 +1,33 @@
-.pagination{
+/* Styles for the pagination container */
+.pagination {
+    /* Add padding around the pagination container */
     padding: 10px;
+    /* Add margin above and below the pagination container */
     margin: 15px 0;
+    /* Make the pagination container a flex container */
     display: flex;
+    /* Center align items horizontally */
     justify-content: center;
 }
 
-.pagination > span{
+/* Styles for pagination items */
+.pagination > span {
+    /* Add padding to each pagination item */
     padding: 12px 25px;
+    /* Add a border around each pagination item */
     border: 1px solid gray;
+    /* Change cursor to pointer on hover */
     cursor: pointer;
 }
 
-.pagination_selected{
+/* Styles for selected pagination item */
+.pagination_selected {
+    /* Change background color of selected pagination item */
     background-color: rgb(220, 220, 220);
 }
 
-.pagination__disable{
+/* Styles to disable pagination */
+.pagination__disable {
+    /* Hide the pagination */
     display: none;
 }
