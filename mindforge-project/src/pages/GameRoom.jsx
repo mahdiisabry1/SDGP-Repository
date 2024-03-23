@@ -14,7 +14,7 @@ const GameRoom = () => {
 
   return (
     <>
-    <NavBar/>
+      <NavBar />
       <div>
         {/* Tab buttons */}
         <div className="gamestab-buttons">
@@ -54,171 +54,89 @@ const GameRoom = () => {
           </div>
         )}
 
+        {/* Content for tabs */}
         {activeTab === "tab3" && (
-          <div
-            style={{
-              backgroundImage:
-                'url("https://images.pexels.com/photos/12718848/pexels-photo-12718848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              minHeight: "100vh",
-              padding: "20px",
-            }}
-          >
-            <p
-              style={{
-                textAlign: "",
-                fontStyle: "italic",
-                padding: 20,
-                fontSize: "20px",
-                color:"white",
-              }}
-            >
-              You can click these links and find more games here:
-            </p>
-            <ul
-              style={{
-                listStyleType: "none",
-                textAlign: "center",
-                padding: 15,
-              }}
-            >
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://www.crazygames.com/game/helix-jump"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "lightblue",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  helix-jump
-                </a>
-              </li>
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://www.crazygames.com/game/tap-tap-shots"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "lightgreen",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  tap-tap-shots
-                </a>
-              </li>
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://www.crazygames.com/game/smash-karts"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "lightcoral",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  smash-karts
-                </a>
-              </li>
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://www.crazygames.com/game/layers-roll"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "lightpink",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  layers-roll
-                </a>
-              </li>
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://www.crazygames.com/game/12-minibattles"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "lightsalmon",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  12-minibattles
-                </a>
-              </li>
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://poki.com/en/g/kubi-pets"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "brown",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  Kubi-Pets
-                </a>
-              </li>
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://poki.com/en/g/cubies"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "purple",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  Cubies
-                </a>
-              </li>
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://poki.com/en/g/sides-of-gravity"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "grey",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  Sides of Gravity
-                </a>
-              </li>
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://poki.com/en/g/crazy-party"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "salmon",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  Crazr Party
-                </a>
-              </li>
-              <li style={{ marginBottom: "10px" }}>
-                <a
-                  href="https://poki.com/en/g/fast-typer"
-                  style={{
-                    textDecoration: "underline",
-                    backgroundColor: "green",
-                    padding: "5px",
-                    fontSize: "30px",
-                  }}
-                >
-                  Fast-Typer
-                </a>
-              </li>
-            </ul>
+          <div className="more-games-container">
+            <h1 style={{ textAlign: "center", color: "white" }}>More Games</h1>
+            <div className="game-chart">
+              {games.map((game, index) => (
+                <GameItem
+                  key={index}
+                  name={game.name}
+                  imageSrc={game.imageSrc}
+                  href={game.href}
+                />
+              ))}
+            </div>
           </div>
         )}
       </div>
     </>
   );
 };
+
+// GameItem component for individual game links with image
+const GameItem = ({ name, imageSrc, href }) => (
+  <div className="game-item">
+    <a href={href}>
+      <img src={imageSrc} alt={name} />
+      <span>{name}</span>
+    </a>
+  </div>
+);
+
+// Games data
+const games = [
+  {
+    name: "helix-jump",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://www.crazygames.com/game/helix-jump"
+  },
+  {
+    name: "tap-tap-shots",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://www.crazygames.com/game/tap-tap-shots"
+  },
+  {
+    name: "smash-karts",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://www.crazygames.com/game/smash-karts"
+  },
+  {
+    name: "layers-roll",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://www.crazygames.com/game/layers-roll"
+  },
+  {
+    name: "12-minibattles",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://www.crazygames.com/game/12-minibattles"
+  },
+  {
+    name: "Kubi-Pets",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://poki.com/en/g/kubi-pets"
+  },
+  {
+    name: "Cubies",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://poki.com/en/g/cubies"
+  },
+  {
+    name: "Sides of Gravity",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://poki.com/en/g/sides-of-gravity"
+  },
+  {
+    name: "Crazy Party",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://poki.com/en/g/crazy-party"
+  },
+  {
+    name: "Fast-Typer",
+    imageSrc: "https://via.placeholder.com/150",
+    href: "https://poki.com/en/g/fast-typer"
+  }
+];
 
 export default GameRoom;

@@ -1,68 +1,101 @@
+/* Gameroom.css */
+
+.more-games-container {
+  background-image: url("https://images.pexels.com/photos/12718848/pexels-photo-12718848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.game-chart {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.game-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.game-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.game-item a {
+  text-decoration: none;
+  color: black;
+}
+
 /* MoreGames.css */
 
 /* Tab buttons container */
 .gamestab-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    margin-top: 100px;
-  }
-  
-  /* Tab button styles */
-  .gamestab-buttons button {
-    background-color: #f0f0f0;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  /* Active tab button styles */
-  .gamestab-buttons button.active {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  /* Content styles */
-  .gamestab-content {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .game-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .game-link {
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #4CAF50; /* Green */
-    color: white;
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition-duration: 0.4s;
-  }
-  
-  .game-link:hover {
-    background-color: #45a049; /* Darker Green */
-  }
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
 
-  .tab3-container {
-    background-image: url('path/to/your/image.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-  }
-  
-  
+/* Tab button styles */
+.gamestab-buttons button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Active tab button styles */
+.gamestab-buttons button.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Content styles */
+.gamestab-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.game-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-link {
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+}
+
+.game-link:hover {
+  background-color: #45a049; /* Darker Green */
+}
+
+.tab3-container {
+  background-image: url('path/to/your/image.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
