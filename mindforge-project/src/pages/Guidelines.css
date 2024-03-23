@@ -1,6 +1,4 @@
-/* Guidelines.css */
 
-/* Existing styles */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -24,7 +22,7 @@ p {
   margin-bottom: 20px;
 }
 
-/* New class styles */
+
 .additional-guidelines {
   margin-top: 40px;
 }
