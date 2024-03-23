@@ -5,6 +5,23 @@
   height: 100vh; /* Setting height to fill the viewport vertically */
 }
 
+.Quztab-content {
+  text-align: center; /* Center align the content */
+  color: rgb(0, 0, 0); /* Set font color to white */
+  padding: 60px 10px; /* Add padding for spacing */
+  background-color: #f0f4f7; /* Set background color */
+  border-radius: 50px; /* Add border radius for rounded corners */
+  box-shadow: 0 4px 8px rgb(92, 172, 253); /* Add box shadow for depth */
+  width: 50%; /* Adjust the width of the tab content */
+  margin: 50px auto; /* Center the tab content horizontally and move it down */
+}
+
+
+/* Optional: Style the tab button container */
+.Quztab-button-container {
+  text-align: center; /* Center align the buttons */
+}
+
 /* Styling for the container holding the survey questions */
 .question-container {
   margin-top: 20vh; /* Margin from the top of the viewport */
@@ -54,7 +71,7 @@
   background-color: #84dadd; /* Background color on hover */
 }
 
-/* Styling for the submit/next button */
+
 .action-button {
   background-color: #23a43f; /* Background color for the button */
   color: #ffffff; /* Text color */
@@ -64,7 +81,11 @@
   border-radius: 4px; /* Rounded corners */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for background color */
+  display: block; /* Change display to block to make it a block-level element */
+  margin: 0 auto; /* Set left and right margins to auto to center horizontally */
 }
+
+
 
 /* Styling for hover effect on the submit/next button */
 .action-button:hover {
