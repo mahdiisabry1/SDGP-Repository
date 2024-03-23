@@ -64,9 +64,13 @@ const Login = () => {
           )}
           <div className="flex justify-center items-center space-x-3">
             <p>New here</p>
-            <p className="text-gray-500 hover:text-black">
-              <Link to="/register">Register</Link>
-            </p>
+            <p className="hover:text-blue-500">
+  <Link to="/register" className="px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-slate-600">
+            Register
+  </Link>
+</p>
+
+
           </div>
         </div>
       </div>
