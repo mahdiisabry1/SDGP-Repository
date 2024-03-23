@@ -24,9 +24,9 @@ const BECertification = () => {
   return (
     <div className="certificate-container">
       {/* Title */}
-      <h1 className="text-3xl font-bold ">Back-End Certification</h1>
-      {/* Congratulations message */}
-      <p className="mb-6 font-bold increased-font-size">Congratulations! </p>
+      <h1 className="certificate-title">Back-End Certification</h1>
+        <p className="certificate-message">Congratulations on completing the React Certification!</p>
+{/* Congratulations message */}
       {/* Certificate image container */}
       <div id="certificate" className="certificate">
         {/* Certificate image */}
