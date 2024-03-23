@@ -1,6 +1,6 @@
 /* Add this to your CSS file, e.g., styles.css */
 .logout-link {
-    background-color: #63a758; /* Adjust the background color as needed */
+    background-color: #45606d; /* Adjust the background color as needed */
     color: #fff; /* Text color */
     padding: 0.5rem 1rem; /* Padding around the link */
     border-radius: 5px; /* Rounded corners */
@@ -37,7 +37,7 @@
   padding: 10px 20px;
   margin: 0 10px; /* Add margin between tabs */
   border-radius: 5px;
-  background-color: #87c7c7;
+  background-color: #759b9c;
 }
 
   
@@ -46,7 +46,7 @@
   }
   
   .tab-item.active {
-    background-color: #12787e;
+    background-color: #3b6d70;
     color: #080808;
   }
   

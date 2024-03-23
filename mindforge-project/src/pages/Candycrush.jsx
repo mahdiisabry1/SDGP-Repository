@@ -264,7 +264,7 @@ const GameRoom = () => {
        </div>
        <ScoreBoard score={scoreDisplay} style={{ fontSize: '36px' }} />
 
-      <button onClick={resetScore}>Reset Score</button> {/* Reset button */}
+       <button className="reset-button" onClick={resetScore}>Reset Score</button> {/* Reset button */}
     </div>
   );
 };

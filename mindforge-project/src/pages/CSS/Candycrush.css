@@ -56,23 +56,27 @@
     background-color: #45a049; /* Darker green on hover */
 }
 
-/* CSS for the reset score button */
-/* button {
-    background-color: #2e8572; 
+
+/* Candycrush.css */
+
+.reset-button {
+    background-color: #1e475f; /* Green */
     border: none;
-    color: rgb(0, 0, 0);
+    color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    transition-duration: 0.4s;
     cursor: pointer;
-  } */
+  }
   
-  /* Change the background color on hover */
-  /* button:hover {
-    background-color: #6dbdab; 
-  } */
+  .reset-button:hover {
+    background-color: #455aa0; /* Darker Green */
+  }
+  
+  .reset-button:active {
+    background-color: #3e3f8e; /* Active Green */
+  }
   

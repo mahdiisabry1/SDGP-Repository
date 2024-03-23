@@ -1,35 +1,61 @@
-/* styles.css */
+/* Styles for the main container */
+.container {
+  /* Set maximum width to 800 pixels */
+  max-width: 800px;
+  /* Center align the container horizontally */
+  margin: 0 auto;
+  /* Add padding around the container */
+  padding: 20px;
+}
 
-/* Body styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Container styles */
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Heading styles */
-  h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-  }
-  
-  /* Paragraph styles */
-  p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
+/* Styles for heading level 1 */
+h1 {
+  /* Set font size to 28 pixels */
+  font-size: 28px;
+  /* Add space below the heading */
+  margin-bottom: 20px;
+}
+
+/* Styles for heading level 2 */
+h2 {
+  /* Set font size to 24 pixels */
+  font-size: 24px;
+  /* Add space above the heading */
+  margin-top: 40px;
+  /* Add space below the heading */
+  margin-bottom: 10px;
+}
+
+/* Styles for paragraphs */
+p {
+  /* Set font size to 16 pixels */
+  font-size: 16px;
+  /* Set line height to 1.5 times the font size */
+  line-height: 1.5;
+  /* Add space below paragraphs */
+  margin-bottom: 20px;
+}
+
+/* Styles for additional guidelines section */
+.additional-guidelines {
+  /* Add space above the additional guidelines section */
+  margin-top: 40px;
+}
+
+/* Styles for heading level 2 within additional guidelines */
+.additional-guidelines h2 {
+  /* Set font size to 24 pixels */
+  font-size: 24px;
+  /* Add space below heading */
+  margin-bottom: 10px;
+}
+
+/* Styles for paragraphs within additional guidelines */
+.additional-guidelines p {
+  /* Set font size to 16 pixels */
+  font-size: 16px;
+  /* Set line height to 1.5 times the font size */
+  line-height: 1.5;
+  /* Add space below paragraphs */
+  margin-bottom: 20px;
+}

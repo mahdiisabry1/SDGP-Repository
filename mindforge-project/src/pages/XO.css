@@ -1,48 +1,53 @@
+/* Styles for the main container of the Tic Tac Toe app */
 .XO-App {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 90vh; /* Set the height of the container to 90% of the viewport height */
   font-family: Arial, sans-serif;
-  background-image: url('https://images.pexels.com/photos/4016535/pexels-photo-4016535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace 'path/to/your/image.jpg' with the path to your background image */
+  background-image: url('https://images.pexels.com/photos/4016535/pexels-photo-4016535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /*  Background image URL */
   background-size: cover; /* Cover the entire container with the background image */
   background-position: center; /* Center the background image */
 }
 
-
+/* Styles for the Tic Tac Toe board */
 .XO-board {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 5px;
+  grid-template-columns: repeat(3, 100px); /* Create 3 columns each with a width of 100px */
+  grid-template-rows: repeat(3, 100px); /* Create 3 rows each with a height of 100px */
+  gap: 5px; /* Set the gap between grid items */
 }
 
+/* Styles for each box in the Tic Tac Toe board */
 .XO-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  cursor: pointer;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  font-size: 2rem; /* Set the font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #fff; /* Set background color to white */
+  border: 1px solid #ccc; /* Add border */
 }
 
+/* Hover styles for each box */
 .XO-box:hover {
-  background-color: #f0f0f0;
+  background-color: #f0f0f0; /* Change background color on hover */
 }
 
+/* Styles for the reset button */
 .XO-reset-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  margin-top: 20px; /* Add top margin */
+  padding: 10px 20px; /* Set padding */
+  font-size: 1rem; /* Set font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #06073f; /* Set background color */
+  color: #fff; /* Set text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
 }
 
-.reset-button:hover {
-  background-color: #0056b3;
+/* Hover styles for the reset button */
+.XO-reset-button:hover {
+  background-color: #455aa0; /* Change background color on hover */
 }

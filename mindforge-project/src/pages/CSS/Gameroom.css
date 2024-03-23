@@ -45,7 +45,7 @@
 
 /* Tab button styles */
 .gamestab-buttons button {
-  background-color: #f0f0f0;
+  background-color: #9da3a0;
   border: none;
   padding: 10px 20px;
   margin: 0 5px;
@@ -55,7 +55,7 @@
 
 /* Active tab button styles */
 .gamestab-buttons button.active {
-  background-color: #4caf50;
+  background-color: #4caf89;
   color: white;
 }
 

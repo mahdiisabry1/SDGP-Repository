@@ -45,20 +45,20 @@ const Profile = () => {
           )}
           <div className="mt-20">
             <ul className="tab-list">
-              <li className={`tab-item ${activeTab === "roadmaps" ? "active" : ""}`} onClick={() => handleTabClick("roadmaps")}>My Roadmaps</li>
+              <li className={`tab-item ${activeTab === "mindmaps" ? "active" : ""}`} onClick={() => handleTabClick("mindmaps")}>My Mindmaps</li>
               <li className={`tab-item ${activeTab === "reads" ? "active" : ""}`} onClick={() => handleTabClick("reads")}>My Reads</li>
             </ul>
           </div>
           {/* Content based on active tab */}
           <div className="tab-content">
-            {activeTab === "roadmaps" && (
+            {activeTab === "mindmaps" && (
               <div>
-                {/* Content for My Roadmaps tab */}
+                No Mindmap Created
               </div>
             )}
             {activeTab === "reads" && (
               <div>
-                {/* Content for My Blogs tab */}
+                No Read Created
               </div>
             )}
           </div>
