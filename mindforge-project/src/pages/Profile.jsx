@@ -5,12 +5,12 @@ import './Profile.css';
 
 const Profile = () => {
   const [userData, setUserData] = useState(null);
+  const [activeTab, setActiveTab] = useState("roadmaps");
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        // Make a request to fetch user data from the database
-        const response = await axios.get("/api/userData"); // Replace "/api/userData" with your actual API endpoint
+        const response = await axios.get("/api/userData");
         setUserData(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -20,25 +20,34 @@ const Profile = () => {
     fetchUserData();
   }, []);
 
+  const handleTabClick = (tab) => {
+    window.open(`/${tab}`, "_blank"); // Open in a new tab
+  };
+
   return (
     <div className="profile-wrapper">
       <div className="profile-bg">
         <NavBar />
-        <div className="mt-40 text-center"> {/* Added text-center class to center the content */}
-          <h1 className="text-6xl mb-4">Welcome to Your Profile</h1> {/* Increased font size using text-4xl class */}
+        <div className="mt-40 text-center">
+          <h1 className="text-6xl mb-4">Welcome Your Profile</h1>
         </div>
       </div>
       <div className="profile-content">
-        <div className="mt-40 text-center"> {/* Added text-center class to center the content */}
+        <div className="mt-20 text-center">
           {userData && (
             <div>
-              <p className="text-xl mt-4">Username: <span className="text-lg">{userData.username}</span></p> {/* Increased font size using text-xl class */}
-              <p className="text-xl mt-2">Email: <span className="text-lg">{userData.email}</span></p> {/* Increased font size using text-xl class */}
-              {/* Add more user data fields as needed */}
+              <p className="text-xl mt-4">UserName: <span className="text-lg">{userData.username}</span></p>
+              <p className="text-xl mt-2">Email: <span className="text-lg">{userData.email}</span></p>
             </div>
           )}
-          <div className="mt-20"> {/* Added a div to separate the logout link */}
-            <a href="/" className="logout-link">Logout</a> {/* Applied CSS class to the logout link */}
+          <div className="mt-10">
+            <ul className="tab-list">
+              <li className={`tab-item ${activeTab === "roadmaps" ? "active" : ""}`} onClick={() => handleTabClick("myroadmaps")}>My Roadmaps</li>
+              <li className={`tab-item ${activeTab === "reads" ? "active" : ""}`} onClick={() => handleTabClick("myreads")}>My Reads</li>
+            </ul>
+          </div>
+          <div className="mt-20 logout-container">
+            <a href="/" className="logout-link">Logout</a>
           </div>
         </div>
       </div>

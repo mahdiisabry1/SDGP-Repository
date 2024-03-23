@@ -67,7 +67,7 @@ const Login = () => {
             <p>New here</p>
             <p className="hover:text-pink-500">
             <Link to="/register" className="register-link">
-  REGISTER
+  Register
 </Link>
 
 </p>
