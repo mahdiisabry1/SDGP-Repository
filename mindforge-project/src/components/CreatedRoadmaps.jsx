@@ -23,13 +23,13 @@ const CreatedRoadmaps = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto"> {/* Apply max-w-7xl class for container */}
       {roadmaps.map((post) => (
-        <>
-          <Link to={user ? `/roadmaps/roadmap/${post._id}` : "/"}>
-            <RoadmapCreation key={post._id} post={post} />
-          </Link>
-        </>
+        <Link to={user ? `/roadmaps/roadmap/${post._id}` : "/"} key={post._id}>
+          <div className="RoadmapCreationContainer"> {/* Apply RoadmapCreationContainer class for each roadmap item */}
+            <RoadmapCreation post={post} />
+          </div>
+        </Link>
       ))}
     </div>
   );

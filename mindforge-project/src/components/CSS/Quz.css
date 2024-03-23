@@ -88,6 +88,13 @@
   background-color: #109db2; /* Background color for selected options */
   color: #ffffff; /* Text color for selected options */
 }
+.result-container-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
 /* Responsive Styles */
 @media screen and (max-width: 600px) {

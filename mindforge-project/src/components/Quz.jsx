@@ -191,12 +191,13 @@ const shuffleArray = (array) => {
 };
 
 const QuestionSurvey = () => {
-  // QuestionSurvey component definition
-  const [questions, setQuestions] = useState([]); // Array to hold shuffled questions
-  const [currentQuestion, setCurrentQuestion] = useState(0); // Index of the current question
-  const [selectedOption, setSelectedOption] = useState(null); // Index of the selected option
-  const [submitted, setSubmitted] = useState(false); // Flag to indicate if the survey is submitted
-  const [totalScore, setTotalScore] = useState(0); // Accumulated total score based on selected options
+ // QuestionSurvey component definition
+ const [questions, setQuestions] = useState([]); // Array to hold shuffled questions
+ const [currentQuestion, setCurrentQuestion] = useState(0); // Index of the current question
+ const [selectedOption, setSelectedOption] = useState(null); // Index of the selected option
+ const [submitted, setSubmitted] = useState(false); // Flag to indicate if the survey is submitted
+ const [totalScore, setTotalScore] = useState(0); // Accumulated total score based on selected options
+ const [recommendation, setRecommendation] = useState(""); // Recommendation based on total score
 
   useEffect(() => {
     // useEffect hook to shuffle questions when the component mounts
@@ -227,9 +228,10 @@ const QuestionSurvey = () => {
       // Move to the next question if not the last question, reset state, or submit the survey
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(null);
-      setSubmitted(false);
+      //setSubmitted(false);
     } else {
       setSubmitted(true);
+      getRecommendation();
     }
   };
 
@@ -245,7 +247,7 @@ const QuestionSurvey = () => {
     }
     // Set the submitted flag to true after handling the current question
     setSubmitted(true);
-
+    setRecommendation(getRecommendation(totalScore));
     
   };
 
@@ -253,11 +255,11 @@ const QuestionSurvey = () => {
   const getRecommendation = (score) => {
     let recommendation = "";
     if (score >= 1 && score <= 9) {
-      recommendation = "Aesthetics-Driven Designer";
+      recommendation = "Aesthetics-Driven Designer" + "--Stay inspired with us!--";
     } else if (score >= 10 && score <= 18) {
-      recommendation = "Functionality-Oriented Designer";
+      recommendation = "Functionality-Oriented Designer"+ "--Stay inspired with us!--";
     } else if (score >= 19 && score <= 27) {
-      recommendation = "Balanced Designer";
+      recommendation = "Balanced Designer"+ "--Stay inspired with us!--";
     } else {
       recommendation =
         "Stay inspired with us. Explore the latest trends and tips to fuel your web design journey.";
@@ -281,59 +283,61 @@ const QuestionSurvey = () => {
       <NavBar />
       <div className="Quzapp-container">
         <h1>Web Design Preferences Questionnaire</h1>
-        <div className="question-container">
-          <h2 className="question-text">
-            {questions[currentQuestion]?.question}
-          </h2>
-          <ul className="options-list">
-            {questions[currentQuestion]?.options?.map((option, index) => (
-              <li
-                key={index}
-                className={`option-item ${
-                  selectedOption === index ? "selected" : ""
-                }`}
-                // Handle option selection onClick, disable if survey is submitted
-
-                onClick={() => handleSelectOption(index)}
-                style={{ cursor: submitted ? "not-allowed" : "pointer" }}
-              >
-                {option.text}
-              </li>
-            ))}
-          </ul>
-          {/* Display result or next/submit button */}
-
-          {submitted ? (
-            <div className="result-container">
-              <p>Your total score: {totalScore}</p>
-              <p>{getRecommendation(totalScore)}</p>
-            </div>
-          ) : (
+        {!submitted ? (
+          <div className="question-container">
+            <h2 className="question-text">
+              {questions[currentQuestion]?.question}
+            </h2>
+            <ul className="options-list">
+              {questions[currentQuestion]?.options?.map((option, index) => (
+                <li
+                  key={index}
+                  className={`option-item ${
+                    selectedOption === index ? "selected" : ""
+                  }`}
+                  onClick={() => handleSelectOption(index)}
+                  style={{ cursor: submitted ? "not-allowed" : "pointer" }}
+                >
+                  {option.text}
+                </li>
+              ))}
+            </ul>
             <button
               className="action-button"
               onClick={
-                selectedOption !== null // Check if an option is selected
+                selectedOption !== null
                   ? currentQuestion === questions.length - 1
                     ? handleSubmit
-                    : handleNextQuestion // Render "Next" or "Submit" based on the current question
-                  : null // Render null if no option is selected
+                    : handleNextQuestion
+                  : null
               }
-              disabled={selectedOption === null} // Disable the button if no option is selected
+              disabled={selectedOption === null}
             >
               {currentQuestion === questions.length - 1 ? "Submit" : "Next"}
             </button>
-          )}
-          {/* Display recommendation after submission */}
-
-          {submitted && (
-            <div className="result-container">
-              <p>Recommendation: {getRecommendation()}</p>
-            </div>
-          )}
-        </div>
+          </div>
+        ) : (
+          <div className="result-container">
+            <h2>Thank you for completing the questionnaire!</h2>
+            <p>Your total score: {totalScore}</p>
+            <p>Click below to view your recommendation.</p>
+            <button
+              className="action-button"
+              onClick={() => {
+                // Navigate to the result page
+                // You can use React Router or any other navigation method here
+                // For demonstration, let's alert the recommendation
+                alert("Recommendation: " + recommendation);
+              }}
+            >
+              Here is our Recommendation for you!
+            </button>
+          </div>
+        )}
       </div>
     </>
   );
-};
+
+} 
 
 export default QuestionSurvey;
