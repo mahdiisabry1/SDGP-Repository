@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 const Indtroduction = () => {
 
   const navItems = [{
-    path: "/Quiz", link: "WebDesign Mastery Quiz",
+    path: "/Quiz", link: "Get know about Your Web Designer!",
   }]
 
   return (
