@@ -256,11 +256,11 @@ const QuestionSurvey = () => {
   const getRecommendation = (score) => {
     let recommendation = "";
     if (score >= 1 && score <= 9) {
-      recommendation = "Aesthetics Driven Designer" + "  --Stay inspired with us!--";
+      recommendation = "Aesthetics Driven Designer" ;
     } else if (score >= 10 && score <= 18) {
-      recommendation = "Functionality Oriented Designer"+ "  --Stay inspired with us!--";
+      recommendation = "Functionality Oriented Designer";
     } else if (score >= 19 && score <= 27) {
-      recommendation = "Balanced Designer"+ "--Stay inspired with us!--";
+      recommendation = "Balanced Designer";
     } else {
       recommendation =
         "Stay inspired with us. Explore the latest trends and tips to fuel your web design journey.";

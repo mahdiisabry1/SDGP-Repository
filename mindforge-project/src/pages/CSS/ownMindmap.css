@@ -1,51 +1,49 @@
-/* ownMindmap.css */
-
 .create-roadmap-container {
-  width: 100%; /* Set container width to full width */
-  height:auto; /* Set container height to full viewport height */
-  background-image: url('https://i.gifer.com/PVtR.gif'); /* Replace with your actual background image URL */
-  background-size: cover; /* Cover the entire container with the background image */
-  background-position: center; /* Center the background image */
-  display: flex; /* Use flexbox for centering content */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  width: 100%;
+  height: auto;
+  background-image: url('https://i.gifer.com/PVtR.gif');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form {
-  width: 60%; /* Set form width */
-  height:min-content;
-  background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to the form */
-  padding: 20px; /* Add padding to the form */
-  border-radius: 10px; /* Add border radius to the form */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the form */
+  width: 60%;
+  height: min-content;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Add other styles for form elements, buttons, etc. as previously provided */
-
-
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Increase margin bottom */
 }
 
 .label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold; /* Make labels bold */
-  font-size: 16px; /* Adjust label font size */
-  color: black; /* Change label font color to black */
+  margin-bottom: 10px; /* Adjust margin bottom */
+  font-weight: bold;
+  font-size: 18px; /* Increase font size */
+  color: black;
 }
+
 h3 {
-  font-weight: bold; /* Make h3 elements bold */
+  font-weight: bold;
+  font-size: 24px; /* Increase font size */
+  margin-bottom: 15px; /* Adjust margin bottom */
 }
 
 .input,
 .textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px; /* Increase padding */
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px; /* Increase border radius */
+  margin-bottom: 15px; /* Adjust margin bottom */
 }
 
 .textarea {
@@ -53,68 +51,66 @@ h3 {
 }
 
 .steps {
-  margin-top: 20px;
+  margin-top: 30px; /* Increase margin top */
 }
 
 .step {
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Increase margin bottom */
 }
 
 .step input,
 .step textarea {
-  margin-bottom: 10px;
-}
-.add-link-button {
-  background-color: #88ff08;
-  color: #000000;
-  border: none;
-  padding: 8px 16px;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
+  margin-bottom: 15px; /* Adjust margin bottom */
 }
 
-.add-link-button:hover {
-  opacity: 0.8;
+.add-link-button,
+.delete-step-button {
+  background-color: #5997d9;
+  color: #fff;
+  border: none;
+  padding: 12px 34px; /* Increase padding */
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .delete-step-button {
-  background-color: #dc3545;
+  background-color: #ec2d2d;
   color: #fff;
   border: none;
-  padding: 8px 16px;
-  font-size: 14px;
-  border-radius: 5px;
+  padding: 12px 34px; /* Increase padding */
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
-  
 }
 
-.add-step-button {
-  background-color: #007bff;
+.add-step-button,
+.submit-button {
+  background-color: #b02bb5;
   color: #fff;
   border: none;
-  padding: 8px 16px;
-  font-size: 14px;
-  border-radius: 5px;
+  padding: 12px 24px; /* Increase padding */
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 .submit-button {
-  background-color: #28a745;
+  background-color: #5da321;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 5px;
+  padding: 12px 24px; /* Increase padding */
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 20px;
-  display: block; /* Ensure the button takes up the full width */
-  margin: 0 auto; /* Center the button horizontally */
 }
 
-
-.submit-button:hover,
+.add-link-button:hover,
 .delete-step-button:hover,
-.add-step-button:hover {
-  opacity: 0.8;
+.add-step-button:hover,
+.submit-button:hover {
+  opacity: 1.0;
+}
+.add-link-button {
+  margin-right: 30px; /* Add margin between add link and delete buttons */
 }

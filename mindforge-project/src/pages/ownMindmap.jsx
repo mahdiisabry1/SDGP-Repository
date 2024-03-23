@@ -1,56 +1,31 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import "./CSS/ownMindmap.css";
 import { UserContext } from "../context/UserContext";
 import { URL } from "../url";
+import "./CSS/ownMindmap.css";
 
-
-
-const CreateRoadMap = () => {
+const RoadmapManagement = () => {
+  const { user } = useContext(UserContext);
+  const [roadmaps, setRoadmaps] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [steps, setSteps] = useState([{ title: "", description: "", links: [] }]);
-  const { user } = useContext(UserContext);
+  const [steps, setSteps] = useState([{ title: "", description: "" }]);
+  const [currentRoadmapId, setCurrentRoadmapId] = useState(null);
 
-  const handleDescriptionChange = (e) => {
-    setDescription(e.target.value);
+  useEffect(() => {
+    fetchRoadmaps();
+  }, []);
+
+  const fetchRoadmaps = async () => {
+    try {
+      const response = await axios.get(URL + "/api/roadmaps");
+      setRoadmaps(response.data);
+    } catch (error) {
+      console.error("Error fetching roadmaps:", error);
+    }
   };
 
-  const handleStepTitleChange = (index, e) => {
-    const newSteps = [...steps];
-    newSteps[index].title = e.target.value;
-    setSteps(newSteps);
-  };
-
-  const handleStepDescriptionChange = (index, e) => {
-    const newSteps = [...steps];
-    newSteps[index].description = e.target.value;
-    setSteps(newSteps);
-  };
-
-  const handleAddStep = () => {
-    setSteps([...steps, { title: "", description: "", links: [] }]);
-  };
-
-  const handleDeleteStep = (index) => {
-    const newSteps = [...steps];
-    newSteps.splice(index, 1);
-    setSteps(newSteps);
-  };
-  const handleAddLink = (index) => {
-    const newSteps = [...steps];
-    newSteps[index].links.push("");
-    setSteps(newSteps);
-  };
-
-  const handleLinkChange = (stepIndex, linkIndex, e) => {
-    const newSteps = [...steps];
-    newSteps[stepIndex].links[linkIndex] = e.target.value;
-    setSteps(newSteps);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleCreateRoadmap = async () => {
     const roadmapData = {
       title,
       description,
@@ -60,103 +35,99 @@ const CreateRoadMap = () => {
     };
 
     try {
-      const response = await axios.post(URL + "/api/roadmaps/createRoad", roadmapData, {
+      await axios.post(URL + "/api/roadmaps/createRoad", roadmapData, {
         withCredentials: true,
       });
-      console.log("Roadmap created:", response.data);
-      // Optionally, redirect the user or perform other actions upon successful creation
+      fetchRoadmaps();
     } catch (error) {
       console.error("Error creating roadmap:", error);
-      // Handle error
+    }
+  };
+
+  const handleDeleteRoadmap = async (roadmapId) => {
+    try {
+      await axios.delete(URL + "/api/roadmaps/" + roadmapId, {
+        withCredentials: true,
+      });
+      fetchRoadmaps();
+    } catch (error) {
+      console.error("Error deleting roadmap:", error);
+    }
+  };
+
+  const handleUpdateRoadmap = async () => {
+    const roadmapData = {
+      title,
+      description,
+      steps,
+      username: user.username,
+      userId: user._id,
+    };
+
+    try {
+      await axios.put(
+        URL + "/api/roadmaps/update/" + currentRoadmapId,
+        roadmapData,
+        {
+          withCredentials: true,
+        }
+      );
+      fetchRoadmaps();
+    } catch (error) {
+      console.error("Error updating roadmap:", error);
     }
   };
 
   return (
-    <div className="create-roadmap-container">
-      <form className="form">
-        <div className="form-group">
-          <label htmlFor="title" className="label">
-            Title:
-          </label>
+    <div className="roadmap-management-container">
+      <h2>Create Roadmap</h2>
+      <input
+        type="text"
+        placeholder="Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <textarea
+        placeholder="Description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <button onClick={handleCreateRoadmap}>Create Roadmap</button>
+
+      <h2>Roadmaps</h2>
+      <ul>
+        {roadmaps.map((roadmap) => (
+          <li key={roadmap._id}>
+            <span>{roadmap.title}</span>
+            <button onClick={() => setCurrentRoadmapId(roadmap._id)}>
+              Edit
+            </button>
+            <button onClick={() => handleDeleteRoadmap(roadmap._id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      {currentRoadmapId && (
+        <>
+          <h2>Edit Roadmap</h2>
           <input
-            id="title"
             type="text"
+            placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="input"
-            required
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="description" className="label">
-            Description:
-          </label>
           <textarea
-            id="description"
+            placeholder="Description"
             value={description}
-            onChange={handleDescriptionChange}
-            className="textarea"
+            onChange={(e) => setDescription(e.target.value)}
           />
-        </div>
-        <div className="form-group steps">
-          <h3>Steps:</h3>
-          {steps.map((step, stepIndex) => (
-            <div className="step" key={stepIndex}>
-              <input
-                type="text"
-                value={step.title}
-                onChange={(e) => handleStepTitleChange(stepIndex, e)}
-                className="input"
-                placeholder="Step Title"
-              />
-              <textarea
-                value={step.description}
-                onChange={(e) => handleStepDescriptionChange(stepIndex, e)}
-                className="textarea"
-                placeholder="Step Description"
-              />
-              {step.links.map((link, linkIndex) => (
-                <input
-                  key={linkIndex}
-                  type="text"
-                  value={link}
-                  onChange={(e) => handleLinkChange(stepIndex, linkIndex, e)}
-                  className="input"
-                  placeholder="Link URL"
-                />
-              ))}
-              <div className="step-buttons">
-                <button
-                  type="button"
-                  onClick={() => handleAddLink(stepIndex)}
-                  className="add-link-button"
-                >
-                  Add Link
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleDeleteStep(stepIndex)}
-                  className="delete-step-button"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={handleAddStep}
-            className="add-step-button"
-          >
-            Add Step
-          </button>
-        </div>
-        <button type="submit" className="submit-button" onClick={handleSubmit}>
-          Create Mindmap
-        </button>
-      </form>
+          <button onClick={handleUpdateRoadmap}>Update Roadmap</button>
+        </>
+      )}
     </div>
   );
 };
 
-export default CreateRoadMap;
+export default RoadmapManagement;
