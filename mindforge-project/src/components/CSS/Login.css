@@ -2,8 +2,9 @@
 
 /* Style for the entire login container */
 
-.the-main-login-container{
-  background-image: url('../../assets/images/man-1853545_1280.jpg');
+.the-main-login-container {
+  background-image: url('../../assets/images/pexels-felix-mittermeier-956999.jpg');
+  background-size: cover;
 }
 
 .login-container {

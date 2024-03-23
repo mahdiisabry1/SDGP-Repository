@@ -38,7 +38,7 @@ const Blogs = () => {
         </div>
 
         {/* The Blog Container */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto mb-8">
           {posts.map((post) => (
             <>
               <Link to={user ? `/posts/post/${post._id}` : "/"}>

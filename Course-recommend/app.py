@@ -68,7 +68,7 @@ def main():
     # recommendations = ["AI and machine learning Course", "Python Course", "Javascript 3"]
     # st.write(f"## Recommended Courses")
     # st.write(recommendations)
-    menu = ["","Courses", "University", "Books"]
+    menu = ["Courses", "University", "Books"]
     choice = st.sidebar.selectbox("Menu", menu)
 
     df = load_data("data/udemy_courses.csv")
