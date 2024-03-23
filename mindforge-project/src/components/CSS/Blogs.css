@@ -1,1 +1,20 @@
+.pagination{
+    padding: 10px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+}
 
+.pagination > span{
+    padding: 12px 25px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.pagination_selected{
+    background-color: rgb(220, 220, 220);
+}
+
+.pagination__disable{
+    display: none;
+}
