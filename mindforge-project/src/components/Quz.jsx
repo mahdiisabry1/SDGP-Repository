@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./CSS/Quz.css"; // Import custom styling
 import NavBar from "./NavBar";
 
+
 const initialQuestions = [
   // Define initial questions for the survey
   {
@@ -255,9 +256,9 @@ const QuestionSurvey = () => {
   const getRecommendation = (score) => {
     let recommendation = "";
     if (score >= 1 && score <= 9) {
-      recommendation = "Aesthetics-Driven Designer" + "--Stay inspired with us!--";
+      recommendation = "Aesthetics Driven Designer" + "  --Stay inspired with us!--";
     } else if (score >= 10 && score <= 18) {
-      recommendation = "Functionality-Oriented Designer"+ "--Stay inspired with us!--";
+      recommendation = "Functionality Oriented Designer"+ "  --Stay inspired with us!--";
     } else if (score >= 19 && score <= 27) {
       recommendation = "Balanced Designer"+ "--Stay inspired with us!--";
     } else {
@@ -327,7 +328,7 @@ const QuestionSurvey = () => {
                 // Navigate to the result page
                 // You can use React Router or any other navigation method here
                 // For demonstration, let's alert the recommendation
-                alert("Recommendation: " + recommendation);
+                alert("Your attitudes matching with : " + recommendation);
               }}
             >
               Here is our Recommendation for you!

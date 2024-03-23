@@ -11,12 +11,11 @@
   margin-bottom: 0vh;
   margin-left: auto; /* Centering the container horizontally */
   margin-right: auto;
-  background-color: #ffffff; /* Background color for the container */
-  border-radius: 8px; /* Rounded corners for a softer appearance */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Box shadow for a subtle lift */
-  padding: 30px; /* Padding around the content */
-  max-width: 600px; /* Maximum width of the container */
-  width: 100%;
+  background: rgba(255, 255, 255, 0.879); /* Background color for the container */
+  border-radius: 15px; /* Rounded corners for a softer appearance */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle lift */
+  padding: 60px; /* Padding around the content */
+  width: 60%;
   height: auto; /* Adjusting height to fit content */
 }
 
@@ -41,8 +40,8 @@
 
 /* Styling for individual answer options */
 .option-item {
-  background-color: #e9ecef; /* Background color for unselected options */
-  border: 1px solid #ced4da; /* Border for unselected options */
+  background-color: #ecf2f8; /* Background color for unselected options */
+  border: 1px solid #c7ccd1; /* Border for unselected options */
   border-radius: 4px;
   padding: 10px; /* Padding for each option */
   margin-bottom: 10px; /* Margin between options */
@@ -52,12 +51,12 @@
 
 /* Styling for hover effect on answer options */
 .option-item:hover {
-  background-color: #8fe4b1; /* Background color on hover */
+  background-color: #84dadd; /* Background color on hover */
 }
 
 /* Styling for the submit/next button */
 .action-button {
-  background-color: #0fa22f; /* Background color for the button */
+  background-color: #23a43f; /* Background color for the button */
   color: #ffffff; /* Text color */
   padding: 10px 20px; /* Padding for the button */
   font-size: 1rem;
@@ -69,7 +68,7 @@
 
 /* Styling for hover effect on the submit/next button */
 .action-button:hover {
-  background-color: #75c788; /* Background color on hover */
+  background-color: #64c27a; /* Background color on hover */
 }
 
 /* Styling for the result message after completing the quiz */
@@ -85,7 +84,7 @@
 
 /* Styling for selected answer options with hover effect */
 .option-item.selected {
-  background-color: #109db2; /* Background color for selected options */
+  background-color: #30abbe; /* Background color for selected options */
   color: #ffffff; /* Text color for selected options */
 }
 .result-container-centered {
