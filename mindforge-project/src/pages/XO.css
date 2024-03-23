@@ -5,7 +5,7 @@
   justify-content: center;
   height: 90vh;
   font-family: Arial, sans-serif;
-  background-image: url('https://images.pexels.com/photos/4016535/pexels-photo-4016535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace 'path/to/your/image.jpg' with the path to your background image */
+  background-image: url('https://images.pexels.com/photos/4016535/pexels-photo-4016535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /*  path to your background image */
   background-size: cover; /* Cover the entire container with the background image */
   background-position: center; /* Center the background image */
 }
@@ -37,12 +37,12 @@
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #06073f;
   color: #fff;
   border: none;
   border-radius: 5px;
 }
 
-.reset-button:hover {
-  background-color: #0056b3;
+.XO-reset-button:hover {
+  background-color: #455aa0;
 }
