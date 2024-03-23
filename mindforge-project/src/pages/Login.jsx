@@ -39,10 +39,11 @@ const Login = () => {
       <Menu />
       <div className="w-full flex justify-center items-center h-[80vh] the-main-login-container">
         <div className="flex flex-col justify-center items-center space-y-4 w-[80%] md:w-[25%]">
-          <h1 className="text-xl font-bold text-left text-white">Log into your account</h1>
+        <h1 className="text-xl font-bold text-left text-white login-heading mb-20">Log into Your Account</h1>
+
           <input
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border-2 border-black outline-0"
+            className="w-full px-4 py-2 border-2 border-black outline-0 mt-4"
             type="email"
             placeholder="Enter your Email"
           />
@@ -64,10 +65,11 @@ const Login = () => {
           )}
           <div className="flex justify-center items-center space-x-3 text-white">
             <p>New here</p>
-            <p className="hover:text-blue-500">
-  <Link to="/register" className="px-4 py-4 font-bold text-white">
-            Register
-  </Link>
+            <p className="hover:text-pink-500">
+            <Link to="/register" className="register-link">
+  REGISTER
+</Link>
+
 </p>
 
 

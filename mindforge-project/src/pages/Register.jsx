@@ -40,7 +40,7 @@ const Register = () => {
       <Menu />
       <div className="w-full flex justify-center items-center h-[80vh] the-register-container">
         <div className="flex flex-col justify-center items-center space-y-4 w-[80%] md:w-[25%]">
-          <h1 className="text-xl font-bold text-left text-white">Create an account</h1>
+          <h1 className="text-xl font-bold text-left text-white register-heading mb-20">Create an Account</h1>
           <input
             onChange={(e) => setUsername(e.target.value)}
             className="w-full px-4 py-2 border-2 border-black outline-0"
@@ -70,8 +70,11 @@ const Register = () => {
           )}
           <div className="flex justify-center items-center space-x-3">
             <p className="text-white">Already a member</p>
-            <p className="text-white hover:text-black">
-              <Link to="/">Login</Link>
+            <p className="text-white hover:text-pink-500">
+            <Link to="/" className="login-link">
+  LOGIN
+</Link>
+
             </p>
           </div>
         </div>

@@ -82,4 +82,13 @@
   .register-text a:hover {
     text-decoration: underline;
   }
+
+  .login-heading {
+    font-size: 36px; /* Adjust the font size*/
+  }
+  
+  .register-link {
+    font-size: 20px; /* Adjust the font size as needed */
+  }
+  
   
