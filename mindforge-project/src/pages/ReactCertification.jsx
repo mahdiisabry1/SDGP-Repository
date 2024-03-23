@@ -26,8 +26,9 @@ const ReactCertification = () => {
       backgroundRepeat: "no-repeat",
       backgroundAttachment: "fixed" // Fix the background image to the viewport
     }}>
-      <h1 className="text-3xl font-bold ">React Certification</h1> {/* Certificate title */}
-      <p className="mb-6 font-bold increased-font-size">Congratulations! </p> {/* Congratulations message */}
+      <h1 className="certificate-title">React Certification</h1>
+        <p className="certificate-message">Congratulations on completing the React Certification!</p>
+{/* Congratulations message */}
       <div id="certificate" className="certificate"> {/* Certificate image container */}
         <img
           src="\src\assets\images\Reactjscertifiaction.jpg" // Image source
@@ -36,7 +37,7 @@ const ReactCertification = () => {
         />
       </div>
       <button onClick={downloadCertificate} className="download-button"> {/* Download certificate button */}
-       Download Certificate
+        Download Certificate
       </button>
     </div>
   );

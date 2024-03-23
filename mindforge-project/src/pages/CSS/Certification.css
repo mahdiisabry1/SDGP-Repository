@@ -1,22 +1,32 @@
 .certificate-container {
   text-align: center;
-  position: relative;/* Set position to relative for button positioning */
+  position: relative; /* Set position to relative for button positioning */
   margin-top: 0%;
 }
 
-
 .download-button {
-  background-color: blue;
+  background-color: #26d8cf; /* Green background */
+  border: none;
   color: white;
-  border: 3px solid #000;
-  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  padding: 12px 24px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px; /* Rounded corners */
+  border: 2px solid #4CAF50; /* Matching border */
   position: absolute; /* Position the button */
-  bottom: 20px; /* Distance from bottom of the container */
+  bottom: 10px; /* Adjusted distance from bottom of the container */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Center horizontally */
 }
 
-
+.download-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
 
 .certificate {
   margin-top: 5vh;
@@ -29,7 +39,10 @@
 
 .certificate-image {
   max-width: 800px; /* Adjust as needed */
-  height: 600px;;
+  height: 600px;
   margin-top: 0vh;
   margin-bottom: 0vh;
+}
+.certificate-title {
+  font-size: 2.5rem; /* Adjust the font size as needed */
 }
