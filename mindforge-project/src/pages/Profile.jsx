@@ -1,29 +1,32 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import NavBar from "../components/NavBar";
-import './Profile.css';
+import { useState, useEffect } from "react"; // Import useState and useEffect hooks from React
+import axios from "axios"; // Import axios for making HTTP requests
+import NavBar from "../components/NavBar"; // Import NavBar component
+import './Profile.css'; // Import CSS file for styling
 
+// Profile component
 const Profile = () => {
-  const [userData, setUserData] = useState(null);
-  const [activeTab, setActiveTab] = useState("roadmaps");
+  // State variables
+  const [userData, setUserData] = useState(null); // State to store user data
+  const [activeTab, setActiveTab] = useState("roadmaps"); // State to track active tab
 
+  // Effect hook to fetch user data when component mounts
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("/api/userData");
-        setUserData(response.data);
+        const response = await axios.get("/api/userData"); // Fetch user data from API
+        setUserData(response.data); // Set user data in state
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        console.error("Error fetching user data:", error); // Log error if data fetching fails
       }
     };
 
-    fetchUserData();
+    fetchUserData(); // Invoke fetchUserData function
   }, []);
 
+  // Function to handle tab click event
   const handleTabClick = (tab) => {
-    setActiveTab(tab);
+    setActiveTab(tab); // Set active tab based on clicked tab
   };
-
   return (
     <div className="profile-wrapper">
       <div className="profile-bg">

@@ -37,7 +37,7 @@
   padding: 10px 20px;
   margin: 0 10px; /* Add margin between tabs */
   border-radius: 5px;
-  background-color: #759b9c;
+  background-color: #87c7c7;
 }
 
   
@@ -46,7 +46,7 @@
   }
   
   .tab-item.active {
-    background-color: #3b6d70;
+    background-color: #12787e;
     color: #080808;
   }
   
