@@ -192,13 +192,24 @@ const shuffleArray = (array) => {
 };
 
 const QuestionSurvey = () => {
- // QuestionSurvey component definition
- const [questions, setQuestions] = useState([]); // Array to hold shuffled questions
- const [currentQuestion, setCurrentQuestion] = useState(0); // Index of the current question
- const [selectedOption, setSelectedOption] = useState(null); // Index of the selected option
- const [submitted, setSubmitted] = useState(false); // Flag to indicate if the survey is submitted
- const [totalScore, setTotalScore] = useState(0); // Accumulated total score based on selected options
- const [recommendation, setRecommendation] = useState(""); // Recommendation based on total score
+  const [questions, setQuestions] = useState([]); // Array to hold shuffled questions
+  const [currentQuestion, setCurrentQuestion] = useState(0); // Index of the current question
+  const [selectedOption, setSelectedOption] = useState(null); // Index of the selected option
+  const [submitted, setSubmitted] = useState(false); // Flag to indicate if the survey is submitted
+  const [totalScore, setTotalScore] = useState(0); // Accumulated total score based on selected options
+  const [recommendation, setRecommendation] = useState(""); // Recommendation based on total score
+  const [showTab, setShowTab] = useState(false); // State variable to control tab visibility
+
+ const handleShowTab = () => {
+  // Function to show the tab content and generate recommendation
+  const generatedRecommendation = generateRecommendation(); // Generate recommendation dynamically
+  setRecommendation(generatedRecommendation); // Set the recommendation text
+  setShowTab(true); // Show the tab content
+};
+const generateRecommendation = () => {
+  // Function to generate recommendation dynamically (replace this with your logic)
+  return "Your recommendation text goes here.";
+};
 
   useEffect(() => {
     // useEffect hook to shuffle questions when the component mounts
@@ -324,21 +335,22 @@ const QuestionSurvey = () => {
             <p>Click below to view your recommendation.</p>
             <button
               className="action-button"
-              onClick={() => {
-                // Navigate to the result page
-                // You can use React Router or any other navigation method here
-                // For demonstration, let's alert the recommendation
-                alert("Your attitudes matching with : " + recommendation);
-              }}
+              onClick={handleShowTab}
             >
               Here is our Recommendation for you!
             </button>
+            {showTab && (
+              <div className="Quztab-content">
+                {/* Render the tab content with the dynamically generated recommendation */}
+                <h2>Recommendation Tab</h2>
+                <p>{recommendation}</p>
+              </div>
+            )}
           </div>
         )}
       </div>
     </>
   );
-
-} 
+};
 
 export default QuestionSurvey;
