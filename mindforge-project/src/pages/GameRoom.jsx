@@ -41,7 +41,7 @@ const GameRoom = () => {
         {/* Content for tabs */}
         {activeTab === "tab1" && (
           <div>
-            <h1 style={{ textAlign: "center" }}>TicTacToe</h1>
+            
             <XO />
           </div>
         )}
@@ -49,7 +49,7 @@ const GameRoom = () => {
         {/* Content for tabs */}
         {activeTab === "tab2" && (
           <div>
-            <h1 style={{ textAlign: "center" }}>CandyCrush</h1>
+            
             <Candycrush />
           </div>
         )}
@@ -57,7 +57,7 @@ const GameRoom = () => {
         {/* Content for tabs */}
         {activeTab === "tab3" && (
           <div className="more-games-container">
-            <h1 style={{ textAlign: "center", color: "white" }}>More Games</h1>
+            
             <div className="game-chart">
               {games.map((game, index) => (
                 <GameItem
