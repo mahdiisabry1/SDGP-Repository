@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import '@fortawesome/fontawesome-free/css/all.css';
+import { useState } from 'react';
 import './Footer.css'; // Import CSS file for custom styles
 
 const Footer = () => {
@@ -27,7 +26,7 @@ const Footer = () => {
           <a href="#" className="text-gray-300 hover:text-gray-400"><i className="fab fa-facebook"></i></a>
           <a href="#" className="text-gray-300 hover:text-gray-400"><i className="fab fa-youtube"></i></a>
           <a href="#" className="text-gray-300 hover:text-gray-400"><i className="fab fa-linkedin"></i></a> {/* LinkedIn icon */}
-          <a href="#" className="text-gray-300 hover:text-gray-400"><i className="fab fa-github"></i></a> {/* GitHub icon */}
+          <a href="https://github.com/mahdiisabry1/SDGP-Repository" target='blank' className="text-gray-300 hover:text-gray-400"><i className="fab fa-github"></i></a> {/* GitHub icon */}
         </div>
         <div
           className={`text-center text-sm animated-footer ${isHovered ? 'line-hover' : ''}`}

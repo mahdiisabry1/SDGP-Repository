@@ -107,17 +107,17 @@ const NavBar = () => {
         <div className="flex gap-4">
           {user ? (
             <>
-              <Link to="/create">
-                <button className="profile-button">
+              <Link to="/create" >
+                <button className="create-profile-logout">
                   <MdCreate />
                 </button>
               </Link>
-              <Link to="/profile">
-                <button className="profile-button">
+              <Link to="/profile" >
+                <button className="create-profile-logout">
                   <CgProfile />
                 </button>
               </Link>
-              <button onClick={handleLogout} className="profile-button">
+              <button onClick={handleLogout} className="create-profile-logout">
                 <CiLogout />
               </button>
             </>
