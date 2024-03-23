@@ -17,7 +17,13 @@ const ReactCertification = () => {
   };
 
   return (
-    <div className="certificate-container">
+    <div className="certificate-container" style={{
+      backgroundImage: 'url("https://i.pinimg.com/564x/7d/a1/4b/7da14beee80696ded786f82e0648b11d.jpg")',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      backgroundAttachment: "fixed" // Fix the background image to the viewport
+    }}>
       <h1 className="text-3xl font-bold ">React Certification</h1>
       <p className="mb-6 font-bold increased-font-size">Congratulations! </p>
       <div id="certificate" className="certificate">
@@ -30,7 +36,6 @@ const ReactCertification = () => {
       <button onClick={downloadCertificate} className="download-button">
        Download Certificate
       </button>
-
     </div>
   );
 };
