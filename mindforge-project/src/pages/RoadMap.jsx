@@ -11,7 +11,7 @@ const RoadMap = () => {
     padding: "2.5rem 1.5rem",
     backgroundColor: "#1a1a1a",
     color: "#ffffff",
-    marginTop: "6%",
+    marginTop: "4.9%",
   };
 
   const titleStyle = {

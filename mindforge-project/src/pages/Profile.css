@@ -17,7 +17,7 @@
     background-size: cover; /* Cover the entire container with the background image */
     background-position: center; /* Center the background image */
     background-attachment: fixed; /* Make the background image fixed */
-    height: 350px; /* Adjust the height of the background image as needed */
+    height: 280px; /* Adjust the height of the background image as needed */
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -37,22 +37,27 @@
   padding: 10px 20px;
   margin: 0 10px; /* Add margin between tabs */
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: #87c7c7;
 }
 
   
   .tab-item:hover {
-    background-color: #f0f0f0;
+    background-color: #349497;
   }
   
   .tab-item.active {
-    background-color: #108c91;
-    color: #fff;
+    background-color: #12787e;
+    color: #080808;
   }
   
   .logout-container {
     margin-bottom: 40px; /* Adjust the value as needed */
   }
+
+  .empty-space {
+    height: 20px; /* Adjust the height as needed */
+  }
+  
   
   
   

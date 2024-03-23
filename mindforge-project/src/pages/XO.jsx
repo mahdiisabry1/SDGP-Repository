@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { Board } from "./Board.jsx";
-import { ResetButton } from "./ResetButton.jsx";
-import { ScoreBoard } from "./ScoreBoard.jsx";
-import './XO.css';
+import React, { useState } from "react"; // Import React and useState hook
+import { Board } from "./Board.jsx"; // Import Board component
+import { ResetButton } from "./ResetButton.jsx"; // Import ResetButton component
+import { ScoreBoard } from "./ScoreBoard.jsx"; // Import ScoreBoard component
+import './XO.css'; // Import CSS file for styling
 
+// XO component
 const XO = () => {
-
+  // Define win conditions for the game
   const WIN_CONDITIONS = [
     [0, 1, 2],
     [3, 4, 5],
@@ -17,11 +18,13 @@ const XO = () => {
     [2, 4, 6]
   ]
 
-  const [xPlaying, setXPlaying] = useState(true);
-  const [board, setBoard] = useState(Array(9).fill(null))
-  const [scores, setScores] = useState({ xScore: 0, oScore: 0 })
-  const [gameOver, setGameOver] = useState(false);
+  // State variables
+  const [xPlaying, setXPlaying] = useState(true); // Track if X is currently playing
+  const [board, setBoard] = useState(Array(9).fill(null)) // Game board state
+  const [scores, setScores] = useState({ xScore: 0, oScore: 0 }) // Scores state for X and O
+  const [gameOver, setGameOver] = useState(false); // Track if the game is over
 
+  // Function to handle box click
   const handleBoxClick = (boxIdx) => {
     // Step 1: Update the board
     const updatedBoard = board.map((value, idx) => {
@@ -53,6 +56,7 @@ const XO = () => {
     setXPlaying(!xPlaying);
   }
 
+  // Function to check for a winner
   const checkWinner = (board) => {
     for (let i = 0; i < WIN_CONDITIONS.length; i++) {
       const [x, y, z] = WIN_CONDITIONS[i];
@@ -65,18 +69,19 @@ const XO = () => {
     }
   }
 
+  // Function to reset the game board
   const resetBoard = () => {
     setGameOver(false);
     setBoard(Array(9).fill(null));
   }
 
   return (
-    <div className="XO-App">
-      <ScoreBoard scores={scores} xPlaying={xPlaying} />
-      <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
-      <ResetButton resetBoard={resetBoard} />
+    <div className="XO-App"> {/* Main wrapper for the game */}
+      <ScoreBoard scores={scores} xPlaying={xPlaying} /> {/* Scoreboard component */}
+      <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} /> {/* Board component */}
+      <ResetButton resetBoard={resetBoard} /> {/* ResetButton component */}
     </div>
   );
 }
 
-export default XO;
+export default XO; // Export XO component
