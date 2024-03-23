@@ -250,24 +250,22 @@ const generateRecommendation = () => {
   // Function to handle the submission of the survey
   const handleSubmit = () => {
     if (selectedOption !== null) {
-      // If an option is selected, proceed to the next question
-      handleNextQuestion();
-    } else {
-      // If no option is selected, show an error message
-      alert("Please answer the question before submitting.");
-      return;
+      // Calculate total score if an option is selected
+      const question = questions[currentQuestion];
+      const selectedRating = question.options[selectedOption].rating;
+      setTotalScore((prevTotalScore) => prevTotalScore + selectedRating);
     }
     // Set the submitted flag to true after handling the current question
     setSubmitted(true);
-    setRecommendation(getRecommendation(totalScore));
-    
+    getRecommendation();
+    setShowTab(true); // Show the tab content after submission
   };
 
-  // Function to get the recommendation based on the total score
+  // Function to generate recommendation based on total score
   const getRecommendation = (score) => {
     let recommendation = "";
     if (score >= 1 && score <= 9) {
-      recommendation = "Aesthetics Driven Designer" ;
+      recommendation = "Aesthetics Driven Designer";
     } else if (score >= 10 && score <= 18) {
       recommendation = "Functionality Oriented Designer";
     } else if (score >= 19 && score <= 27) {
@@ -276,19 +274,18 @@ const generateRecommendation = () => {
       recommendation =
         "Stay inspired with us. Explore the latest trends and tips to fuel your web design journey.";
     }
-
-    // Remove "Recommendation:" from the recommendation text
-    return recommendation.replace("Recommendation: ", "");
+    return recommendation;
   };
+
+  // useEffect to load recommendation from local storage on component mount
   useEffect(() => {
-    // Load recommendation from local storage on component mount
     const savedRecommendation = localStorage.getItem("recommendation");
     if (savedRecommendation) {
       setRecommendation(savedRecommendation);
       console.log("Recommendation loaded from local storage:", savedRecommendation);
     }
-    
   }, []);
+
 
   return (
     <>
@@ -344,6 +341,7 @@ const generateRecommendation = () => {
                 {/* Render the tab content with the dynamically generated recommendation */}
                 <h2>Recommendation Tab</h2>
                 <p>{recommendation}</p>
+                
               </div>
             )}
           </div>
