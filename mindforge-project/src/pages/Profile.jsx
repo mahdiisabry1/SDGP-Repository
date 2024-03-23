@@ -1,36 +1,68 @@
-import { useState, useEffect } from "react"; // Import useState and useEffect hooks from React
-import axios from "axios"; // Import axios for making HTTP requests
-import NavBar from "../components/NavBar"; // Import NavBar component
-import './Profile.css'; // Import CSS file for styling
+import { useState, useEffect } from "react";
+import axios from "axios";
+import NavBar from "../components/NavBar";
+import './Profile.css';
 
-// Profile component
 const Profile = () => {
-  // State variables
-  const [userData, setUserData] = useState(null); // State to store user data
-  const [activeTab, setActiveTab] = useState("roadmaps"); // State to track active tab
+  const [userData, setUserData] = useState(null);
+  const [activeTab, setActiveTab] = useState("roadmaps");
+  const [profilePhoto, setProfilePhoto] = useState(null); // State to hold the selected profile photo
 
-  // Effect hook to fetch user data when component mounts
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("/api/userData"); // Fetch user data from API
-        setUserData(response.data); // Set user data in state
+        const response = await axios.get("/api/userData");
+        setUserData(response.data);
       } catch (error) {
-        console.error("Error fetching user data:", error); // Log error if data fetching fails
+        console.error("Error fetching user data:", error);
       }
     };
 
-    fetchUserData(); // Invoke fetchUserData function
+    fetchUserData();
   }, []);
 
-  // Function to handle tab click event
   const handleTabClick = (tab) => {
-    setActiveTab(tab); // Set active tab based on clicked tab
+    setActiveTab(tab);
   };
+
+  // Function to handle file selection for profile photo
+  const handleProfilePhotoChange = (event) => {
+    const selectedPhoto = event.target.files[0];
+    setProfilePhoto(selectedPhoto);
+  };
+
+  // Function to handle profile photo upload
+  const uploadProfilePhoto = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('profilePhoto', profilePhoto);
+      // Make a request to upload the profile photo
+      // Replace '/api/uploadProfilePhoto' with your actual API endpoint for uploading photos
+      await axios.post("/api/uploadProfilePhoto", formData);
+      // Optionally, you can update the user data in state after the photo is uploaded
+      // Fetch updated user data again
+      const response = await axios.get("/api/userData");
+      setUserData(response.data);
+    } catch (error) {
+      console.error("Error uploading profile photo:", error);
+    }
+  };
+
   return (
     <div className="profile-wrapper">
       <div className="profile-bg">
         <NavBar />
+        <div className="profile-photo-container">
+          {/* Display selected profile photo */}
+          {profilePhoto ? (
+            <img src={URL.createObjectURL(profilePhoto)} alt="Profile" className="profile-photo" />
+          ) : (
+            <label htmlFor="profile-photo-input" className="profile-photo-placeholder">
+              <span className="plus-sign">+</span>
+              <input type="file" id="profile-photo-input" onChange={handleProfilePhotoChange} accept="image/*" className="profile-photo-input" />
+            </label>
+          )}
+        </div>
         <div className="mt-40 text-center">
           <h1 className="text-6xl mb-20">Welcome Your Profile</h1>
         </div>
