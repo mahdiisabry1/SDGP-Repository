@@ -36,7 +36,7 @@
 
 .score {
     margin-top: 40px; /* Adjust the margin as needed */
-    font-size: 24px; /* Adjust the font size as needed */
+    font-size: 36px; /* Adjust the font size as needed */
     font-weight: bold; /* Make the score text bold */
     font-family: sans-serif; /* Apply the "Game Font" or your preferred font family */
 }
@@ -45,7 +45,7 @@
     margin-top: 50px; /* Adjust the margin as needed */
     padding: 10px 20px; /* Adjust padding as needed */
     font-size: 16px; /* Adjust font size as needed */
-    background-color: #4CAF50; /* Green background */
+    background-color: #366438; /* Green background */
     color: white; /* White text */
     border: none; /* Remove border */
     border-radius: 5px; /* Add border radius */
@@ -55,3 +55,24 @@
 .gamebutton:hover {
     background-color: #45a049; /* Darker green on hover */
 }
+
+/* CSS for the reset score button */
+button {
+    background-color: #2e8572; /* Green background */
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  /* Change the background color on hover */
+  button:hover {
+    background-color: #6dbdab; /* Darker green */
+  }
+  
