@@ -1,64 +1,100 @@
 /* Add this to your CSS file, e.g., styles.css */
 .logout-link {
-    background-color: #45606d; /* Adjust the background color as needed */
-    color: #fff; /* Text color */
-    padding: 0.5rem 1rem; /* Padding around the link */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-  }
-  
-  .logout-link:hover {
-    background-color: #afa0a6; /* Adjust the background color on hover */
-  }
-  
- /* Add this to your CSS file, e.g., styles.css */
-.profile-bg {
-    background-image: url('https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=600'); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
-    background-size: cover; /* Cover the entire container with the background image */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Make the background image fixed */
-    height: 280px; /* Adjust the height of the background image as needed */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-align: center; /* Align text horizontally */
-  }
+  background-color: #45606d; /* Adjust the background color as needed */
+  color: #fff; /* Text color */
+  padding: 0.5rem 1rem; /* Padding around the link */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+}
 
-  /* Profile.css */
+.logout-link:hover {
+  background-color: #afa0a6; /* Adjust the background color on hover */
+}
+
+/* Add this to your CSS file, e.g., styles.css */
+.profile-bg {
+  background-image: url('https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=600'); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire container with the background image */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Make the background image fixed */
+  height: 300px; /* Adjust the height of the background image as needed */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Align text horizontally */
+  position: relative;
+}
+
+/* Profile.css */
 .tab-list {
-  display: flex;
-  justify-content: center; /* Horizontally center the tabs */
-  list-style-type: none;
-  padding: 0;
+display: flex;
+justify-content: center; /* Horizontally center the tabs */
+list-style-type: none;
+padding: 0;
 }
 
 .tab-item {
-  cursor: pointer;
-  padding: 10px 20px;
-  margin: 0 10px; /* Add margin between tabs */
-  border-radius: 5px;
-  background-color: #759b9c;
+cursor: pointer;
+padding: 10px 20px;
+margin: 0 10px; /* Add margin between tabs */
+border-radius: 5px;
+background-color: #759b9c;
 }
 
-  
-  .tab-item:hover {
-    background-color: #349497;
-  }
-  
-  .tab-item.active {
-    background-color: #3b6d70;
-    color: #080808;
-  }
-  
-  .logout-container {
-    margin-bottom: 40px; /* Adjust the value as needed */
-  }
 
-  .empty-space {
-    height: 20px; /* Adjust the height as needed */
-  }
-  
-  
-  
-  
-  
+.tab-item:hover {
+  background-color: #349497;
+}
+
+.tab-item.active {
+  background-color: #3b6d70;
+  color: #080808;
+}
+
+.logout-container {
+  margin-bottom: 40px; /* Adjust the value as needed */
+}
+
+.empty-space {
+  height: 20px; /* Adjust the height as needed */
+}
+
+.profile-photo-container {
+  position: absolute;
+  top: calc(50% - 75px + 10px); /* Position the container vertically centered with an additional 40px downward offset */
+  left: calc(50% - 75px - 550px); /* Position the container horizontally centered */
+}
+
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-photo-placeholder {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ccc; /* Placeholder background color */
+  cursor: pointer;
+  position: relative;
+}
+
+.plus-sign {
+  font-size: 60px;
+  line-height: 200px;
+  text-align: center;
+  color: #666; /* Plus sign color */
+}
+
+.profile-photo-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
