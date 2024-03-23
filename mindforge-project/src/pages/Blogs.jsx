@@ -30,7 +30,7 @@ const Blogs = () => {
     <>
       <NavBar />
       <div>
-        <div className="py-40 bg-black text-center text-white px-4 outerLayer-blog">
+        <div className="py-24 bg-gray-800 text-center text-white px-4 outerLayer-blog">
           <h1 className="text-5xl mt-8">Whats your story Today</h1>
           <p className="mt-8">
             Start your blog today and join the community of writers and readers

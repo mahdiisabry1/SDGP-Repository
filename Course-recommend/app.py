@@ -57,33 +57,37 @@ Recommendation_style = f"""
 """
 
 # Search 
-def search_term_if_not_found(term,df):
-	result_df = df[df['course_title'].str.contains(term)]
-	return result_df
+def search_term_if_not_found(term, df):
+    title_matches = df[df['course_title'].str.contains(term, case=False)]
+    subject_matches = df[df['subject'].str.contains(term, case=False)]
+    
+    if title_matches.empty and subject_matches.empty:
+        return pd.DataFrame(columns=df.columns)  # Empty DataFrame if no matches found
+    else:
+        return pd.concat([title_matches, subject_matches]).drop_duplicates()
 
 
 def main():
-    st.title("Get Recommendations")
-    # Your recommendation logic here
-    # recommendations = ["AI and machine learning Course", "Python Course", "Javascript 3"]
-    # st.write(f"## Recommended Courses")
-    # st.write(recommendations)
     menu = ["Courses", "University", "Books"]
     choice = st.sidebar.selectbox("Menu", menu)
 
     df = load_data("data/udemy_courses.csv")
 
     if choice == "Courses":
-        st.subheader("Courses")
-        Course = ["Search instead","Flask Tutorial Step by Step","PHP Specialist (2017 Edition)","Python Web Programming","HTML and CSS Foundations","Angular Tutorial For Beginners","Web Hosting Fundamentals","1 Hour JavaScript"]
-        search_option = st.selectbox("What are you interested in", Course)
-        search_course = st.text_input("what do you like to learn").lower()
-        cosine_sim = vectorize_text(df['course_title'])
+        st.subheader("Course Recommendation")
+        st.text("The platform recommends you udemy courses based on a given Course title or subject")
+        st.subheader("Copy and paste the Course title")
+        st.text("Here are some famous udemy Courses based on web designing")
+        st.text("React JS and Redux - Mastering Web Apps\nThe Complete HTML and CSS Course For Beginners\nLearn and Understand AngularJS\nExpressJS Fundamentals\nCSS :basics for beginners")
+        search_examples = ["Graphic Design","Web Development","Business Finance"]
+        search_course = st.text_input("Enter Udemy Course Title or subject", placeholder="E.g., " + ", ".join(search_examples)).lower()
+        cosine_sim = vectorize_text(df['subject'])
         number_of_records = st.sidebar.number_input("Number", 4, 30, 7)
 
 
         if st.button("Enter"):
             if search_course is not None:
+                st.info("Suggested Courses")
                 try:
                     result = get_recommendation(search_course, cosine_sim, df, number_of_records)
                     for row in result.iterrows():
@@ -92,14 +96,14 @@ def main():
                         rec_url = row[1][2]
                         rec_price = row[1][3]
                         rec_num_sub = row[1][4]
-
+                        
                         stc.html(Recommendation_style.format(rec_title, rec_score, rec_url, rec_price, rec_num_sub), height=250)
                 except:
-                    result = "Not Found"
-                    st.warning(result)
                     st.info("Suggested Courses")
                     result_df = search_term_if_not_found(search_course, df)
                     st.dataframe(result_df)
+
+
                 
     elif choice == "University":
         st.subheader("University")
