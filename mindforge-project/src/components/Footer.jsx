@@ -26,6 +26,8 @@ const Footer = () => {
           <a href="#" className="text-gray-300 hover:text-gray-400"><i className="fab fa-instagram"></i></a>
           <a href="#" className="text-gray-300 hover:text-gray-400"><i className="fab fa-facebook"></i></a>
           <a href="#" className="text-gray-300 hover:text-gray-400"><i className="fab fa-youtube"></i></a>
+          <a href="#" className="text-gray-300 hover:text-gray-400"><i className="fab fa-linkedin"></i></a> {/* LinkedIn icon */}
+          <a href="#" className="text-gray-300 hover:text-gray-400"><i className="fab fa-github"></i></a> {/* GitHub icon */}
         </div>
         <div
           className={`text-center text-sm animated-footer ${isHovered ? 'line-hover' : ''}`}
@@ -36,8 +38,8 @@ const Footer = () => {
             {/* You can replace the content of this div with your logo image or styled text */}
             <span className="text-3xl font-bold">MINDFORGE</span>
           </div>
-          <p>&copy; 2024 Your Company. All rights reserved.</p>
-          <p>Designed with <span role="img" aria-label="Heart">❤️</span> by You</p>
+          <p>&copy;  Learn.MindMaps.Games</p>
+          <p>Designed  <span role="img" aria-label="Heart">❤️</span> by MindForgers...</p>
           <div className="line"></div>
         </div>
       </div>
