@@ -129,10 +129,10 @@ const Tabs = () => {
     // Assuming you have a separate object storing correct answers for each question
     const correctAnswers = {
       1: [".", ".", ".", ".", "."],
-      2: ["Hello, Angular!", "Two-way Data Binding", "Counter Button", "HTTP GET", "Counter Component"],
-      3: ["Change Background", "Change Text", "Simple Layout", "CSS Box Model", "CSS Animation"],
-      4: ["Print Hello World", "Express Server", "CRUD Operations", "GET Users", "Authentication System"],
-      5: ["Basic CRUD App", "Authentication", "Full-stack CRUD", "Real-time Chat", "Task Management System"],
+      2: [".", ".", ".", ".", "."],
+      3: [".", ".", ".", ".", "."],
+      4: [".", ".", ".", ".", "."],
+      5: [".", ".", ".", ".", "."],
     };
 
     // Fetch the correct answers for the active tab

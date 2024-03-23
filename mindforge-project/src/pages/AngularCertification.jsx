@@ -23,9 +23,9 @@ const AngularCertification = () => {
   return (
     <div className="certificate-container">
        {/* Title */}
-       <h1 className="text-3xl font-bold ">Angular Certification</h1>
-       {/* Congratulations message */}
-       <p className="mb-6 font-bold increased-font-size">Congratulations! </p>
+       <h1 className="certificate-title">Angular Certification</h1>
+        <p className="certificate-message">Congratulations on completing the React Certification!</p>
+{/* Congratulations message */}
       {/* Certificate container */}
       <div id="certificate" className="certificate">
         {/* Certificate image */}
