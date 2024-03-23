@@ -21,7 +21,7 @@ const Profile = () => {
   }, []);
 
   const handleTabClick = (tab) => {
-    window.open(`/${tab}`, "_blank"); // Open in a new tab
+    setActiveTab(tab);
   };
 
   return (
@@ -29,7 +29,7 @@ const Profile = () => {
       <div className="profile-bg">
         <NavBar />
         <div className="mt-40 text-center">
-          <h1 className="text-6xl mb-4">Welcome Your Profile</h1>
+          <h1 className="text-6xl mb-20">Welcome Your Profile</h1>
         </div>
       </div>
       <div className="profile-content">
@@ -40,14 +40,30 @@ const Profile = () => {
               <p className="text-xl mt-2">Email: <span className="text-lg">{userData.email}</span></p>
             </div>
           )}
-          <div className="mt-10">
+          <div className="mt-20">
             <ul className="tab-list">
-              <li className={`tab-item ${activeTab === "roadmaps" ? "active" : ""}`} onClick={() => handleTabClick("myroadmaps")}>My Roadmaps</li>
-              <li className={`tab-item ${activeTab === "reads" ? "active" : ""}`} onClick={() => handleTabClick("myreads")}>My Reads</li>
+              <li className={`tab-item ${activeTab === "roadmaps" ? "active" : ""}`} onClick={() => handleTabClick("roadmaps")}>My Roadmaps</li>
+              <li className={`tab-item ${activeTab === "reads" ? "active" : ""}`} onClick={() => handleTabClick("reads")}>My Reads</li>
             </ul>
+          </div>
+          {/* Content based on active tab */}
+          <div className="tab-content">
+            {activeTab === "roadmaps" && (
+              <div>
+                {/* Content for My Roadmaps tab */}
+              </div>
+            )}
+            {activeTab === "reads" && (
+              <div>
+                {/* Content for My Blogs tab */}
+              </div>
+            )}
           </div>
           <div className="mt-20 logout-container">
             <a href="/" className="logout-link">Logout</a>
+          </div>
+          <div className="footer">
+            {/* Footer content */}
           </div>
         </div>
       </div>
