@@ -72,7 +72,7 @@ const Register = () => {
             <p className="text-white">Already a member</p>
             <p className="text-white hover:text-pink-500">
             <Link to="/" className="login-link">
-  LOGIN
+  Login
 </Link>
 
             </p>

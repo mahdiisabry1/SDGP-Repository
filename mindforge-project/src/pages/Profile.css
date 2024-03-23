@@ -1,6 +1,6 @@
 /* Add this to your CSS file, e.g., styles.css */
 .logout-link {
-    background-color: #198585; /* Adjust the background color as needed */
+    background-color: #2d6077; /* Adjust the background color as needed */
     color: #fff; /* Text color */
     padding: 0.5rem 1rem; /* Padding around the link */
     border-radius: 5px; /* Rounded corners */
@@ -8,7 +8,7 @@
   }
   
   .logout-link:hover {
-    background-color: #5ab6db; /* Adjust the background color on hover */
+    background-color: #afa0a6; /* Adjust the background color on hover */
   }
   
  /* Add this to your CSS file, e.g., styles.css */
@@ -17,12 +17,48 @@
     background-size: cover; /* Cover the entire container with the background image */
     background-position: center; /* Center the background image */
     background-attachment: fixed; /* Make the background image fixed */
-    height: 350px; /* Adjust the height of the background image as needed */
+    height: 280px; /* Adjust the height of the background image as needed */
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     text-align: center; /* Align text horizontally */
   }
+
+  /* Profile.css */
+.tab-list {
+  display: flex;
+  justify-content: center; /* Horizontally center the tabs */
+  list-style-type: none;
+  padding: 0;
+}
+
+.tab-item {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0 10px; /* Add margin between tabs */
+  border-radius: 5px;
+  background-color: #759b9c;
+}
+
+  
+  .tab-item:hover {
+    background-color: #349497;
+  }
+  
+  .tab-item.active {
+    background-color: #3b6d70;
+    color: #080808;
+  }
+  
+  .logout-container {
+    margin-bottom: 40px; /* Adjust the value as needed */
+  }
+
+  .empty-space {
+    height: 20px; /* Adjust the height as needed */
+  }
+  
+  
   
   
   
