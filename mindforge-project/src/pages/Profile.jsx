@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import NavBar from "../components/NavBar";
-import "./CSS/Profile.css";
+import "./Profile.css";
 import { URL } from "../url";
 import { UserContext } from "../context/UserContext";
 import BlogPosts from "../components/BlogPosts";

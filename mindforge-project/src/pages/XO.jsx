@@ -2,7 +2,7 @@ import React, { useState } from "react"; // Import React and useState hook
 import { Board } from "./Board.jsx"; // Import Board component
 import { ResetButton } from "./ResetButton.jsx"; // Import ResetButton component
 import { ScoreBoard } from "./ScoreBoard.jsx"; // Import ScoreBoard component
-import './CSS/XO.css'; // Import CSS file for styling
+import './XO.css'; // Import CSS file for styling
 
 // XO component
 const XO = () => {

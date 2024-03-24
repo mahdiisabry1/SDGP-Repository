@@ -1,25 +1,17 @@
 .own-mindmap-container {
-  width: 100vw; /* Adjust the width to cover the entire viewport */
-  height: 100vh; /* Adjust the height to cover the entire viewport */
-  margin: 0;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
-  background-image: url('https://i.gifer.com/PVtR.gif');
-  background-size: cover; /* Ensure the background covers the entire container */
-  background-position: center; /* Center the background */
-  background-repeat: no-repeat; /* Prevent the background from repeating */
-  border-radius: 0; /* Remove border radius */
-  box-shadow: none; /* Remove box shadow */
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .own-mindmap-container h2 {
   font-size: 24px;
   margin-bottom: 15px;
-  color: #ffffff;
 }
 
-
-/* Input and textarea styles */
 .own-mindmap-container input[type="text"],
 .own-mindmap-container textarea {
   width: 100%;
@@ -30,7 +22,6 @@
   box-sizing: border-box;
 }
 
-/* Button styles */
 .own-mindmap-container button {
   background-color: #4caf50;
   color: #fff;
@@ -39,30 +30,25 @@
   margin-right: 10px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .own-mindmap-container button:hover {
   background-color: #45a049;
 }
 
-/* List styles */
 .own-mindmap-container ul {
   list-style-type: none;
   padding: 0;
 }
 
-/* List item styles */
 .own-mindmap-container li {
   margin-bottom: 10px;
 }
 
-/* Span styles */
 .own-mindmap-container li span {
   font-weight: bold;
 }
 
-/* Button inside list item styles */
 .own-mindmap-container li button {
   background-color: #f44336;
   color: #fff;
@@ -71,13 +57,11 @@
   margin-left: 5px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .own-mindmap-container li button:hover {
   background-color: #e53935;
 }
-
 /* Edit button styles */
 .own-mindmap-container li button.edit-button {
   margin-left: 10px;
@@ -85,7 +69,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #2196f3;
+  background-color: #4caf50;
   color: white;
 }
 
