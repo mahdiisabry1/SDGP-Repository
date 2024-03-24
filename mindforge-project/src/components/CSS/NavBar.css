@@ -1,4 +1,5 @@
-.logo-box{
+/* Styling for the logo box */
+.logo-box {
     height: 50px;
     width: 100%;
     display: flex;
@@ -6,6 +7,7 @@
     align-items: center;
 }
 
+/* Keyframe animation for fading in from the top */
 @keyframes fadeInFromTop {
     from {
         opacity: 0;
@@ -18,6 +20,7 @@
     }
 }
 
+/* Styling for the main navigation bar */
 .the-main-navbar {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -28,10 +31,11 @@
     justify-content: space-around;
     align-items: center;
     opacity: 0;
-    animation: fadeInFromTop 1s ease forwards;
+    animation: fadeInFromTop 1s ease forwards; /* Apply the fadeInFromTop animation */
 }
 
-.header-container{
+/* Styling for the header container */
+.header-container {
     z-index: 10;
     right: 0px;
     left: 0px;
@@ -42,33 +46,39 @@
     color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.navItems{
+/* Styling for navigation items */
+.navItems {
     transition: 1s;
 }
 
-.navItems:hover{
+/* Styling for navigation items on hover */
+.navItems:hover {
     color: rgb(0, 68, 255);
 }
 
-.Mind{
-    font-size: 2.25rem/* 36px */;
-    line-height: 2.5rem/* 40px */;
+/* Styling for "Mind" text */
+.Mind {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
     transition: 0.5s;
 }
 
-.Forge{
+/* Styling for "Forge" text */
+.Forge {
     --tw-text-opacity: 1;
     color: rgb(96 165 250 / var(--tw-text-opacity));
     transition: 2s;
 }
 
-.Mind:hover{
+/* Styling for "Mind" text on hover */
+.Mind:hover {
     color: rgb(96, 165, 250);
 }
 
+/* Styling for the login button */
 .login-button {
     position: relative;
     background: #ffffff;
@@ -86,6 +96,7 @@
     transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/* Styling for the tooltip */
 .tooltip {
     position: absolute;
     top: 0;
@@ -100,6 +111,7 @@
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/* Styling for the tooltip arrow */
 .tooltip::before {
     position: absolute;
     content: "";
@@ -112,6 +124,7 @@
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/* Styling for the tooltip on login button hover */
 .login-button:hover .tooltip {
     top: -45px;
     opacity: 1;
@@ -119,11 +132,13 @@
     pointer-events: auto;
 }
 
+/* Styling for text and tooltip shadow on hover */
 svg:hover span,
 svg:hover .tooltip {
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for login button and tooltip on hover */
 .login-button:hover,
 .login-button:hover .tooltip,
 .login-button:hover .tooltip::before {
@@ -131,8 +146,8 @@ svg:hover .tooltip {
     color: #ffffff;
 }
 
-
-.create-profile-logout{
+/* Styling for create profile/logout button */
+.create-profile-logout {
     background-color: rgb(255, 255, 255);
     border: none;
     color: rgb(255, 255, 255);
@@ -147,6 +162,7 @@ svg:hover .tooltip {
     border-radius: 97px;
 }
 
-.create-profile-logout{
+/* Styling for create profile/logout button background */
+.create-profile-logout {
     background-color: rgb(54, 54, 132);
 }
