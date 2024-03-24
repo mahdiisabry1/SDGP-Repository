@@ -4,11 +4,11 @@ import NavBar from "../components/NavBar";
 import "./Profile.css";
 import { URL } from "../url";
 import { UserContext } from "../context/UserContext";
-import BlogPosts from "../components/BlogPosts";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import MyBlogs from "./MyBlogs";
 
 const Profile = () => {
+  const param = useParams().id;
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [posts, setPosts] = useState([]);
@@ -30,12 +30,12 @@ const Profile = () => {
 
   useEffect(() => {
     fetchProfile();
-  }, []);
+  }, [param]);
 
   // Fetching blog posts from the server
   const fetchPosts = async () => {
     try {
-      const res = await axios.get(URL + "/api/posts");
+      const res = await axios.get(URL + "/api/posts/user/" + user._id);
       setPosts(res.data);
     } catch (error) {
       console.log(error);
@@ -45,7 +45,7 @@ const Profile = () => {
   // Fetch blog posts when component mounts
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [param]);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -107,41 +107,47 @@ const Profile = () => {
         </div>
       </div>
       <div className="profile-content">
-      <div className="mt-20 text-center">
-  <div className="input-group">
-    <label htmlFor="username" className="label">Username:</label>
-    <input
-      type="text"
-      id="username"
-      onChange={(e) => setUsername(e.target.value)}
-      value={username}
-      className="input"
-      disabled
-    />
-  </div>
-  <div className="input-group">
-    <label htmlFor="Email" className="label">Email:</label>
-    <input
-      type="text"
-      id="Email"
-      onChange={(e) => setUsername(e.target.value)}
-      value={email}
-      className="input"
-      disabled
-    />
-  </div>
+        <div className="mt-20 text-center">
+          <div className="input-group">
+            <label htmlFor="username" className="label">
+              Username:
+            </label>
+            <input
+              type="text"
+              id="username"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+              className="input"
+              disabled
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="Email" className="label">
+              Email:
+            </label>
+            <input
+              type="text"
+              id="Email"
+              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              className="input"
+              disabled
+            />
+          </div>
 
-  <div className="input-group">
-    <label htmlFor="Password" className="label">PassWord:</label>
-    <input
-      type="text"
-      id="Password"
-      onChange={(e) => setPassword(e.target.value)}
-      value={password}
-      className="input"
-      disabled
-    />
-  </div>
+          <div className="input-group">
+            <label htmlFor="Password" className="label">
+              PassWord:
+            </label>
+            <input
+              type="text"
+              id="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              className="input"
+              disabled
+            />
+          </div>
 
           <div className="mt-20">
             <ul className="tab-list">
@@ -163,29 +169,25 @@ const Profile = () => {
           </div>
           {/* Content based on active tab */}
           <div className="tab-content">
-  {activeTab === "mindmaps" && (
-    <div>
-      {posts.length === 0 ? (
-        <p>No Mindmaps by You</p>
-      ) : (
-        posts.map((post) => (
-          <Link to={user ? `/posts/post/${post._id}` : "/"}>
-            <MyBlogs key={post._id} post={post} />
-          </Link>
-        ))
-      )}
-    </div>
-  )}
-  {activeTab === "reads" && (
-    <div>
-      {posts.length === 0 ? (
-        <p>No Posts by You</p>
-      ) : (
-        <div>{/* Render posts content here */}</div>
-      )}
-    </div>
-  )}
-</div>
+            {activeTab === "mindmaps" && (
+              <div>
+                <p>No Mindmaps by You</p>
+              </div>
+            )}
+            {activeTab === "reads" && (
+              <div>
+
+                {posts?.map((p) => (
+                  <>
+                  <Link to={user ? `/posts/post/${p._id}` : "/"}>
+                    <MyBlogs key={p._id} p={p} />
+                  </Link>
+                  </>
+                  
+                ))}
+              </div>
+            )}
+          </div>
 
           <div className="mt-20 logout-container">
             <a href="/" className="logout-link">
