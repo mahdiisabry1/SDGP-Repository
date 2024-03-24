@@ -1,116 +1,85 @@
-.create-roadmap-container {
-  width: 100%;
-  height: auto;
-  background-image: url('https://i.gifer.com/PVtR.gif');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form {
-  width: 60%;
-  height: min-content;
-  background: rgba(255, 255, 255, 0.8);
+.own-mindmap-container {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-group {
-  margin-bottom: 20px; /* Increase margin bottom */
+.own-mindmap-container h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
-.label {
-  display: block;
-  margin-bottom: 10px; /* Adjust margin bottom */
-  font-weight: bold;
-  font-size: 18px; /* Increase font size */
-  color: black;
-}
-
-h3 {
-  font-weight: bold;
-  font-size: 24px; /* Increase font size */
-  margin-bottom: 15px; /* Adjust margin bottom */
-}
-
-.input,
-.textarea {
+.own-mindmap-container input[type="text"],
+.own-mindmap-container textarea {
   width: 100%;
-  padding: 12px; /* Increase padding */
-  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 8px; /* Increase border radius */
-  margin-bottom: 15px; /* Adjust margin bottom */
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
-.textarea {
-  resize: vertical;
-}
-
-.steps {
-  margin-top: 30px; /* Increase margin top */
-}
-
-.step {
-  margin-bottom: 20px; /* Increase margin bottom */
-}
-
-.step input,
-.step textarea {
-  margin-bottom: 15px; /* Adjust margin bottom */
-}
-
-.add-link-button,
-.delete-step-button {
-  background-color: #5997d9;
+.own-mindmap-container button {
+  background-color: #4caf50;
   color: #fff;
   border: none;
-  padding: 12px 34px; /* Increase padding */
-  font-size: 16px;
-  border-radius: 8px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-.delete-step-button {
-  background-color: #ec2d2d;
+.own-mindmap-container button:hover {
+  background-color: #45a049;
+}
+
+.own-mindmap-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.own-mindmap-container li {
+  margin-bottom: 10px;
+}
+
+.own-mindmap-container li span {
+  font-weight: bold;
+}
+
+.own-mindmap-container li button {
+  background-color: #f44336;
   color: #fff;
   border: none;
-  padding: 12px 34px; /* Increase padding */
-  font-size: 16px;
-  border-radius: 8px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.add-step-button,
-.submit-button {
-  background-color: #b02bb5;
-  color: #fff;
+.own-mindmap-container li button:hover {
+  background-color: #e53935;
+}
+/* Edit button styles */
+.own-mindmap-container li button.edit-button {
+  margin-left: 10px;
+  padding: 5px 10px;
   border: none;
-  padding: 12px 24px; /* Increase padding */
-  font-size: 16px;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
+  background-color: #4caf50;
+  color: white;
 }
 
-.submit-button {
-  background-color: #5da321;
-  color: #fff;
+/* Delete button styles */
+.own-mindmap-container li button.delete-button {
+  margin-left: 10px;
+  padding: 5px 10px;
   border: none;
-  padding: 12px 24px; /* Increase padding */
-  font-size: 16px;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-}
-
-.add-link-button:hover,
-.delete-step-button:hover,
-.add-step-button:hover,
-.submit-button:hover {
-  opacity: 1.0;
-}
-.add-link-button {
-  margin-right: 30px; /* Add margin between add link and delete buttons */
+  background-color: #f44336;
+  color: white;
 }

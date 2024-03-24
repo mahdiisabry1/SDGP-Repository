@@ -4,29 +4,29 @@ import { UserContext } from "../context/UserContext";
 import { URL } from "../url";
 import "./CSS/ownMindmap.css";
 
-const RoadmapManagement = () => {
+const OwnMindmap = () => {
   const { user } = useContext(UserContext);
-  const [roadmaps, setRoadmaps] = useState([]);
+  const [mindmaps, setMindmaps] = useState([]); // State to hold mind maps
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [steps, setSteps] = useState([{ title: "", description: "" }]);
-  const [currentRoadmapId, setCurrentRoadmapId] = useState(null);
+  const [steps, setSteps] = useState([{ title: "", description: "", links: [] }]);
+  const [currentMindmapId, setCurrentMindmapId] = useState(null); // State for current mind map ID
 
   useEffect(() => {
-    fetchRoadmaps();
+    fetchMindmaps(); // Fetch mind maps when component mounts
   }, []);
 
-  const fetchRoadmaps = async () => {
+  const fetchMindmaps = async () => {
     try {
-      const response = await axios.get(URL + "/api/roadmaps");
-      setRoadmaps(response.data);
+      const response = await axios.get(URL + "/api/mindmaps"); // Fetch all mind maps
+      setMindmaps(response.data);
     } catch (error) {
-      console.error("Error fetching roadmaps:", error);
+      console.error("Error fetching mind maps:", error);
     }
   };
 
-  const handleCreateRoadmap = async () => {
-    const roadmapData = {
+  const handleCreateMindmap = async () => {
+    const mindmapData = {
       title,
       description,
       steps,
@@ -35,100 +35,103 @@ const RoadmapManagement = () => {
     };
 
     try {
-      await axios.post(URL + "/api/roadmaps/createRoad", roadmapData, {
+      await axios.post(URL + "/api/mindmaps/create", mindmapData, {
         withCredentials: true,
       });
-      fetchRoadmaps();
+      fetchMindmaps(); // Refetch mind maps after creating a new one
     } catch (error) {
-      console.error("Error creating roadmap:", error);
+      console.error("Error creating mind map:", error);
     }
   };
 
-  const handleDeleteRoadmap = async (roadmapId) => {
+  const handleDeleteMindmap = async (mindmapId) => {
     try {
-      await axios.delete(URL + "/api/roadmaps/" + roadmapId, {
+      await axios.delete(URL + "/api/mindmaps/" + mindmapId, {
         withCredentials: true,
       });
-      fetchRoadmaps();
+      fetchMindmaps(); // Refetch mind maps after deleting one
     } catch (error) {
-      console.error("Error deleting roadmap:", error);
+      console.error("Error deleting mind map:", error);
     }
   };
 
-  const handleUpdateRoadmap = async () => {
-    const roadmapData = {
-      title,
-      description,
-      steps,
-      username: user.username,
-      userId: user._id,
-    };
-
-    try {
-      await axios.put(
-        URL + "/api/roadmaps/update/" + currentRoadmapId,
-        roadmapData,
-        {
-          withCredentials: true,
-        }
-      );
-      fetchRoadmaps();
-    } catch (error) {
-      console.error("Error updating roadmap:", error);
-    }
+  const handleAddStep = () => {
+    setSteps([...steps, { title: "", description: "", links: [] }]);
   };
+
+  const handleRemoveStep = (index) => {
+    const updatedSteps = [...steps];
+    updatedSteps.splice(index, 1);
+    setSteps(updatedSteps);
+  };
+
+  const handleTitleChange = (index, value) => {
+    const updatedSteps = [...steps];
+    updatedSteps[index].title = value;
+    setSteps(updatedSteps);
+  };
+
+  const handleDescriptionChange = (index, value) => {
+    const updatedSteps = [...steps];
+    updatedSteps[index].description = value;
+    setSteps(updatedSteps);
+  };
+
+  // Other CRUD operations (update, view) can be implemented similarly
 
   return (
-      <div className="create-roadmap-container">
-      <h2>Create Roadmap</h2>
+    <div className="own-mindmap-container">
+      <h2>Create Mind Map</h2>
       <input
         type="text"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="input"
       />
       <textarea
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button onClick={handleCreateRoadmap}>Create Roadmap</button>
-
-      <h2>Roadmaps</h2>
-      <ul>
-        {roadmaps.map((roadmap) => (
-          <li key={roadmap._id}>
-            <span>{roadmap.title}</span>
-            <button onClick={() => setCurrentRoadmapId(roadmap._id)}>
-              Edit
-            </button>
-            <button onClick={() => handleDeleteRoadmap(roadmap._id)}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
-
-      {currentRoadmapId && (
-        <>
-          <h2>Edit Roadmap</h2>
+      <h3>Steps</h3>
+      {steps.map((step, index) => (
+        <div key={index}>
           <input
             type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            placeholder={`Step ${index + 1} Title`}
+            value={step.title}
+            onChange={(e) => handleTitleChange(index, e.target.value)}
           />
           <textarea
-            placeholder="Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            placeholder={`Step ${index + 1} Description`}
+            value={step.description}
+            onChange={(e) => handleDescriptionChange(index, e.target.value)}
           />
-          <button onClick={handleUpdateRoadmap}>Update Roadmap</button>
-        </>
-      )}
+          <button onClick={() => handleRemoveStep(index)}>Remove Step</button>
+        </div>
+      ))}
+      <button onClick={handleAddStep}>Add Step</button>
+      <button onClick={handleCreateMindmap}>Create Mind Map</button>
+
+      <h2>Mind Maps</h2>
+      <ul>
+  {mindmaps.map((mindmap) => (
+    <li key={mindmap._id}>
+      <span>{mindmap.title}</span>
+      <button onClick={() => setCurrentMindmapId(mindmap._id)}>
+        Edit
+      </button>
+      <button onClick={() => handleDeleteMindmap(mindmap._id)}>
+        Delete
+      </button>
+    </li>
+  ))}
+</ul>
+
+
+      {/* Add editing form for current mind map if needed */}
     </div>
   );
 };
 
-export default RoadmapManagement;
+export default OwnMindmap;
