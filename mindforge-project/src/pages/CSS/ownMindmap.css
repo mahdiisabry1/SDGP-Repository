@@ -1,96 +1,86 @@
-/* ownMindmap.css */
-.own-mindmap-container {
-  max-width: 800px;
+.create-roadmap-container {
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://i.gifer.com/PVtR.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* Target all headings inside .create-roadmap-container */
+.label,
+.create-roadmap-container h3 {
+  color: white; /* Set font color to white */
+}
+.create-roadmap-container h2{
+  color: white;
+  font-weight: bold;
+}
+.form {
+  display: flex;
+  flex-direction: column;
 }
 
-.own-mindmap-container h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
+.form-group {
+  margin-bottom: 20px;
 }
 
-.own-mindmap-container input[type="text"],
-.own-mindmap-container textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-.own-mindmap-container button {
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin-right: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.own-mindmap-container button:hover {
-  background-color: #45a049;
-}
-
-.own-mindmap-container ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.own-mindmap-container li {
-  margin-bottom: 10px;
-}
-
-.own-mindmap-container li span {
+.label {
   font-weight: bold;
 }
 
-.own-mindmap-container li button {
-  background-color: #f44336;
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.steps {
+  margin-top: 20px;
+}
+
+.step {
+  margin-bottom: 10px;
+}
+
+.delete-step-button{
+  padding: 10px 20px;
+  background-color: #ff2828;
   color: #fff;
   border: none;
-  padding: 5px 10px;
-  margin-left: 5px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-}
 
-.own-mindmap-container li button:hover {
-  background-color: #e53935;
 }
-
-/* Edit button styles */
-.own-mindmap-container li button.edit-button {
-  margin-left: 10px;
-  padding: 5px 10px;
+.add-step-button,
+.submit-button {
+  padding: 10px 20px;
+  background-color: #487db5;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #4caf50;
-  color: white;
 }
 
-/* Delete button styles */
-.own-mindmap-container li button.delete-button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #f44336;
-  color: white;
+.delete-step-button,
+.add-step-button {
+  margin-top: 10px;
 }
 
-/* Provided styles */
-.result-container-centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+.submit-button {
+  margin-top: 20px;
+}
+
+.delete-step-button:hover{
+  background-color: #970d0d;
+}
+.submit-button:hover,
+.add-step-button:hover {
+  background-color: #033972;
 }
