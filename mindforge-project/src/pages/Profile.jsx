@@ -4,11 +4,11 @@ import NavBar from "../components/NavBar";
 import "./Profile.css";
 import { URL } from "../url";
 import { UserContext } from "../context/UserContext";
-import BlogPosts from "../components/BlogPosts";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import MyBlogs from "./MyBlogs";
 
 const Profile = () => {
+  const param = useParams().id;
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [posts, setPosts] = useState([]);
@@ -30,12 +30,12 @@ const Profile = () => {
 
   useEffect(() => {
     fetchProfile();
-  }, []);
+  }, [param]);
 
   // Fetching blog posts from the server
   const fetchPosts = async () => {
     try {
-      const res = await axios.get(URL + "/api/posts");
+      const res = await axios.get(URL + "/api/posts/user/"+user._id);
       setPosts(res.data);
     } catch (error) {
       console.log(error);
@@ -45,7 +45,7 @@ const Profile = () => {
   // Fetch blog posts when component mounts
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [param]);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -145,28 +145,17 @@ const Profile = () => {
             </ul>
           </div>
           {/* Content based on active tab */}
-          <div className="tab-content">
+          <div className="tab-content mb-10">
             {activeTab === "mindmaps" && (
               <div>
-                {posts
-                  .map((post) => (
-                    <>
-                      {/* Link to individual post */}
-                      <Link to={user ? `/posts/post/${post._id}` : "/"}>
-                        <MyBlogs key={post._id} post={post} />
-                      </Link>
-                    </>
-                  ))}
               </div>
             )}
-            {activeTab === "reads" && <div></div>}
+            {activeTab === "reads" && <div>
+              {posts?.map((p)=>(
+                <MyBlogs key={p._id} p={p} />
+              ))}
+              </div>}
           </div>
-          <div className="mt-20 logout-container">
-            <a href="/" className="logout-link">
-              Logout
-            </a>
-          </div>
-          <div className="footer">{/* Footer content */}</div>
         </div>
       </div>
     </div>
