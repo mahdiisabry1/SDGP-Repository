@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { UserContext } from "../context/UserContext";
 import { URL } from "../url";
 import "./CSS/ownMindmap.css";
@@ -75,7 +76,7 @@ const OwnMindmap = () => {
     const updatedSteps = [...steps];
     updatedSteps[index].description = value;
     setSteps(updatedSteps);
-  };
+  }
 
   // Other CRUD operations (update, view) can be implemented similarly
 
@@ -115,21 +116,28 @@ const OwnMindmap = () => {
 
       <h2>Mind Maps</h2>
       <ul>
-  {mindmaps.map((mindmap) => (
-    <li key={mindmap._id}>
-      <span>{mindmap.title}</span>
-      <button onClick={() => setCurrentMindmapId(mindmap._id)}>
-        Edit
-      </button>
-      <button onClick={() => handleDeleteMindmap(mindmap._id)}>
-        Delete
-      </button>
-    </li>
-  ))}
-</ul>
+        {mindmaps.map((mindmap) => (
+          <li key={mindmap._id}>
+            <span>{mindmap.title}</span>
+            <button onClick={() => setCurrentMindmapId(mindmap._id)}>
+              Edit
+            </button>
+            <button onClick={() => handleDeleteMindmap(mindmap._id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
 
-
-      {/* Add editing form for current mind map if needed */}
+      {user &&
+        mindmaps.map((post) => (
+          <Link to={`/roadmaps/roadmap/${post._id}`} key={post._id}>
+            <div className="RoadmapCreationContainer"> {/* Apply RoadmapCreationContainer class for each roadmap item */}
+              {/* Assuming RoadmapCreation component renders the roadmap item */}
+              <RoadmapCreation post={post} />
+            </div>
+          </Link>
+        ))}
     </div>
   );
 };
