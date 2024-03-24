@@ -1,4 +1,3 @@
-/* ownMindmap.css */
 .own-mindmap-container {
   max-width: 800px;
   margin: 0 auto;
@@ -63,7 +62,6 @@
 .own-mindmap-container li button:hover {
   background-color: #e53935;
 }
-
 /* Edit button styles */
 .own-mindmap-container li button.edit-button {
   margin-left: 10px;
@@ -84,13 +82,4 @@
   cursor: pointer;
   background-color: #f44336;
   color: white;
-}
-
-/* Provided styles */
-.result-container-centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
