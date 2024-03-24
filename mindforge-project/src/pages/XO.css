@@ -34,20 +34,3 @@
 .XO-box:hover {
   background-color: #f0f0f0; /* Change background color on hover */
 }
-
-/* Styles for the reset button */
-.XO-reset-button {
-  margin-top: 20px; /* Add top margin */
-  padding: 10px 20px; /* Set padding */
-  font-size: 1rem; /* Set font size */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  background-color: #06073f; /* Set background color */
-  color: #fff; /* Set text color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Add border radius */
-}
-
-/* Hover styles for the reset button */
-.XO-reset-button:hover {
-  background-color: #455aa0; /* Change background color on hover */
-}

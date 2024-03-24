@@ -60,21 +60,24 @@
 /* Candycrush.css */
 
 .reset-button {
-    background-color: #1e475f; /* Green */
+    background-color: #0a3f5e; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 12px 24px; /* Adjusted padding */
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px; /* Adjusted font size */
     margin: 4px 2px;
     cursor: pointer;
-  }
-  
-  .reset-button:hover {
-    background-color: #455aa0; /* Darker Green */
-  }
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1); /* Box shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.reset-button:hover {
+    background-color: #667fd1; /* Darker Green */
+}
   
   .reset-button:active {
     background-color: #3e3f8e; /* Active Green */
