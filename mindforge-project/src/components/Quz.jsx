@@ -265,11 +265,11 @@ const generateRecommendation = () => {
   const getRecommendation = (score) => {
     let recommendation = "";
     if (score >= 1 && score <= 9) {
-      recommendation = "Aesthetics Driven Designer";
+      recommendation = "Aesthetics Driven Designer -- Visualist --";
     } else if (score >= 10 && score <= 18) {
-      recommendation = "Functionality Oriented Designer";
+      recommendation = "Functionality Oriented Designer -- Pragmatist --";
     } else if (score >= 19 && score <= 27) {
-      recommendation = "Balanced Designer";
+      recommendation = "Balanced Designer -- Harmonizer --";
     } else {
       recommendation =
         "Stay inspired with us. Explore the latest trends and tips to fuel your web design journey.";
@@ -327,24 +327,24 @@ const generateRecommendation = () => {
           </div>
         ) : (
           <div className="result-container">
-            <h2>Thank you for completing the questionnaire!</h2>
-            <p>Your total score: {totalScore}</p>
-            <p>Click below to view your recommendation.</p>
-            <button
-              className="action-button"
-              onClick={handleShowTab}
-            >
-              Here is our Recommendation for you!
-            </button>
-            {showTab && (
-              <div className="Quztab-content">
-                {/* Render the tab content with the dynamically generated recommendation */}
-                <h2>Recommendation Tab</h2>
-                <p>{recommendation}</p>
-                
-              </div>
-            )}
-          </div>
+  <h2>Thank you for completing the questionnaire!</h2>
+  <p>Your total score: {totalScore}</p>
+  <p>Click below to view your recommendation.</p>
+  <button
+    className="action-button"
+    onClick={handleShowTab}
+  >
+    Here is our Recommendation for you!
+  </button>
+  {showTab && (
+    <div className="Quztab-content">
+      {/* Render the tab content with the dynamically generated recommendation */}
+      <h2>Our Recommendation deppend on your design preferences :</h2>
+      <div></div> {/* Empty div for line space */}
+      <p>{getRecommendation(totalScore)}</p> {/* Invoke getRecommendation function with totalScore */}
+    </div>
+  )}
+</div>
         )}
       </div>
     </>

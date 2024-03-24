@@ -9,9 +9,9 @@
   text-align: center; /* Center align the content */
   color: rgb(0, 0, 0); /* Set font color to white */
   padding: 60px 10px; /* Add padding for spacing */
-  background-color: #f0f4f7; /* Set background color */
-  border-radius: 50px; /* Add border radius for rounded corners */
-  box-shadow: 0 4px 8px rgb(92, 172, 253); /* Add box shadow for depth */
+  background-color: rgba(255, 255, 255, 0.9); /* Set background color */
+  border-radius: 30px; /* Add border radius for rounded corners */
+  box-shadow: 0 6px 8px rgb(92, 172, 253); /* Add box shadow for depth */
   width: 50%; /* Adjust the width of the tab content */
   margin: 50px auto; /* Center the tab content horizontally and move it down */
 }
@@ -28,7 +28,7 @@
   margin-bottom: 0vh;
   margin-left: auto; /* Centering the container horizontally */
   margin-right: auto;
-  background: rgba(255, 255, 255, 0.879); /* Background color for the container */
+  background: rgba(255, 255, 255, 0.9); /* Background color for the container */
   border-radius: 15px; /* Rounded corners for a softer appearance */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle lift */
   padding: 60px; /* Padding around the content */
