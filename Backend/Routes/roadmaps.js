@@ -43,4 +43,14 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+router.get("/:id",async (req,res)=>{
+    try{
+        const roadmaps=await Roadmap.findById(req.params.id)
+        res.status(200).json(roadmaps)
+    }
+    catch(error){
+        res.status(500).json(error)
+    }
+})
+
 module.exports = router;

@@ -75,7 +75,7 @@ def main():
 
     if choice == "Courses":
         st.subheader("Course Recommendation")
-        st.text("The platform recommends you udemy courses based on a given Course title or subject")
+        st.text("The platform recommends you udemy courses based on a given Course title, subject\nOr Use any keyword for searching")
         st.subheader("Copy and paste the Course title")
         st.text("Here are some famous udemy Courses based on web designing")
         st.text("React JS and Redux - Mastering Web Apps\nThe Complete HTML and CSS Course For Beginners\nLearn and Understand AngularJS\nExpressJS Fundamentals\nCSS :basics for beginners")
@@ -101,7 +101,14 @@ def main():
                 except:
                     st.info("Suggested Courses")
                     result_df = search_term_if_not_found(search_course, df)
-                    st.dataframe(result_df)
+                    for row in result_df.iterrows():
+                        rec_title = row[1][0]
+                        rec_score = row[1][1]
+                        rec_url = row[1][2]
+                        rec_price = row[1][3]
+                        rec_num_sub = row[1][4]
+                
+                        stc.html(Recommendation_style.format(rec_score, rec_title, rec_url, rec_price, rec_num_sub), height=250)
 
 
                 

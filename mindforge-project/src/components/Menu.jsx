@@ -20,7 +20,7 @@ const Menu = () => {
         <nav className="MenuNav">
           <ul className="Menu-com">
             <li>
-              <a onClick={openModel}>Guidelines</a>
+              <a onClick={openModel} className='cursor-pointer'>Guidelines</a>
             </li>
             <li>
               <a href="/Home">Visit</a>
