@@ -101,7 +101,7 @@ const PostDetails = () => {
           <p>{new Date(post.updatedAt).toString().slice(16, 24)}</p>
         </div>
         <img src={IF + post.photo} className="w-1/2 relative left-1/4" alt="" />
-        <p>{post.desc}</p>
+        <p className="text-justify mt-7">{post.desc}</p>
         <div className="flex items-center mt-8 space-x-4 font-semibold">
           <p>Categories:</p>
           <div className="flex justify-center items-center space-x-2">
