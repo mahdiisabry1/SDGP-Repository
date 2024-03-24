@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Guidelines.css'; // Import CSS file for custom styles
+import './CSS/Guidelines.css'; // Import CSS file for custom styles
 
 // Define the GuidelinePage component
 function GuidelinePage() {
