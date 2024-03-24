@@ -13,8 +13,15 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh 'cd Backend && npm test' || error 'Failed to run tests in Backend directory'
-                    sh 'cd mindforge-project && npm test' || error 'Failed to run tests in mindforge-project directory'
+                    def backendTestResult = sh(script: 'cd Backend && npm test', returnStatus: true)
+                    if (backendTestResult != 0) {
+                        error 'Failed to run tests in Backend directory'
+                    }
+                    
+                    def frontendTestResult = sh(script: 'cd mindforge-project && npm test', returnStatus: true)
+                    if (frontendTestResult != 0) {
+                        error 'Failed to run tests in mindforge-project directory'
+                    }
                 }
             }
         }
