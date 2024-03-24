@@ -3,12 +3,14 @@ import axios from "axios";
 import "./CSS/ownMindmap.css";
 import { UserContext } from "../context/UserContext";
 import { URL } from "../url";
+import { useNavigate } from "react-router-dom";
 
 const CreateRoadMap = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [steps, setSteps] = useState([{ title: "", description: "" }]);
   const { user } = useContext(UserContext);
+  const navigator = useNavigate()
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
@@ -48,6 +50,7 @@ const CreateRoadMap = () => {
       }
     );
     console.log("Roadmap created:", response.data);
+    navigator("/RoadMap");
     // Optionally, redirect the user or perform other actions upon successful creation
   } catch (error) {
     console.error("Error creating roadmap:", error);
