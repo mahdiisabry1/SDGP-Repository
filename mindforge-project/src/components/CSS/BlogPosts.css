@@ -1,32 +1,20 @@
-/* Styles for the image section */
 .the-image-section {
-    /* Set width to 35% of its containing block */
     width: 35%;
-    /* Set height to 200 pixels */
     height: 200px;
-    /* Make flex container */
     display: flex;
-    /* Center align both horizontally and vertically */
     justify-content: center;
     align-items: center;
 }
 
-/* Styles for images inside the image section */
 .the-image-section img {
-    /* Set image height to fill its container */
     height: 100%;
-    /* Set image width to 80% of its container */
     width: 80%;
-    /* Maintain aspect ratio and cover entire container */
     object-fit: cover;
 }
 
-/* Styles for the blog container */
+
 .the-blog-container {
-    /* Set width to 100% of its containing block */
     width: 100%;
-    /* Make flex container */
     display: flex;
-    /* Add space above the container */
     margin-top: 2rem;
 }

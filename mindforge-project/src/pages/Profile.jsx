@@ -57,22 +57,22 @@ const Profile = () => {
     setProfilePhoto(selectedPhoto);
   };
 
-  // Function to handle profile photo upload
-  // const uploadProfilePhoto = async () => {
-  //   try {
-  //     const formData = new FormData();
-  //     formData.append("profilePhoto", profilePhoto);
-  //     // Make a request to upload the profile photo
-  //     // Replace '/api/uploadProfilePhoto' with your actual API endpoint for uploading photos
-  //     await axios.post("/api/uploadProfilePhoto", formData);
-  //     // Optionally, you can update the user data in state after the photo is uploaded
-  //     // Fetch updated user data again
-  //     const response = await axios.get("/api/userData");
-  //     setUserData(response.data);
-  //   } catch (error) {
-  //     console.error("Error uploading profile photo:", error);
-  //   }
-  // };
+ // Function to handle profile photo upload
+  const uploadProfilePhoto = async () => {
+    try {
+      const formData = new FormData();
+      formData.append("profilePhoto", profilePhoto);
+      // Make a request to upload the profile photo
+      // Replace '/api/uploadProfilePhoto' with your actual API endpoint for uploading photos
+      await axios.post("/api/uploadProfilePhoto", formData);
+      // Optionally, you can update the user data in state after the photo is uploaded
+      // Fetch updated user data again
+      const response = await axios.get("/api/userData");
+      setUserData(response.data);
+    } catch (error) {
+      console.error("Error uploading profile photo:", error);
+    }
+  };
 
   return (
     <div className="profile-wrapper">
