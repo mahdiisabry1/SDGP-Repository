@@ -1,3 +1,4 @@
+// Import React and other necessary modules
 import React, { useState } from "react";
 import "./CSS/Gameroom.css";
 import XO from "./XO.jsx";
@@ -34,14 +35,13 @@ const GameRoom = () => {
             className={activeTab === "tab3" ? "active" : ""}
             onClick={() => handleTabClick("tab3")}
           >
-            MoreGames
+            More Games
           </button>
         </div>
 
         {/* Content for tabs */}
         {activeTab === "tab1" && (
           <div>
-            
             <XO />
           </div>
         )}
@@ -49,7 +49,6 @@ const GameRoom = () => {
         {/* Content for tabs */}
         {activeTab === "tab2" && (
           <div>
-            
             <Candycrush />
           </div>
         )}
@@ -57,8 +56,8 @@ const GameRoom = () => {
         {/* Content for tabs */}
         {activeTab === "tab3" && (
           <div className="more-games-container">
-            
             <div className="game-chart">
+              {/* Display game items */}
               {games.map((game, index) => (
                 <GameItem
                   key={index}
