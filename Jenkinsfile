@@ -1,27 +1,29 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
                 git url: 'https://github.com/mahdiisabry1/SDGP-Repository'
-        
-                sh 'cd Backend && npm install'
-
-                // Build React frontend
-                sh 'cd mindforge-project && npm install && npm run build'
             }
         }
-        stage('Test') {
+        stage('Build Backend') {
             steps {
-                // Run tests for backend
-                sh 'cd Backend && npm test'
-                // Run tests for frontend
-                sh 'cd mindforge-project && npm test'
+                dir('Backend') {
+                    sh 'mvn clean package'
+                }
+            }
+        }
+        stage('Build Frontend') {
+            steps {
+                dir('mindforge-project') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
             }
         }
         stage('Deploy') {
             steps {
-                echo 'No deployment steps specified yet'
+                echo 'Deployment steps go here'
             }
         }
     }
