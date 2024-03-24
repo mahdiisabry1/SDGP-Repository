@@ -42,10 +42,11 @@ router.delete('/:id', async (req, res) => {
         res.status(500).send('Error in Deletion');
     }
 });
+
 router.get("/:id",async (req,res)=>{
     try{
-        const roadmaps=await Post.findById(req.params.id)
-        res.status(200).json(post)
+        const roadmaps=await Roadmap.findById(req.params.id)
+        res.status(200).json(roadmaps)
     }
     catch(error){
         res.status(500).json(error)
