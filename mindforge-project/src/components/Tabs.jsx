@@ -5,6 +5,7 @@ const Tabs = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [answers, setAnswers] = useState(Array(5).fill('')); // Array to store user answers
+  const [file, setFile] = useState(null); // State to store uploaded file
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
@@ -144,6 +145,20 @@ const Tabs = () => {
     });
   };
 
+  const additionalContent = (
+    <div>
+      <p>End of Questions</p>
+      {isAllAnswersCorrect() && (
+        <button
+          className="mt-5 bg-black w-full text-white hover:bg-slate-500"
+          onClick={handleCertificationClick}
+        >
+          Get Your Certification
+        </button>
+      )}
+    </div>
+  );
+
   return (
     <div>
       <div className="tab-container">
@@ -185,6 +200,17 @@ const Tabs = () => {
                       onChange={handleAnswerChange}
                     />
 
+                    {/* File upload input */}
+                    <div className="flex items-center space-x-4 md:space-x-8 mt-5">
+                      <label htmlFor={`file-${questionIndex}`}>Upload a File</label>
+                      <input
+                        onChange={(e) => setFile(e.target.files[0])}
+                        type="file"
+                        className="flex-1"
+                        id={`file-${questionIndex}`}
+                      />
+                    </div>
+
                     {isAnswerProvided && (
                       <div style={{ borderTop: "1px solid #ccc", marginTop: "10px", paddingTop: "10px" }}>
                         <button
@@ -209,18 +235,8 @@ const Tabs = () => {
               </div>
             ))}
             
-            <div>
-              {/* Additional content for all tabs */}
-              <p>End of Questions</p>
-              {isAllAnswersCorrect() && (
-                <button
-                  className="mt-5 bg-black w-full text-white hover:bg-slate-500"
-                  onClick={handleCertificationClick}
-                >
-                  Get Your Certification
-                </button>
-              )}
-            </div>
+            {/* Additional content for all tabs */}
+            {additionalContent}
           </div>
         )}
       </div>
