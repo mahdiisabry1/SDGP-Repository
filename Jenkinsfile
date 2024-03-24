@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git https://github.com/mahdiisabry1/SDGP-Repository
-                
+                git url: 'https://github.com/mahdiisabry1/SDGP-Repository'
+        
                 sh 'cd Backend && npm install'
 
                 // Build React frontend
