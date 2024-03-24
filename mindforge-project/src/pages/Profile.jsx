@@ -109,33 +109,36 @@ const Profile = () => {
       <div className="profile-content">
       <div className="mt-20 text-center">
   <div className="input-group">
-    <label htmlFor="username">Username:</label>
+    <label htmlFor="username" className="label">Username:</label>
     <input
       type="text"
       id="username"
       onChange={(e) => setUsername(e.target.value)}
       value={username}
+      className="input"
       disabled
     />
   </div>
   <div className="input-group">
-    <label htmlFor="Email">Email:</label>
+    <label htmlFor="Email" className="label">Email:</label>
     <input
       type="text"
       id="Email"
       onChange={(e) => setUsername(e.target.value)}
       value={email}
+      className="input"
       disabled
     />
   </div>
 
   <div className="input-group">
-    <label htmlFor="Password">Password:</label>
+    <label htmlFor="Password" className="label">PassWord:</label>
     <input
-      type="password"
+      type="text"
       id="Password"
       onChange={(e) => setPassword(e.target.value)}
       value={password}
+      className="input"
       disabled
     />
   </div>
