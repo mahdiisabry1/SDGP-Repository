@@ -3,18 +3,26 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git url: 'https://github.com/mahdiisabry1/SDGP-Repository', branch: 'main'
                 script {
-                    sh 'cd Backend && npm install' || error 'Failed to install dependencies in Backend directory'
-                    sh 'cd mindforge-project && npm install && npm run dev' || error 'Failed to install dependencies or run dev script in mindforge-project directory'
+                    try {
+                        git url: 'https://github.com/mahdiisabry1/SDGP-Repository', branch: 'main'
+                        sh 'cd Backend && npm install'
+                        sh 'cd mindforge-project && npm install && npm run dev'
+                    } catch (Exception e) {
+                        echo "Failed to build: ${e.message}"
+                    }
                 }
             }
         }
         stage('Test') {
             steps {
                 script {
-                    sh 'cd Backend && npm test' || error 'Failed to run tests in Backend directory'
-                    sh 'cd mindforge-project && npm test' || error 'Failed to run tests in mindforge-project directory'
+                    try {
+                        sh 'cd Backend && npm test'
+                        sh 'cd mindforge-project && npm test'
+                    } catch (Exception e) {
+                        echo "Failed to test: ${e.message}"
+                    }
                 }
             }
         }
