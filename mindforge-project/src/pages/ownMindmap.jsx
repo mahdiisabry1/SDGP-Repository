@@ -79,13 +79,14 @@ const RoadmapManagement = () => {
   };
 
   return (
-    <div className="roadmap-management-container">
+      <div className="create-roadmap-container">
       <h2>Create Roadmap</h2>
       <input
         type="text"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        className="input"
       />
       <textarea
         placeholder="Description"

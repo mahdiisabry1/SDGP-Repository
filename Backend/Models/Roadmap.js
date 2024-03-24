@@ -6,8 +6,8 @@ const roadmapSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    description: String, // Optional description field
-    steps: [{ // Array of steps, each with a title and description
+    description: String,
+    steps: [{ 
         title: String,
         description: String
     }],
