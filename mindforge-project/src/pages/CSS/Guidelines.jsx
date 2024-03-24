@@ -18,7 +18,6 @@ function GuidelinePage() {
       <h2>2. MindMaps</h2>
       <p>You can choose your mind map according to your preference and you can follow the mind map and improve your knowledge.</p>
       <p>At there we have linked important tutorials and certification courses too.</p>
-      <p>You can also create your own mind map that does not exist on our website.</p>
 
       {/* Section 3: Certification */}
       <h2>3. Certification</h2>

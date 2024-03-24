@@ -103,13 +103,13 @@ background-color: #759b9c;
   margin-bottom: 20px; /* Adjust the value as needed */
 }
 
-.label {
+.profilelabel {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-.input {
+.profileinput {
   width: 20%;
   padding: 3px;
   font-size: 16px;
@@ -117,6 +117,6 @@ background-color: #759b9c;
   border-radius: 5px;
 }
 
-.input:disabled {
+.profileinput:disabled {
   background-color: #dbf3f0; /* Change disabled input background color */
 }

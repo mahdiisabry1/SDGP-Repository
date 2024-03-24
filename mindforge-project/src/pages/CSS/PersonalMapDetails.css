@@ -1,0 +1,38 @@
+/* Apply styles to the RoadmapDetails component */
+
+/* Style the container */
+.p-44 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://i.gifer.com/PVtR.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  /* Target headings inside .p-44 */
+  .p-44 h1,
+  .p-44 p {
+    color: white; /* Set font color to white */
+  }
+  
+  /* Style the title */
+  .p-44 h1 {
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Style the paragraphs */
+  .p-44 p {
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  /* Adjust button styles if any */
+  
+  /* You can add more specific styles if needed */
+  
