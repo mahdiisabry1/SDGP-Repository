@@ -98,3 +98,8 @@ background-color: #759b9c;
   height: 100%;
   opacity: 0;
 }
+
+/* Inside your CSS file or style section */
+.input-group {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}

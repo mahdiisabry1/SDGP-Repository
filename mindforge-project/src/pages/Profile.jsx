@@ -103,29 +103,43 @@ const Profile = () => {
           )}
         </div>
         <div className="mt-40 text-center">
-          <h1 className="text-6xl mb-20">Welcome to Your Profile</h1>
+          <h1 className="text-6xl mb-20">Welcome Your Profile</h1>
         </div>
       </div>
       <div className="profile-content">
-        <div className="mt-20 text-center">
-          <div>
-            <label htmlFor="username">Username : </label>
-            <input
-              type="text"
-              id="username"
-              onChange={(e) => setUsername(e.target.value)}
-              value={username}
-              disabled
-            />
-            <label htmlFor="Email">Email : </label>
-            <input
-              type="text"
-              id="Email"
-              onChange={(e) => setUsername(e.target.value)}
-              value={email}
-              disabled
-            />
-          </div>
+      <div className="mt-20 text-center">
+  <div className="input-group">
+    <label htmlFor="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      onChange={(e) => setUsername(e.target.value)}
+      value={username}
+      disabled
+    />
+  </div>
+  <div className="input-group">
+    <label htmlFor="Email">Email:</label>
+    <input
+      type="text"
+      id="Email"
+      onChange={(e) => setUsername(e.target.value)}
+      value={email}
+      disabled
+    />
+  </div>
+
+  <div className="input-group">
+    <label htmlFor="Password">Password:</label>
+    <input
+      type="password"
+      id="Password"
+      onChange={(e) => setPassword(e.target.value)}
+      value={password}
+      disabled
+    />
+  </div>
+
           <div className="mt-20">
             <ul className="tab-list">
               <li
@@ -146,21 +160,30 @@ const Profile = () => {
           </div>
           {/* Content based on active tab */}
           <div className="tab-content">
-            {activeTab === "mindmaps" && (
-              <div>
-                {posts
-                  .map((post) => (
-                    <>
-                      {/* Link to individual post */}
-                      <Link to={user ? `/posts/post/${post._id}` : "/"}>
-                        <MyBlogs key={post._id} post={post} />
-                      </Link>
-                    </>
-                  ))}
-              </div>
-            )}
-            {activeTab === "reads" && <div></div>}
-          </div>
+  {activeTab === "mindmaps" && (
+    <div>
+      {posts.length === 0 ? (
+        <p>No Mindmaps by You</p>
+      ) : (
+        posts.map((post) => (
+          <Link to={user ? `/posts/post/${post._id}` : "/"}>
+            <MyBlogs key={post._id} post={post} />
+          </Link>
+        ))
+      )}
+    </div>
+  )}
+  {activeTab === "reads" && (
+    <div>
+      {posts.length === 0 ? (
+        <p>No Posts by You</p>
+      ) : (
+        <div>{/* Render posts content here */}</div>
+      )}
+    </div>
+  )}
+</div>
+
           <div className="mt-20 logout-container">
             <a href="/" className="logout-link">
               Logout
