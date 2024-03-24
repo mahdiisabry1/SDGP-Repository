@@ -8,18 +8,19 @@
 .Quztab-content {
   text-align: center; /* Center align the content */
   color: rgb(0, 0, 0); /* Set font color to white */
-  padding: 60px 10px; /* Add padding for spacing */
+  padding: 90px 10px; /* Add padding for spacing */
   background-color: rgba(255, 255, 255, 0.9); /* Set background color */
   border-radius: 30px; /* Add border radius for rounded corners */
   box-shadow: 0 6px 8px rgb(92, 172, 253); /* Add box shadow for depth */
   width: 50%; /* Adjust the width of the tab content */
-  margin: 50px auto; /* Center the tab content horizontally and move it down */
+  margin: 150px auto; /* Center the tab content horizontally and move it down */
 }
 
 
 /* Optional: Style the tab button container */
 .Quztab-button-container {
   text-align: center; /* Center align the buttons */
+  
 }
 
 /* Styling for the container holding the survey questions */
@@ -68,17 +69,17 @@
 
 /* Styling for hover effect on answer options */
 .option-item:hover {
-  background-color: #84dadd; /* Background color on hover */
+  background-color: #8b98e2; /* Background color on hover */
 }
 
 
 .action-button {
-  background-color: #23a43f; /* Background color for the button */
+  background-color: #2350a4; /* Background color for the button */
   color: #ffffff; /* Text color */
   padding: 10px 20px; /* Padding for the button */
-  font-size: 1rem;
+  font-size: 1.1rem;
   border: none; /* Remove border */
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 5px; /* Rounded corners */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for background color */
   display: block; /* Change display to block to make it a block-level element */
@@ -89,7 +90,7 @@
 
 /* Styling for hover effect on the submit/next button */
 .action-button:hover {
-  background-color: #64c27a; /* Background color on hover */
+  background-color: #3d68ad; /* Background color on hover */
 }
 
 /* Styling for the result message after completing the quiz */
@@ -100,12 +101,12 @@
 
 /* Styling for selected answer options */
 .question-option-item.selected {
-  background-color: #8dc7d9; /* Background color for selected options */
+  background-color: #8da0d9; /* Background color for selected options */
 }
 
 /* Styling for selected answer options with hover effect */
 .option-item.selected {
-  background-color: #30abbe; /* Background color for selected options */
+  background-color: #385fc3; /* Background color for selected options */
   color: #ffffff; /* Text color for selected options */
 }
 .result-container-centered {
