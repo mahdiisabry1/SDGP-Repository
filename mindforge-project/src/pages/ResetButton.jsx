@@ -1,31 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Define a functional component called ResetButton
 export const ResetButton = ({ resetBoard }) => {
+    const [hovered, setHovered] = useState(false); // State to track hover
+
     // Define inline styles for the button
     const buttonStyle = {
         border: 'none',
         borderRadius: '0.5rem',
-        backgroundColor: 'rgb(0, 110, 255)',
+        backgroundColor: hovered ? 'rgb(236, 70, 70)' : 'rgb(198, 17, 17)',
         color: 'white',
-        fontSize: '2rem',
+        fontSize: '1.5rem',
         padding: '0.5rem 1rem',
         margin: '2rem auto',
         display: 'block',
+        boxShadow: hovered ? '10px 10px 10px rgba(0, 0, 0, 1)' : 'none', // Add box-shadow on hover
+        transition: 'background-color 0.3s, box-shadow 0.3s', // Add transition for smooth effect
+    }
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+    const handleMouseLeave = () => {
+        setHovered(false);
     };
 
-    // Define hover style for the button
-    const hoverStyle = {
-        backgroundColor: 'rgb(0, 119, 255)',
-    };
 
     // Return JSX for the ResetButton component
     return (
         <button
-            style={{ ...buttonStyle }} // Apply buttonStyle as inline style
-            onMouseEnter={() => this.setState(hoverStyle)} // Change button style on hover
-            onMouseLeave={() => this.setState(buttonStyle)} // Revert button style on mouse leave
-            onClick={resetBoard} // Call resetBoard function on button click
+            style={{ ...buttonStyle }}
+            onMouseEnter={handleMouseEnter} // Call handleMouseEnter on mouse enter
+            onMouseLeave={handleMouseLeave} // Call handleMouseLeave on mouse leave
+            onClick={resetBoard}
         >
             Reset {/* Button text */}
         </button>

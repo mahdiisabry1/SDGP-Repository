@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Importing Link from react-router-dom
 import ScoreBoard from "../components/ScoreBoard"; // Importing ScoreBoard component
 import blank from "./images/blank.png"; // Importing blank image
 import greenCandy from "./images/green-candy.png"; // Importing green candy image
