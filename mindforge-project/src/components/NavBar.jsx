@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
 import React, { useContext, useState, useEffect } from "react";
@@ -49,6 +50,7 @@ const NavBar = () => {
           withCredentials: true,
         });
         setUser(null);
+        navigate("/Home")
       }
     } catch (error) {
       console.log(error);
@@ -112,7 +114,7 @@ const NavBar = () => {
                   <MdCreate />
                 </button>
               </Link>
-              <Link to="/profile" >
+              <Link to={"/profile/"+user._id} >
                 <button className="create-profile-logout">
                   <CgProfile />
                 </button>

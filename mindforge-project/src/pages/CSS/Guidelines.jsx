@@ -39,7 +39,7 @@ function GuidelinePage() {
       <p>In the profile, it displays your Username and Password.</p>
       <p>Also, it displays the work you have done so far.</p>
       <p>ex: If you have created a mind map by your own, it displays in the profile.</p>
-      <p>ex: If you have created a read, it displays in the profile.</p>
+      <p>ex: If you have created a Post, it displays in the profile.</p>
 
       {/* Section 7: Additional Guidelines */}
       <div className="additional-guidelines">

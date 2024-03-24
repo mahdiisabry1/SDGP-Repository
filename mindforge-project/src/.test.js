@@ -2,16 +2,16 @@ import '@testing-library/jest-dom';
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import QuestionSurvey from './QuestionSurvey'; // Adjust the import path based on your file structure
+import Quz from './components/Quz'; // Adjust the import path based on your file structure
 
 describe('QuestionSurvey component', () => {
   test('renders QuestionSurvey component', () => {
-    const { getByText } = render(<QuestionSurvey />);
+    const { getByText } = render(<Quz />);
     expect(getByText('Web Design Preferences Questionnaire')).toBeInTheDocument();
   });
 
   test('allows user to select an option and move to the next question', () => {
-    const { getByText, getByTestId } = render(<QuestionSurvey />);
+    const { getByText, getByTestId } = render(<Quz />);
     const option = getByText('Aesthetics are crucial; I want my designs to be visually stunning and unique.');
     fireEvent.click(option);
 

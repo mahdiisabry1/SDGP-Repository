@@ -93,7 +93,7 @@ const router = createBrowserRouter([
         element: <EditPost />,
       },
       {
-        path: "/profile",
+        path: "/profile/:id",
         element: <Profile />,
       },
       {
