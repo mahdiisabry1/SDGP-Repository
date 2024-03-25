@@ -23,23 +23,7 @@ const Model = ({ isOpen, onClose }) => {
               page.
             </p>
 
-            {/* Section 1: Quiz */}
-            <h2 style={{ color: "black" }}>1. Quiz</h2>
-            <p>
-              There is a quiz in the Home page. By completing it you can get a
-              web developer suggestion according to your answers.
-            </p>
-
-            {/* Section 2: MindMaps */}
-            <h2 style={{ color: "black" }}>2. MindMaps</h2>
-            <p>
-              You can choose your mind map according to your preference and you
-              can follow the mind map and improve your knowledge.
-            </p>
-            <p>
-              At there we have linked important tutorials and certification
-              courses too.
-            </p>
+            
             <h2>1. Be Respectful</h2>
             <p>
               Respect other users and their opinions. Avoid offensive language
@@ -63,6 +47,7 @@ const Model = ({ isOpen, onClose }) => {
               Respect the privacy of others. Do not share personal information
               without consent.
             </p>
+
           </div>
         </div>
       </div>

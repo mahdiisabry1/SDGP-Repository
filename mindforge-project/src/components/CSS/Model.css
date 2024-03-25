@@ -10,31 +10,31 @@
     /* Center align the container horizontally */
     margin: 0 auto;
     /* Add padding around the container */
-    padding: 5px;
+    padding: 25px;
   }
   
   /* Styles for heading level 1 */
   h1 {
     /* Set font size to 28 pixels */
-    font-size: 20px;
+    font-size: 26px;
     /* Add space below the heading */
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   
   /* Styles for heading level 2 */
   h2 {
     /* Set font size to 24 pixels */
-    font-size: 18px;
+    font-size: 22px;
     /* Add space above the heading */
-    margin-top: 5px;
+    margin-top: 8px;
     /* Add space below the heading */
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
   
   /* Styles for paragraphs */
   p {
     /* Set font size to 16 pixels */
-    font-size: 16px;
+    font-size: 18px;
     /* Set line height to 1.5 times the font size */
     line-height: 1.5;
     /* Add space below paragraphs */
