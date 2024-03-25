@@ -1,11 +1,9 @@
 /* Modern styles for the RoadmapDetails component */
 
 /* Container background overlay */
-.p-44::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.p-44 {
+  margin-top: 20%;
+  margin-bottom: 20%;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
@@ -20,7 +18,7 @@
   transition: transform 0.3s ease; /* Smooth transition for hover effect */
   width: 80%; /* Adjust width for better visibility */
   max-width: 600px; /* Set maximum width */
-  margin: 20px auto; /* Center the container */
+  left: 30%; /* Center the container */
   padding: 30px; /* Add padding for content */
   display: flex;
   flex-direction: column;
