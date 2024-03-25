@@ -17,6 +17,7 @@ const Profile = () => {
   const [activeTab, setActiveTab] = useState("roadmaps");
   const { user } = useContext(UserContext);
   const [profilePhoto, setProfilePhoto] = useState(null); // State to hold the selected profile photo
+  const [profilePhotoURL, setProfilePhotoURL] = useState(""); // State to hold the URL of the selected profile photo
 
   const fetchProfile = async () => {
     try {
@@ -55,9 +56,16 @@ const Profile = () => {
   const handleProfilePhotoChange = (event) => {
     const selectedPhoto = event.target.files[0];
     setProfilePhoto(selectedPhoto);
+
+    // Read the selected file and set its URL
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setProfilePhotoURL(e.target.result);
+    };
+    reader.readAsDataURL(selectedPhoto);
   };
 
- // Function to handle profile photo upload
+  // Function to handle profile photo upload
   const uploadProfilePhoto = async () => {
     try {
       const formData = new FormData();
@@ -78,30 +86,37 @@ const Profile = () => {
     <div className="profile-wrapper">
       <div className="profile-bg">
         <NavBar />
-        <div className="profile-photo-container">
-          {/* Display selected profile photo */}
-          {profilePhoto ? (
-            <img
-              src={URL.createObjectURL(profilePhoto)}
-              alt="Profile"
-              className="profile-photo"
-            />
-          ) : (
-            <label
-              htmlFor="profile-photo-input"
-              className="profile-photo-placeholder"
-            >
-              <span className="plus-sign">+</span>
-              <input
-                type="file"
-                id="profile-photo-input"
-                onChange={handleProfilePhotoChange}
-                accept="image/*"
-                className="profile-photo-input"
-              />
-            </label>
-          )}
-        </div>
+        
+<div className="profile-photo-container">
+  {/* Display selected profile photo */}
+  {profilePhotoURL ? (
+    <>
+      <img
+        src={profilePhotoURL}
+        alt="Profile"
+        className="profile-photo"
+      />
+      <button className="delete-profile-photo" onClick={() => setProfilePhotoURL("")}>
+        Delete
+      </button>
+    </>
+  ) : (
+    <label
+      htmlFor="profile-photo-input"
+      className="profile-photo-placeholder"
+    >
+      <span className="plus-sign">+</span>
+      <input
+        type="file"
+        id="profile-photo-input"
+        onChange={handleProfilePhotoChange}
+        accept="image/*"
+        className="profile-photo-input"
+      />
+    </label>
+  )}
+</div>
+
         <div className="mt-40 text-center">
           <h1 className="text-6xl mb-20">Welcome Your Profile</h1>
         </div>
