@@ -3,7 +3,18 @@
     "builds": [
         {
             "src":"*.js",
-            "use":"@vercel/node"
+            "use":"@vercel/node",
+            "config": {
+                "build": {
+                    "maxDuration": 60,
+                    "env": {
+                        "MY_ENV_VAR": "my-value"
+                    }
+                },
+                "development": {
+                    "port": 3000
+                }
+            }
         }
     ],
     "routes":[
