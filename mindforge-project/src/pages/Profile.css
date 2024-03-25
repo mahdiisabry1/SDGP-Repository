@@ -120,3 +120,20 @@ background-color: #759b9c;
 .profileinput:disabled {
   background-color: #dbf3f0; /* Change disabled input background color */
 }
+
+.delete-profile-photo {
+  background-color: #629ead;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.delete-profile-photo:hover {
+  background-color: #236272;
+}
+
+
