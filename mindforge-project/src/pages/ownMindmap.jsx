@@ -12,27 +12,37 @@ const CreateRoadMap = () => {
   const { user } = useContext(UserContext);
   const navigator = useNavigate()
 
+  // Function to handle changes in the description input
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
   };
+  // Function to handle changes in the title input of each step
   const handleStepTitleChange = (index, e) => {
     const newSteps = [...steps];
     newSteps[index].title = e.target.value;
     setSteps(newSteps);
   };
+
+   // Function to handle changes in the description input of each step
   const handleStepDescriptionChange = (index, e) => {
     const newSteps = [...steps];
     newSteps[index].description = e.target.value;
     setSteps(newSteps);
   };
+
+  // Function to add a new step
   const handleAddStep = () => {
     setSteps([...steps, { title: "", description: "" }]);
   };
+
+  // Function to delete a step
   const handleDeleteStep = (index) => {
     const newSteps = [...steps];
     newSteps.splice(index, 1);
     setSteps(newSteps);
   };
+
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     const roadmapData = {
