@@ -6,6 +6,8 @@ Earn certifiacations
 And create technical blogs and show case their knowledge
 A gameroom is being developed (On progress) where instructers also can join nd create their quiz game and the Students can join and play the game and be ranked
 
+Technonologies Used:  MongoDB, Express.js, React.js, Node.js, TailwindCSS, JWT for authentication,bcrypt for password hashing, cookieparser for session management, Jenkins for CI/CD
+Machine Learning Technologies : : python, scikit-learn, Streamlit, Pandas
 
 _Follow the steps_:
 
