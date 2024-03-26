@@ -39,6 +39,9 @@ ScreenShots
 
 ![Screenshot 2024-03-26 120201](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/1700fb5b-173c-4f79-8608-c9f6ff43d627)
 
+![Screenshot 2024-03-26 120106](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/4c82e82d-42d8-4053-931b-c7676e39205d)
+
+
 ![Screenshot 2024-03-26 120259](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/15688b31-1d74-4d6b-b40f-6a54e56d96ba)
 
 ![Screenshot 2024-03-26 120337](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/fb768fc8-25e7-48c2-b47b-94469144632a)
