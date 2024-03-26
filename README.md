@@ -32,6 +32,24 @@ pip install neattext
 // Finally run After every dependency is intalled correctly <br/>
 streamlit run app.py 
 
+ScreenShots
+![WhatsApp Image 2024-03-26 at 11 59 41_a0fea4e2](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/d9ecaf55-78ef-452e-b940-2c0aa519fa38)
+
+![Screenshot 2024-03-26 120201](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/1700fb5b-173c-4f79-8608-c9f6ff43d627)
+
+![Screenshot 2024-03-26 120259](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/15688b31-1d74-4d6b-b40f-6a54e56d96ba)
+
+![Screenshot 2024-03-26 120337](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/fb768fc8-25e7-48c2-b47b-94469144632a)
+
+![Screenshot 2024-03-26 120259](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/026b175f-440f-43c8-8f52-eac0e3a8a63c)
+
+![Screenshot 2024-03-26 120609](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/6798a949-239b-48c6-ae76-684ca1d4f777)
+
+![Screenshot 2024-03-26 120433](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/193e2fa3-f9ae-4722-8d90-accdc4f64b23)
+
+
+
+
 
 
 
