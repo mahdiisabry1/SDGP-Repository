@@ -34,6 +34,12 @@ pip install neattext
 // Finally run After every dependency is intalled correctly <br/>
 streamlit run app.py 
 
+Current version 
+Recording:
+https://drive.google.com/file/d/15yW1Wpwt4oiZpPCF3VTAIRiQsxoszSHx/view?usp=drive_link
+
+
+
 ScreenShots
 ![WhatsApp Image 2024-03-26 at 11 59 41_a0fea4e2](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/d9ecaf55-78ef-452e-b940-2c0aa519fa38)
 
