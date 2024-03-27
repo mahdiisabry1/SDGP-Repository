@@ -12,6 +12,14 @@ const postRoute = require('./Routes/posts')
 const commentRoute = require('./Routes/comments')
 const roadmapRoute = require('./Routes/roadmaps')
 
+
+app.use(cors({
+  origin: "https://mindforge-web-psi.vercel.app",
+  methods: ["POST", "GET", "DELETE", "PUT"],
+  credentials: true
+}));
+
+
 // database
 const connectDB = async() => {
     try {
@@ -21,13 +29,6 @@ const connectDB = async() => {
         console.log(error);
     }
 }
-
-
-app.use(cors({
-  origin: "https://mindforge-web-psi.vercel.app",
-  methods: ["POST", "GET", "DELETE", "PUT"],
-  credentials: true
-}));
 
 
 dotenv.config()
