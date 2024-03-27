@@ -12,9 +12,11 @@ const postRoute = require('./Routes/posts')
 const commentRoute = require('./Routes/comments')
 const roadmapRoute = require('./Routes/roadmaps')
 
+dotenv.config()
 
+app.use(express.json());
 app.use(cors({
-  origin: "https://mindforge-web-psi.vercel.app",
+  origin: ["https://mindforge-web-psi.vercel.app", "http://localhost:5173"],
   methods: ["POST", "GET", "DELETE", "PUT"],
   credentials: true
 }));
@@ -31,11 +33,11 @@ const connectDB = async() => {
 }
 
 
-dotenv.config()
-app.use(express.json())
 app.use("/images", express.static(path.join(__dirname,"/images")))
 app.use(cors({origin:"http://localhost:5173", credentials: true}))
 app.use(cookieParser())
+
+// Routes
 app.use("/api/auth", authRoute)
 app.use("/api/users", userRoute)
 app.use("/api/posts", postRoute)
