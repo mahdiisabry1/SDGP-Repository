@@ -23,6 +23,13 @@ const connectDB = async() => {
 }
 
 
+app.use(cors({
+  origin: "https://mindforge-web-psi.vercel.app",
+  methods: ["POST", "GET", "DELETE", "PUT"],
+  credentials: true
+}));
+
+
 dotenv.config()
 app.use(express.json())
 app.use("/images", express.static(path.join(__dirname,"/images")))
