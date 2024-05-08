@@ -34,10 +34,6 @@ pip install neattext
 // Finally run After every dependency is intalled correctly <br/>
 streamlit run app.py 
 
-Current version 
-Recording:
-https://drive.google.com/file/d/15yW1Wpwt4oiZpPCF3VTAIRiQsxoszSHx/view?usp=drive_link
-
 
 
 ScreenShots
