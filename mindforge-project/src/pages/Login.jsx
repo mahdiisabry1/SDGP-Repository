@@ -20,6 +20,17 @@ const Login = () => {
   // Use navigate hook from react-router-dom
   const navigate = useNavigate();
 
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Show the popup after 5 seconds
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 5000);
+
+    return () => clearTimeout(timer); // Cleanup timer on component unmount
+  }, []);
+
   // Function to handle login process
   const handleLogin = async () => {
     try {
@@ -83,6 +94,13 @@ const Login = () => {
         </div>
       </div>
       <Disclaimer /> {/* Render Disclaimer component */}
+
+      {/* Popup message */}
+      {showPopup && (
+        <div className="popup-message fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white px-8 py-4 rounded-lg shadow-lg animate-fade-in">
+          This site has been taken down
+        </div>
+      )}
     </>
   );
 };
