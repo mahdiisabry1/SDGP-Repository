@@ -25,7 +25,7 @@ const Login = () => {
     // Show the overlay after 5 seconds
     const timer = setTimeout(() => {
       setShowOverlay(true);
-    }, 5000);
+    }, 1000);
 
     return () => clearTimeout(timer); // Cleanup timer on component unmount
   }, []);
