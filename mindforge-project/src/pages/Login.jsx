@@ -20,8 +20,7 @@ const Login = () => {
   // Use navigate hook from react-router-dom
   const navigate = useNavigate();
 
-  const [showPopup, setShowPopup] = useState(false);
-
+  const [showOverlay, setShowOverlay] = useState(false);
   useEffect(() => {
     // Show the overlay after 5 seconds
     const timer = setTimeout(() => {
