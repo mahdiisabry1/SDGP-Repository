@@ -98,7 +98,9 @@ const Login = () => {
       {showOverlay && (
         <div className="overlay fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex justify-center items-center z-50">
           <div className="text-center text-white text-2xl font-bold animate-fade-in">
-            This site has been taken down
+            This site is currently offline.<br />
+    Access has been restricted due to scheduled updates, security enhancements, or administrative actions.<br />
+    Please revisit us soon. 
           </div>
         </div>
       )}
