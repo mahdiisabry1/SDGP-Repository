@@ -1,2 +1,2 @@
-export const URL = "http://localhost:5000"
-export const IF = "http://localhost:5000/images/"
+export const URL = "mindforge-app.vercel.app"
+export const IF = "mindforge-app.vercel.app/images/";
