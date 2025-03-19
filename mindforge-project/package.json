@@ -14,7 +14,7 @@
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
-    "html2pdf.js": "^0.10.1",
+    "html2pdf.js": "^0.10.3",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
