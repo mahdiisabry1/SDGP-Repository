@@ -30,6 +30,19 @@ const Login = () => {
     return () => clearTimeout(timer); // Cleanup timer on component unmount
   }, []);
 
+  useEffect(() => {
+    if (showOverlay) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to re-enable scrolling when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showOverlay]);
+
   // Function to handle login process
   const handleLogin = async () => {
     try {
