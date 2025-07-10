@@ -36,11 +36,11 @@ streamlit run app.py
 
 System Architecture and Design patterns
 
-<img width="372" height="381" alt="Screenshot 2025-07-10 205719" src="https://github.com/user-attachments/assets/ec2e5cff-cf1f-40e9-a969-9c9158c5d6d3" />
+<img width="372" height="381" alt="Screenshot 2025-07-10 205719" src="https://github.com/user-attachments/assets/ec2e5cff-cf1f-40e9-a969-9c9158c5d6d3" /> <br/>
 
-<img width="387" height="602" alt="Screenshot 2025-07-10 205751" src="https://github.com/user-attachments/assets/b41d79d4-e577-438c-82ec-95bcb844b54f" />
+<img width="387" height="602" alt="Screenshot 2025-07-10 205751" src="https://github.com/user-attachments/assets/b41d79d4-e577-438c-82ec-95bcb844b54f" /> <br/>
 
-<img width="545" height="560" alt="Screenshot 2025-07-10 205817" src="https://github.com/user-attachments/assets/8ec7b2bc-5263-4190-9bef-eb8cda106217" />
+<img width="545" height="560" alt="Screenshot 2025-07-10 205817" src="https://github.com/user-attachments/assets/8ec7b2bc-5263-4190-9bef-eb8cda106217" /> <br/>
 
 <img width="495" height="707" alt="Screenshot 2025-07-10 205921" src="https://github.com/user-attachments/assets/de5e67f3-5e21-4217-a1b2-9b57e5d4c87c" />
 
