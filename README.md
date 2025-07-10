@@ -34,16 +34,15 @@ pip install neattext
 // Finally run After every dependency is intalled correctly <br/>
 streamlit run app.py 
 
+System Architecture and Design patterns
 
+<img width="372" height="381" alt="Screenshot 2025-07-10 205719" src="https://github.com/user-attachments/assets/ec2e5cff-cf1f-40e9-a969-9c9158c5d6d3" />
 
-ScreenShots
-![WhatsApp Image 2024-03-26 at 11 59 41_a0fea4e2](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/d9ecaf55-78ef-452e-b940-2c0aa519fa38)
+<img width="387" height="602" alt="Screenshot 2025-07-10 205751" src="https://github.com/user-attachments/assets/b41d79d4-e577-438c-82ec-95bcb844b54f" />
 
+<img width="545" height="560" alt="Screenshot 2025-07-10 205817" src="https://github.com/user-attachments/assets/8ec7b2bc-5263-4190-9bef-eb8cda106217" />
 
-![Screenshot 2024-03-26 120337](https://github.com/mahdiisabry1/SDGP-Repository/assets/141149923/fb768fc8-25e7-48c2-b47b-94469144632a)
-
-
-
+<img width="495" height="707" alt="Screenshot 2025-07-10 205921" src="https://github.com/user-attachments/assets/de5e67f3-5e21-4217-a1b2-9b57e5d4c87c" />
 
 
 
