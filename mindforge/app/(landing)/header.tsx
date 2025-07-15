@@ -24,7 +24,7 @@ export const Header = () => {
           <Button variant="outline" size="sm">
             Creator
           </Button>
-          <Link href="/register">
+          <Link href="/auth/register">
             <Button variant="default" size="lg">
               Get Started
             </Button>

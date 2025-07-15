@@ -7,7 +7,7 @@ const RegisterPage = () => {
         <h1 className="text-3xl">Get started with your account</h1>
         <p>
           Already have an account?{" "}
-          <a href="/login" className="text-blue-600 hover:text-blue-900">
+          <a href="/auth/login" className="text-blue-600 hover:text-blue-900">
             Login
           </a>
         </p>
